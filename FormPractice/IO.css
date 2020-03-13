@@ -1,0 +1,132 @@
+@import "CSS.css"; 
+
+/* select element */
+select:required:invalid {
+    color: gray;
+}
+option[value=""][disabled] {
+    display: none;
+}
+option {
+    color: black;
+}
+
+/* Section container form */ 
+.flex-container{
+    display:flex;
+    width:auto;
+}
+.flex-container > input[type="text"] {
+    flex-grow:1;
+}
+.flex-container > select {
+    width:auto;
+}
+
+fieldset > input, textarea, select, fieldset > div > input {
+    width: -webkit-fill-available;
+    padding:0.5em;
+    border-radius: 10px;
+    /* from user agent forms */
+    display: inline-block;
+    font: 400 13.3333px Arial;
+    border-width: 2px;
+    border-style: inset;
+    background-color: white;
+    border-color: initial;
+}
+
+
+fieldset input[type="submit"] {
+    font-weight: bold;
+    width: fit-content;
+    border-style: outset;
+}
+
+/* apply styling to file button */
+
+label.myLabel input[type="file"] {
+    position:absolute;
+    top: -1000px;
+}
+
+/* for file upload*/
+.myLabel {
+    padding:0.5em;
+    
+    /* from user agent forms */
+    font: 400 13.3333px Arial;
+    border-width: 2px;
+    background-color: white;
+    border-color: initial;
+    font-weight: bold;
+    width: fit-content;
+    border-style: outset;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.myLabel:hover, input[type="submit"]:hover, select:hover {
+    background: #CCC;
+    cursor: pointer;
+}
+
+.myLabel:active, input[type="submit"]:active, select:active,div#submission-container input:active {
+    background: #CCF;
+    border-style: inset;
+    border-bottom:2px solid #e3e7e6;
+    box-shadow: 1px 1px 2px 0px black}
+
+.myLabel:focus, input[type="submit"]:focus, input:focus, textarea:focus, select:focus {
+    background: white;
+    /* border-style: inset; */
+    outline: none;
+}
+
+.myLabel :invalid + span {
+    color: initial;
+}
+.myLabel :valid + span {
+    color: #4A4;
+}
+
+span {
+    text-shadow:none;
+    font: 400 13.3333px Arial;
+    font-weight: bold;
+}
+
+div#file-container {
+    display: flex;
+    width:100%;
+    align-items: baseline;
+}
+div#file-container > div {
+    flex-grow:2
+}
+
+div#submission-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    margin: 25px auto;
+    align-content: stretch;
+}
+
+div#submission-container input {
+    width:100%;
+    padding: 1vh;
+    margin: 1vh;
+    font-size: 100%;
+    font-family: verdana,sans-serif;
+    font-variant-caps: all-petite-caps;
+    box-shadow: 4px 4px 10px 0px black;
+}
+
+.preview {
+    margin:0.5em auto;
+    text-align: center;
+    color: red;
+    text-transform: uppercase;
+}

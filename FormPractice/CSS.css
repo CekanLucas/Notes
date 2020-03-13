@@ -1,0 +1,312 @@
+html {
+    background: #c3bab8;
+    width: 100vw;
+    height: 100vh;
+    margin:0;
+}
+
+body {
+    text-align: -webkit-auto;
+    color: #57191b;
+    text-shadow: 1px 1px 1px #aeb6b9;
+    font-size: calc(12px + 1vw);
+    font-family: trebuchet ms;
+    font-family: helvetica,sans-serif;
+    background: white;
+    padding: 1em 5%;
+    padding-bottom: 0px;
+    border: 3px #a92220 solid;
+    margin: 1em 10%;
+    box-shadow: 10px 10px 20px 5px #51070b;
+    max-width: 600px;
+    min-height: calc(100% - 46px - 5em);
+}
+
+main {
+    height:100%;
+}
+
+h1 {
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+#logo {
+    display:block;
+    max-width: 100%;
+    width: auto;
+    height: 25vh;
+    padding: 20px 0px;
+    margin:auto;
+}
+
+table[name="link_headings"] {
+    position:relative;
+    width: calc(100% + 1px + 10vw);;
+    right:5vw;
+    text-align: center;
+    background-color: #51070b;
+    border: #a92220 3px solid;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+td>a {
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 3vw;
+    font-family: "Trebuchet MS",arial,helvitica,sans-serif;
+    text-transform: uppercase;
+    text-shadow: 4px -1px 2px black;
+}
+
+td>a:hover {
+    color: #aeb6b9
+}
+
+td>a:active {
+    color: #FFEB3B
+}
+
+#InLineElement {
+    color: #51070b;
+    border: 2px solid #a92220;
+    height: 30vh;
+    width: 50%;
+    float: right;
+    margin: 10px;
+    background: #e3e7e6;
+    text-align: center;
+}
+
+#dropdwnAbout {
+    display: none
+}
+
+/* ********** ToolShed ********** */
+
+.tool {
+    height: 20vh;
+    width: auto;
+    position: relative;
+    bottom: 0;
+    margin:auto;
+    cursor: pointer;
+    transition: all 0.5s linear;
+}
+.tool:hover {
+    position: relative;
+    bottom: 25px;
+}
+.tool:focus {
+    position: relative;
+    bottom: 25px;
+    padding: 0px 20px;
+}
+
+fieldset {
+    border-radius: 10px;
+    padding: 0em 10px 0em 0.5em;
+    background-color: #e3e7e6;
+    border: 3px solid #a92220;
+    font-weight: bold;
+}
+
+fieldset p {
+    font-size: 75%;
+    margin-bottom: 0px;
+    padding: 0px;
+}
+/* ********** ToolShed ********** */
+
+#toolShed {
+    display: flex;
+    flex-wrap: wrap;
+}
+#toolShed fieldset {
+    color: #57191b;
+    padding-top: 1.5em;
+    text-align: center;
+    background-color:white;
+    font-weight: normal;
+    position:relative;
+}
+#toolShed fieldset:hover {
+    padding-top: 1.5em;
+    text-align: center;
+    background-color:white;
+    font-weight: normal;
+    position:relative;
+    border: 3px solid #a92220;
+    color: darkslategray;
+    cursor:pointer;
+}
+#toolShed fieldset:active {
+    padding-top: 1.5em;
+    text-align: center;
+    background-color:white;
+    font-weight: normal;
+    position:relative;
+    border: 3px solid #a92220;
+    color: #FFEB3B;
+    cursor: pointer;
+}
+#toolShed fieldset:focus-within {
+    text-align: center;
+    background-color:white;
+    font-style: italic;
+    position:relative;
+    border: 3px double darkslategray;
+    color: darkslategray;
+    cursor: pointer;
+}
+
+#toolShedFieldSet {
+    padding: 1.5em 0.5em 0.5em 0.5em;
+    padding-block-start: 0.5em;
+}
+#toolShedFieldSet>legend {
+    padding: 1.5em 0.5em 0.5em 0.5em;
+    padding-block-start: 0.5em;
+}
+#toolShedText {
+    color: darkslategray;
+    Margin: 0 0 0.5em 0;
+    text-shadow: none;
+    font: 400 13.3333px Arial;
+    font-weight: bold;
+}
+
+.toolRackText {
+    Margin: 0;
+    font: 400 13.3333px Arial;
+    font-weight: bolder;
+    position: relative;
+    /*     position: absolute; 
+    bottom: -100px; 
+    left: 100px; 
+    background:content-box; 
+    padding: 0 2px; */
+    top: 4px;
+    background-color: white;
+    display: table;
+    left: calc(50% - 14px - 1.3em);
+}
+/* ********** ToolShed END ********** */
+
+#profileDisplay {
+    display: flow-root;
+    font-size: 75%;
+}
+
+span {
+    font-family: courier,monospace;
+    font-weight: bolder;
+}
+
+.EE:active span {
+    display: none;
+}
+
+.EE:active::before {
+    content: " fA";
+    font-family: courier, monospace;
+    font-weight: bolder;
+}
+
+#Portrait {
+    float:right;
+    margin:5px 10px;
+    max-height: 20vh;
+    width: auto;
+    padding:0px;
+    border:3px solid #a92220;
+    overflow:auto;
+}
+
+/* ********** Contact ********** */
+
+/* google map resize */
+div#map {
+    position:relative;
+    right: 5vw;
+    height: 75vh !important;
+    width:calc(100% + 10vw) !important;
+    border: none;
+}
+
+@media screen and (max-width: 415px) {
+    div#map {
+        right: 1vw;
+        height: 75vh !important;
+        width: calc(100% + 2vw) !important;
+    }
+    body {
+        padding: 1em 1%;
+        padding-bottom:0px;
+        margin: 1em 1%;
+        box-shadow: none;
+    }
+    table[name="link_headings"] {
+        box-shadow: none;
+        width: calc(98vw - 6px);
+        right:calc(3px);
+    }
+    main #footer {
+        position: absolute;
+        left: calc(50vw - 100px);
+        vertical-align: bottom;
+    }
+    main #footer span {
+        vertical-align: text-bottom;
+        position: relative;
+        bottom: -1.5px;
+    }
+    main #footer img {
+        vertical-align: middle;
+        position: relative;
+        bottom: -1.5px;
+    }
+}
+
+/* ********** Contact ********** */
+
+#homepage-pic {
+    width: 50%;
+    height: auto;
+    padding: 0px;
+    margin: 0px  0px 0px 1em ;
+    float: right;
+    border: 5px solid #a92220;
+    box-shadow: 5px 5px 2px 2px #a6aaa9;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ********** Footer ********** */
+#footer {
+    text-align: center;
+    position: absolute;
+    left: calc(3px + 15% + 300px - 100px);
+    /* bottom: calc(0px + 2em - 3px); */
+    display:visible;
+    margin-top: 15px;
+}
+#footer>img {
+    height: 0.9em;
+    vertical-align: super;
+}
+#footer>span {
+    color: #57191b;
+    height: 1em;
+    width: auto;
+    vertical-align: super;
+    font: 400 13.3333px Arial;
+    font-weight: bold;
+    top: -5px;
+    position: relative;
+}
+/* ********** Footer END ********** */

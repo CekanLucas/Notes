@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Page</title>
+	<link href="IO.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">	
+</head>
+<body>
+<header>
+    <a href="index.html"><img id="logo" src="../images/headLogo.png" alt="DK center of Arts header/Logo"></a>
+    <nav>
+    <table name="link_headings">    		
+        <tr>			
+            <td><a href="../index.html"> Home </a></td>      		
+            <td class="dropdwnnav"><a href="../about/index.html"> About 
+                <ul id="dropdwnAbout"> 
+                    <a><li>Management</li></a>
+                    <a><li>Production Staff</li></a>
+                    <a><li>Operational Staff</li></a>
+                </ul>
+            </a></td>   		
+            <td><a href="../contact/index.html"> Contact </a></td>	
+        </tr>
+    </table>
+    </nav>
+</header>
+<main><br>	
+<!------------------  form start  ------------------>
+<form name="add-person">
+    <fieldset>
+        <legend>Add Person</legend>
+
+        <p>Full Name</p>
+        <input
+            type="type"
+            name= "name"
+            placeholder="add full name here"
+            oninput="changePreview()"
+            autocomplete="off"
+            required
+            autofocus
+        >
+        
+        <p>Section eg Kitchen, Labour, IT etc</p>
+            <div class="flex-container">
+            <select name="section" oninput="changePreview()" required>
+                <option value="" disabled selected>select section</option>
+                <option value="Music">Music</option>
+                <option value="Kitchen">Kitchen</option>
+            </select>
+            <input
+            type="type"
+            name="add-section"
+            placeholder="add new section here"
+            autocomplete="off"
+            onchange="addSection()"
+            />
+            <input type="submit" value="add section" oninput="addSection()">
+        </div>
+
+        <p>Position eg Head Chef (for section: Kitchen)</p>
+        <input
+            type="type"
+            name= "position"
+            placeholder="add specific position or position title"
+            oninput="changePreview()"
+            autocomplete="off"
+            required
+        >
+
+        <p>Description or Article</p>
+        <textarea 
+            name="description" 
+            rows="10" 
+            placeholder="enter a short description here"
+            oninput="changePreview()"
+            required
+        ></textarea>
+
+        <div id="file-container">
+            
+            <div></div>
+
+            <p>Add Tool:</p> <div></div>
+            <label class="myLabel">
+                <input 
+                    type="file" 
+                    name="tool-file" 
+                    onchange="addTool()" 
+                    accept=".png, .gif*"
+                    required
+                />
+                <span>image file</span>
+            </label>
+
+            <div></div>
+
+            <p>Add Portrait:</p> <div></div>
+            <label class="myLabel">
+                <input 
+                    type="file" 
+                    name="portrait-file" 
+                    oninput="changePreview()"
+                    accept="image/*"
+                    required
+                />
+                <span>image file</span>
+            </label>
+
+            <div></div>
+
+        </div>
+
+        <div id="submission-container">
+            <input type="submit" value="Add Person" oninput="addPerson()">
+            <input type="submit" value="Deploy Changes to Site">
+        </div>
+
+        <!------------------  test function  ------------------>
+        <p><a href="/.netlify/functions/helloworld">Say hello!</a></p> 
+
+    </fieldset>
+</form>
+<!------------------  form end  ------------------>
+<hr><h5 class="preview">Preview</h5><hr>
+<fieldset id="toolShedFieldSet">
+<legend>Tool Shed <span id="toolShedText">Choose tool to reveal user</span></legend>
+	<div id="toolShed">
+        <fieldset>
+            <legend>Music</legend>
+            <img id="YellowGuitar" class="tool" src="../images/YellowGuitar.png">
+            <img id="BlackGuitar" class="tool" src="../images/BlackGuitar.png">
+            <p class="toolBoxText">Tool Box</p>
+        </fieldset>
+        <fieldset>
+            <legend>Kitchen</legend>
+            <img id="WoodenSpoon" class="tool" src="../images/WoodenSpoon.png">
+            <p class="toolBoxText">Tool Box</p>
+        </fieldset>
+	</div>
+</fieldset>
+    <article id="profileDisplay">
+        <img id="Portrait" src="../images/John_Doe.png">
+        <h2 id="name-profileDisplay">Name (eg John Doe)</h2>
+        <h3 id="section-profileDisplay">Section (eg example)</h3>
+        <h4 id="position-profileDisplay">Position (eg fictional)</h4>
+        <p id="description-profileDisplay">Description (eg born in medieval england)</p> 
+    </article>
+<hr><h5 class="preview">Preview</h5><hr>
+
+<footer id="footer">
+    <img src="../favicon.ico">
+    <span>©2019 DK Center of Arts </span>
+    <img src="../images/dramaMasks.png">
+</footer>
+
+</main>
+<script src="IO.js"></script>
+</body>
+</html>
