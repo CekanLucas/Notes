@@ -70,7 +70,7 @@ Simply include the code you want to be treated as JavaScript within curly braces
 
 <span class="Beige"><span class="SkyBlue">**React**</span> uses a syntax extension of JavaScript called <span class="Turquoise">JSX</span> that allows you to write <span class="DarkOrange">HTML</span> directly within JavaScript. This has several benefits. It lets you use the full programmatic power of JavaScript within <span class="DarkOrange">HTML</span>, and helps to keep your code readable. For the most part, <span class="Turquoise">JSX</span> is similar to the <span class="DarkOrange">HTML</span> that you have already learned, however there are a few key differences that will be covered throughout these challenges.**</span></span>
 
-For instance, because <span class="Turquoise">JSX</span> is a syntactic extension of JavaScript, you can actually write JavaScript directly within <span class="Turquoise">JSX</span>. To do this, you simply include the code you want to be treated as JavaScript within curly braces: `{'this is treated as JavaScript code'}`. Keep this in mind, since it's used in several future challenges.
+For instance, because <span class="Turquoise">JSX</span> is a syntactic extension of JavaScript, you can actually write JavaScript directly within <span class="Turquoise">JSX</span>. To do this, you simply include the code you want to be treated as JavaScript within curly braces: `{'this is treated as JavaScript code'}`
 
 However, because <span class="Turquoise">JSX</span> is not valid JavaScript, <span class="Turquoise">JSX</span> code must be compiled into JavaScript. The transpiler Babel is a popular tool for this process. For your convenience, it's already added behind the scenes for these challenges. If you happen to write syntactically invalid <span class="Turquoise">JSX</span>, you will see the first test in these challenges fail.
 
@@ -125,6 +125,17 @@ In <span class="Turquoise">JSX</span>, the rules are a little different. Any <sp
 
 ><span class="Gold">Components</span> are the core of <span class="SkyBlue">**React** </span>. Everything in <span class="SkyBlue">**React** </span>is a <span class="Gold">component</span> and here you will learn how to create one **using Javascript functions**.
 
+## <span class="Green">Good Components are:
+
+<span class="Green">**Composable**:</span> 
+<span class="Lime">we can combine them together to build complex interfaces</span><br>
+<span class="Green">**Encapsulated**:</span> 
+<span class="Lime">we can build them in isolation</span><br>
+<span class="Green">**Reuseable**:</span> 
+<span class="Lime">we can use them in different parts of our without duplicating code</span><br>
+<span class="Green">**Testable**:</span> 
+<span class="Lime">we can isolate them for certain types of testing</span><br>
+
 There are two ways to create a <span class="Gold">**React Component**</span>. The first way is to use a **JavaScript function**. Defining a <span class="Gold">component</span> in this way creates a <span class="Gold">stateless functional component</span>. The concept of state in an application will be covered in later challenges. For now, think of a <span class="Gold">stateless component</span> as one that can <span class="LightGreen">receive data</span> and <span class="Lime">render it</span>, but does not <span class="IndianRed">manage or track changes</span> to that data. 
 
 >To create a <span class="Gold">component</span> with a *function*, you simply write a **JavaScript function** that returns either <span class="Turquoise">JSX</span> or null. **One important thing to note is that <span class="SkyBlue">React </span>requires your function name to begin with a *<u>capital letter</u>.* Here's an example of a stateless functional <span class="Gold">component</span> that assigns an <span class="DarkOrange">HTML</span> class in <span class="Turquoise">JSX</span>**
@@ -138,7 +149,7 @@ const DemoComponent = function() {
 ```
 Because a <span class="Turquoise">JSX</span> <span class="Gold">component</span> represents <span class="DarkOrange">HTML</span>, you could put several <span class="Gold">components</span> together to create a more complex <span class="DarkOrange">HTML</span> page. This is one of the key advantages of the <span class="Gold">component</span> architecture <span class="SkyBlue">**React** </span>provides. It allows you to compose your UI from many separate, isolated <span class="Gold">components</span>. This makes it easier to build and maintain complex user interfaces.
 
-## Create a <span class="Gold">React Component</span> using Classes
+## Create a <span class="Gold">React Component</span> using Classes <sup>use hooks instead</sup>
 
 The other way to define a <span class="Gold">React component</span> is with the *ES6 class syntax.* 
 >In the following example, `Kitten extends React.Component`:
