@@ -389,3 +389,65 @@ The `<input>` element becomes a **controlled component** when we provide a `valu
  4. The browser displays the "Hello, {name}." message as "Hello, A".
 
 As the user types more letters, we run this process for each change to the input. The value of the `name` state always contains the most recent user input. Another benefit is that you can call` setName("")` at any point to empty the `<input>`.
+
+
+## Rules of useEffect Hook 
+
+### Rule #1
+>Don't call Hooks inside loops, conditions, or nested functions.
+### Rule #2
+>Only call Hooks from inside React components.
+### Rule #3
+>The effect method that we pass to `useEffect` must either return undefined or a function
+
+#### Example Pattern
+``` jsx
+function LiveSearch(props) {
+  const [term, setTerm] = useState("");
+  const [results, setResults] = useState([]);
+
+  useEffect(() => {
+    fetch(`/search?term=${term}`).then(setResults);
+  }, [term]);
+
+  return (
+    <>
+      <SearchBar value={term} onChange={setTerm} />
+      <Results results={results} />
+    </>
+  );
+}
+
+```
+
+# Combine state into one object 
+
+``` jsx 
+const [state, setState] = useState({
+  day: "Monday",
+  days: [],
+  appointments: {}
+});
+
+```
+## Working with objects 
+* spread operator 
+  > use the spread operator to create a new object with all of the existing keys of `state`. 
+  
+  >Any keys declared after will overwrite existing keys.
+  ``` jsx
+  const state = { day: "Monday", days: [] };
+  setState({ ...state, day: "Tuesday" });
+  ```
+* Object.assign
+  >Merge objects with `Object.assign`
+  ``` jsx
+  const state = { day: "Monday", days: [] };
+  setState(Object.assign({}, state, { day: "Tuesday" });
+  ```
+  >Notice that the first argument passed to `assign` is an empty object. Without this detail, we would mutate the `state` which is an anti-pattern.
+* Aliasing Actions 
+  >could just define a function to set state 
+  ``` jsx
+  const setDay = day => setState({ ...state, day });
+  ```
