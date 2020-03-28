@@ -451,3 +451,93 @@ const [state, setState] = useState({
   ``` jsx
   const setDay = day => setState({ ...state, day });
   ```
+
+# Custom Hooks 
+
+> **A custom Hook is a function that must start with the word** `use`
+
+Since we must call a custom Hook from within a component, a custom Hook can call other custom or built-in Hooks.
+
+# DO NOT MUTATE STATE
+<span class="SkyBlue">**Use immutable patterns using the**</span> `spread operator`
+```jsx
+// use spread operator
+const original = { one: 1 };
+const bad = original;
+const good = { ...original };
+
+console.log(original === original); // true
+console.log(original === bad); // true
+console.log(original === good); // false
+
+// relevant example
+const original = { one: 1, sub: { two: 2 } };
+const copy = { ...original, sub: { ...original.sub } };
+
+console.log(original === copy); // false
+console.log(original.sub === copy.sub); // false
+
+// This will only copy the first level of keys. The example below shows how the copy two levels
+
+const original = { one: 1, sub: { two: 2 } };
+const copy = { ...original, sub: { ...original.sub } };
+
+console.log(original === copy); // false
+console.log(original.sub === copy.sub); // false
+
+// adding to object 
+const original = { one: 1 };
+const copy = { ...original, two: 2 };
+
+console.log(original === copy); // false
+
+/* original */
+{
+  one: 1
+}
+
+/* copy */
+{
+  one: 1,
+  two: 2
+}
+
+// update takes advantage of the fact that keys declared later in the object overwrite previous values.
+
+const original = { one: 1, two: 3 };
+const copy = { ...original, two: 2 };
+
+console.log(original === copy); // false
+
+/* original */
+{
+  one: 1,
+  two: 3
+}
+
+/* copy */
+{
+  one: 1,
+  two: 2
+}
+
+// merging multiple objects 
+const first = { one: 1 };
+const second = { two: 2 };
+const copy = { ...first, ...second };
+
+console.log(copy === copy); // true
+console.log(first === copy); // false
+console.log(second === copy); // false
+
+/* first */
+{one: 1}
+
+/* second */
+{two: 2}
+
+/* copy */
+{one: 1, two: 2}
+
+```
+With this you can update, add keys to objects. Order keys declared later overwrite earlier declared keys. 
