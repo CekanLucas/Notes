@@ -63,9 +63,9 @@ body ::selection {
 }
 .img{
   position:sticky;
-  left:70%;
+  float: Right;
   top:1px;
-  width: 30%
+  width: 10%
 }
 .metaprogramming {
   font-weight: bolder;
@@ -74,12 +74,14 @@ body ::selection {
 </style>
 </head>    
 
-# <span class="Cyan">Meta</span><span class="SteelBlue">Programming</span> in <span class="ruby">RUBY</span> 
-## *Written By: <span class="SkyBlue">Lucas Cekan</span>* 
+# <span class="Cyan">Meta</span><span class="SteelBlue">Programming</span> in <span class="ruby">RUBY</span>  
+## *Written By: <span class="SkyBlue">Lucas Cekan</span>*  
+<img class=img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/198px-Ruby_logo.svg.png">
+
 > "Will write code that writes code that writes code for food."
 > > Martin Rodgers
  
- <img class=img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/198px-Ruby_logo.svg.png">
+
 
 <i><span class="Khaki">Programming can seem like magic, with programs seeming to be able to do so many things. I personally believe that the art of programming is bassically the process of automating away pretty much everything. Wherever there is data, a programming language can be utilised to munipulate that data and cause magic to happen. </span></i>
 
@@ -127,6 +129,13 @@ link to this [md file](./MetaProgramingRuby.md)
 span.skyblue
 
 span.blueviolet
+
+### <span class="Red">Below should change colour</span>
+<span class="Red">If not [refresh page](./MetaProgramingRuby.md). Or try running the [ruby file]() again. </span>
+
+<span class=aliceblue>AliceBlue</span><span class=antiquewhite>AntiqueWhite</span><span class=aqua>Aqua</span><span class=aquamarine>Aquamarine</span><span class=azure>Azure</span><span class=beige>Beige</span><span class=bisque>Bisque</span><span class=black>Black</span><span class=blanchedalmond>BlanchedAlmond</span><span class=blue>Blue</span><span class=blueviolet>BlueViolet</span><span class=brown>Brown</span><span class=burlywood>BurlyWood</span><span class=cadetblue>CadetBlue</span><span class=chartreuse>Chartreuse</span><span class=chocolate>Chocolate</span><span class=coral>Coral</span><span class=cornflowerblue>CornflowerBlue</span><span class=cornsilk>Cornsilk</span><span class=crimson>Crimson</span><span class=cyan>Cyan</span><span class=darkblue>DarkBlue</span><span class=darkcyan>DarkCyan</span><span class=darkgoldenrod>DarkGoldenRod</span><span class=darkgray>DarkGray</span><span class=darkgrey>DarkGrey</span><span class=darkgreen>DarkGreen</span><span class=darkkhaki>DarkKhaki</span><span class=darkmagenta>DarkMagenta</span><span class=darkolivegreen>DarkOliveGreen</span><span class=darkorange>DarkOrange</span><span class=darkorchid>DarkOrchid</span><span class=darkred>DarkRed</span><span class=darksalmon>DarkSalmon</span><span class=darkseagreen>DarkSeaGreen</span><span class=darkslateblue>DarkSlateBlue</span><span class=darkslategray>DarkSlateGray</span><span class=darkslategrey>DarkSlateGrey</span><span class=darkturquoise>DarkTurquoise</span><span class=darkviolet>DarkViolet</span><span class=deeppink>DeepPink</span><span class=deepskyblue>DeepSkyBlue</span><span class=dimgray>DimGray</span><span class=dimgrey>DimGrey</span><span class=dodgerblue>DodgerBlue</span><span class=firebrick>FireBrick</span><span class=floralwhite>FloralWhite</span><span class=forestgreen>ForestGreen</span><span class=fuchsia>Fuchsia</span><span class=gainsboro>Gainsboro</span><span class=ghostwhite>GhostWhite</span><span class=gold>Gold</span><span class=goldenrod>GoldenRod</span><span class=gray>Gray</span><span class=grey>Grey</span><span class=green>Green</span><span class=greenyellow>GreenYellow</span><span class=honeydew>HoneyDew</span><span class=hotpink>HotPink</span><span class=indianred>IndianRed</span><span class=indigo>Indigo</span><span class=ivory>Ivory</span><span class=khaki>Khaki</span><span class=lavender>Lavender</span><span class=lavenderblush>LavenderBlush</span><span class=lawngreen>LawnGreen</span><span class=lemonchiffon>LemonChiffon</span><span class=lightblue>LightBlue</span><span class=lightcoral>LightCoral</span><span class=lightcyan>LightCyan</span><span class=lightgoldenrodyellow>LightGoldenRodYellow</span><span class=lightgray>LightGray</span><span class=lightgrey>LightGrey</span><span class=lightgreen>LightGreen</span><span class=lightpink>LightPink</span><span class=lightsalmon>LightSalmon</span><span class=lightseagreen>LightSeaGreen</span><span class=lightskyblue>LightSkyBlue</span><span class=lightslategray>LightSlateGray</span><span class=lightslategrey>LightSlateGrey</span><span class=lightsteelblue>LightSteelBlue</span><span class=lightyellow>LightYellow</span><span class=lime>Lime</span><span class=limegreen>LimeGreen</span><span class=linen>Linen</span><span class=magenta>Magenta</span><span class=maroon>Maroon</span><span class=mediumaquamarine>MediumAquaMarine</span><span class=mediumblue>MediumBlue</span><span class=mediumorchid>MediumOrchid</span><span class=mediumpurple>MediumPurple</span><span class=mediumseagreen>MediumSeaGreen</span><span class=mediumslateblue>MediumSlateBlue</span><span class=mediumspringgreen>MediumSpringGreen</span><span class=mediumturquoise>MediumTurquoise</span><span class=mediumvioletred>MediumVioletRed</span><span class=midnightblue>MidnightBlue</span><span class=mintcream>MintCream</span><span class=mistyrose>MistyRose</span><span class=moccasin>Moccasin</span><span class=navajowhite>NavajoWhite</span><span class=navy>Navy</span><span class=oldlace>OldLace</span><span class=olive>Olive</span><span class=olivedrab>OliveDrab</span><span class=orange>Orange</span><span class=orangered>OrangeRed</span><span class=orchid>Orchid</span><span class=palegoldenrod>PaleGoldenRod</span><span class=palegreen>PaleGreen</span><span class=paleturquoise>PaleTurquoise</span><span class=palevioletred>PaleVioletRed</span><span class=papayawhip>PapayaWhip</span><span class=peachpuff>PeachPuff</span><span class=peru>Peru</span><span class=pink>Pink</span><span class=plum>Plum</span><span class=powderblue>PowderBlue</span><span class=purple>Purple</span><span class=rebeccapurple>RebeccaPurple</span><span class=red>Red</span><span class=rosybrown>RosyBrown</span><span class=royalblue>RoyalBlue</span><span class=saddlebrown>SaddleBrown</span><span class=salmon>Salmon</span><span class=sandybrown>SandyBrown</span><span class=seagreen>SeaGreen</span><span class=seashell>SeaShell</span><span class=sienna>Sienna</span><span class=silver>Silver</span><span class=skyblue>SkyBlue</span><span class=slateblue>SlateBlue</span><span class=slategray>SlateGray</span><span class=slategrey>SlateGrey</span><span class=snow>Snow</span><span class=springgreen>SpringGreen</span><span class=steelblue>SteelBlue</span><span class=tan>Tan</span><span class=teal>Teal</span><span class=thistle>Thistle</span><span class=tomato>Tomato</span><span class=turquoise>Turquoise</span><span class=violet>Violet</span><span class=wheat>Wheat</span><span class=white>White</span><span class=whitesmoke>WhiteSmoke</span><span class=yellow>Yellow</span><span class=yellowgreen>YellowGreen</span>
+
+
 
 <b><span class="Orange">Emmet</span></b> and this file made with Markdown are both examples of metaprogramming, this md file would be compiled to html and emmet was used to quickly add color to this page. So if you look closely everything you see here is the result of metaprogramming and thats pretty meta. 
 
