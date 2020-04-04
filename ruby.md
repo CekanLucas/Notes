@@ -57,7 +57,7 @@ body ::selection {
   font-weight:bolder;
 }
 .img{
-  position:fixed;
+  position:sticky;
   left:70%;
   top:1px;
   width: 30%
@@ -692,3 +692,78 @@ Something.qux     #=> NoMethodError: undefined method `qux'
 Something.new.bar #=> NoMethodError: undefined method `bar'
 Something.new.qux #=> "qux"
 ```
+
+# Array.select <small>filtering array</small>
+To <span class="Teal">filter</span> an array we can use `select` with a <span class="Lime">block</span>
+``` ruby 
+array = [ 3, 4, 7, 12 ]
+result = array.select do |elem|
+  elem > 5
+end # => [7, 12]
+```
+
+# Array.sort <small>sorting array</small>
+To <span class="Teal">sort</span> an array we can use `sort` with a <span class="Lime">block</span>
+``` ruby 
+numbers = [5,3,2,1]
+numbers.sort
+# [1,2,3,5]
+```
+> if you use `.sort!` original array will change instead of creating a new one, which can be good for performance.
+
+> sort in reverse use `.reverse`
+
+Use `.sort_by` for advanced sorting using a block 
+
+```ruby
+@candidates.sort_by{ |candidate| candidate[:years_of_experience] }
+```
+> to sort multiple things and break the tie 
+
+# Creating constants and namespaces
+
+Let's see how we can define our own constants globally and within an existing namespace. Try this out in irb:
+
+``` ruby
+module Apple
+  FOUNDED_BY = "L. Ron Hubbard"
+end
+```
+Now that we've created these two new constants, in the same irb session we can:
+``` ruby
+Apple
+Apple.class
+Apple::FOUNDED_BY
+Creating constants and namespaces
+```
+Finally let's see how we can define our own constants globally and within an existing namespace. Try this out in irb:
+``` ruby
+module Apple
+  FOUNDED_BY = "L. Ron Hubbard"
+end
+```
+Now that we've created these two new constants, in the same irb session we can:
+``` ruby
+Apple
+Apple.class
+Apple::FOUNDED_BY
+```
+### Conclusions
+* Capitalized words can be used to define a constant
+* A constant can refer to a Module, a Class or simple data like Floats and Strings
+* Namespacing is used heavily to limit the exposure of constants defined in the global namespace
+* The `::` Syntax is used to access constants (Modules, Classes, etc)
+* It is convention to only capitalize the first letter when defining Class and Module constants like `Apple`
+* It is convention to capitalize and underscore the entire name when defining value constants like `FOUNDED_BY`
+
+## Proc <small>procedurials</small>
+A Proc is just a block that you save to a variable
+> my_proc = Proc.new { |arg1| print "#{arg1}! " }
+
+Use that block of code (now called a Proc) as an input to a function by prepending it with an apersand &:
+
+> [1,2,3].each(&my_proc) #=> 1! 2! 3! =>[1,2,3]
+
+# p and pp 
+
+Theres a method `p` that acts like `puts` except it also calls `inpect` method useful for debugging `pp` is used to better display objects 
