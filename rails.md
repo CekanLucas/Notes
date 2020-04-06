@@ -164,3 +164,50 @@ We use ERB (Embedded RuBy)
 A <span class="controller">controller's</span> purpose is to receive specific <span class="request">requests</span> for the application. <span class="route">Routing</span> decides which <span class="controller">controller</span> receives which <span class="request">requests</span>. Often, there is more than one <span class="route">route</span> to each <span class="controller">controller</span>, and different <span class="route">routes</span> can be served by different actions. Each action's purpose is to collect information to provide it to a <span class="view">view</span>.
 
 A <span class="view">view's</span> purpose is to display this information in a human readable format. An important distinction to make is that it is the <span class="controller">controller</span>, not the <span class="view">view</span>, where information is collected. The <span class="view">view</span> should just display that information. By default, <span class="view">view templates</span> are written in a language called <span class="Red">eRuby (Embedded Ruby)</span> which is processed by the <span class="request">request cycle</span> in <span class="Red">Rails</span> before being sent to the user.
+
+# Active Record
+## Relations and Lazy Evaluation
+
+Using `User.find(1)` will return an unambiguous object – it’s going to find the user with ID = 1 and give it to you as a Ruby object. But this behavior is actually unusual. Most queries don’t actually return a Ruby object, they just fake it. For example:
+``` ruby
+  User.where(id: 1)
+```
+Might look like it returns an array that contains a serialized User object, like:
+``` ruby
+  [#<User id: 1, email: "foo@bar.com">]
+```
+But try running `User.where(id: 1).class` and you’ll see that it isn’t an `Array`, it’s actually an instance of `ActiveRecord::Relation`. Relations are actually just really good at looking like arrays but they’ve got more going on.
+
+Active Record queries return relations to be lazy. There’s basically no reason to actually tell the database to execute a query until the very last possible minute. What if you never actually needed to use that query at all? What if you want to make it more complex before executing it? Relations give you that flexibility and make much more efficient use of your database’s valuable time.
+
+Relations only get executed when it becomes absolutely necessary to know what’s inside them. So if your controller grabs 5 blog posts using @posts = Post.limit(5), that is really passing your view a relation. It’s only when the code in the view actually calls a method on @posts (like @posts.first.title) that the query will be run and the relation will get stored as a real Ruby object in memory.
+
+
+
+## Database Migrations
+#### Example
+``` ruby
+class CreateProducts < ActiveRecord::Migration
+  def change
+    create_table :products do |t|
+      t.string :name
+      t.text :description
+      t.string :image
+      t.integer :price_cents
+      t.integer :quantity
+
+      t.timestamps null: false
+    end
+  end
+end
+```
+**t** short hand for table t.--- means add column
+
+      bin/rake db:migrate # run all migrations
+      bin/rails g migration add_discount_cents_to_products
+      rails g model User first_name:string last_name:string email:string 
+      bin/rake db:rollback # rollback migration
+**g** is shorthand for generate 
+
+>**Note** if you have migrations pending Rails throws error
+>**Note** rails generates *both* a migration and model file with the generate model command

@@ -119,7 +119,7 @@ Now run the file with ruby
       
       $ ruby metaprogramming.rb
 
-Congratulation you just ran a program to create [this](./color_new.css) css file 
+Congratulation you just ran a program to create [this](./color_new.css) css file. Using ruby to create a file in this case the CSS file is all that Metaprogramming entails. 
 
 
 If you have <b><span class="Orange">Emmet</span></b> try expanding the abreviations below with the `tab` key. ([documentation here](https://docs.emmet.io/actions/expand-abbreviation/)). 
