@@ -1,6 +1,5 @@
 * {background-color: transparent;}
 html>body {
-    color:azure;
     background-color: #000;
     background-image: url(
 "https://www.transparenttextures.com/patterns/cartographer.png");
@@ -14,9 +13,6 @@ h1,h2,h3,h4,h5,h6 {
     text-shadow: 
     -1px -1px 0.5px #FFF,
      0px  0px 0.5px #000;
-}
-h1, hr {
-  border-bottom: 1px solid goldenrod !important;
 }
 h2>code, p>code, li>code, div>code {
     background: linear-gradient(#FFF,#09f);
@@ -86,4 +82,5 @@ body ::selection {
     1px  0px black ,
     -1px  0px black ,
     0px -1px black ;
+  text-outline: black;  
 }
