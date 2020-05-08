@@ -1,0 +1,22 @@
+{
+  "name": "cekanlucasnotes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Iterator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dubi911/Notes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dubi911/Notes/issues"
+  },
+  "homepage": "https://github.com/Dubi911/Notes#readme",
+  "dependencies": {
+    "bulma": "^0.8.2"
+  }
+}

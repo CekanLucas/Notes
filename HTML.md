@@ -12,45 +12,36 @@
   <link 
       href="https://fonts.googleapis.com/css?family=Fira+Mono:500&display=swap" 
       rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
 <style> 
 
-html>body, p {
-  font-family: ubuntu;
-  font-size: 1.1em;
-  text-shadow:none;
-}
-h2>code, p>code, li>code, div>code {
-    background-color: #09A;
-    border-radius: 7px;
-    box-shadow: 
-      1px 1px 1px #000,
-      -1px -1px 1px #FFF,
-      -1px 1px 2px #000,
-      1px -1px 2px #000;
-    color: #00f;
-    margin: 5px;
-    padding: 2px;
-    font-family: 'Fira Mono', monospace;
-    text-shadow:none;
-    font-size:0.8em
-}
-body ::selection {
-  /*highlighting*/
-  background: transparent;
-  text-shadow: 
-    1px  0px 1px ,
-    0px  1px 1px ,
-    -1px  0px 1px ,
-    0px -1px 1px ,
-    0px  1px black ,
-    1px  0px black ,
-    -1px  0px black ,
-    0px -1px black ;
-  text-outline: black;  
-}
+
+
 </style>
 </head>    
 
-# HTML
-## &lt;Button&gt; &#280;
+
+# Positioning Tips
+When you use float elements (my favorite) they don't expand the div parent container. Enter the clearfix hack observe;
+
+```css
+.clearfix:after {
+  content: "";
+  clear:both;
+}
+```
+
+
+<div class=container>
+
+<div id=no-clearfix>
+<h3>No clearfix</h3>
+
+
+</div>
+<div class="asideL"></div>
+<div class="asideR"></div>
+</div>
+<button class="button is-primary">Toggle ClearFix</button>
