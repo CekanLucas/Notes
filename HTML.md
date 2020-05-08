@@ -1,4 +1,6 @@
 <head>
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css"> -->
+
   <link 
       rel="stylesheet" 
       type="text/css" 
@@ -14,11 +16,43 @@
       rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
-<style> 
 
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha256-gvEnj2axkqIj4wbYhPjbWV7zttgpzBVEgHub9AAZQD4=" crossorigin="anonymous" /> -->
+<style>
+.container{
+  background-color:rgba(255,255,255,10%);
+  text-align: center;
+  border-radius: 5px;
+  padding:1em;
+}
 
+.clearfix-container {
+  background-color:rgba(255,255,255,40%);
+  padding: 1em;
+  border-radius: 5px;
+}
 
+.clearfix:after {
+  content: "";
+  clear:both;
+}
+
+.asideL{
+  width:40%;
+  display:inline;
+  margin-left: 1em;
+  float:left;
+  height:3em;
+  background-color: rgba(150,0,0,100%)
+}
+.asideR{
+  width:40%;
+  display:inline;
+  margin-right: 1em;
+  float:right;
+  height:5em;
+  background-color: rgba(0,100,100,100%)
+}
 </style>
 </head>    
 
@@ -31,17 +65,22 @@ When you use float elements (my favorite) they don't expand the div parent conta
   content: "";
   clear:both;
 }
+
 ```
 
 
 <div class=container>
-
-<div id=no-clearfix>
-<h3>No clearfix</h3>
+  <h3>No clearfix</h3>
 
 
+  <div class="clearfix-container clearfix">
+    <div class="asideL clearfix"></div>
+    <div class="asideR clearfix"></div>
+  </div>
+  
+  <button id="toggle-clearfix" class="button is-info is-outlined is-rounded is-fullwidth">Toggle ClearFix</button>
 </div>
-<div class="asideL"></div>
-<div class="asideR"></div>
-</div>
-<button class="button is-primary">Toggle ClearFix</button>
+
+<script>
+  $("#toggle-clearfix").click( () => $(".asideL").hide(500))
+</script>
