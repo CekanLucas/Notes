@@ -19,6 +19,11 @@ img {
     height:30vh;
     float:right;
 }
+#exp {
+  float:none;
+  height: 70vh;
+  text-align:center;
+}
 </style>
 </head>    
 
@@ -121,3 +126,126 @@ Warning: Failed prop type: Invalid prop `value` of type `string` supplied to `In
     in main (at Application.js:33)
     in Application (at src/index.js:8)
 ```
+
+# Unit Testing
+
+1. **Initialize** the component that we would like to test
+2. **Trigger** the change that executes the unit
+3. **Verify** that the unit produced the expected result
+
+*see scheduler test file for button*
+
+```js
+it("renders without crashing", () => {
+  render(<Button />);
+});
+
+it("renders its `children` prop as text", () => {
+  const { getByText } = render(<Button>Default</Button>);
+  expect(getByText("Default")).toBeInTheDocument();
+});
+
+```
+
+### Second test 
+- `render` function is imported from the `react-testing-library`
+- `expect` function is injected into the global scope by Jest
+- `getByText` [query function](https://testing-library.com/docs/dom-testing-library/api-queries) is returned by the render function but is a part of the the `dom-testing-library`
+- `toBeInTheDocument` function is a [matcher](https://jestjs.io/docs/en/expect) provided through Jest by the `jest-dom` library
+
+## Jest <sub class=Red>Testing Framework</sub>
+![Jest Logo](https://seeklogo.com/images/J/jest-logo-F9901EBBF7-seeklogo.com.png) 
+
+See [documentation](https://jestjs.io/docs/en/expect) if you cant remember all the functions
+
+examples `toBe` `toHaveLength` `toHaveProperty` `toBeGreaterThan`
+
+## [jest-dom](https://github.com/testing-library/jest-dom)
+
+The [jest-dom](https://github.com/testing-library/jest-dom) library provides the DOM specific <span class="Orange">matchers</span>. This library is the source of the `toBeInDocument` matcher. The `toHaveClass` and `toHaveValue` <span class="Orange">matchers</span> are examples of the types of helpers that make DOM testing easier. These <span class="Orange">matchers</span> help us verify <u>_expected behaviour_</u>
+
+## react-testing-library
+
+The `react-testing-library` is one of many view testing library implementations in the [Testing Library collection](https://testing-library.com/). It provides React specific helper functions, including the `render` function.
+
+When we call the `render` function, we gain access to functions that help us interact with the DOM. The `rerender` and `unmount` helpers are examples of React specific API. The `react-testing-library` inherits access to a variety of [queries](https://testing-library.com/docs/dom-testing-library/api-queries) provided by the `dom-testing-library`.
+
+> The other functions that we can import from the react-testing-library are `cleanup` and `act`.
+
+## dom-testing-library
+
+The queries come from the `dom-testing-library`. A query is a combination of a query variant and a query type. The query we want to use is `getByText`. The variant is `getBy` and the type is `ByText`. 
+
+We can also combine the variant `getBy` with the type `ByLabelText` to access the `getByLabelText` query.
+
+<img id=exp src="https://s3-us-west-2.amazonaws.com/reactv2/figures/23300e6b-d342-4dcf-b9ed-343e89f54619.png" alt="">
+
+## Expecting
+
+We use the helpers to implement each phase of the test. Our example is testing that the text "Default" is in the document after we render the `<Button>Default</Button>` component. We expect that an element with the text "Default" is somewhere in the document.
+
+Storybook is a test environment that we use to isolate components. We render a component with specific props, and then we verify with our eyes that the component is working as expected. Our brains expect to see the text "Default" within a button in the document.
+
+There are a lot of examples of different assertions that we can make about the nodes returned by queries.
+
+   ` expect(getByText("Default")).toHaveClass("button");`
+    `expect(getByPlaceholderText("Enter Student Name")).toHaveValue("");`
+    `expect(getByTestId("student-name-input")).toHaveValue("Lydia Miller-Jones");`
+
+There is no shortcut to learning the queries and matchers. Having to constantly look them up will make writing tests slow at first. Most testing solutions follow this pattern but don't always use the same terminology.
+
+#### Example <span class="Green">-line-by-line</span>
+```js
+/*
+-- In Appointment.test.js --
+  We are rendering `<Application />` down below, so we need React.createElement
+*/
+import React from "react";
+
+/*
+  We import our helper functions from the react-testing-library
+  The render function allows us to render Components
+*/
+import { render } from "@testing-library/react";
+
+/*
+  We import the component that we are testing
+*/
+import Application from "components/Application";
+
+/*
+  A test that renders a React Component
+
+  --describe--
+  groups related tests
+*/
+
+
+/*
+  A test that renders a React Component
+
+  describe
+    - groups related tests under one function
+  it 
+    - actual test
+  test
+    - alias of it
+*/
+describe("Appointment", () => {
+  it("renders without crashing", () => {
+    render(<Appointment />);
+  });
+});
+```
+# Testing Specific Files
+
+We want to become familiar with the available watch options. When we press the `w` key in **watch mode**, we are presented with a list of options.
+
+-  Press `a` to run all tests.
+-  Press `f` to run only failed tests.
+-  Press `q` to quit watch mode.
+-  Press `p` to filter by a filename regex pattern.
+-  Press `t` to filter by a test name regex pattern.
+-  Press `Enter` to trigger a test run.
+
+Change the watch mode to `p` and type in `Appointment` to only run the `Appointment.test.js` file after each update.
