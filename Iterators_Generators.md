@@ -63,11 +63,32 @@ it.next(); // Object {value: 5 done: false}
 it.next(); // Object {value: 6 done: true}
 ```
 
-The <span class="iterator">Interator</span> defined above  follows the <span class="iterator">interator protocol</span>
+The <span class="iterator">Iterator</span> defined above  follows the <span class="iterator">iterator protocol</span>
 
 <span class="Yellow">Built in Javascript defined as <span class="iterator">iterables</span> </span>
 - <span class="Coral">arrays</span>
 - <span class="Coral">srings</span>
 - <span class="Coral">maps</span>
 - <span class="Coral">sets</span> 
-- `for ... of` kind of loops
+- `for ... of` <span class="Coral">kind of loops</span>
+
+# Generators
+
+> Special type of function that work as a factory for interators ~Mozzila Docs
+
+`yield` tells function to exit and return value when function is called next time function execution continues right after yield instead of again.
+
+```js
+function * getGenerator() { // * means generator
+  let currentNumber = 1;
+  while (currentNumber < 6){
+    yield currentNumber++;
+  }
+}
+
+let gen = getGenerator(); 
+
+gen.next()
+gen.next()
+gen.next()
+```
