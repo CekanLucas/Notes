@@ -32,9 +32,10 @@
   border-radius: 5px;
 }
 
-.clearfix:after {
+.clearfix::after {
   content: "";
   clear:both;
+  display:table;
 }
 
 .asideL{
@@ -61,14 +62,13 @@
 When you use float elements (my favorite) they don't expand the div parent container. Enter the clearfix hack observe;
 
 ```css
-.clearfix:after {
+.clearfix::after {
   content: "";
   clear:both;
+  display:table;
 }
 
 ```
-
-
 <div class=container>
   <h3>No clearfix</h3>
 
