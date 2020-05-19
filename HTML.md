@@ -58,8 +58,8 @@
 </head>    
 
 
-# Positioning Tips
-When you use float elements (my favorite) they don't expand the div parent container. Enter the clearfix hack observe;
+# ClearFix Hack
+When you use float elements (my favorite) they don't expand the div parent container
 
 ```css
 .clearfix::after {
@@ -70,17 +70,15 @@ When you use float elements (my favorite) they don't expand the div parent conta
 
 ```
 <div class=container>
-  <h3>No clearfix</h3>
 
-
-  <div class="clearfix-container clearfix">
-    <div class="asideL clearfix"></div>
-    <div class="asideR clearfix"></div>
+  <div id=clearfix-container class="clearfix-container clearfix" style="clear:none;">
+    <div class=asideL></div>
+    <div class=asideR></div>
   </div>
   
   <button id="toggle-clearfix" class="button is-info is-outlined is-rounded is-fullwidth">Toggle ClearFix</button>
 </div>
 
 <script>
-  $("#toggle-clearfix").click( () => $(".asideL").hide(500))
+  $("#toggle-clearfix").click( () => $("#clearfix-container").toggleClass('clearfix'))
 </script>
