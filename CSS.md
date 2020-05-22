@@ -92,23 +92,38 @@ body {
 <img src="https://testing-library.com/img/octopus-64x64.png" alt="" style="" id=scale-img>
 
 <form action="">
-  <div class="container">
-    <span id="text-scalex">ScaleX</span>
-    <input id=range-scalex type="range" min=0 max=360 value=1>
-    <span id="counter-scalex">0 deg</span>
-  </div>
+  
+  <span id="text-scalex">ScaleX</span>
+  <input id=range-scalex type="range" min=-2 max=2 value=1 step=0.1>
+  <span id="counter-scalex">1</span>
+
+  <span id="text-scaley">ScaleY</span>
+  <input id=range-scaley type="range" min=-2 max=2 value=1 step=0.1>
+  <span id="counter-scaley">1</span>
+
 </form>
 
 <script>
 const img = document.getElementById("scale-img");
+
 const counterScaleX = document.querySelector('#counter-scalex');
 const rangeScaleX = document.querySelector('#range-scalex');
+
+const counterScaleY = document.querySelector('#counter-scaley');
+const rangeScaleY = document.querySelector('#range-scaley');
 // btn.onclick = e => console.log(e);
 
+// Scale Event Listeners
 rangeScaleX.addEventListener('input', function (e) {
   // change counter based on range slider
-  counterScaleX.innerText = rangeScaleX.value + ' deg';
+  counterScaleX.innerText = rangeScaleX.value;
   // tranform img transform property based on range
   img.style.transform = `scaleX(${rangeScaleX.value})`;
+});
+rangeScaleY.addEventListener('input', function (e) {
+  // change counter based on range slider
+  counterScaleY.innerText = rangeScaleY.value;
+  // tranform img transform property based on range
+  img.style.transform = `scaleY(${rangeScaleY.value})`;
 });
 </script>
