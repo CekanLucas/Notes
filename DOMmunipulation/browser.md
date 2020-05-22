@@ -153,4 +153,6 @@ div.innerHTML = '<span>Hello World!</span>'
 
 When you have a reference to an element, you can use that reference to alter the element’s own properties. **This allows you to do many useful alterations, like adding/removing and altering attributes, changing classes, adding inline style information and more.**
 
+<span class="Orange"> `node.innerHTML` Overides all html code within the element</span> 
+
 >**Note that `textContent` is preferable for adding text, and `innerHTML` should be used sparingly as it can create security risks if misused.**

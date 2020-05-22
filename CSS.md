@@ -107,3 +107,21 @@ Horizontal centering of blocks of kown width
 <br><hr>
 
 * `auto` makes the browser calculate unkown portion
+
+
+### Make Text Unselectable
+```css
+.noselect {
+  user-select: none;
+}
+```
+
+### Background Repeat 
+`background-repeat` property allows us to specify if background image will repeat horizontally `repeat-x` or vertically `repeat-y`, or use `no-repeat` to prevent this
+
+```css
+body {
+  background-image: url(image.jpg);
+  background-repeat: repeat-x;
+}
+```
