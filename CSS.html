@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>CSS (cascading style sheets)</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: 'Segoe WPC', -apple-system, BlinkMacSystemFont,  'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <head>
+  <link 
+      rel="stylesheet" 
+      type="text/css" 
+      media="all" 
+      href="./color.css"/>
+  <link 
+      rel="stylesheet" 
+      type="text/css" 
+      media="all" 
+      href="./CSS.css"/>
+  <link 
+      href="https://fonts.googleapis.com/css?family=Fira+Mono:500&display=swap" 
+      rel="stylesheet">
+<style> 
+</style>
+<script>
+const counterScaleX = document.querySelector('#counter-scalex');
+const rangeScaleX = document.querySelector('#counter-scalex');
+// btn.onclick = e => console.log(e);
+
+rangeScaleX.addEventListener('onchange', function (e) {
+  counterScaleX.innerText()
+  // e.target.style.background = 'red !important';
+});
+</script>
+</head>    
+<h1 id="css-cascading-style-sheets">CSS (cascading style sheets)</h1>
+<h2 id="centering-recipes">Centering Recipes</h2>
+<h3 id="horizontal-centering-fluid-blocks">Horizontal Centering Fluid Blocks</h3>
+<p>Horizontal centering of blocks of unkown width</p>
+<pre><code class="language-css"><div><span class="hljs-selector-id">#horizontal-center</span>{
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>;
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateX</span>(-50%);
+}
+<span class="hljs-selector-id">#vertical-center</span>{
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">50%</span>;
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(-50%);
+}
+</div></code></pre>
+<h4 id="example">example</h4>
+<blockquote id='horizontal-center'> This is centered</blockquote> 
+<p><br><hr></p>
+<ul>
+<li>The <code>left</code> property relates to the size of parent</li>
+<li>The <code>transform</code> property relates to the child size</li>
+<li>thus it will be centered</li>
+</ul>
+<p>Horizontal centering of blocks of kown width</p>
+<pre><code class="language-css"><div><span class="hljs-selector-id">#horizontal-center</span>{
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">550px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto;
+}
+<span class="hljs-selector-id">#vertical-center</span>{
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">50%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">400px</span>;
+  <span class="hljs-attribute">margin-top</span>:-<span class="hljs-number">200px</span>;
+}
+<span class="hljs-comment">/* vertically align text */</span>
+<span class="hljs-selector-id">#vertical-center</span>{
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">40px</span>;
+  <span class="hljs-attribute">line-height</span>:<span class="hljs-number">40px</span>;
+}
+</div></code></pre>
+<h4 id="example-1">example</h4>
+<blockquote id='horizontal-center'> This is centered</blockquote> 
+<p><br><hr></p>
+<ul>
+<li><code>auto</code> makes the browser calculate unkown portion</li>
+</ul>
+<h3 id="make-text-unselectable">Make Text Unselectable</h3>
+<pre><code class="language-css"><div><span class="hljs-selector-class">.noselect</span> {
+  <span class="hljs-attribute">user-select</span>: none;
+}
+</div></code></pre>
+<h3 id="background-repeat">Background Repeat</h3>
+<p><code>background-repeat</code> property allows us to specify if background image will repeat horizontally <code>repeat-x</code> or vertically <code>repeat-y</code>, or use <code>no-repeat</code> to prevent this</p>
+<pre><code class="language-css"><div><span class="hljs-selector-tag">body</span> {
+  <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(image.jpg);
+  <span class="hljs-attribute">background-repeat</span>: repeat-x;
+}
+</div></code></pre>
+<h3 id="transform">Transform</h3>
+<p><span class="GoldenRod">This property allows you to modify the coordinate space</span></p>
+<img src="https://testing-library.com/img/octopus-64x64.png" alt="" style="">
+<form action="">
+  <div class="container">
+    <span id="text-scalex">ScaleX</span>
+    <input id=range-scalex type="range" min=0 max=360 value=0>
+    <span id="counter-scalex">0</span>
+  </div>
+</form>
+    </body>
+    </html>

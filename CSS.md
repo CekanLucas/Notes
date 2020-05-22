@@ -14,48 +14,8 @@
       rel="stylesheet">
 
 <style> 
-
-html>body, p {
-  font-family: ubuntu;
-  font-size: 1.1em;
-  text-shadow:none;
-}
-h2>code, p>code, li>code, div>code {
-    background-color: #09A;
-    border-radius: 7px;
-    box-shadow: 
-      1px 1px 1px #000,
-      -1px -1px 1px #FFF,
-      -1px 1px 2px #000,
-      1px -1px 2px #000;
-    color: #00f;
-    margin: 5px;
-    padding: 2px;
-    font-family: 'Fira Mono', monospace;
-    text-shadow:none;
-    font-size:0.8em
-}
-body ::selection {
-  /*highlighting*/
-  background: transparent;
-  text-shadow: 
-    1px  0px 1px ,
-    0px  1px 1px ,
-    -1px  0px 1px ,
-    0px -1px 1px ,
-    0px  1px black ,
-    1px  0px black ,
-    -1px  0px black ,
-    0px -1px black ;
-  text-outline: black;  
-}
-
-#horizontal-center{
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
 </style>
+
 </head>    
 
 # CSS (cascading style sheets)
@@ -80,7 +40,7 @@ Horizontal centering of blocks of unkown width
 <br><hr>
 
 * The `left` property relates to the size of parent 
-* The `trasform` property relates to the child size 
+* The `transform` property relates to the child size 
 * thus it will be centered
    
 Horizontal centering of blocks of kown width 
@@ -125,3 +85,30 @@ body {
   background-repeat: repeat-x;
 }
 ```
+
+### Transform 
+<span class="GoldenRod">This property allows you to modify the coordinate space</span>
+
+<img src="https://testing-library.com/img/octopus-64x64.png" alt="" style="" id=scale-img>
+
+<form action="">
+  <div class="container">
+    <span id="text-scalex">ScaleX</span>
+    <input id=range-scalex type="range" min=0 max=360 value=1>
+    <span id="counter-scalex">0 deg</span>
+  </div>
+</form>
+
+<script>
+const img = document.getElementById("scale-img");
+const counterScaleX = document.querySelector('#counter-scalex');
+const rangeScaleX = document.querySelector('#range-scalex');
+// btn.onclick = e => console.log(e);
+
+rangeScaleX.addEventListener('input', function (e) {
+  // change counter based on range slider
+  counterScaleX.innerText = rangeScaleX.value + ' deg';
+  // tranform img transform property based on range
+  img.style.transform = `scaleX(${rangeScaleX.value})`;
+});
+</script>
