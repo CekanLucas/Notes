@@ -3,12 +3,12 @@
       rel="stylesheet" 
       type="text/css" 
       media="all" 
-      href="./color.css"/>
+      href="../color.css"/>
   <link 
       rel="stylesheet" 
       type="text/css" 
       media="all" 
-      href="./CSS.css"/>
+      href="../CSS.css"/>
     <link 
       href="https://fonts.googleapis.com/css?family=Fira+Mono:500&display=swap" 
       rel="stylesheet">
@@ -35,10 +35,55 @@
 ```
 
 ```js
+/* --- EXAMPLE --- */
+
 let newDiv = document.createElement('div');
 let newTextContent = document.createTextNode("HelloWorld");
 
 newDiv.appendChild(newTextContent);
+
+/* --- Adding Attributes --- */
+
+// adds the indicated style rule
+div.style.color = 'blue'
+
+// adds several style rules
+div.style.cssText = 'color:blue; background: white'
+
+// adds several inline style rules through style attribute
+div.setAttribute('style', 'color:blue; background: white')
+
+/* --- Editing Attributes --- */
+
+// if id exists update it to 'theDiv' else create an id
+// with value "theDiv"
+div.setAttribute('id', 'theDiv');        
+
+// returns value of specified attribute, in this case
+// "theDiv
+div.getAttribute('id');                      
+
+// removes specified attribute
+div.removeAttribute('id');
+
+/* --- Working with Classes --- */
+
+// adds class "new" to your new div
+div.classList.add('new');
+
+// remove "new" class from div
+div.classList.remove('new');
+
+// if div doesn't have class "active" then add it, or if it does, then remove it
+div.classList.toggle('active');
+
+/* --- Adding Text Content --- */
+// create a text node containing "Hello World!" and inserts it in div 
+div.textContent = 'Hello World!'
+
+/* --- Adding HTML Content --- */
+// renders the html inside div
+div.innerHTML = '<span>Hello World!</span>'
 ```
 
 <script>
@@ -85,13 +130,27 @@ newDiv.appendChild(newTextContent);
 
 **When the <span class="Orange">HTML</span> is parsed by the <span class="Orange">browser</span> it is converted into a <span class="Yellow">DOM tree</span>. Each <span class="Lime">Node</span> of the tree is an <span class="Yellow">object</span> to which we get our properties and elements to manipulate said <span class="Yellow">DOM</span>**
 
-### Append Elements
+### <span class="RoyalBlue">Append Elements</span>
 
 
-*parentNode*.**appendChild**(*childNode*)
-<p class="is-size-2 ">
-  *parentNode*.**appendChild**(*childNode*)
-</p>
+<span class="is-size-4 RoyalBlue">*parentNode*.**appendChild**(*childNode*)</span>
+<br>
+<span class="SteelBlue">appends *childNode* as the last child of *parentNode*</span>
+<br>
+<span class="is-size-4 RoyalBlue"> *parentNode*.**insertBefore**(*newNode*, *referenceNode*) </span>
+<br>
+<span class="SteelBlue">inserts *newNode* into *parentNode* before *referenceNode*</span>
+<br>
 
+### <span class="Crimson">Remove  Elements </span>
 
-<span class="is-size-4">appends *childnode* as the last child of *parentNode*</span>
+<span class="is-size-4 Crimson">*parentNode*.**removeChild**(*child*)</span>
+<br>
+<span class="Crimson">remove *child* from *parentNode* on the DOM and returns reference to *child*</span>
+<br>
+
+### Altering Elements
+
+When you have a reference to an element, you can use that reference to alter the element’s own properties. **This allows you to do many useful alterations, like adding/removing and altering attributes, changing classes, adding inline style information and more.**
+
+>**Note that `textContent` is preferable for adding text, and `innerHTML` should be used sparingly as it can create security risks if misused.**
