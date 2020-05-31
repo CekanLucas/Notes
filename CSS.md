@@ -89,17 +89,22 @@ body {
 ### Transform 
 <span class="GoldenRod">This property allows you to modify the coordinate space</span>
 
-<img src="https://testing-library.com/img/octopus-64x64.png" alt="" style="" id=scale-img>
+<div style="text-align:center">
+  <img src="https://testing-library.com/img/octopus-64x64.png" id=scale-img>
+</div>
 
 <form action="">
   
-  <span id="text-scalex">ScaleX</span>
-  <input id=range-scalex type="range" min=-2 max=2 value=1 step=0.1>
-  <span id="counter-scalex">1</span>
+  <fieldset>
+    <legend> <b>Scale</b> </legend>
+<span id="text-scalex">ScaleX</span>
+<input id=range-scalex type="range" min=-2 max=2 value=1 step=0.1>
+<span id="counter-scalex">1</span>
 
-  <span id="text-scaley">ScaleY</span>
-  <input id=range-scaley type="range" min=-2 max=2 value=1 step=0.1>
-  <span id="counter-scaley">1</span>
+<span id="text-scaley">ScaleY</span>
+<input id=range-scaley type="range" min=-2 max=2 value=1 step=0.1>
+<span id="counter-scaley">1</span>
+  </fieldset>
 
 </form>
 
@@ -108,22 +113,28 @@ const img = document.getElementById("scale-img");
 
 const counterScaleX = document.querySelector('#counter-scalex');
 const rangeScaleX = document.querySelector('#range-scalex');
+let valueScaleX = 1;
 
 const counterScaleY = document.querySelector('#counter-scaley');
 const rangeScaleY = document.querySelector('#range-scaley');
-// btn.onclick = e => console.log(e);
+let valueScaleY = 1;
+
 
 // Scale Event Listeners
 rangeScaleX.addEventListener('input', function (e) {
+  const transform = `scaleX(${valueScaleX}) scaleY(${valueScaleY})`;
   // change counter based on range slider
   counterScaleX.innerText = rangeScaleX.value;
   // tranform img transform property based on range
-  img.style.transform = `scaleX(${rangeScaleX.value})`;
+  valueScaleX = rangeScaleX.value;
+  img.style.transform = transform;
 });
 rangeScaleY.addEventListener('input', function (e) {
+  const transform = `scaleX(${valueScaleX}) scaleY(${valueScaleY})`;
   // change counter based on range slider
   counterScaleY.innerText = rangeScaleY.value;
   // tranform img transform property based on range
-  img.style.transform = `scaleY(${rangeScaleY.value})`;
+  valueScaleY = rangeScaleY.value;
+  img.style.transform = transform;
 });
 </script>

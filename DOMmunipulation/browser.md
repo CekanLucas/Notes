@@ -156,3 +156,6 @@ When you have a reference to an element, you can use that reference to alter the
 <span class="Orange"> `node.innerHTML` Overides all html code within the element</span> 
 
 >**Note that `textContent` is preferable for adding text, and `innerHTML` should be used sparingly as it can create security risks if misused.**
+
+
+<span class="LightBlue"> `node.clone()` only way to create copies</span> 
