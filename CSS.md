@@ -19,6 +19,9 @@
 </head>    
 
 # CSS (cascading style sheets)
+
+>Practice CSS selectors <br>
+<b class="Orange">CSS diner:</b> [link](http://flukeout.github.io/)
 ## Centering Recipes
 ### Horizontal Centering Fluid Blocks 
 Horizontal centering of blocks of unkown width 
@@ -32,6 +35,30 @@ Horizontal centering of blocks of unkown width
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+}
+/* Default */
+a {
+  color: blue;
+}
+/* Unvisited links */
+a:link {
+  color: blue;
+}
+/* Visited links */
+a:visited {
+  color: purple;
+}
+/* Hover state */
+a:hover {
+  color: red; 
+}
+/* Focused state */
+a:focus {
+  color: orange;
+}
+/* Activated state */
+a:active {
+  color: green;
 }
 ```
 #### example
@@ -138,3 +165,34 @@ rangeScaleY.addEventListener('input', function (e) {
   img.style.transform = transform;
 });
 </script>
+
+# Pseudo - Classes 
+
+```css
+/* Default */
+a {
+  color: blue !important;
+}
+/* Unvisited links */
+a:link {
+  color: blue !important;
+}
+/* Visited links */
+a:visited {
+  color: purple !important;
+}
+/* Hover state */
+a:hover {
+  color: red !important; 
+}
+/* Focused state */
+a:focus {
+  color: orange !important;
+}
+/* Activated state */
+a:active {
+  color: green !important;
+}
+```
+
+<a href="#">Example LInk</a>
