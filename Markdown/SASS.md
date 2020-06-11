@@ -15,53 +15,18 @@
 
 <style> 
 
-html>body, p {
-  font-family: ubuntu;
-  font-size: 1.1em;
-  text-shadow:none;
-}
-h2>code, p>code, li>code, div>code {
-    background-color: #09A;
-    border-radius: 7px;
-    box-shadow: 
-      1px 1px 1px #000,
-      -1px -1px 1px #FFF,
-      -1px 1px 2px #000,
-      1px -1px 2px #000;
-    color: #00f;
-    margin: 5px;
-    padding: 2px;
-    font-family: 'Fira Mono', monospace;
-    text-shadow:none;
-    font-size:0.8em
-}
-body ::selection {
-  /*highlighting*/
-  background: transparent;
-  text-shadow: 
-    1px  0px 1px ,
-    0px  1px 1px ,
-    -1px  0px 1px ,
-    0px -1px 1px ,
-    0px  1px black ,
-    1px  0px black ,
-    -1px  0px black ,
-    0px -1px black ;
-  text-outline: black;  
-}
 </style>
 </head> 
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/320px-Sass_Logo_Color.svg.png" height="200px" style="float:right">
 
-## SASS
-**SASS**, or **<span style="color:aqua;">S</span>yntactically <span style="color:aqua;">A</span>wesome <span style="color:aqua;">S</span>tyle<span style="color:aqua;">S</span>heets**, is a language extension of CSS. It adds features that aren't available using basic CSS syntax. Sass makes it easier for developers to simplify and maintain the style sheets for their projects.
+<span class="Violet"><b class="HotPink">SASS</b>, or **<span style="color:hotpink">S</span>yntactically <span style="color:hotpink">A</span>wesome <span style="color:hotpink">S</span>tyle<span style="color:hotpink">S</span>heets**, is a language extension of CSS. It adds features that aren't available using basic CSS syntax. Sass makes it easier for developers to simplify and maintain the style sheets for their projects.</span>
 
-Sass can extend the CSS language because it is a preprocessor. It takes code written using Sass syntax, and converts it into basic CSS. This allows you to <span style="color:yellow">create variables</span>, <span style="color:orange">nest CSS rules</span> into others, and <span style="color:lime">import other Sass files</span>, among other things. The result is more compact, easier to read code.
+<b class="HotPink">SASS</b> can extend the CSS language because it is a preprocessor. It takes code written using Sass syntax, and converts it into basic CSS. This allows you to <span style="color:yellow">create variables</span>, <span style="color:orange">nest CSS rules</span> into others, and <span style="color:lime">import other Sass files</span>, among other things. The result is more compact, easier to read code.
 
-<span style="color:palegreen">There are two syntaxes available for Sass. The first, known as ***SCSS (Sassy CSS)*** and used throughout these challenges, is an extension of the syntax of CSS. This means that every valid CSS stylesheet is a valid SCSS file with the same meaning. Files using this syntax have the .scss extension.</span>
+<span style="color:palegreen">There are two syntaxes available for Sass. The first, known as ***SCSS (Sassy CSS)*** , is an extension of the syntax of CSS. This means that every valid CSS stylesheet is a valid SCSS file with the same meaning. Files using this syntax have the `.scss` extension.</span>
 
-<span style="color:lime">The second and older syntax, known as the indented syntax (or sometimes just "***Sass***"), uses indentation rather than brackets to indicate nesting of selectors, and newlines rather than semicolons to separate properties. Files using this syntax have the .sass extension.</span>
+<span style="color:lime">The second and older syntax, known as the indented syntax (or sometimes just "***Sass***"), uses indentation rather than brackets to indicate nesting of selectors, and newlines rather than semicolons to separate properties. Files using this syntax have the `.sass` extension.</span>
 
 ## Store Data with Sass Variables
 One feature of Sass that's different than CSS is it uses `variables`. They are declared and set to store data, similar to JavaScript.

@@ -7,11 +7,11 @@
 @import "./node_modules/bulma/sass/base/helpers"
 // bulma -- sass -- base does not work
 // @import "./node_modules/bulma/sass/base/generic"
-* 
+*
   background-color: transparent
-  
+
 html
-  body 
+  body
     color: azure
     background-color: #000
     background-image: url("https://www.transparenttextures.com/patterns/cartographer.png")
@@ -19,25 +19,29 @@ html
 h1,h2,h3,h4,h5,h6
   color: goldenrod
   text-shadow: -1px -1px 0.5px #FFF, 0px  0px 0.5px #000
-h1 
+h1
   border-bottom: 1px solid goldenrod !important
 
 li
-    color: skyblue
+  color: skyblue
 
 h2>code, p>code, li>code, div>code, span>code
-    background-color: #09A
-    border-radius: 7px
-    box-shadow: 1px 1px 1px #000, -1px -1px 1px #FFF, -1px 1px 2px #000, 1px -1px 2px #000
-    background: linear-gradient(#FFF,#09f)
-    color: blue
-    margin: 5px
-    padding: 2px 1em
-    font-family: 'Fira Mono', monospace
-    font-weight: bold
-    font-size:0.8em
+  background-color: #09A
+  border-radius: 7px
+  box-shadow: 1px 1px 1px #000, -1px -1px 1px #FFF, -1px 1px 2px #000, 1px -1px 2px #000
+  background: linear-gradient(#FFF,#09f)
+  color: blue
+  margin: 5px
+  padding: 2px 1em
+  font-family: 'Fira Mono', monospace
+  font-weight: bold
+  font-size: 0.8em
 
-body ::selection 
-  /*highlighting*/
+body ::selection
+ /*highlighting*/
   background: transparent
-  text-shadow: 1px  0px 1px , 0px  1px 1px , -1px  0px 1px , 0px -1px 1px , 0px  1px black , 1px  0px black , -1px  0px black , 0px -1px black 
+  text-shadow: 1px  0px 1px , 0px  1px 1px , -1px  0px 1px , 0px -1px 1px , 0px  1px black , 1px  0px black , -1px  0px black , 0px -1px black
+
+pre
+  background: transparent !important
+  font-weight: bold

@@ -9184,8 +9184,13 @@ h2 > code, p > code, li > code, div > code, span > code {
 
 body ::selection {
   /*highlighting*/
-  background: transparent;
-  text-shadow: 1px 0px 1px, 0px 1px 1px, -1px 0px 1px, 0px -1px 1px, 0px 1px black, 1px 0px black, -1px 0px black, 0px -1px black;
+  * background: transparent
+  * text-shadow: 1px  0px 1px , 0px  1px 1px , -1px  0px 1px , 0px -1px 1px , 0px  1px black , 1px  0px black , -1px  0px black , 0px -1px black */
+}
+
+pre {
+  background: transparent !important;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=CSS.css.map */
