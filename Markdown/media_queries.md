@@ -16,14 +16,14 @@
 </style>
 </head>    
 
-# Heading 1
+# Media Queries
 ## Notes
 
 `@ media`
 
 * `and` 
 * `not`
-* 
+  
 ### Media Variables
 
 <table>

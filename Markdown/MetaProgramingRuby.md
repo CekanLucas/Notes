@@ -3,12 +3,12 @@
       rel="stylesheet" 
       type="text/css" 
       media="all" 
-      href="./color.css"/>
-    <link 
+      href="../boilerplate/color"/>
+  <link 
       rel="stylesheet" 
       type="text/css" 
       media="all" 
-      href="./color_new.css"/>
+      href="../boilerplate/CSS.css"/>
   <link 
       rel="stylesheet" 
       type="text/css" 
