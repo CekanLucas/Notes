@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Create a Simple <span class="Turquoise">JSX</span> Element</span></title>
+        <style>
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: 'Segoe WPC', -apple-system, BlinkMacSystemFont,  'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+        
+    </head>
+    <body class="vscode-light">
+        <head>
+  <link 
+      rel="stylesheet" 
+      type="text/css" 
+      media="all" 
+      href="../boilerplate/color.css"/>
+  <link 
+      rel="stylesheet" 
+      type="text/css" 
+      media="all" 
+      href="../boilerplate/CSS.css"/>
+  <link 
+      href="https://fonts.googleapis.com/css?family=Fira+Mono:500&display=swap" 
+      rel="stylesheet">
+<style> 
+ 
+
+</style>
+</head>    
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" height="200px" style="float:left">
+<p><span style="color:skyblue"><strong>React</strong></span>, popularized by the evil <span class="SlateBlue"><em><strong>Facebook</strong></em></span>, is an open-source JavaScript library for building user interfaces. It is used to <span class="Gold">create components</span>, <span class="SkyBlue">handle state and props</span>, <span class="Lime">utilize event listeners</span> and <span class="Orange">certain life cycle methods to update data as it changes</span>.
+<span class=""><span class="Beige"><strong><span class="SkyBlue"><strong>React</strong> </span>uses a syntax extension of JavaScript called <span class="Turquoise">JSX</span> that allows you to write <span class="DarkOrange">HTML</span> directly within JavaScript. This has several benefits. It lets you use the full programmatic power of JavaScript within <span class="DarkOrange">HTML</span>, and helps to keep your code readable. For the most part, JSX is similar to the <span class="DarkOrange">HTML</span> that you have already learned, however there are a few key differences that will be covered throughout these challenges.</strong></span></span></p>
+<p><span class="SkyBlue"> <b>React </b> combines <span class="DarkOrange"><b>HTML</b></span> with JavaScript functionality to create its own markup language, <span class="Turquoise"><em><strong>JSX</strong></em></span>. This section will introduce you to all of these concepts and how to implement them for use with your own projects.</span></p>
+<p>For instance, because <span class="Turquoise">JSX</span> is a syntactic extension of JavaScript, you can actually write JavaScript directly within <span class="Turquoise">JSX</span>.</p>
+<p>Simply include the code you want to be treated as JavaScript within curly braces: <code>{'this is treated as JavaScript code'}</code></span></p>
+<h2 id="create-a-simple-jsx-elementspan">Create a Simple <span class="Turquoise">JSX</span> Element</span></h2>
+<blockquote>
+<p><span class="SkyBlue">React </span>is an Open Source view library created and maintained by Facebook. It's a great tool to render the User Interface (UI) of modern web applications.</p>
+</blockquote>
+<p><span class="Beige"><span class="SkyBlue"><strong>React</strong></span> uses a syntax extension of JavaScript called <span class="Turquoise">JSX</span> that allows you to write <span class="DarkOrange">HTML</span> directly within JavaScript. This has several benefits. It lets you use the full programmatic power of JavaScript within <span class="DarkOrange">HTML</span>, and helps to keep your code readable. For the most part, <span class="Turquoise">JSX</span> is similar to the <span class="DarkOrange">HTML</span> that you have already learned, however there are a few key differences that will be covered throughout these challenges.**</span></span></p>
+<p>For instance, because <span class="Turquoise">JSX</span> is a syntactic extension of JavaScript, you can actually write JavaScript directly within <span class="Turquoise">JSX</span>. To do this, you simply include the code you want to be treated as JavaScript within curly braces: <code>{'this is treated as JavaScript code'}</code></p>
+<p>However, because <span class="Turquoise">JSX</span> is not valid JavaScript, <span class="Turquoise">JSX</span> code must be compiled into JavaScript. The transpiler Babel is a popular tool for this process. For your convenience, it's already added behind the scenes for these challenges. If you happen to write syntactically invalid <span class="Turquoise">JSX</span>, you will see the first test in these challenges fail.</p>
+<p><span class="Turquoise">It's worth noting that under the hood the challenges are calling <code>ReactDOM.render(JSX, document.getElementById('root'))</code>. This function call is what places your JSX into React's own lightweight representation of the DOM. <span class="SkyBlue"><b>React</b> </span>then uses snapshots of its own DOM to optimize updating only specific parts of the actual DOM.</span></p>
+<h1 id="create-a-complex-jsx-element">Create a Complex JSX Element</h1>
+<p>One important thing to know about nested JSX is that it <u>must return a single element</u>. This one parent element would wrap all of the other levels of nested elements. For instance, several JSX elements written as siblings with no parent wrapper element will not transpile.</p>
+<p><span class="Green">Valid JSX:</span></p>
+<pre><code class="language-HTML"><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Paragraph One<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Paragraph Two<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Paragraph Three<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<p><span class="IndianRed">Invalid JSX:</span></p>
+<pre><code class="language-HTML"><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Paragraph One<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Paragraph Two<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Paragraph Three<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<h1 id="add-comments-in-jsx">Add Comments in <span class="Turquoise">JSX</span></h1>
+<p><span class="Turquoise">JSX</span> is a syntax that gets compiled into valid JavaScript. Sometimes, for readability, you might need to add comments to your code. Like most programming languages, <span class="Turquoise">JSX</span> has its own way to do this.</p>
+<p>To put comments inside <span class="Turquoise">JSX</span>, you use the syntax <code>{/* */}</code> to wrap around the comment text.</p>
+<h1 id="render-html-elements-to-the-dom">Render <span class="DarkOrange">HTML</span> Elements to the DOM</h1>
+<p>So far, you've learned that <span class="Turquoise">JSX</span> is a convenient tool to write readable <span class="DarkOrange">HTML</span> within JavaScript. With React, we can render this <span class="Turquoise">JSX</span> directly to the <span class="DarkOrange">HTML</span> DOM using React's rendering API known as <span class="Orange"><em><strong>ReactDOM</strong></em></span>.</p>
+<p><span class="Orange"><em><strong>ReactDOM</strong></em></span> offers a simple method to render <span class="SkyBlue"><strong>React</strong> </span>elements to the DOM which looks like this: <code>ReactDOM.render(componentToRender, targetNode)</code>, where the first argument is the <span class="SkyBlue"><strong>React</strong> </span>element or component that you want to render, and the second argument is the DOM node that you want to render the component to. Remember to use <code>document.getElementById()</code></p>
+<p>As you would expect, <code>ReactDOM.render()</code> must be called after the <span class="Turquoise">JSX</span>  element declarations, just like how you must declare variables before using them.</p>
+<h1 id="define-an-html-class-in-jsx">Define an <span class="DarkOrange">HTML</span> Class in <span class="Turquoise">JSX</span></h1>
+<p>One key difference in <span class="Turquoise">JSX</span> is that you can no longer use the word <code>class</code> to define <span class="DarkOrange">HTML</span> classes. This is because <code>class</code> is a reserved word in JavaScript. <span class="RoyalBlue">Instead, <span class="Turquoise">JSX</span> uses <code>className</code>.</span></p>
+<p>In fact, the naming convention for all <span class="DarkOrange">HTML</span> attributes and event references in <span class="Turquoise">JSX</span> become <span class="Yellow">camelCase</span>. For example, a click event in <span class="Turquoise">JSX</span> is <code>onClick</code>, instead of <code>onclick</code>. Likewise, <code>onchange</code> becomes <code>onChange</code>. While this is a subtle difference, it is an important one to keep in mind moving forward.</p>
+<h1 id="learn-about-self-closing-jsx-tags">Learn About Self-Closing <span class="Turquoise">JSX</span> Tags</h1>
+<p>So far, you’ve seen how <span class="Turquoise">JSX</span> differs from <span class="DarkOrange">HTML</span> in a key way with the use of <code>className</code> vs. <code>class</code> for defining <span class="DarkOrange">HTML</span> classes.</p>
+<p>Another important way in which JSX differs from <span class="DarkOrange">HTML</span> is in the <span class="Gold">idea of the self-closing tag.</span></p>
+<p>In <span class="DarkOrange">HTML</span>, almost all tags have both an opening and closing tag: <code>&lt;div&gt;&lt;/div&gt;</code>; the closing tag always has a forward slash before the tag name that you are closing. However, there are special instances in <span class="DarkOrange">HTML</span> called “self-closing tags”, or tags that don’t require both an opening and closing tag before another tag can start.</p>
+<p>For example the line-break tag can be written as <code>&lt;br&gt;</code> or as <code>&lt;br /&gt;</code>, but should never be written as <code>&lt;br&gt;&lt;/br&gt;</code>, since it doesn't contain any content.</p>
+<p>In <span class="Turquoise">JSX</span>, the rules are a little different. Any <span class="Turquoise">JSX</span> element can be written with a self-closing tag, and every element must be closed. The line-break tag, for example, must always be written as <code>&lt;br /&gt;</code> in order to be valid <span class="Turquoise">JSX</span> that can be transpiled. A <code>&lt;div&gt;</code>, on the other hand, can be written as <code>&lt;div /&gt;</code> or <code>&lt;div&gt;&lt;/div&gt;</code>. The difference is that in the first syntax version there is no way to include anything in the <code>&lt;div /&gt;</code>. You will see in later challenges that this syntax is useful when rendering <span class="SkyBlue"><strong>React</strong> </span>components.</p>
+<h1 id="create-a-stateless-functional-component">Create a <span class="Gold">Stateless Functional Component</span></h1>
+<blockquote>
+<p><span class="Gold">Components</span> are the core of <span class="SkyBlue"><strong>React</strong> </span>. Everything in <span class="SkyBlue"><strong>React</strong> </span>is a <span class="Gold">component</span> and here you will learn how to create one <strong>using Javascript functions</strong>.</p>
+</blockquote>
+<h2 id="span-classgreengood-components-are"><span class="Green">Good Components are:</h2>
+<p><span class="Green"><strong>Composable</strong>:</span>
+<span class="Lime">we can combine them together to build complex interfaces</span><br>
+<span class="Green"><strong>Encapsulated</strong>:</span>
+<span class="Lime">we can build them in isolation</span><br>
+<span class="Green"><strong>Reuseable</strong>:</span>
+<span class="Lime">we can use them in different parts of our without duplicating code</span><br>
+<span class="Green"><strong>Testable</strong>:</span>
+<span class="Lime">we can isolate them for certain types of testing</span><br></p>
+<p>There are two ways to create a <span class="Gold"><strong>React Component</strong></span>. The first way is to use a <strong>JavaScript function</strong>. Defining a <span class="Gold">component</span> in this way creates a <span class="Gold">stateless functional component</span>. The concept of state in an application will be covered in later challenges. For now, think of a <span class="Gold">stateless component</span> as one that can <span class="LightGreen">receive data</span> and <span class="Lime">render it</span>, but does not <span class="IndianRed">manage or track changes</span> to that data.</p>
+<blockquote>
+<p>To create a <span class="Gold">component</span> with a <em>function</em>, you simply write a <strong>JavaScript function</strong> that returns either <span class="Turquoise">JSX</span> or null. <strong>One important thing to note is that <span class="SkyBlue">React </span>requires your function name to begin with a <em><u>capital letter</u>.</em> Here's an example of a stateless functional <span class="Gold">component</span> that assigns an <span class="DarkOrange">HTML</span> class in <span class="Turquoise">JSX</span></strong></p>
+</blockquote>
+<pre><code class="language-JSX"><div><span class="hljs-comment">// After being transpiled, the &lt;div&gt; will have a CSS class of 'customClass'</span>
+<span class="hljs-keyword">const</span> DemoComponent = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">'customClass'</span> /&gt;</span>
+  );
+};
+</span></div></code></pre>
+<p>Because a <span class="Turquoise">JSX</span> <span class="Gold">component</span> represents <span class="DarkOrange">HTML</span>, you could put several <span class="Gold">components</span> together to create a more complex <span class="DarkOrange">HTML</span> page. This is one of the key advantages of the <span class="Gold">component</span> architecture <span class="SkyBlue"><strong>React</strong> </span>provides. It allows you to compose your UI from many separate, isolated <span class="Gold">components</span>. This makes it easier to build and maintain complex user interfaces.</p>
+<h2 id="create-a-react-component-using-classes-supuse-hooks-insteadsup">Create a <span class="Gold">React Component</span> using Classes <sup>use hooks instead</sup></h2>
+<p>The other way to define a <span class="Gold">React component</span> is with the <em>ES6 class syntax.</em></p>
+<blockquote>
+<p>In the following example, <code>Kitten extends React.Component</code>:</p>
+</blockquote>
+<pre><code class="language-JavaScript"><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Kitten</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+  }
+
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hi<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span>
+    );
+  }
+}
+</div></code></pre>
+<p>This creates an ES6 class <code>Kitten</code> which <code>extends</code> the <code>React.Component class</code>.</p>
+<p>So the <code>Kitten class</code> now has access to many useful <span class="SkyBlue"><strong>React</strong></span> features, such as <span class="HotPink">local state</span> and <span class="Violet">lifecycle hooks</span>.</p>
+<p>Also notice the <code>Kitten class</code> has a <code>constructor</code> defined within it that calls <code>super()</code>. It uses <code>super()</code> to call the <code>constructor</code> of the parent class, in this case <code>React.Component</code>. The <code>constructor</code> is a special method used during the initialization of objects that are created with the <code>class</code> keyword. It is best practice to call a component's constructor with super, and pass props to both. This makes sure the component is initialized properly. For now, know that it is standard for this code to be included. Soon you will see other uses for the constructor as well as props.</p>
+<h2 id="create-a-component-with-composition">Create a Component with <span class="Gold">Composition</span></h2>
+<p>Now we will look at how we can compose multiple <span class="SkyBlue"><strong>React</strong> </span> components together. Imagine you are building an App and have created three components, a Navbar, Dashboard, and Footer.</p>
+<p>To compose these components together, you could create an App parent component which renders each of these three components as children. To render a component as a child in a <span class="SkyBlue"><strong>React</strong> </span> component, you include the component name written as a custom <span class="DarkOrange">HTML</span> tag in the <span class="Turquoise">JSX</span>.</p>
+<p><u>For example, in the render method you could write:</u></p>
+<pre><code class="language-javascript"><div><span class="hljs-keyword">return</span> (
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">App</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Navbar</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Dashboard</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Footer</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">App</span>&gt;</span></span>
+)
+</div></code></pre>
+<p>When <span class="SkyBlue"><strong>React</strong> </span> encounters a custom <span class="DarkOrange">HTML</span> tag that references another component (a component name wrapped in <code>&lt; /&gt;</code> like in this example), it renders the markup for that component in the location of the tag. This should illustrate the parent/child relationship between the <mark>App component and the <strong>Navbar</strong>, <strong>Dashboard</strong>, and <strong>Footer</strong></mark>.</p>
+<h2 id="use-react-to-render-nested-components">Use <span class="SkyBlue"><strong>React</strong> </span> to Render Nested <span class="Gold">Components</span></h2>
+<p>The last challenge showed a simple way to compose two <span class="Gold">components</span>, but there are many different ways you can compose <span class="Gold">components</span> with <span class="SkyBlue"><strong>React</strong> </span>.</p>
+<p><span class="Gold">Component composition </span>is one of <span class="SkyBlue"><strong>React</strong> </span>'s powerful features. When you work with <span class="SkyBlue"><strong>React</strong> </span>, it is important to start thinking about your user interface in terms of <span class="Gold">components</span> like the App example in the last challenge. You break down your UI into its basic building blocks, and those pieces become the <span class="Gold">components</span>. This helps to separate the code responsible for the UI from the code responsible for handling your application logic. It can greatly simplify the development and maintenance of complex projects.</p>
+<h2 id="render-a-class-component-to-the-dom">Render a <span class="Gold">Class Component</span> to the <span class="Tomato">DOM</span></h2>
+<p>You may remember using the <span class="Orange"><em><strong>ReactDOM API</strong></em></span> in an earlier challenge to render <span class="Turquoise">JSX</span> elements to the <span class="Tomato">DOM</span>. The process for rendering <span class="SkyBlue"><strong>React</strong> </span> components will look very similar. The past few challenges focused on components and composition, so the rendering was done for you behind the scenes. However, none of the <span class="SkyBlue"><strong>React</strong> </span> code you write will render to the <span class="Tomato">DOM</span> without making a call to the <span class="Orange"><em><strong>ReactDOM API</strong></em></span>.</p>
+<p>Here's a refresher on the syntax: <code>ReactDOM.render(componentToRender, targetNode)</code>.</p>
+<ol>
+<li><code>The first argument is the React component that you want to render. </code></li>
+<li><code>The second argument is the DOM node that you want to render that component within.</code></li>
+</ol>
+<p><span class="SkyBlue"><strong>React</strong> </span> components are passed into <code>ReactDOM.render()</code> a little differently than <span class="Turquoise">JSX</span> elements. For <span class="Turquoise">JSX</span> elements, you pass in the name of the element that you want to render. However, for <span class="SkyBlue"><strong>React</strong> </span> components, you need to use the same syntax as if you were rendering a nested component, for example <code>ReactDOM.render(&lt;ComponentToRender /&gt;, targetNode)</code>. <em>You use this syntax for both ES6 class components and functional components.</em></p>
+<h1 id="write-a-react-component-from-scratch">Write a <span class="Gold">React Component</span> from Scratch</h1>
+<p><span class="Gold">React components</span> are the core building blocks of <span class="SkyBlue"><strong>React</strong>  applications </span>so it's important to become very familiar with writing them. Remember, a typical <span class="Gold">React component</span> is an <code>ES6 class</code> which extends <code>React.Component</code>. It has a render method that returns <span class="DarkOrange">HTML</span> (from <span class="Turquoise">JSX</span>) or null. This is the basic form of a React component. Once you understand this well, you will be prepared to start building more complex <span class="SkyBlue"><strong>React</strong>  projects</span>.</p>
+<pre><code class="language-Javascript"><div><span class="hljs-comment">// Define a class MyComponent that extends React.Component. </span>
+<span class="hljs-comment">// Its render method should return a div that contains an h1 tag with the text: My First React Component! in it. Use this text exactly, the case and punctuation matter. Make sure to call the constructor for your component, too.</span>
+<span class="hljs-comment">// Render this component to the DOM using ReactDOM.render(). </span>
+<span class="hljs-comment">// There is a div with id='challenge-node' available for you to use.</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+  }
+    render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>
+                My First React Component!
+                <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+        );
+    };
+};
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span> /&gt;</span>, document.getElementById('challenge-node'))
+</span></div></code></pre>
+<h2 id="pass-props-to-a-stateless-functional-component">Pass <span class="Violet">Props</span> to a <span class="Gold">Stateless Functional Component</span></h2>
+<p>It's time to look at another feature very common in <span class="SkyBlue"><strong>React</strong></span>: <span class="Violet">props</span>. In <span class="SkyBlue"><strong>React</strong></span>, you can pass <span class="Violet">props</span>, or <span class="Violet">properties</span>, to <span class="Gold">child components</span>. Say you have an <span class="Gold">App component</span> which renders a <span class="Gold">child component</span> called <code>Welcome</code> that is a <span class="Gold">stateless functional component</span>. You can pass <code>Welcome</code> a <span class="Violet">user property</span> by writing:</p>
+<pre><code class="language-Javascript"><div>&lt;App&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Welcome</span> <span class="hljs-attr">user</span>=<span class="hljs-string">'Mark'</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">App</span>&gt;</span></span>
+</div></code></pre>
+<p>You use <span class="DarkOrange">custom HTML attributes</span> that <span class="SkyBlue"><strong>React</strong></span> provides support for to pass the <span class="Violet">property user </span>to the <code>component Welcome</code>. Since <code>Welcome</code> is a <span class="Gold">stateless functional component</span>, it has access to this value like so:</p>
+<pre><code class="language-Javascript"><div><span class="hljs-keyword">const</span> Welcome = <span class="hljs-function">(<span class="hljs-params">props</span>) =&gt;</span> &lt;h1&gt;Hello, {props.user}!<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span>
+</div></code></pre>
+<p>It is standard to call this <span class="Violet">value props</span> and when dealing with <span class="Gold">stateless functional components</span>, you basically consider it as an argument to a function which returns <span class="Turquoise">JSX</span>. You can access the value of the argument in the function body. With <span class="Gold">class components</span>, you will see this is a little different.</p>
+<blockquote>
+<p>There are Calendar and CurrentDate components in the code editor. When rendering CurrentDate from the Calendar component, pass in a property of date assigned to the current date from JavaScript's Date object. Then access this prop in the CurrentDate component, showing its value within the p tags. Note that for prop values to be evaluated as JavaScript, they must be enclosed in curly brackets, for instance date={Date()}.</p>
+</blockquote>
+<pre><code class="language-Javascript"><div><span class="hljs-keyword">const</span> CurrentDate = <span class="hljs-function">(<span class="hljs-params">props</span>) =&gt;</span> {
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      { /* change code below this line */ }
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>The current date is: {props.date} <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      { /* change code above this line */ }
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  );
+};
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Calendar</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+  }
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>What date is it?<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+        { /* change code below this line */ }
+        <span class="hljs-tag">&lt;<span class="hljs-name">CurrentDate</span> <span class="hljs-attr">date</span>=<span class="hljs-string">{Date()}</span> /&gt;</span>
+        { /* change code above this line */ }
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    );
+  }
+};
+</span></div></code></pre>
+<h2 id="pass-an-array-as-props">Pass an Array as Props</h2>
+<p>The last challenge demonstrated how to pass information from a parent component to a child component as props or properties. This challenge looks at how arrays can be passed as props. To pass an array to a JSX element, it must be treated as JavaScript and wrapped in curly braces.</p>
+<pre><code class="language-Javascript"><div>&lt;ParentComponent&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ChildComponent</span> <span class="hljs-attr">colors</span>=<span class="hljs-string">{[</span>"<span class="hljs-attr">green</span>", "<span class="hljs-attr">blue</span>", "<span class="hljs-attr">red</span>"]} /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ParentComponent</span>&gt;</span></span>
+</div></code></pre>
+<p>The child component then has access to the array property colors. Array methods such as <code>join()</code> can be used when accessing the property.</p>
+<pre><code class="language-Javascript"><div><span class="hljs-keyword">const</span> ChildComponent = <span class="hljs-function">(<span class="hljs-params">props</span>) =&gt;</span> 
+  &lt;p&gt;{props.colors.join(<span class="hljs-string">', '</span>)}&lt;<span class="hljs-regexp">/p&gt;
+</span></div></code></pre>
+<p>This will join all <code>colors array items</code> into a <em>comma separated string and produce:</em></p>
+<pre><code class="language-Javascript"><div>&lt;p&gt;green, blue, red&lt;<span class="hljs-regexp">/p&gt;
+</span></div></code></pre>
+<h2 id="use-default-props">Use Default Props</h2>
+<p>React also has an option to set default props. You can assign default props to a component as a property on the component itself and React assigns the default prop if necessary. This allows you to specify what a prop value should be if no value is explicitly provided. For example, if you declare <code>MyComponent.defaultProps = { location: 'San Francisco' }</code>, you have defined a location prop that's set to the string San Francisco, unless you specify otherwise. <mark> <strong>React assigns default props if props are undefined, but if you pass null as the value for a prop, it will remain null</strong> </mark>.</p>
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTg4MjA5OTc0NF19
+-->
+    </body>
+    </html>

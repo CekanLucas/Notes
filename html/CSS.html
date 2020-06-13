@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>CSS (cascading style sheets)</title>
+        <style>
+</style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: 'Segoe WPC', -apple-system, BlinkMacSystemFont,  'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </head>
+    <body class="vscode-light">
+        <head>
+  <link 
+      rel="stylesheet" 
+      type="text/css" 
+      media="all" 
+      href="../boilerplate/color"/>
+  <link 
+      rel="stylesheet" 
+      type="text/css" 
+      media="all" 
+      href="../boilerplate/CSS.css"/>
+  <link 
+      href="https://fonts.googleapis.com/css?family=Fira+Mono:500&display=swap" 
+      rel="stylesheet">
+<style> 
+</style>
+</head>    
+<h1 id="css-cascading-style-sheets">CSS (cascading style sheets)</h1>
+<blockquote>
+<p>Practice CSS selectors <br>
+<b class="Orange">CSS diner:</b> <a href="http://flukeout.github.io/">link</a></p>
+</blockquote>
+<h2 id="centering-recipes">Centering Recipes</h2>
+<h3 id="horizontal-centering-fluid-blocks">Horizontal Centering Fluid Blocks</h3>
+<p>Horizontal centering of blocks of unkown width</p>
+<pre><code class="language-css"><div><span class="hljs-selector-id">#horizontal-center</span>{
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>;
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateX</span>(-50%);
+}
+<span class="hljs-selector-id">#vertical-center</span>{
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">50%</span>;
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(-50%);
+}
+<span class="hljs-comment">/* Default */</span>
+<span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">color</span>: blue;
+}
+<span class="hljs-comment">/* Unvisited links */</span>
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:link</span> {
+  <span class="hljs-attribute">color</span>: blue;
+}
+<span class="hljs-comment">/* Visited links */</span>
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:visited</span> {
+  <span class="hljs-attribute">color</span>: purple;
+}
+<span class="hljs-comment">/* Hover state */</span>
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">color</span>: red; 
+}
+<span class="hljs-comment">/* Focused state */</span>
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span> {
+  <span class="hljs-attribute">color</span>: orange;
+}
+<span class="hljs-comment">/* Activated state */</span>
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:active</span> {
+  <span class="hljs-attribute">color</span>: green;
+}
+</div></code></pre>
+<h4 id="example">example</h4>
+<blockquote id='horizontal-center'> This is centered</blockquote> 
+<p><br><hr></p>
+<ul>
+<li>The <code>left</code> property relates to the size of parent</li>
+<li>The <code>transform</code> property relates to the child size</li>
+<li>thus it will be centered</li>
+</ul>
+<p>Horizontal centering of blocks of kown width</p>
+<pre><code class="language-css"><div><span class="hljs-selector-id">#horizontal-center</span>{
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">550px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto;
+}
+<span class="hljs-selector-id">#vertical-center</span>{
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">50%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">400px</span>;
+  <span class="hljs-attribute">margin-top</span>:-<span class="hljs-number">200px</span>;
+}
+<span class="hljs-comment">/* vertically align text */</span>
+<span class="hljs-selector-id">#vertical-center</span>{
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">40px</span>;
+  <span class="hljs-attribute">line-height</span>:<span class="hljs-number">40px</span>;
+}
+</div></code></pre>
+<h4 id="example-1">example</h4>
+<blockquote id='horizontal-center'> This is centered</blockquote> 
+<p><br><hr></p>
+<ul>
+<li><code>auto</code> makes the browser calculate unkown portion</li>
+</ul>
+<h3 id="make-text-unselectable">Make Text Unselectable</h3>
+<pre><code class="language-css"><div><span class="hljs-selector-class">.noselect</span> {
+  <span class="hljs-attribute">user-select</span>: none;
+}
+</div></code></pre>
+<h3 id="background-repeat">Background Repeat</h3>
+<p><code>background-repeat</code> property allows us to specify if background image will repeat horizontally <code>repeat-x</code> or vertically <code>repeat-y</code>, or use <code>no-repeat</code> to prevent this</p>
+<pre><code class="language-css"><div><span class="hljs-selector-tag">body</span> {
+  <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(image.jpg);
+  <span class="hljs-attribute">background-repeat</span>: repeat-x;
+}
+</div></code></pre>
+<h3 id="transform">Transform</h3>
+<p><span class="GoldenRod">This property allows you to modify the coordinate space</span></p>
+<div style="text-align:center">
+  <img src="https://testing-library.com/img/octopus-64x64.png" id=scale-img>
+</div>
+<form action="">
+  <fieldset>
+    <legend> <b>Scale</b> </legend>
+<span id="text-scalex">ScaleX</span>
+<input id=range-scalex type="range" min=-2 max=2 value=1 step=0.1>
+<span id="counter-scalex">1</span>
+<p><span id="text-scaley">ScaleY</span>
+<input id=range-scaley type="range" min=-2 max=2 value=1 step=0.1>
+<span id="counter-scaley">1</span></p>
+  </fieldset>
+</form>
+<script>
+const img = document.getElementById("scale-img");
+
+const counterScaleX = document.querySelector('#counter-scalex');
+const rangeScaleX = document.querySelector('#range-scalex');
+let valueScaleX = 1;
+
+const counterScaleY = document.querySelector('#counter-scaley');
+const rangeScaleY = document.querySelector('#range-scaley');
+let valueScaleY = 1;
+
+
+// Scale Event Listeners
+rangeScaleX.addEventListener('input', function (e) {
+  const transform = `scaleX(${valueScaleX}) scaleY(${valueScaleY})`;
+  // change counter based on range slider
+  counterScaleX.innerText = rangeScaleX.value;
+  // tranform img transform property based on range
+  valueScaleX = rangeScaleX.value;
+  img.style.transform = transform;
+});
+rangeScaleY.addEventListener('input', function (e) {
+  const transform = `scaleX(${valueScaleX}) scaleY(${valueScaleY})`;
+  // change counter based on range slider
+  counterScaleY.innerText = rangeScaleY.value;
+  // tranform img transform property based on range
+  valueScaleY = rangeScaleY.value;
+  img.style.transform = transform;
+});
+</script>
+<h1 id="pseudo---classes">Pseudo - Classes</h1>
+<pre><code class="language-css"><div><span class="hljs-comment">/* Default */</span>
+<span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">color</span>: blue <span class="hljs-meta">!important</span>;
+}
+<span class="hljs-comment">/* Unvisited links */</span>
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:link</span> {
+  <span class="hljs-attribute">color</span>: blue <span class="hljs-meta">!important</span>;
+}
+<span class="hljs-comment">/* Visited links */</span>
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:visited</span> {
+  <span class="hljs-attribute">color</span>: purple <span class="hljs-meta">!important</span>;
+}
+<span class="hljs-comment">/* Hover state */</span>
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">color</span>: red <span class="hljs-meta">!important</span>; 
+}
+<span class="hljs-comment">/* Focused state */</span>
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span> {
+  <span class="hljs-attribute">color</span>: orange <span class="hljs-meta">!important</span>;
+}
+<span class="hljs-comment">/* Activated state */</span>
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:active</span> {
+  <span class="hljs-attribute">color</span>: green <span class="hljs-meta">!important</span>;
+}
+</div></code></pre>
+<p><a href="#">Example LInk</a></p>
+
+    </body>
+    </html>

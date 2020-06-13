@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title><span class="ruby">RUBY</span></title>
+        <style>
+</style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: 'Segoe WPC', -apple-system, BlinkMacSystemFont,  'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </head>
+    <body class="vscode-light">
+        <head>
+  <link 
+      rel="stylesheet" 
+      type="text/css" 
+      media="all" 
+      href="../boilerplate/color.css"/>
+  <link 
+      rel="stylesheet" 
+      type="text/css" 
+      media="all" 
+      href="../boilerplate/CSS.css"/>
+  <link 
+      href="https://fonts.googleapis.com/css?family=Fira+Mono:500&display=swap" 
+      rel="stylesheet">
+<style> 
+html > body{
+  background-color: #000;
+}
+
+html>body, p {
+  font-family: ubuntu;
+  font-size: 1.1em;
+  text-shadow:none;
+}
+h2>code, p>code, li>code, div>code {
+    background-color: #09A;
+    border-radius: 7px;
+    box-shadow: 
+      1px 1px 1px #000,
+      -1px -1px 1px #FFF,
+      -1px 1px 2px #000,
+      1px -1px 2px #000;
+    color: #00f;
+    margin: 5px;
+    padding: 2px;
+    font-family: 'Fira Mono', monospace;
+    text-shadow:none;
+    font-size:0.8em
+}
+body ::selection {
+  /*highlighting*/
+  background: transparent;
+  text-shadow: 
+    1px  0px 1px ,
+    0px  1px 1px ,
+    -1px  0px 1px ,
+    0px -1px 1px ,
+    0px  1px black ,
+    1px  0px black ,
+    -1px  0px black ,
+    0px -1px black ;
+  text-outline: black;  
+}
+ .ruby {
+  color:FireBrick;
+  font-weight:bolder;
+}
+.img{
+  position:sticky;
+  left:70%;
+  top:1px;
+  width: 30%
+}
+</style>
+</head>    
+<h1 id="ruby"><span class="ruby">RUBY</span></h1>
+ <img class=img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/198px-Ruby_logo.svg.png">
+<pre><code class="language-ruby"><div><span class="hljs-comment"># This is a comment</span>
+
+<span class="hljs-comment">=begin
+This is a multi-line comment.
+The beginning line must start with "=begin"
+and the ending line must start with "=end".
+
+You can do this, or start each line in
+a multi-line comment with the # character.
+=end</span>
+
+<span class="hljs-comment"># In Ruby, (almost) everything is an object.</span>
+<span class="hljs-comment"># This includes numbers...</span>
+<span class="hljs-number">3</span>.<span class="hljs-keyword">class</span> <span class="hljs-comment">#=&gt; Integer</span>
+
+<span class="hljs-comment"># ...and strings...</span>
+<span class="hljs-string">"Hello"</span>.<span class="hljs-keyword">class</span> <span class="hljs-comment">#=&gt; String</span>
+
+<span class="hljs-comment"># ...and even methods!</span>
+<span class="hljs-string">"Hello"</span>.method(<span class="hljs-symbol">:class</span>).<span class="hljs-keyword">class</span> <span class="hljs-comment">#=&gt; Method</span>
+
+<span class="hljs-comment"># Some basic arithmetic</span>
+<span class="hljs-number">1</span> + <span class="hljs-number">1</span>   <span class="hljs-comment">#=&gt; 2</span>
+<span class="hljs-number">8</span> - <span class="hljs-number">1</span>   <span class="hljs-comment">#=&gt; 7</span>
+<span class="hljs-number">10</span> * <span class="hljs-number">2</span>  <span class="hljs-comment">#=&gt; 20</span>
+<span class="hljs-number">35</span> / <span class="hljs-number">5</span>  <span class="hljs-comment">#=&gt; 7</span>
+<span class="hljs-number">2</span> ** <span class="hljs-number">5</span>  <span class="hljs-comment">#=&gt; 32</span>
+<span class="hljs-number">5</span> % <span class="hljs-number">3</span>   <span class="hljs-comment">#=&gt; 2</span>
+
+<span class="hljs-comment"># Bitwise operators</span>
+<span class="hljs-number">3</span> &amp; <span class="hljs-number">5</span>   <span class="hljs-comment">#=&gt; 1</span>
+<span class="hljs-comment">#3 | 5  #=&gt; 7</span>
+<span class="hljs-number">3</span> ^ <span class="hljs-number">5</span>   <span class="hljs-comment">#=&gt; 6</span>
+
+<span class="hljs-comment"># Arithmetic is just syntactic sugar</span>
+<span class="hljs-comment"># for calling a method on an object</span>
+<span class="hljs-number">1</span>.+(<span class="hljs-number">3</span>) <span class="hljs-comment">#=&gt; 4</span>
+<span class="hljs-number">10</span>.* <span class="hljs-number">5</span> <span class="hljs-comment">#=&gt; 50</span>
+<span class="hljs-number">100</span>.methods.<span class="hljs-keyword">include</span>?(<span class="hljs-symbol">:/</span>) <span class="hljs-comment">#=&gt; true</span>
+
+<span class="hljs-comment"># Special values are objects</span>
+<span class="hljs-literal">nil</span> <span class="hljs-comment"># equivalent to null in other languages</span>
+<span class="hljs-literal">true</span> <span class="hljs-comment"># truth</span>
+<span class="hljs-literal">false</span> <span class="hljs-comment"># falsehood</span>
+
+<span class="hljs-literal">nil</span>.<span class="hljs-keyword">class</span> <span class="hljs-comment">#=&gt; NilClass</span>
+<span class="hljs-literal">true</span>.<span class="hljs-keyword">class</span> <span class="hljs-comment">#=&gt; TrueClass</span>
+<span class="hljs-literal">false</span>.<span class="hljs-keyword">class</span> <span class="hljs-comment">#=&gt; FalseClass</span>
+
+<span class="hljs-comment"># Equality</span>
+<span class="hljs-number">1</span> == <span class="hljs-number">1</span> <span class="hljs-comment">#=&gt; true</span>
+<span class="hljs-number">2</span> == <span class="hljs-number">1</span> <span class="hljs-comment">#=&gt; false</span>
+
+<span class="hljs-comment"># Inequality</span>
+<span class="hljs-number">1</span> != <span class="hljs-number">1</span> <span class="hljs-comment">#=&gt; false</span>
+<span class="hljs-number">2</span> != <span class="hljs-number">1</span> <span class="hljs-comment">#=&gt; true</span>
+
+<span class="hljs-comment"># Apart from false itself, nil is the only other 'falsey' value</span>
+
+!!<span class="hljs-literal">nil</span>   <span class="hljs-comment">#=&gt; false</span>
+!!<span class="hljs-literal">false</span> <span class="hljs-comment">#=&gt; false</span>
+!!<span class="hljs-number">0</span>     <span class="hljs-comment">#=&gt; true</span>
+!!<span class="hljs-string">""</span>    <span class="hljs-comment">#=&gt; true</span>
+
+<span class="hljs-comment"># More comparisons</span>
+<span class="hljs-number">1</span> &lt; <span class="hljs-number">10</span> <span class="hljs-comment">#=&gt; true</span>
+<span class="hljs-number">1</span> &gt; <span class="hljs-number">10</span> <span class="hljs-comment">#=&gt; false</span>
+<span class="hljs-number">2</span> &lt;= <span class="hljs-number">2</span> <span class="hljs-comment">#=&gt; true</span>
+<span class="hljs-number">2</span> &gt;= <span class="hljs-number">2</span> <span class="hljs-comment">#=&gt; true</span>
+
+<span class="hljs-comment"># Combined comparison operator (returns `1` when the first argument is greater, </span>
+<span class="hljs-comment"># `-1` when the second argument is greater, and `0` otherwise)</span>
+<span class="hljs-number">1</span> &lt;=&gt; <span class="hljs-number">10</span> <span class="hljs-comment">#=&gt; -1 (1 &lt; 10)</span>
+<span class="hljs-number">10</span> &lt;=&gt; <span class="hljs-number">1</span> <span class="hljs-comment">#=&gt; 1 (10 &gt; 1)</span>
+<span class="hljs-number">1</span> &lt;=&gt; <span class="hljs-number">1</span> <span class="hljs-comment">#=&gt; 0 (1 == 1)</span>
+
+<span class="hljs-comment"># Logical operators</span>
+<span class="hljs-literal">true</span> &amp;&amp; <span class="hljs-literal">false</span> <span class="hljs-comment">#=&gt; false</span>
+<span class="hljs-literal">true</span> <span class="hljs-params">||</span> <span class="hljs-literal">false</span> <span class="hljs-comment">#=&gt; true</span>
+
+<span class="hljs-comment"># There are alternate versions of the logical operators with much lower</span>
+<span class="hljs-comment"># precedence. These are meant to be used as flow-control constructs to chain</span>
+<span class="hljs-comment"># statements together until one of them returns true or false.</span>
+
+<span class="hljs-comment"># `do_something_else` only called if `do_something` succeeds.</span>
+do_something() <span class="hljs-keyword">and</span> do_something_else()
+<span class="hljs-comment"># `log_error` only called if `do_something` fails.</span>
+do_something() <span class="hljs-keyword">or</span> log_error()
+
+<span class="hljs-comment"># String interpolation</span>
+
+placeholder = <span class="hljs-string">'use string interpolation'</span>
+<span class="hljs-string">"I can <span class="hljs-subst">#{placeholder}</span> when using double quoted strings"</span>
+<span class="hljs-comment">#=&gt; "I can use string interpolation when using double quoted strings"</span>
+
+<span class="hljs-comment"># You can combine strings using `+`, but not with other types</span>
+<span class="hljs-string">'hello '</span> + <span class="hljs-string">'world'</span>  <span class="hljs-comment">#=&gt; "hello world"</span>
+<span class="hljs-string">'hello '</span> + <span class="hljs-number">3</span> <span class="hljs-comment">#=&gt; TypeError: can't convert Fixnum into String</span>
+<span class="hljs-string">'hello '</span> + <span class="hljs-number">3</span>.to_s <span class="hljs-comment">#=&gt; "hello 3"</span>
+<span class="hljs-string">"hello <span class="hljs-subst">#{<span class="hljs-number">3</span>}</span>"</span> <span class="hljs-comment">#=&gt; "hello 3"</span>
+
+<span class="hljs-comment"># ...or combine strings and operators</span>
+<span class="hljs-string">'hello '</span> * <span class="hljs-number">3</span> <span class="hljs-comment">#=&gt; "hello hello hello "</span>
+
+<span class="hljs-comment"># ...or append to string</span>
+<span class="hljs-string">'hello'</span> &lt;&lt; <span class="hljs-string">' world'</span> <span class="hljs-comment">#=&gt; "hello world"</span>
+
+<span class="hljs-comment"># You can print to the output with a newline at the end</span>
+puts <span class="hljs-string">"I'm printing!"</span>
+<span class="hljs-comment">#=&gt; I'm printing!</span>
+<span class="hljs-comment">#=&gt; nil</span>
+
+<span class="hljs-comment"># ...or print to the output without a newline</span>
+print <span class="hljs-string">"I'm printing!"</span>
+<span class="hljs-comment">#=&gt; "I'm printing!" =&gt; nil</span>
+
+<span class="hljs-comment"># Variables</span>
+x = <span class="hljs-number">25</span> <span class="hljs-comment">#=&gt; 25</span>
+x <span class="hljs-comment">#=&gt; 25</span>
+
+<span class="hljs-comment"># Note that assignment returns the value assigned.</span>
+<span class="hljs-comment"># This means you can do multiple assignment.</span>
+
+x = y = <span class="hljs-number">10</span> <span class="hljs-comment">#=&gt; 10</span>
+x <span class="hljs-comment">#=&gt; 10</span>
+y <span class="hljs-comment">#=&gt; 10</span>
+
+<span class="hljs-comment"># By convention, use snake_case for variable names.</span>
+snake_case = <span class="hljs-literal">true</span>
+
+<span class="hljs-comment"># Use descriptive variable names</span>
+path_to_project_root = <span class="hljs-string">'/good/name/'</span>
+m = <span class="hljs-string">'/bad/name/'</span>
+
+<span class="hljs-comment"># Symbols are immutable, reusable constants represented internally by an</span>
+<span class="hljs-comment"># integer value. They're often used instead of strings to efficiently convey</span>
+<span class="hljs-comment"># specific, meaningful values.</span>
+
+<span class="hljs-symbol">:pending</span>.<span class="hljs-keyword">class</span> <span class="hljs-comment">#=&gt; Symbol</span>
+
+status = <span class="hljs-symbol">:pending</span>
+
+status == <span class="hljs-symbol">:pending</span> <span class="hljs-comment">#=&gt; true</span>
+
+status == <span class="hljs-string">'pending'</span> <span class="hljs-comment">#=&gt; false</span>
+
+status == <span class="hljs-symbol">:approved</span> <span class="hljs-comment">#=&gt; false</span>
+
+<span class="hljs-comment"># Strings can be converted into symbols and vice versa.</span>
+status.to_s <span class="hljs-comment">#=&gt; "pending"</span>
+<span class="hljs-string">"argon"</span>.to_sym <span class="hljs-comment">#=&gt; :argon</span>
+
+<span class="hljs-comment"># Arrays</span>
+
+<span class="hljs-comment"># This is an array.</span>
+array = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>] <span class="hljs-comment">#=&gt; [1, 2, 3, 4, 5]</span>
+
+<span class="hljs-comment"># Arrays can contain different types of items.</span>
+[<span class="hljs-number">1</span>, <span class="hljs-string">'hello'</span>, <span class="hljs-literal">false</span>] <span class="hljs-comment">#=&gt; [1, "hello", false]</span>
+
+<span class="hljs-comment"># Arrays can be indexed.</span>
+<span class="hljs-comment"># From the front...</span>
+array[<span class="hljs-number">0</span>] <span class="hljs-comment">#=&gt; 1</span>
+array.first <span class="hljs-comment">#=&gt; 1</span>
+array[<span class="hljs-number">12</span>] <span class="hljs-comment">#=&gt; nil</span>
+
+<span class="hljs-comment"># ...or from the back...</span>
+array[-<span class="hljs-number">1</span>] <span class="hljs-comment">#=&gt; 5</span>
+array.last <span class="hljs-comment">#=&gt; 5</span>
+
+<span class="hljs-comment"># ...or with a start index and length...</span>
+array[<span class="hljs-number">2</span>, <span class="hljs-number">3</span>] <span class="hljs-comment">#=&gt; [3, 4, 5]</span>
+
+<span class="hljs-comment"># ...or with a range...</span>
+array[<span class="hljs-number">1</span>..<span class="hljs-number">3</span>] <span class="hljs-comment">#=&gt; [2, 3, 4]</span>
+
+<span class="hljs-comment"># You can reverse an Array.</span>
+<span class="hljs-comment"># Return a new array with reversed values</span>
+[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>].reverse <span class="hljs-comment">#=&gt; [3,2,1]</span>
+<span class="hljs-comment"># Reverse an array in place to update variable with reversed values</span>
+a = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]
+a.reverse! <span class="hljs-comment">#=&gt; a==[3,2,1] because of the bang ('!') call to reverse</span>
+
+<span class="hljs-comment"># Like arithmetic, [var] access is just syntactic sugar</span>
+<span class="hljs-comment"># for calling a method '[]' on an object.</span>
+array.[] <span class="hljs-number">0</span> <span class="hljs-comment">#=&gt; 1</span>
+array.[] <span class="hljs-number">12</span> <span class="hljs-comment">#=&gt; nil</span>
+
+<span class="hljs-comment"># You can add to an array...</span>
+array &lt;&lt; <span class="hljs-number">6</span> <span class="hljs-comment">#=&gt; [1, 2, 3, 4, 5, 6]</span>
+<span class="hljs-comment"># Or like this</span>
+array.push(<span class="hljs-number">6</span>) <span class="hljs-comment">#=&gt; [1, 2, 3, 4, 5, 6]</span>
+
+<span class="hljs-comment"># ...and check if an item exists in an array</span>
+array.<span class="hljs-keyword">include</span>?(<span class="hljs-number">1</span>) <span class="hljs-comment">#=&gt; true</span>
+
+<span class="hljs-comment"># Hashes are Ruby's primary dictionary with key/value pairs.</span>
+<span class="hljs-comment"># Hashes are denoted with curly braces.</span>
+hash = { <span class="hljs-string">'color'</span> =&gt; <span class="hljs-string">'green'</span>, <span class="hljs-string">'number'</span> =&gt; <span class="hljs-number">5</span> }
+
+hash.keys <span class="hljs-comment">#=&gt; ['color', 'number']</span>
+
+<span class="hljs-comment"># Hashes can be quickly looked up by key.</span>
+hash[<span class="hljs-string">'color'</span>] <span class="hljs-comment">#=&gt; "green"</span>
+hash[<span class="hljs-string">'number'</span>] <span class="hljs-comment">#=&gt; 5</span>
+
+<span class="hljs-comment"># Asking a hash for a key that doesn't exist returns nil.</span>
+hash[<span class="hljs-string">'nothing here'</span>] <span class="hljs-comment">#=&gt; nil</span>
+
+<span class="hljs-comment"># When using symbols for keys in a hash, you can use an alternate syntax.</span>
+
+hash = { <span class="hljs-symbol">:defcon</span> =&gt; <span class="hljs-number">3</span>, <span class="hljs-symbol">:action</span> =&gt; <span class="hljs-literal">true</span> }
+hash.keys <span class="hljs-comment">#=&gt; [:defcon, :action]</span>
+
+hash = { <span class="hljs-symbol">defcon:</span> <span class="hljs-number">3</span>, <span class="hljs-symbol">action:</span> <span class="hljs-literal">true</span> }
+hash.keys <span class="hljs-comment">#=&gt; [:defcon, :action]</span>
+
+<span class="hljs-comment"># Check existence of keys and values in hash</span>
+hash.key?(<span class="hljs-symbol">:defcon</span>) <span class="hljs-comment">#=&gt; true</span>
+hash.value?(<span class="hljs-number">3</span>) <span class="hljs-comment">#=&gt; true</span>
+
+<span class="hljs-comment"># Tip: Both Arrays and Hashes are Enumerable!</span>
+<span class="hljs-comment"># They share a lot of useful methods such as each, map, count, and more.</span>
+
+<span class="hljs-comment"># Control structures</span>
+
+<span class="hljs-comment"># Conditionals</span>
+<span class="hljs-keyword">if</span> <span class="hljs-literal">true</span>
+ <span class="hljs-string">'if statement'</span>
+<span class="hljs-keyword">elsif</span> <span class="hljs-literal">false</span>
+ <span class="hljs-string">'else if, optional'</span>
+<span class="hljs-keyword">else</span>
+ <span class="hljs-string">'else, also optional'</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment"># If a condition controls invocation of a single statement rather than a block of code</span>
+<span class="hljs-comment"># you can use postfix-if notation</span>
+warnings = [<span class="hljs-string">'Patronimic is missing'</span>, <span class="hljs-string">'Address too short'</span>]
+puts(<span class="hljs-string">"Some warnings occurred:\n"</span> + warnings.join(<span class="hljs-string">"\n"</span>))  <span class="hljs-keyword">if</span> !warnings.empty?
+
+<span class="hljs-comment"># Rephrase condition if `unless` sounds better than `if`</span>
+puts(<span class="hljs-string">"Some warnings occurred:\n"</span> + warnings.join(<span class="hljs-string">"\n"</span>))  <span class="hljs-keyword">unless</span> warnings.empty?
+
+<span class="hljs-comment"># Loops</span>
+<span class="hljs-comment"># In Ruby, traditional `for` loops aren't very common. Instead, these </span>
+<span class="hljs-comment"># basic loops are implemented using enumerable, which hinges on `each`.</span>
+(<span class="hljs-number">1</span>..<span class="hljs-number">5</span>).each <span class="hljs-keyword">do</span> <span class="hljs-params">|counter|</span>
+ puts <span class="hljs-string">"iteration <span class="hljs-subst">#{counter}</span>"</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment"># Which is roughly equivalent to the following, which is unusual to see in Ruby.</span>
+<span class="hljs-keyword">for</span> counter <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>..<span class="hljs-number">5</span>
+ puts <span class="hljs-string">"iteration <span class="hljs-subst">#{counter}</span>"</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment"># The `do |variable| ... end` construct above is called a 'block'. Blocks are similar</span>
+<span class="hljs-comment"># to lambdas, anonymous functions or closures in other programming languages. They can</span>
+<span class="hljs-comment"># be passed around as objects, called, or attached as methods.</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># The 'each' method of a range runs the block once for each element of the range.</span>
+<span class="hljs-comment"># The block is passed a counter as a parameter.</span>
+
+<span class="hljs-comment"># You can also surround blocks in curly brackets.</span>
+(<span class="hljs-number">1</span>..<span class="hljs-number">5</span>).each { <span class="hljs-params">|counter|</span> puts <span class="hljs-string">"iteration <span class="hljs-subst">#{counter}</span>"</span> }
+
+<span class="hljs-comment"># The contents of data structures can also be iterated using each.</span>
+array.each <span class="hljs-keyword">do</span> <span class="hljs-params">|element|</span>
+ puts <span class="hljs-string">"<span class="hljs-subst">#{element}</span> is part of the array"</span>
+<span class="hljs-keyword">end</span>
+hash.each <span class="hljs-keyword">do</span> <span class="hljs-params">|key, value|</span>
+ puts <span class="hljs-string">"<span class="hljs-subst">#{key}</span> is <span class="hljs-subst">#{value}</span>"</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment"># If you still need an index you can use 'each_with_index' and define an index</span>
+<span class="hljs-comment"># variable.</span>
+array.each_with_index <span class="hljs-keyword">do</span> <span class="hljs-params">|element, index|</span>
+ puts <span class="hljs-string">"<span class="hljs-subst">#{element}</span> is number <span class="hljs-subst">#{index}</span> in the array"</span>
+<span class="hljs-keyword">end</span>
+
+counter = <span class="hljs-number">1</span>
+<span class="hljs-keyword">while</span> counter &lt;= <span class="hljs-number">5</span> <span class="hljs-keyword">do</span>
+ puts <span class="hljs-string">"iteration <span class="hljs-subst">#{counter}</span>"</span>
+ counter += <span class="hljs-number">1</span>
+<span class="hljs-keyword">end</span>
+<span class="hljs-comment">#=&gt; iteration 1</span>
+<span class="hljs-comment">#=&gt; iteration 2</span>
+<span class="hljs-comment">#=&gt; iteration 3</span>
+<span class="hljs-comment">#=&gt; iteration 4</span>
+<span class="hljs-comment">#=&gt; iteration 5</span>
+
+<span class="hljs-comment"># There are a bunch of other helpful looping functions in Ruby.</span>
+<span class="hljs-comment"># For example: 'map', 'reduce', 'inject', the list goes on.</span>
+<span class="hljs-comment"># Map, for instance, takes the array it's looping over, does something</span>
+<span class="hljs-comment"># to it as defined in your block, and returns an entirely new array.</span>
+array = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]
+doubled = array.map <span class="hljs-keyword">do</span> <span class="hljs-params">|element|</span>
+ element * <span class="hljs-number">2</span>
+<span class="hljs-keyword">end</span>
+puts doubled
+<span class="hljs-comment">#=&gt; [2,4,6,8,10]</span>
+puts array
+<span class="hljs-comment">#=&gt; [1,2,3,4,5]</span>
+
+<span class="hljs-comment"># Case construct</span>
+grade = <span class="hljs-string">'B'</span>
+
+<span class="hljs-keyword">case</span> grade
+<span class="hljs-keyword">when</span> <span class="hljs-string">'A'</span>
+ puts <span class="hljs-string">'Way to go kiddo'</span>
+<span class="hljs-keyword">when</span> <span class="hljs-string">'B'</span>
+ puts <span class="hljs-string">'Better luck next time'</span>
+<span class="hljs-keyword">when</span> <span class="hljs-string">'C'</span>
+ puts <span class="hljs-string">'You can do better'</span>
+<span class="hljs-keyword">when</span> <span class="hljs-string">'D'</span>
+ puts <span class="hljs-string">'Scraping through'</span>
+<span class="hljs-keyword">when</span> <span class="hljs-string">'F'</span>
+ puts <span class="hljs-string">'You failed!'</span>
+<span class="hljs-keyword">else</span>
+ puts <span class="hljs-string">'Alternative grading system, eh?'</span>
+<span class="hljs-keyword">end</span>
+<span class="hljs-comment">#=&gt; "Better luck next time"</span>
+
+<span class="hljs-comment"># Cases can also use ranges</span>
+grade = <span class="hljs-number">82</span>
+<span class="hljs-keyword">case</span> grade
+<span class="hljs-keyword">when</span> <span class="hljs-number">90</span>..<span class="hljs-number">100</span>
+ puts <span class="hljs-string">'Hooray!'</span>
+<span class="hljs-keyword">when</span> <span class="hljs-number">80</span>...<span class="hljs-number">90</span>
+ puts <span class="hljs-string">'OK job'</span>
+<span class="hljs-keyword">else</span>
+ puts <span class="hljs-string">'You failed!'</span>
+<span class="hljs-keyword">end</span>
+<span class="hljs-comment">#=&gt; "OK job"</span>
+
+<span class="hljs-comment"># Exception handling</span>
+<span class="hljs-keyword">begin</span>
+ <span class="hljs-comment"># Code here that might raise an exception</span>
+ raise NoMemoryError, <span class="hljs-string">'You ran out of memory.'</span>
+<span class="hljs-keyword">rescue</span> NoMemoryError =&gt; exception_variable
+ puts <span class="hljs-string">'NoMemoryError was raised'</span>, exception_variable
+<span class="hljs-keyword">rescue</span> RuntimeError =&gt; other_exception_variable
+ puts <span class="hljs-string">'RuntimeError was raised now'</span>
+<span class="hljs-keyword">else</span>
+ puts <span class="hljs-string">'This runs if no exceptions were thrown at all'</span>
+<span class="hljs-keyword">ensure</span>
+ puts <span class="hljs-string">'This code always runs no matter what'</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment"># Methods</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">double</span><span class="hljs-params">(x)</span></span>
+ x * <span class="hljs-number">2</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment"># Methods (and blocks) implicitly return the value of the last statement.</span>
+double(<span class="hljs-number">2</span>) <span class="hljs-comment">#=&gt; 4</span>
+
+<span class="hljs-comment"># Parentheses are optional where the interpretation is unambiguous.</span>
+double <span class="hljs-number">3</span> <span class="hljs-comment">#=&gt; 6</span>
+
+double double <span class="hljs-number">3</span> <span class="hljs-comment">#=&gt; 12</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sum</span><span class="hljs-params">(x, y)</span></span>
+ x + y
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment"># Method arguments are separated by a comma.</span>
+sum <span class="hljs-number">3</span>, <span class="hljs-number">4</span> <span class="hljs-comment">#=&gt; 7</span>
+
+sum sum(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>), <span class="hljs-number">5</span> <span class="hljs-comment">#=&gt; 12</span>
+
+<span class="hljs-comment"># yield</span>
+<span class="hljs-comment"># All methods have an implicit, optional block parameter.</span>
+<span class="hljs-comment"># It can be called with the 'yield' keyword.</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">surround</span></span>
+ puts <span class="hljs-string">'{'</span>
+ <span class="hljs-keyword">yield</span>
+ puts <span class="hljs-string">'}'</span>
+<span class="hljs-keyword">end</span>
+
+surround { puts <span class="hljs-string">'hello world'</span> }
+
+<span class="hljs-comment">#=&gt; {</span>
+<span class="hljs-comment">#=&gt; hello world</span>
+<span class="hljs-comment">#=&gt; }</span>
+
+<span class="hljs-comment"># Blocks can be converted into a 'proc' object, which wraps the block </span>
+<span class="hljs-comment"># and allows it to be passed to another method, bound to a different scope,</span>
+<span class="hljs-comment"># or manipulated otherwise. This is most common in method parameter lists,</span>
+<span class="hljs-comment"># where you frequently see a trailing '&amp;block' parameter that will accept </span>
+<span class="hljs-comment"># the block, if one is given, and convert it to a 'Proc'. The naming here is</span>
+<span class="hljs-comment"># convention; it would work just as well with '&amp;pineapple'.</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">guests</span><span class="hljs-params">(&amp;block)</span></span>
+ block.<span class="hljs-keyword">class</span> <span class="hljs-comment">#=&gt; Proc</span>
+ block.call(<span class="hljs-number">4</span>)
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment"># The 'call' method on the Proc is similar to calling 'yield' when a block is </span>
+<span class="hljs-comment"># present. The arguments passed to 'call' will be forwarded to the block as arguments.</span>
+
+guests { <span class="hljs-params">|n|</span> <span class="hljs-string">"You have <span class="hljs-subst">#{n}</span> guests."</span> }
+<span class="hljs-comment"># =&gt; "You have 4 guests."</span>
+
+<span class="hljs-comment"># You can pass a list of arguments, which will be converted into an array.</span>
+<span class="hljs-comment"># That's what splat operator ("*") is for.</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">guests</span><span class="hljs-params">(*array)</span></span>
+ array.each { <span class="hljs-params">|guest|</span> puts guest }
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment"># Destructuring</span>
+
+<span class="hljs-comment"># Ruby will automatically destructure arrays on assignment to multiple variables.</span>
+a, b, c = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]
+a <span class="hljs-comment">#=&gt; 1</span>
+b <span class="hljs-comment">#=&gt; 2</span>
+c <span class="hljs-comment">#=&gt; 3</span>
+
+<span class="hljs-comment"># In some cases, you will want to use the splat operator: `*` to prompt destructuring</span>
+<span class="hljs-comment"># of an array into a list.</span>
+ranked_competitors = [<span class="hljs-string">"John"</span>, <span class="hljs-string">"Sally"</span>, <span class="hljs-string">"Dingus"</span>, <span class="hljs-string">"Moe"</span>, <span class="hljs-string">"Marcy"</span>]
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">best</span><span class="hljs-params">(first, second, third)</span></span>
+ puts <span class="hljs-string">"Winners are <span class="hljs-subst">#{first}</span>, <span class="hljs-subst">#{second}</span>, and <span class="hljs-subst">#{third}</span>."</span>
+<span class="hljs-keyword">end</span>
+
+best *ranked_competitors.first(<span class="hljs-number">3</span>) <span class="hljs-comment">#=&gt; Winners are John, Sally, and Dingus.</span>
+
+<span class="hljs-comment"># The splat operator can also be used in parameters.</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">best</span><span class="hljs-params">(first, second, third, *others)</span></span>
+ puts <span class="hljs-string">"Winners are <span class="hljs-subst">#{first}</span>, <span class="hljs-subst">#{second}</span>, and <span class="hljs-subst">#{third}</span>."</span>
+ puts <span class="hljs-string">"There were <span class="hljs-subst">#{others.count}</span> other participants."</span>
+<span class="hljs-keyword">end</span>
+
+best *ranked_competitors 
+<span class="hljs-comment">#=&gt; Winners are John, Sally, and Dingus.</span>
+<span class="hljs-comment">#=&gt; There were 2 other participants.</span>
+
+<span class="hljs-comment"># By convention, all methods that return booleans end with a question mark.</span>
+<span class="hljs-number">5</span>.even? <span class="hljs-comment">#=&gt; false</span>
+<span class="hljs-number">5</span>.odd? <span class="hljs-comment">#=&gt; true</span>
+
+<span class="hljs-comment"># By convention, if a method name ends with an exclamation mark, it does something destructive</span>
+<span class="hljs-comment"># like mutate the receiver. Many methods have a ! version to make a change, and</span>
+<span class="hljs-comment"># a non-! version to just return a new changed version.</span>
+company_name = <span class="hljs-string">"Dunder Mifflin"</span>
+company_name.upcase <span class="hljs-comment">#=&gt; "DUNDER MIFFLIN"</span>
+company_name <span class="hljs-comment">#=&gt; "Dunder Mifflin"</span>
+<span class="hljs-comment"># We're mutating company_name this time.</span>
+company_name.upcase! <span class="hljs-comment">#=&gt; "DUNDER MIFFLIN"</span>
+company_name <span class="hljs-comment">#=&gt; "DUNDER MIFFLIN"</span>
+
+<span class="hljs-comment"># Classes</span>
+
+<span class="hljs-comment"># You can define a class with the 'class' keyword.</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Human</span></span>
+
+ <span class="hljs-comment"># A class variable. It is shared by all instances of this class.</span>
+ @@species = <span class="hljs-string">'H. sapiens'</span>
+
+ <span class="hljs-comment"># Basic initializer</span>
+ <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">initialize</span><span class="hljs-params">(name, age = <span class="hljs-number">0</span>)</span></span>
+   <span class="hljs-comment"># Assign the argument to the 'name' instance variable for the instance.</span>
+   @name = name
+   <span class="hljs-comment"># If no age given, we will fall back to the default in the arguments list.</span>
+   @age = age
+ <span class="hljs-keyword">end</span>
+
+ <span class="hljs-comment"># Basic setter method</span>
+ <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">name=</span><span class="hljs-params">(name)</span></span>
+   @name = name
+ <span class="hljs-keyword">end</span>
+
+ <span class="hljs-comment"># Basic getter method</span>
+ <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">name</span></span>
+   @name
+ <span class="hljs-keyword">end</span>
+
+ <span class="hljs-comment"># The above functionality can be encapsulated using the attr_accessor method as follows.</span>
+ <span class="hljs-keyword">attr_accessor</span> <span class="hljs-symbol">:name</span>
+
+ <span class="hljs-comment"># Getter/setter methods can also be created individually like this.</span>
+ <span class="hljs-keyword">attr_reader</span> <span class="hljs-symbol">:name</span>
+ <span class="hljs-keyword">attr_writer</span> <span class="hljs-symbol">:name</span>
+
+ <span class="hljs-comment"># A class method uses self to distinguish from instance methods.</span>
+ <span class="hljs-comment"># It can only be called on the class, not an instance.</span>
+ <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">self</span>.<span class="hljs-title">say</span><span class="hljs-params">(msg)</span></span>
+   puts msg
+ <span class="hljs-keyword">end</span>
+
+ <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">species</span></span>
+   @@species
+ <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment"># Instantiating of a class</span>
+jim = Human.new(<span class="hljs-string">'Jim Halpert'</span>)
+dwight = Human.new(<span class="hljs-string">'Dwight K. Schrute'</span>)
+
+<span class="hljs-comment"># You can call the methods of the generated object.</span>
+jim.species <span class="hljs-comment">#=&gt; "H. sapiens"</span>
+jim.name <span class="hljs-comment">#=&gt; "Jim Halpert"</span>
+jim.name = <span class="hljs-string">"Jim Halpert II"</span> <span class="hljs-comment">#=&gt; "Jim Halpert II"</span>
+jim.name <span class="hljs-comment">#=&gt; "Jim Halpert II"</span>
+dwight.species <span class="hljs-comment">#=&gt; "H. sapiens"</span>
+dwight.name <span class="hljs-comment">#=&gt; "Dwight K. Schrute"</span>
+
+<span class="hljs-comment"># Calling of a class method</span>
+Human.say(<span class="hljs-string">'Hi'</span>) <span class="hljs-comment">#=&gt; "Hi"</span>
+
+<span class="hljs-comment"># Variable's scopes are defined by the way we name them.</span>
+<span class="hljs-comment"># Variables that start with $ have global scope.</span>
+$var = <span class="hljs-string">"I'm a global var"</span>
+<span class="hljs-keyword">defined</span>? $var <span class="hljs-comment">#=&gt; "global-variable"</span>
+
+<span class="hljs-comment"># Variables that start with @ have instance scope.</span>
+@var = <span class="hljs-string">"I'm an instance var"</span>
+<span class="hljs-keyword">defined</span>? @var <span class="hljs-comment">#=&gt; "instance-variable"</span>
+
+<span class="hljs-comment"># Variables that start with @@ have class scope.</span>
+@@var = <span class="hljs-string">"I'm a class var"</span>
+<span class="hljs-keyword">defined</span>? @@var <span class="hljs-comment">#=&gt; "class variable"</span>
+
+<span class="hljs-comment"># Variables that start with a capital letter are constants.</span>
+Var = <span class="hljs-string">"I'm a constant"</span>
+<span class="hljs-keyword">defined</span>? Var <span class="hljs-comment">#=&gt; "constant"</span>
+
+<span class="hljs-comment"># Class is also an object in ruby. So a class can have instance variables.</span>
+<span class="hljs-comment"># A class variable is shared among the class and all of its descendants.</span>
+
+<span class="hljs-comment"># Base class</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Human</span></span>
+ @@foo = <span class="hljs-number">0</span>
+
+ <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">self</span>.<span class="hljs-title">foo</span></span>
+   @@foo
+ <span class="hljs-keyword">end</span>
+
+ <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">self</span>.<span class="hljs-title">foo=</span><span class="hljs-params">(value)</span></span>
+   @@foo = value
+ <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment"># Derived class</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Worker</span> &lt; Human</span>
+<span class="hljs-keyword">end</span>
+
+Human.foo <span class="hljs-comment">#=&gt; 0</span>
+Worker.foo <span class="hljs-comment">#=&gt; 0</span>
+
+Human.foo = <span class="hljs-number">2</span>
+Worker.foo <span class="hljs-comment">#=&gt; 2</span>
+
+<span class="hljs-comment"># A class instance variable is not shared by the class's descendants.</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Human</span></span>
+ @bar = <span class="hljs-number">0</span>
+
+ <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">self</span>.<span class="hljs-title">bar</span></span>
+   @bar
+ <span class="hljs-keyword">end</span>
+
+ <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">self</span>.<span class="hljs-title">bar=</span><span class="hljs-params">(value)</span></span>
+   @bar = value
+ <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Doctor</span> &lt; Human</span>
+<span class="hljs-keyword">end</span>
+
+Human.bar <span class="hljs-comment">#=&gt; 0</span>
+Doctor.bar <span class="hljs-comment">#=&gt; nil</span>
+
+<span class="hljs-class"><span class="hljs-keyword">module</span> <span class="hljs-title">ModuleExample</span></span>
+ <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">foo</span></span>
+   <span class="hljs-string">'foo'</span>
+ <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment"># Including modules binds their methods to the class instances.</span>
+<span class="hljs-comment"># Extending modules binds their methods to the class itself.</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span></span>
+ <span class="hljs-keyword">include</span> ModuleExample
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Book</span></span>
+ extend ModuleExample
+<span class="hljs-keyword">end</span>
+
+Person.foo     <span class="hljs-comment">#=&gt; NoMethodError: undefined method `foo' for Person:Class</span>
+Person.new.foo <span class="hljs-comment">#=&gt; "foo"</span>
+Book.foo       <span class="hljs-comment">#=&gt; "foo"</span>
+Book.new.foo   <span class="hljs-comment">#=&gt; NoMethodError: undefined method `foo'</span>
+
+<span class="hljs-comment"># Callbacks are executed when including and extending a module</span>
+<span class="hljs-class"><span class="hljs-keyword">module</span> <span class="hljs-title">ConcernExample</span></span>
+ <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">self</span>.<span class="hljs-title">included</span><span class="hljs-params">(base)</span></span>
+   base.extend(ClassMethods)
+   base.send(<span class="hljs-symbol">:include</span>, InstanceMethods)
+ <span class="hljs-keyword">end</span>
+
+ <span class="hljs-class"><span class="hljs-keyword">module</span> <span class="hljs-title">ClassMethods</span></span>
+   <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bar</span></span>
+     <span class="hljs-string">'bar'</span>
+   <span class="hljs-keyword">end</span>
+ <span class="hljs-keyword">end</span>
+
+ <span class="hljs-class"><span class="hljs-keyword">module</span> <span class="hljs-title">InstanceMethods</span></span>
+   <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">qux</span></span>
+     <span class="hljs-string">'qux'</span>
+   <span class="hljs-keyword">end</span>
+ <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Something</span></span>
+ <span class="hljs-keyword">include</span> ConcernExample
+<span class="hljs-keyword">end</span>
+
+Something.bar     <span class="hljs-comment">#=&gt; "bar"</span>
+Something.qux     <span class="hljs-comment">#=&gt; NoMethodError: undefined method `qux'</span>
+Something.new.bar <span class="hljs-comment">#=&gt; NoMethodError: undefined method `bar'</span>
+Something.new.qux <span class="hljs-comment">#=&gt; "qux"</span>
+</div></code></pre>
+<h1 id="arrayselect-smallfiltering-arraysmall">Array.select <small>filtering array</small></h1>
+<p>To <span class="Teal">filter</span> an array we can use <code>select</code> with a <span class="Lime">block</span></p>
+<pre><code class="language-ruby"><div>array = [ <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">7</span>, <span class="hljs-number">12</span> ]
+result = array.select <span class="hljs-keyword">do</span> <span class="hljs-params">|elem|</span>
+  elem &gt; <span class="hljs-number">5</span>
+<span class="hljs-keyword">end</span> <span class="hljs-comment"># =&gt; [7, 12]</span>
+</div></code></pre>
+<h1 id="arraysort-smallsorting-arraysmall">Array.sort <small>sorting array</small></h1>
+<p>To <span class="Teal">sort</span> an array we can use <code>sort</code> with a <span class="Lime">block</span></p>
+<pre><code class="language-ruby"><div>numbers = [<span class="hljs-number">5</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]
+numbers.sort
+<span class="hljs-comment"># [1,2,3,5]</span>
+</div></code></pre>
+<blockquote>
+<p>if you use <code>.sort!</code> original array will change instead of creating a new one, which can be good for performance.</p>
+</blockquote>
+<blockquote>
+<p>sort in reverse use <code>.reverse</code></p>
+</blockquote>
+<p>Use <code>.sort_by</code> for advanced sorting using a block</p>
+<pre><code class="language-ruby"><div>@candidates.sort_by{ <span class="hljs-params">|candidate|</span> candidate[<span class="hljs-symbol">:years_of_experience</span>] }
+</div></code></pre>
+<blockquote>
+<p>to sort multiple things and break the tie</p>
+</blockquote>
+<h1 id="creating-constants-and-namespaces">Creating constants and namespaces</h1>
+<p>Let's see how we can define our own constants globally and within an existing namespace. Try this out in irb:</p>
+<pre><code class="language-ruby"><div><span class="hljs-class"><span class="hljs-keyword">module</span> <span class="hljs-title">Apple</span></span>
+  FOUNDED_BY = <span class="hljs-string">"L. Ron Hubbard"</span>
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<p>Now that we've created these two new constants, in the same irb session we can:</p>
+<pre><code class="language-ruby"><div>Apple
+Apple.<span class="hljs-keyword">class</span>
+Apple::FOUNDED_BY
+Creating constants <span class="hljs-keyword">and</span> namespaces
+</div></code></pre>
+<p>Finally let's see how we can define our own constants globally and within an existing namespace. Try this out in irb:</p>
+<pre><code class="language-ruby"><div><span class="hljs-class"><span class="hljs-keyword">module</span> <span class="hljs-title">Apple</span></span>
+  FOUNDED_BY = <span class="hljs-string">"L. Ron Hubbard"</span>
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<p>Now that we've created these two new constants, in the same irb session we can:</p>
+<pre><code class="language-ruby"><div>Apple
+Apple.<span class="hljs-keyword">class</span>
+Apple::FOUNDED_BY
+</div></code></pre>
+<h3 id="conclusions">Conclusions</h3>
+<ul>
+<li>Capitalized words can be used to define a constant</li>
+<li>A constant can refer to a Module, a Class or simple data like Floats and Strings</li>
+<li>Namespacing is used heavily to limit the exposure of constants defined in the global namespace</li>
+<li>The <code>::</code> Syntax is used to access constants (Modules, Classes, etc)</li>
+<li>It is convention to only capitalize the first letter when defining Class and Module constants like <code>Apple</code></li>
+<li>It is convention to capitalize and underscore the entire name when defining value constants like <code>FOUNDED_BY</code></li>
+</ul>
+<h2 id="proc-smallprocedurialssmall">Proc <small>procedurials</small></h2>
+<p>A Proc is just a block that you save to a variable</p>
+<blockquote>
+<p>my_proc = Proc.new { |arg1| print &quot;#{arg1}! &quot; }</p>
+</blockquote>
+<p>Use that block of code (now called a Proc) as an input to a function by prepending it with an apersand &amp;:</p>
+<blockquote>
+<p>[1,2,3].each(&amp;my_proc) #=&gt; 1! 2! 3! =&gt;[1,2,3]</p>
+</blockquote>
+<h1 id="p-and-pp">p and pp</h1>
+<p>Theres a method <code>p</code> that acts like <code>puts</code> except it also calls <code>inpect</code> method useful for debugging <code>pp</code> is used to better display objects</p>
+
+    </body>
+    </html>

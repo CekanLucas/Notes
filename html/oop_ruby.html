@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title><span class="ruby">RUBY</span> OOP</title>
+        <style>
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: 'Segoe WPC', -apple-system, BlinkMacSystemFont,  'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+        
+    </head>
+    <body class="vscode-light">
+        <head>
+  <link 
+      rel="stylesheet" 
+      type="text/css" 
+      media="all" 
+      href="../boilerplate/color"/>
+  <link 
+      rel="stylesheet" 
+      type="text/css" 
+      media="all" 
+      href="../boilerplate/CSS.css"/>
+  <link 
+      href="https://fonts.googleapis.com/css?family=Fira+Mono:500&display=swap" 
+      rel="stylesheet">
+<style> 
+html > body{
+  background-color: #000;
+}
+
+html>body, p {
+  font-family: ubuntu;
+  font-size: 1.1em;
+  text-shadow:none;
+}
+
+ .ruby {
+  color:FireBrick;
+  font-weight:bolder;
+}
+.img{
+  position:sticky;
+  left:70%;
+  top:1px;
+  width: 30%
+}
+</style>
+</head>    
+<h1 id="ruby-oop"><span class="ruby">RUBY</span> OOP</h1>
+<h2 id="object-orientated-programming">Object Orientated Programming</h2>
+ <img class=img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/198px-Ruby_logo.svg.png">
+<h4 id="tenets-of-oop">Tenets of OOP</h4>
+<img src="https://d2aw5xe2jldque.cloudfront.net/books/ruby/images/class_instance_diagram.jpg" style="float:right">
+<ul>
+<li>Encapsulation</li>
+<li>Inheritance</li>
+<li>Polymorphism</li>
+</ul>
+<p>Objects are defined by Classes through <em>instantiation</em></p>
+<pre><code class="language-ruby"><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GoodDog</span> <span class="hljs-comment">#class defined</span></span>
+<span class="hljs-keyword">end</span> 
+
+<span class="hljs-comment"># sparky is a object created as a intance of GoodDog class </span>
+sparky = GoodDog.new 
+</div></code></pre>
+<h1 id="modules">Modules</h1>
+<p>modules are another way to achieve polymorphism in Ruby. A <strong>module</strong> is a collection of behaviors that is usable in other classes via <strong>mixins</strong>. A module is &quot;mixed in&quot; to a class using the include method invocation. Let's say we wanted our <code>GoodDog class</code> to have a <code>speak method</code> but we have other classes that we want to use a <code>speak method</code> with too.</p>
+<pre><code class="language-ruby"><div><span class="hljs-class"><span class="hljs-keyword">module</span> <span class="hljs-title">Speak</span> <span class="hljs-comment"># define speak method</span></span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">speak</span><span class="hljs-params">(sound)</span></span>
+    puts sound
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GoodDog</span></span>
+  <span class="hljs-keyword">include</span> Speak
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HumanBeing</span></span>
+  <span class="hljs-keyword">include</span> Speak
+<span class="hljs-keyword">end</span>
+
+sparky = GoodDog.new
+<span class="hljs-comment"># both unique classes have the speak method </span>
+sparky.speak(<span class="hljs-string">"Arf!"</span>)  <span class="hljs-comment"># =&gt; Arf!</span>
+bob = HumanBeing.new
+bob.speak(<span class="hljs-string">"Hello!"</span>)   <span class="hljs-comment"># =&gt; Hello!</span>
+</div></code></pre>
+<h1 id="states-and-behaviours">States and Behaviours</h1>
+<p><strong>states</strong> track attributes for <em>individual objects</em></p>
+<p><strong>behaviours</strong> are what objects are capable of doing</p>
+<pre><code class="language-ruby"><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GoodDog</span></span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">initialize</span><span class="hljs-params">(name)</span></span>
+    @name = name
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_name</span> </span>
+    @name
+  <span class="hljs-keyword">end</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">set_name=</span><span class="hljs-params">(name)</span></span>
+    @name = name
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">speak</span></span>
+    <span class="hljs-string">"<span class="hljs-subst">#{@name}</span> says arf!"</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+sparky = GoodDog.new(<span class="hljs-string">"Sparky"</span>)
+sparky.speak <span class="hljs-comment">#=&gt; "#Sparky says arf!"</span>
+sparky.set_name = <span class="hljs-string">"Spartacus"</span>
+puts sparky.get_name
+
+</div></code></pre>
+<p>The <code>@</code> is called the <span class="Lime">instance variable</span> it is a variable that exists as long as the object instance exists and it is one of the ways we tie data to objects</p>
+<p>If we call <code>sparky.name</code> we will get a error. We need to crate a method which returns the name variable <code>sparky.get_name</code></p>
+<p>If we want to change <code>sparky</code> <code>name</code> then we need to use a setter instead of a getter</p>
+<p>ecause these methods are so commonplace, Ruby has a built-in way to automatically create these getter and setter methods for us, using the <code>attr_accessor</code> method. Check out this refactoring of the code from above.</p>
+<pre><code class="language-ruby"><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GoodDog</span></span>
+  <span class="hljs-keyword">attr_accessor</span> <span class="hljs-symbol">:name</span> <span class="hljs-comment">#takes symbol as argument</span>
+  <span class="hljs-keyword">attr_reader</span>   <span class="hljs-symbol">:name</span> <span class="hljs-comment">#if you only want getter</span>
+  <span class="hljs-keyword">attr_writer</span>   <span class="hljs-symbol">:name</span> <span class="hljs-comment">#if you only want setter</span>
+  <span class="hljs-comment"># to track more states </span>
+  <span class="hljs-keyword">attr_accessor</span> <span class="hljs-symbol">:name</span>, <span class="hljs-symbol">:height</span>, <span class="hljs-symbol">:weight</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">initialize</span><span class="hljs-params">(name)</span></span>
+    @name = name
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">speak</span></span>
+    <span class="hljs-string">"<span class="hljs-subst">#{@name}</span> says arf!"</span>
+    <span class="hljs-comment">#if we remove the @ we would be calling the instance method rather than the variable</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+sparky = GoodDog.new(<span class="hljs-string">"Sparky"</span>)
+puts sparky.speak
+puts sparky.name            <span class="hljs-comment"># =&gt; "Sparky"</span>
+sparky.name = <span class="hljs-string">"Spartacus"</span>
+puts sparky.name            <span class="hljs-comment"># =&gt; "Spartacus"</span>
+</div></code></pre>
+<h1 id="class-methods-and-class-variables">Class Methods and Class Variables</h1>
+<pre><code class="language-ruby"><div><span class="hljs-comment"># prepend method with self to make class method</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">self</span>.<span class="hljs-title">what_am_i</span></span>
+  <span class="hljs-string">"I'm a GoodDog class!"</span>
+<span class="hljs-keyword">end</span>
+GoodDog.what_am_i <span class="hljs-comment">#=&gt; I'am a GoodDog class!</span>
+
+<span class="hljs-comment"># to create class variables use @@</span>
+<span class="hljs-comment"># for instance variables use @ </span>
+@@number_of_dogs = <span class="hljs-number">0</span>
+</div></code></pre>
+<h1 id="inheritance">Inheritance</h1>
+<pre><code class="language-ruby"><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GoodDog</span> &lt; Animal <span class="hljs-comment">#GoodDog is inheriting from Animal class</span></span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">speak</span></span>
+    <span class="hljs-keyword">super</span> + <span class="hljs-string">" from GoodDog class"</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<p><code>super</code> allows us to call methods up the inheritance hierarchy When you call <code>super</code> from within a method, it will search the inheritance hierarchy for a method by the same name and then invoke it</p>
+
+    </body>
+    </html>

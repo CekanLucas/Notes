@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>JSON <small>(Javascript Object Notation)</small></title>
+        <style>
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: 'Segoe WPC', -apple-system, BlinkMacSystemFont,  'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+        
+    </head>
+    <body class="vscode-light">
+        <head>
+  <link 
+      rel="stylesheet" 
+      type="text/css" 
+      media="all" 
+      href="../boilerplate/color"/>
+  <link 
+      rel="stylesheet" 
+      type="text/css" 
+      media="all" 
+      href="../boilerplate/CSS.css"/>
+  <link 
+      href="https://fonts.googleapis.com/css?family=Fira+Mono:500&display=swap" 
+      rel="stylesheet">
+<style> 
+
+html>body, p {
+  font-family: ubuntu;
+  font-size: 1.1em;
+  text-shadow:none;
+}
+h2>code, p>code, li>code, div>code {
+    background-color: #09A;
+    border-radius: 7px;
+    box-shadow: 
+      1px 1px 1px #000,
+      -1px -1px 1px #FFF,
+      -1px 1px 2px #000,
+      1px -1px 2px #000;
+    color: #00f;
+    margin: 5px;
+    padding: 2px;
+    font-family: 'Fira Mono', monospace;
+    text-shadow:none;
+    font-size:0.8em
+}
+body ::selection {
+  /*highlighting*/
+  background: transparent;
+  text-shadow: 
+    1px  0px 1px ,
+    0px  1px 1px ,
+    -1px  0px 1px ,
+    0px -1px 1px ,
+    0px  1px black ,
+    1px  0px black ,
+    -1px  0px black ,
+    0px -1px black ;
+  text-outline: black;  
+}
+</style>
+</head>    
+<h1 id="json-smalljavascript-object-notationsmall">JSON <small>(Javascript Object Notation)</small></h1>
+<pre><code class="language-JSON"><div>{
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"New York City"</span>,
+  <span class="hljs-attr">"boroughs"</span>: [
+    <span class="hljs-string">"Manhattan"</span>,
+    <span class="hljs-string">"Queens"</span>,
+    <span class="hljs-string">"Brooklyn"</span>,
+    <span class="hljs-string">"The Bronx"</span>,
+    <span class="hljs-string">"Staten Island"</span>],
+  <span class="hljs-attr">"population"</span>: <span class="hljs-number">8491079</span>,
+  <span class="hljs-attr">"area_codes"</span>: [<span class="hljs-number">212</span>, <span class="hljs-number">347</span>, <span class="hljs-number">646</span>, <span class="hljs-number">718</span>, <span class="hljs-number">917</span>, <span class="hljs-number">929</span>],
+  <span class="hljs-attr">"position"</span>: { <span class="hljs-attr">"lat"</span>: <span class="hljs-number">40.7127</span>, <span class="hljs-attr">"lng"</span>: <span class="hljs-number">-74.0059</span> }
+}
+</div></code></pre>
+<h2 id="serialisation">Serialisation</h2>
+<p>The process of <span class="Blue">serialization </span> converts objects (or data structures) into a format that can be stored or transmitted between computers (typically as a string of text). The opposite, going from String → Object is called <span class="Red">deserialization</span> .</p>
+<p><code>JSON.parse</code></p>
+<blockquote>
+<p>Parse a string as JSON, optionally transform the produced value and its properties, and return the value.</p>
+</blockquote>
+<p><code>JSON.stringify</code></p>
+<blockquote>
+<p>Return a JSON string corresponding to the specified value, optionally including only certain properties or replacing property values in a user-defined manner.</p>
+</blockquote>
+<h2 id="json-media-type">JSON Media Type</h2>
+<p>When data is sent across the web using HTTP request/responses, the Media Type for JSON data is <code>application/json</code> (compared to <code>text/html</code> for HTML). It is set via the <code>Content-Type</code> HTTP response header.</p>
+
+    </body>
+    </html>

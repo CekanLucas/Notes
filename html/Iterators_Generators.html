@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Iterators and Generators</title>
+        <style>
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: 'Segoe WPC', -apple-system, BlinkMacSystemFont,  'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+        
+    </head>
+    <body class="vscode-light">
+        <head>
+  <link 
+      rel="stylesheet" 
+      type="text/css" 
+      media="all" 
+      href="../boilerplate/color"/>
+  <link 
+      rel="stylesheet" 
+      type="text/css" 
+      media="all" 
+      href="../boilerplate/CSS.css"/>
+  <link 
+      href="https://fonts.googleapis.com/css?family=Fira+Mono:500&display=swap" 
+      rel="stylesheet">
+<style> 
+.object {
+    color:yellow;
+}
+.iterator {
+    color:coral;
+}
+</style>
+</head>    
+<h1 id="iterators-and-generators">Iterators and Generators</h1>
+<h2 id="iterators">Iterators</h2>
+<blockquote>
+<p><span class="Orange"><strong><span class="iterator">Iterator:</span></strong> A <span class="DarkOrange">special type of object </span>that <span class="LightSalmon">returns items from a sequence one at a time</span> and <span class="DarkSalmon">remembers its position within the sequence</span></span></p>
+</blockquote>
+<pre><code class="language-js"><div><span class="hljs-keyword">const</span> getInterator = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-keyword">let</span> num = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>];
+    <span class="hljs-keyword">let</span> nextIndex = <span class="hljs-number">0</span>;
+
+    <span class="hljs-comment">// take into account done condition </span>
+    <span class="hljs-comment">// otherwise return next value </span>
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-attr">next</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">if</span> (nextIndex &lt; num.length) {
+        <span class="hljs-keyword">const</span> valueToReturn = num[nextIndex];
+        nextIndex++;
+        <span class="hljs-keyword">return</span> {
+          <span class="hljs-attr">value</span>: valueToReturn,
+          <span class="hljs-attr">done</span>: <span class="hljs-literal">false</span>,
+        };
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> { <span class="hljs-attr">done</span>: <span class="hljs-literal">true</span> };
+      }
+    },
+  };
+}
+
+<span class="hljs-comment">// lets use our iterator </span>
+<span class="hljs-keyword">let</span> it = getIterator();
+
+it.next(); <span class="hljs-comment">// Object {value: 1 done: false}</span>
+it.next(); <span class="hljs-comment">// Object {value: 2 done: false}</span>
+it.next(); <span class="hljs-comment">// Object {value: 3 done: false}</span>
+it.next(); <span class="hljs-comment">// Object {value: 4 done: false}</span>
+it.next(); <span class="hljs-comment">// Object {value: 5 done: false}</span>
+it.next(); <span class="hljs-comment">// Object {value: 5 done: false}</span>
+it.next(); <span class="hljs-comment">// Object {value: 6 done: true}</span>
+</div></code></pre>
+<p>The <span class="iterator">Iterator</span> defined above  follows the <span class="iterator">iterator protocol</span></p>
+<p><span class="Yellow">Built in Javascript defined as <span class="iterator">iterables</span> </span></p>
+<ul>
+<li><span class="Coral">arrays</span></li>
+<li><span class="Coral">srings</span></li>
+<li><span class="Coral">maps</span></li>
+<li><span class="Coral">sets</span></li>
+<li><code>for ... of</code> <span class="Coral">kind of loops</span></li>
+</ul>
+<h1 id="generators">Generators</h1>
+<blockquote>
+<p>Special type of function that work as a factory for interators ~Mozzila Docs</p>
+</blockquote>
+<p><code>yield</code> tells function to exit and return value when function is called next time function execution continues right after yield instead of again.</p>
+<pre><code class="language-js"><div><span class="hljs-function"><span class="hljs-keyword">function</span> * <span class="hljs-title">getGenerator</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-comment">// * means generator</span>
+  <span class="hljs-keyword">let</span> currentNumber = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">while</span> (currentNumber &lt; <span class="hljs-number">6</span>){
+    <span class="hljs-keyword">yield</span> currentNumber++;
+  }
+}
+
+<span class="hljs-keyword">let</span> gen = getGenerator(); 
+
+gen.next()
+gen.next()
+gen.next()
+</div></code></pre>
+
+    </body>
+    </html>

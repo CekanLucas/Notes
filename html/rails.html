@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title><span class="ruby">RUBY ON RAILS</span></title>
+        <style>
+</style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: 'Segoe WPC', -apple-system, BlinkMacSystemFont,  'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </head>
+    <body class="vscode-light">
+        <head>
+  <link 
+      rel="stylesheet" 
+      type="text/css" 
+      media="all" 
+      href="../boilerplate/color"/>
+  <link 
+      rel="stylesheet" 
+      type="text/css" 
+      media="all" 
+      href="../boilerplate/CSS.css"/>
+  <link 
+      href="https://fonts.googleapis.com/css?family=Fira+Mono:500&display=swap" 
+      rel="stylesheet">
+<style> 
+html > body{
+  background-color: #000;
+}
+
+html>body, p {
+  font-family: ubuntu;
+  font-size: 1.1em;
+  text-shadow:none;
+}
+h2>code, p>code, li>code, div>code {
+    background-color: #09A;
+    border-radius: 7px;
+    box-shadow: 
+      1px 1px 1px #000,
+      -1px -1px 1px #FFF,
+      -1px 1px 2px #000,
+      1px -1px 2px #000;
+    color: #00f;
+    margin: 5px;
+    padding: 2px;
+    font-family: 'Fira Mono', monospace;
+    text-shadow:none;
+    font-size:0.8em
+}
+body ::selection {
+  /*highlighting*/
+  background: transparent;
+  text-shadow: 
+    1px  0px 1px ,
+    0px  1px 1px ,
+    -1px  0px 1px ,
+    0px -1px 1px ,
+    0px  1px black ,
+    1px  0px black ,
+    -1px  0px black ,
+    0px -1px black ;
+  text-outline: black;  
+}
+ .ruby {
+  color:FireBrick;
+  font-weight:bolder;
+}
+.img{
+  position:sticky;
+  left:70%;
+  top:1px;
+  width: 30%;
+  float:right
+}
+.controller{
+  font-weight: bold;
+  color:blueviolet;
+}
+.view{
+  font-weight: bold;
+  color:green;
+}
+.route{
+  color: steelblue;
+}
+.request{
+  color:violet;
+}
+</style>
+</head>    
+<h1 id="ruby-on-rails"><span class="ruby">RUBY ON RAILS</span></h1>
+ <img class=img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Ruby_On_Rails_Logo.svg/411px-Ruby_On_Rails_Logo.svg.png">
+<pre><code>$ rails new blog 
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>File/Folder</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>app/</td>
+<td>Contains the controllers, models, views, helpers, mailers and assets for your application. You'll focus on this folder for the remainder of this guide.</td>
+</tr>
+<tr>
+<td>bin/</td>
+<td>Contains the rails script that starts your app and can contain other scripts you use to setup, deploy or run your application.</td>
+</tr>
+<tr>
+<td>config/</td>
+<td>Configure your application's routes, database, and more. This is covered in more detail in Configuring Rails Applications.</td>
+</tr>
+<tr>
+<td><a href="http://config.ru">config.ru</a></td>
+<td>Rack configuration for Rack based servers used to start the application.</td>
+</tr>
+<tr>
+<td>db/</td>
+<td>Contains your current database schema, as well as the database migrations.</td>
+</tr>
+<tr>
+<td>Gemfile Gemfile.lock</td>
+<td>These files allow you to specify what gem dependencies are needed for your Rails application. These files are used by the Bundler gem. For more information about Bundler, see the Bundler website.</td>
+</tr>
+<tr>
+<td>lib/</td>
+<td>Extended modules for your application.</td>
+</tr>
+<tr>
+<td>log/</td>
+<td>Application log files.</td>
+</tr>
+<tr>
+<td>public/</td>
+<td>The only folder seen by the world as-is. Contains static files and compiled assets.</td>
+</tr>
+<tr>
+<td>Rakefile</td>
+<td>This file locates and loads tasks that can be run from the command line. The task definitions are defined throughout the components of Rails. Rather than changing Rakefile, you should add your own tasks by adding files to the lib/tasks directory of your application.</td>
+</tr>
+<tr>
+<td>README.rdoc</td>
+<td>This is a brief instruction manual for your application. You should edit this file to tell others what your application does, how to set it up, and so on.</td>
+</tr>
+<tr>
+<td>test/</td>
+<td>Unit tests, fixtures, and other test apparatus. These are covered in Testing Rails Applications.</td>
+</tr>
+<tr>
+<td>tmp/</td>
+<td>Temporary files (like cache, pid, and session files).</td>
+</tr>
+<tr>
+<td>vendor/</td>
+<td>A place for all third-party code. In a typical Rails application this includes vendored gems.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="model-view-controller-mvc">Model-View-Controller (MVC)</h1>
+<p>You might have noticed that the standard Rails application structure (Figure 1.11) has an application directory called app/, which includes subdirectories called models, views, and controllers (among others). This is a hint that Rails follows the model-view-controller (MVC) architectural pattern, which enforces a separation between the data in the application (such as user information) and the code used to display it, which is a common way of structuring a graphical user interface (GUI).</p>
+<p>When interacting with a Rails application, a browser sends a request, which is received by a webserver and passed on to a Rails controller, which is in charge of what to do next. In some cases, the controller will immediately render a view, which is a template that gets converted to HTML and sent back to the browser. More commonly for dynamic sites, the controller interacts with a model, which is a Ruby object that represents an element of the site (such as a user) and is in charge of communicating with the database. After invoking the model, the controller then renders the view and returns the complete web page to the browser as HTML.
+mvc_schematic</p>
+<img src="https://softcover.s3.amazonaws.com/636/ruby_on_rails_tutorial_6th_edition/images/figures/mvc_schematic.png" style="width:40%">
+<img src="https://softcover.s3.amazonaws.com/636/ruby_on_rails_tutorial_6th_edition/images/figures/mvc_detailed.png" style="width:59%">
+<p>Click <a href="https://www.railstutorial.org/book/toy_app#sec-mvc_in_action">here</a> for detailed explanation</p>
+<h3 id="summary-steps-shown-in-figure">Summary steps shown in figure</h3>
+<ol>
+<li>browser issues a request for the /users URL.</li>
+<li>Rails routes /users to the index action in the Users controller.</li>
+<li>index action asks the User model to retrieve all users (User.all).</li>
+<li>User model pulls all the users from the database.</li>
+<li>User model returns the list of users to the controller.</li>
+<li>Controller captures the users in the @users variable, which is passed to the index view</li>
+<li>view uses embedded Ruby to render the page as HTML.</li>
+<li>Controller passes the HTML back to the browser</li>
+</ol>
+<pre>
+  Model       => DB => ActiveRecord
+  
+  View        => ERB Templates (think EJS)
+  
+  Controller  => Project Manager
+</pre>
+<h3 id="routing">Routing</h3>
+<pre><code class="language-rb"><div>root <span class="hljs-symbol">to:</span> <span class="hljs-string">'product#index'</span> <span class="hljs-comment"># current syntax</span>
+get <span class="hljs-string">'/'</span> =&gt; <span class="hljs-string">'product#index'</span> <span class="hljs-comment"># old syntax</span>
+<span class="hljs-comment"># very old syntax which is more verbose </span>
+get <span class="hljs-string">'/'</span> =&gt; { <span class="hljs-symbol">controller:</span><span class="hljs-string">'products'</span>, <span class="hljs-symbol">actions:</span><span class="hljs-string">'index'</span> } 
+
+</div></code></pre>
+<h3 id="templates">Templates</h3>
+<p>We use ERB (Embedded RuBy)</p>
+<pre><code class="language-erb"><div><span class="xml"><span class="hljs-comment">&lt;!-- current syntax --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">%=</span></span></span><span class="ruby"> render <span class="hljs-string">'product_details'</span>,
+    <span class="hljs-symbol">product:</span> @product </span><span class="xml"><span class="hljs-tag">%&gt;</span>
+<span class="hljs-comment">&lt;!-- previous syntax --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">%=</span></span></span><span class="ruby"> render <span class="hljs-symbol">:partial</span> =&gt; <span class="hljs-string">'product_details'</span>, 
+    <span class="hljs-symbol">locals:</span> { <span class="hljs-symbol">product:</span> @product } </span><span class="xml"><span class="hljs-tag">%&gt;</span>
+</span></div></code></pre>
+<p>A <span class="controller">controller's</span> purpose is to receive specific <span class="request">requests</span> for the application. <span class="route">Routing</span> decides which <span class="controller">controller</span> receives which <span class="request">requests</span>. Often, there is more than one <span class="route">route</span> to each <span class="controller">controller</span>, and different <span class="route">routes</span> can be served by different actions. Each action's purpose is to collect information to provide it to a <span class="view">view</span>.</p>
+<p>A <span class="view">view's</span> purpose is to display this information in a human readable format. An important distinction to make is that it is the <span class="controller">controller</span>, not the <span class="view">view</span>, where information is collected. The <span class="view">view</span> should just display that information. By default, <span class="view">view templates</span> are written in a language called <span class="Red">eRuby (Embedded Ruby)</span> which is processed by the <span class="request">request cycle</span> in <span class="Red">Rails</span> before being sent to the user.</p>
+<h1 id="active-record">Active Record</h1>
+<h2 id="relations-and-lazy-evaluation">Relations and Lazy Evaluation</h2>
+<p>Using <code>User.find(1)</code> will return an unambiguous object – it’s going to find the user with ID = 1 and give it to you as a Ruby object. But this behavior is actually unusual. Most queries don’t actually return a Ruby object, they just fake it. For example:</p>
+<pre><code class="language-ruby"><div>  User.where(<span class="hljs-symbol">id:</span> <span class="hljs-number">1</span>)
+</div></code></pre>
+<p>Might look like it returns an array that contains a serialized User object, like:</p>
+<pre><code class="language-ruby"><div>  [#&lt;User id: 1, email: "foo@bar.com"&gt;]
+</div></code></pre>
+<p>But try running <code>User.where(id: 1).class</code> and you’ll see that it isn’t an <code>Array</code>, it’s actually an instance of <code>ActiveRecord::Relation</code>. Relations are actually just really good at looking like arrays but they’ve got more going on.</p>
+<p>Active Record queries return relations to be lazy. There’s basically no reason to actually tell the database to execute a query until the very last possible minute. What if you never actually needed to use that query at all? What if you want to make it more complex before executing it? Relations give you that flexibility and make much more efficient use of your database’s valuable time.</p>
+<p>Relations only get executed when it becomes absolutely necessary to know what’s inside them. So if your controller grabs 5 blog posts using @posts = Post.limit(5), that is really passing your view a relation. It’s only when the code in the view actually calls a method on @posts (like @posts.first.title) that the query will be run and the relation will get stored as a real Ruby object in memory.</p>
+<h2 id="database-migrations">Database Migrations</h2>
+<h4 id="example">Example</h4>
+<pre><code class="language-ruby"><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CreateProducts</span> &lt; ActiveRecord::Migration</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">change</span></span>
+    create_table <span class="hljs-symbol">:products</span> <span class="hljs-keyword">do</span> <span class="hljs-params">|t|</span>
+      t.string <span class="hljs-symbol">:name</span>
+      t.text <span class="hljs-symbol">:description</span>
+      t.string <span class="hljs-symbol">:image</span>
+      t.integer <span class="hljs-symbol">:price_cents</span>
+      t.integer <span class="hljs-symbol">:quantity</span>
+
+      t.timestamps <span class="hljs-symbol">null:</span> <span class="hljs-literal">false</span>
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<p><strong>t</strong> short hand for table t.--- means add column</p>
+<pre><code>  bin/rake db:migrate # run all migrations
+  bin/rails g migration add_discount_cents_to_products
+  rails g model User first_name:string last_name:string email:string 
+  bin/rake db:rollback # rollback migration
+</code></pre>
+<p><strong>g</strong> is shorthand for generate</p>
+<blockquote>
+<p><strong>Note</strong> if you have migrations pending Rails throws error
+<strong>Note</strong> rails generates <em>both</em> a migration and model file with the generate model command</p>
+</blockquote>
+
+    </body>
+    </html>
