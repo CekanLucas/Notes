@@ -14,21 +14,36 @@
       rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <style> 
+  .color{
+    display: flex;
+    background-color: rgba(0,0,0,0.1);
+    box-shadow: inset 1px 1px 20px  #fff;
+    width: 10em ;
+    border:1px solid #FFF;
+    border-radius: 5px;
+  }  
+  #background-color-text{
+    font-weight:bold;
+    font-family: monospace;
+    color: #000000;
+    margin: auto;
+    text-shadow: 1px 1px 0.1px #000
+  }
 </style>
 </head>    
 
 
 # Backgrounds & Gradients
 
-<label class="label is-large">
-Background-color <small><sup>(Single)</sup></small>
-</label>
-<div class="field has-addons has-addons-centered">
-<div class="control is-expanded">
-  <input class="input" type="text" id="background-color-text" value="red">
+<h3>
+	Background-color <small><sup>(Single)</sup></small>
+</h3>
+<div class="field">
+<div class="color">
+  <input type="color" id="background-color">
+  <span id="background-color-text">
+    #000000
+  </span>
 </div>
-<div class="control">
-  <input type="color" class="input" id="background-color">
-</div>   
   
 <script src="./CSS.js"></script>
