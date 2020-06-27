@@ -3,7 +3,7 @@
       rel="stylesheet" 
       type="text/css" 
       media="all" 
-      href="../boilerplate/color"/>
+      href="../boilerplate/color.css"/>
   <link 
       rel="stylesheet" 
       type="text/css" 
