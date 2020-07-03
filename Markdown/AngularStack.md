@@ -133,6 +133,7 @@ pokemons: string[] = ['Gyrados', 'Clefairy', 'Gengar']
 ```
 > `*ngFor` is a **structural directive** which modify HTML according to the variable data that they are associated with
 
+> `*ngIf` is another that will only show element when it exists
 ## Iterating with Indices
 
 ```ts
@@ -151,3 +152,72 @@ let i=index'>
 -->
 ```
 > `i`  could be named anything but `index` is a keyword
+
+# Angular Services
+
+Angular can generate a service with following command
+    
+  This generates a empty service called transportation within the application
+    
+    ng generate service transportation
+    
+```ts
+//import files reside here will be used by the service
+import { Injectable } from '@angular/core';
+@Injectable({
+  providedIn: 'root'
+})
+export class TransportationService 
+{
+  // methods here used by service to export data
+  constructor() {  }
+}
+```
+## Angular Events 
+
+``` html
+<!-- app.component.html -->
+<button (click)="triggerEvent()">Trigger Event</button>
+```
+```ts
+// app.component.ts
+triggerEvent() {
+  alert('event triggered');
+}
+```
+The parentheses around click is how angular does <span class="Tomato">event binding</span>
+
+## Two Way Data Binding
+```html
+<input [(ngModal)] = "data">
+```
+
+`[()]` <span class="Yellow"> Banana in a box</span> is the construct that allows two way data binding
+
+> Angular **modals** as implemented via `ngModal` have nothing to do with databases or storange on the backend it is just where Angular temporarily stores and holds data within a frnt-end application
+
+<b class="SkyBlue">A modal is simply a container that stores information or a container that stores variables we say *representation of domain data* data that can be accessed <u>both</u> by component and view</b>
+
+### To use Two Way Data Binding 
+
+```ts
+import { FormsModule } from "angular/forms";
+```
+
+### sending Hard coded data to a service 
+
+```ts
+// addPokemon method accepts pokemon of type Pokemon
+// adds it to existing array of pokemon
+addPokemon(pokemon: Pokemon){
+  this.pokemons.push(pokemon)
+}
+```
+
+# Databases 
+We are going to use both <b class="SkyBlue">Postregress</b> and <b class="LightGreen">MongoDB</b> these are the primary examples 
+
+- <span class="Orange">**relational databases** - store data in tables </span>
+- <span class="BlueViolet">**non-relational databases** - store data in collections (like with JSON)</span>
+
+We need to store data we cant use **variables** becuase variables dont <strong class="Tomato">persist</strong> this is an example of <b class="Lime">Volatile (or memory) Storage</b> we want non-volatile
