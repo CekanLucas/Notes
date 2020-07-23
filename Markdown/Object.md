@@ -3,7 +3,7 @@
       rel="stylesheet" 
       type="text/css" 
       media="all" 
-      href="../boilerplate/color"/>
+      href="../boilerplate/color.css"/>
   <link 
       rel="stylesheet" 
       type="text/css" 
@@ -20,7 +20,7 @@ html>body, p {
   font-size: 1.1em;
   text-shadow:none;
 }
-h2>code, p>code, li>code, div>code {
+h2>code, p>code, li>code, div>code, h1 code, h2 code, h3 code {
     background-color: #09A;
     border-radius: 7px;
     box-shadow: 
@@ -53,7 +53,53 @@ body ::selection {
 </head>    
 
 # Object
-## Object.prototype.  ;
+
+
+```js
+// Many Ways to define object best to use object literal
+const myObject = {
+  property: 'Value!',
+  otherProperty: 77,
+  "obnoxious property": function() {
+    // do stuff!
+ }
+}
+// two ways call properties
+myObject.property // dot notation 
+myObject["obnoxious property"] // bracket notation
+```
+
+## `Object.prototype`
+### refs 
+[Jacascript.info](https://javascript.info/prototype-inheritance) 
+[JavaScript Prototype in Plain Language](https://web.archive.org/web/20200513181548/https://javascriptissexy.com/javascript-prototype-in-plain-detailed-language/)
+
+<style>
+.proto {
+  font-weight: bold;
+  font-style: italic;
+  color:red;
+}
+.js {
+  font-weight: bold;
+  color:yellow;
+}
+</style>
+In programming we often want to extend properties and methods in <span class="js">Javascript</span> we often use <span class="proto">Prototypal Inheritance</span>
+
+## [[Prototype]]
+
+In <span class="js">JavaScript</span>, objects have a special hidden property `[[Prototype]]` (as named in the specification), that is either null or references another object. That object is called <b class="Orange">a prototype</b> <span class="Teal">every object has a prototype property</span>
+
+### Prototype-based Inheritance
+The prototype is a little bit <i>magical</i>. When we want to read a property from object, and it’s missing, JavaScript automatically takes it from the prototype. In programming, such thing is called “prototypal inheritance”. Many cool language features and programming techniques are based on it.
+
+> Other programming languages tend to use class based inheritance so javascript is unique in this regard.
+
+The property `[[Prototype]]` is internal and hidden, but there are many ways to set it.
+
+One of them is to use the special name __proto__, like this:
+
 > \_\_defineGetter__
 > 
 > \_\_defineSetter__
@@ -62,7 +108,11 @@ body ::selection {
 > 
 > \_\_lookupSetter__
 > 
-> \_\_proto__
+> ## `\_\_proto__`
+> If an object does not have the property then javascript will look up the `prototype chain`  
+> ```js
+> 
+> ```
 > constructor
 > 
 > hasOwnProperty
@@ -113,7 +163,7 @@ class Temperature {
     this.celsius = (value - 32) / 1.8;
   }
   static fromFahrenheit(value) {
-    return new Temperature((value - 32) / 1.8);
+    return new Temperature( (value - 32) / 1.8 );
   }
 }
 let temp = new Temperature(22);

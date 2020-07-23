@@ -21,10 +21,7 @@
     flex-direction: column-reverse;
     bottom:5vh;
     right: 5vw;
-  }
-    #stack-container > img {
- 
-  }
+}
   
 </style>
 </head>    
@@ -330,8 +327,49 @@ await repository.delete({name:"bulbasuar"});
 # Nest.js 
 Scalable Node.js server side applications put another way it is a type of web application server. 
 
+To add a server folder to existing angular application
+
+    ng add @nestjs/ng-universal
+  
+Now just use 
+
+    nest generate
+
 #### Definitions
 
 The <span class="Crimson">front end</span> makes a <b class="Purple">request</b> to the <span class="Khaki">web server</span> the <span class="Khaki">web server</span> takes the <b class="Purple">request</b> and then gives a <b class="BlueViolet">response</b> back to the <span class="Crimson">front end</span>
 
 A controllers job is to get a request and send back a response. The controllers have access to the data stored in the database.
+
+```ts
+import { Controller, Get } from '@nestjs/common';
+import { AppService } from './app.service';
+
+@Controller()
+export class AppController {
+  constructor(private readonly appService: AppService) {}
+
+  // the @ below is termed as a "Decorator"
+  @Get()
+  // in TypeScript you need to define the return type of methods
+  getHello(): string {
+    // here we define the response
+    // return this.appService.getHello();
+    return "Test"
+  }
+}
+```
+If we were to add another route we can scaffold with 
+      
+      nest generate controller red
+
+###  WildCard Route 
+
+To specify variables within routes inline wih rest architecture we use **wildcards** using the humble colon
+
+> wildcards are key to looking for specific entries in databases
+```ts 
+@Get('pokedex/:generation:pokemon:move')
+```
+
+## [Observables](https://rxjs.dev/guide/observable)
