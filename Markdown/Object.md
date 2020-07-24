@@ -98,6 +98,51 @@ The prototype is a little bit <i>magical</i>. When we want to read a property fr
 
 The property `[[Prototype]]` is internal and hidden, but there are many ways to set it.
 
+> Following the ECMAScript standard, the notation `someObject.[[Prototype]]` is used to designate the prototype of someObject. Since ECMAScript 2015, the `[[Prototype]]` is accessed using the accessors `Object.getPrototypeOf()` and `Object.setPrototypeOf()`. This is equivalent to the JavaScript property `__proto__` which is non-standard but de-facto implemented by many browsers.
+
+```js 
+// lets create an object o from function f with properties a and b
+
+let f = function() {
+  this.a = 1; 
+  this.b = 2;
+}
+let o = new f(); // f { a: 1, b: 2 }
+
+// add properties in f's function's prototype
+f.prototype.b = 3
+f.prototype.c = 4
+
+//do not set the prototype f.prototype = {b:3,c:4}; this will break the prototype chain
+
+// o.[[Prototype]] has properties b and c
+
+// o.[[Prototype]].[[Prototype]] is Object.prototype
+
+// Finally, o.[[Prototype]].[[Prototype]].[[Prototype]] is null
+
+// This is the end of the prototype chain, as null,
+
+// by definition, has no [[Prototype]].
+
+// Thus, the full prototype chain looks like:
+
+// {a: 1, b: 2} -> {b: 3, c: 4} -> Object.prototype -> null
+
+// Node Terminal
+> o.a 
+1
+> o.b 
+2
+> o.c 
+4
+> o.d
+undefined
+> JSON.stringify(o)
+'{"a":1,"b":2}'
+```
+
+
 One of them is to use the special name __proto__, like this:
 
 > \_\_defineGetter__
