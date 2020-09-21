@@ -31,6 +31,12 @@ body ::selection {
 </style>
 </head>    
 
-# <span class="react">React</span> <small>Updated</small>
- */
-In <span class="react">React</span> we 
+# EFI <small>bootloaders</small>
+from Rod Smith <a href="http://www.rodsbooks.com/efi-bootloaders/index.html">click here</a> 
+
+<big>**E**xtensible **F**irmware **I**nterface</big> 
+<small class="Orange">Note: the 2.x variant is the Unified EFI (UEFI)</small>
+
+The older way of booting was with the <big class="Teal">**B**asic **I**nput/**O**utput **S**ystem (BIOS) boot</big>
+
+### <a href="http://www.rodsbooks.com/efi-bootloaders/secureboot.html">Dealing with Secure Boot </a>

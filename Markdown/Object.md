@@ -71,8 +71,9 @@ myObject["obnoxious property"] // bracket notation
 
 ## `Object.prototype`
 ### refs 
-[Jacascript.info](https://javascript.info/prototype-inheritance) 
-[JavaScript Prototype in Plain Language](https://web.archive.org/web/20200513181548/https://javascriptissexy.com/javascript-prototype-in-plain-detailed-language/)
+[Javascript.info](https://javascript.info/prototype-inheritance) 
+[Javascript Prototype in Plain Language](https://web.archive.org/web/20200513181548/https://javascriptissexy.com/javascript-prototype-in-plain-detailed-language/)
+[Javascript Visualized](https://dev.to/lydiahallie/javascript-visualized-prototypal-inheritance-47co)
 
 <style>
 .proto {
@@ -101,6 +102,22 @@ The property `[[Prototype]]` is internal and hidden, but there are many ways to 
 > Following the ECMAScript standard, the notation `someObject.[[Prototype]]` is used to designate the prototype of someObject. Since ECMAScript 2015, the `[[Prototype]]` is accessed using the accessors `Object.getPrototypeOf()` and `Object.setPrototypeOf()`. This is equivalent to the JavaScript property `__proto__` which is non-standard but de-facto implemented by many browsers.
 
 ```js 
+// from javascript.info
+let animal = {
+  eats: true, 
+  walk() {
+    alert("Animal Walk");
+  }
+};
+
+let rabbit = {
+  jumps: true, 
+  __proto__: animal
+};
+
+// walk is taken from the prototype
+rabbit.walk(); // Animal Walk
+
 // lets create an object o from function f with properties a and b
 
 let f = function() {
@@ -270,3 +287,6 @@ class Mentor extends Person {
 const bob = new Mentor('Bob Ross', 'I like mountains way too much');
 console.log(bob.bio());
 ```
+
+`Object.create()`
+

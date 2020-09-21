@@ -1,10 +1,10 @@
-@import "./node_modules/bulma/sass/utilities/_all"
-@import "./node_modules/bulma/sass/elements/_all"
-@import "./node_modules/bulma/sass/layout/_all"
-@import "./node_modules/bulma/sass/grid/_all"
-@import "./node_modules/bulma/sass/form/_all"
-@import "./node_modules/bulma/sass/components/_all"
-@import "./node_modules/bulma/sass/base/helpers"
+@import "../node_modules/bulma/sass/utilities/_all"
+@import "../node_modules/bulma/sass/elements/_all"
+@import "../node_modules/bulma/sass/layout/_all"
+@import "../node_modules/bulma/sass/grid/_all"
+@import "../node_modules/bulma/sass/form/_all"
+@import "../node_modules/bulma/sass/components/_all"
+@import "../node_modules/bulma/sass/base/helpers"
 // bulma -- sass -- base does not work
 // @import "./node_modules/bulma/sass/base/generic"
 *
@@ -23,6 +23,7 @@ h1
   border-bottom: 1px solid goldenrod !important
 
 li
+  margin-top: 1em
   color: skyblue
 
 h2>code, p>code, li>code, div>code, span>code
@@ -38,9 +39,8 @@ h2>code, p>code, li>code, div>code, span>code
   font-size: 0.8em
 
 body ::selection
- /*highlighting*/
-  background: transparent
-  text-shadow: 1px  0px 1px , 0px  1px 1px , -1px  0px 1px , 0px -1px 1px , 0px  1px black , 1px  0px black , -1px  0px black , 0px -1px black
+  background: transparent !important
+  text-shadow: 1px  0px 1px , 0px  1px 1px , -1px  0px 1px , 0px -1px 1px , 0px  1px black , 1px  0px black , -1px  0px black , 0px -1px black !important
 
 pre
   background: transparent !important

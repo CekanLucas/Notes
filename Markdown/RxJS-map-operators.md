@@ -13,9 +13,35 @@
       href="https://fonts.googleapis.com/css?family=Fira+Mono:500&display=swap" 
       rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-<style> 
+<style>
+  body ::selection {
+  /*highlighting*/
+  background: transparent;
+  text-shadow: 
+    1px  0px 1px ,
+    0px  1px 1px ,
+    -1px  0px 1px ,
+    0px -1px 1px ,
+    0px  1px black ,
+    1px  0px black ,
+    -1px  0px black ,
+    0px -1px black ;
+  text-outline: black;  
+}
+  #stack-container {
+    position: fixed;
+    height: 5em;
+    display: flex;
+    flex-direction: column-reverse;
+    bottom:5vh;
+    right: 5vw;
+}
 </style>
 </head>    
+
+<div id="stack-container">
+<img src="https://rxjs.dev/assets/images/logos/Rx_Logo_S.png" alt="Typescript Logo">
+</div>
 
 # Mapping in RxJS 
 ## Simple example
@@ -82,7 +108,7 @@ namesObservable.pipe(
 // Mike is awesome (msg #1)
 // Mike is awesome (msg #2)
 ```
-<big class="SkyBlue">Above is called the <b class="red">Merge Strategy</b></big> this merging strateg may not be the best becuase it can lead to memory leaks and wierd bugs 
+<big class="SkyBlue">Above is called the <b class="red">Merge Strategy</b></big> this merging strategy may not be the best becuase it can lead to memory leaks and wierd bugs 
 
 <big><b class="SteelBlue">There are 4 <span class="Aqua">Flattening Strategies</span></b></big>
 
