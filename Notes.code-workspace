@@ -5,6 +5,10 @@
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "Notes"
+		"liveServer.settings.multiRootWorkspaceName": "Notes",
+		"markdown.styles": [
+			"/home/dubi/Desktop/projects/Notes/boilerplate/CSS.css",
+			"/home/dubi/Desktop/projects/Notes/boilerplate/color.css"
+		]
 	}
 }

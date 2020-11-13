@@ -22,6 +22,12 @@ body ::selection {
 </style>
 </head>    
 
-# <span class="react">React</span> <small>Updated</small>
- */
-In <span class="react">React</span> we 
+# Unix <small class="Grey">Programming Environment</small>
+
+`cntrl + d` to log out <span class="LightBlue">This bassically tells the terminal that there is no more input</span>
+
+### Printing Commands 
+
+`cat` comes from <i class="FireBrick">concatention</i> and simply prints the contents of files in argumnets 
+
+`pr` is like any other print command but it is designed to print with a page friendly format <b class="Yellow">every page is 66 lines or 11 inches </b> `pr -3 ` to print with 3 columns

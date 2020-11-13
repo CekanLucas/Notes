@@ -1,17 +1,8 @@
 <head>
+ 
   <link 
-      rel="stylesheet" 
-      type="text/css" 
-      media="all" 
-      href="../boilerplate/color.css"/>
-  <link 
-      rel="stylesheet" 
-      type="text/css" 
-      media="all" 
-      href="../boilerplate/CSS.css"/>
-    <link 
-      href="https://fonts.googleapis.com/css?family=Fira+Mono:500&display=swap" 
-      rel="stylesheet">
+    href="https://fonts.googleapis.com/css?family=Fira+Mono:500&display=swap" 
+    rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <style> 
 </style>
@@ -42,3 +33,24 @@
     - [How Does the Internet Work?](https://vimeo.com/128575085)
   - How the Internet Works? [In 5 minutes ](https://www.youtube.com/watch?v=7_LPdttKXPc)
   - [DNS Explained](https://www.youtube.com/watch?v=72snZctFFtA&feature=youtu.be&t=45s)
+
+
+## <big class="SkyBlue">/wdg/</big> Web Dev General 
+>Beginner Roadmap and Guide <a href="https://github.com/kamranahmedse/developer-roadmap">link</a>
+
+>All useful documentation in one place <a href="https://www.devdocs.io">link</a>
+
+>Free beginner resources to get started with HTML, CSS and JavaScript
+https://developer.mozilla.org/en-US/docs/Learn - a good starting point to learn about web dev fundamentals
+https://javascript.info/ - quite a good JS tutorial according to many posts
+https://www.freecodecamp.org - curriculum including HTML/CSS/JS, React, Node.js, Express, and MongoDB
+https://www.theodinproject.com - curriculum including HTML/CSS/JS, Ruby on Rails, and SQL
+https://fullstackopen.com/en/ - requires you to have basic web dev, db and git knowledge
+
+#### List of PHP resources
+https://pastebin.com/gfBPg24A
+
+>Need help? Create an example and post the link
+https://jsfiddle.net - if you need help with HTML/CSS/JS
+https://3v4l.org - if you need help with PHP/HackLang
+https://codesandbox.io - if you need help with React/Angular/Vue

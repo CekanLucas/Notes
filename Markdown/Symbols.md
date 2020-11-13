@@ -1,15 +1,6 @@
 <head>
   <link 
-  <link 
-      rel="stylesheet" 
-      type="text/css" 
-      media="all" 
-      href="../boilerplate/color.css"/>
-  <link 
-      rel="stylesheet" 
-      type="text/css" 
-      media="all" 
-      href="../boilerplate/CSS.css"/>
+ 
   <link 
       href="https://fonts.googleapis.com/css?family=Fira+Mono:500&display=swap" 
       rel="stylesheet">
