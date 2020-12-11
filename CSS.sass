@@ -1,10 +1,10 @@
-@import "../node_modules/bulma/sass/utilities/_all"
-@import "../node_modules/bulma/sass/elements/_all"
-@import "../node_modules/bulma/sass/layout/_all"
-@import "../node_modules/bulma/sass/grid/_all"
-@import "../node_modules/bulma/sass/form/_all"
-@import "../node_modules/bulma/sass/components/_all"
-@import "../node_modules/bulma/sass/base/helpers"
+@import "./node_modules/bulma/sass/utilities/_all"
+@import "./node_modules/bulma/sass/elements/_all"
+@import "./node_modules/bulma/sass/layout/_all"
+@import "./node_modules/bulma/sass/grid/_all"
+@import "./node_modules/bulma/sass/form/_all"
+@import "./node_modules/bulma/sass/components/_all"
+@import "./node_modules/bulma/sass/base/helpers"
 // bulma -- sass -- base does not work
 // @import "./node_modules/bulma/sass/base/generic"
 *
@@ -45,3 +45,12 @@ body ::selection
 pre
   background: transparent !important
   font-weight: bold
+
+#stack-container
+    position: fixed
+    height: 5em
+    display: flex
+    flex-direction: column-reverse
+    bottom:5vh
+    right: 5vw
+    width: 20vw
