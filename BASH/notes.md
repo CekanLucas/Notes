@@ -158,4 +158,5 @@ $ ls -al | less
 `grep` ***`pattern filename`***
 -i (ignore case) -v (print lines that dont **match** pattern)
 
-
+## Environmental Variables 
+`printenv` display all environmental variables

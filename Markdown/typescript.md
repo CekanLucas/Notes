@@ -4,17 +4,6 @@
     href="https://fonts.googleapis.com/css?family=Fira+Mono:500&display=swap" 
     rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-<style> 
-  #stack-container {
-    position: fixed;
-    height: 5em;
-    display: flex;
-    flex-direction: column-reverse;
-    bottom:5vh;
-    right: 5vw;
-}
-  
-</style>
 </head>    
 
 <div id="stack-container">
@@ -25,6 +14,21 @@
 
 <strong>Uses <u>statically typed</u> variables in stark contrast to dynamic typing in regular javascript</strong> 
 
+
+## Core Types
+
+ | | | |
+--- | - | - 
+| number | 1, 5.3, -10 | All numbers, no differentiation between integers or floats
+| string | 'hi', "hi", \`hi` | All text values
+| boolean | true, false | Two truthy or falsey values
+| Object | { age:30 } | Any JS object but more specifically type `Object`
+| Array| [ 1, 2, 3] | Any Array, can be flexible or strict with regards to element types
+| Tuple | [ 'string',2 ] | Added by Typescript: Fixed-length Array
+| Enum | enum { NEW, OLD } | Added by Typescript: Automatically enumerated global constant identifiers
+| Any | * | really flexible avoid whenever possible
+
+
 ``` ts
 //  ----- types ----- 
 const name:string = "bulbasaur";
@@ -32,6 +36,21 @@ const name:string = "bulbasaur";
 const level:number = 32;
 const isTrue:string = false;
 const data:any;
+```
+## Tuples 
+### Assignment for fixed length Array
+``` ts
+const person: {
+  name: string;
+  age: number;
+  hobbies: string[];
+  role: [number, string]; //here is how we declare a tuple
+} = {
+  name: 'Lucas',
+  age: 28, 
+  hobbies: ['Chess', 'Hiking'],
+  role: [3, 'dev'] // its like a any[] array but better defined
+}; 
 ```
 ## ENUMS 
 ### <small>Collections of Constants</small>
@@ -45,11 +64,30 @@ enum evolutionLevels {
 console.log(evolutionLevels.second);
 // outputs: "haunter"
 ```
+## Unions 
+### Assignment of multiple Accepted types or literal types
+`|` is the <b class="GoldenRod">union</b> operator 
+need to check at runtime with the `typeof` operator
+``` ts
+function combine(input: number | string, input2: number | string) {
+  if (typef input1 === 'number' && typeof input2 === 'number') {
+    result = input + input2;
+  } else {
+    result = input1.toString() + input2.toString();
+  }
+  return result; 
+}
+
+```
+
+
 
 ## Custom Types 
 ### <small>Specify Shape of Data</small>
 
 ``` ts
+
+
 interface pokemon {
   name:string,
   idNumber:number,
@@ -59,6 +97,39 @@ interface pokemon {
 }; // this is known as a "contract"
 
 //  need to specify certain number of fields else contract void 
+  
+ type Pokemon = pokemon; //make our own type with a type alias
+```
+## ts.config.json 
+See end of <a href="https://www.youtube.com/watch?v=BwuLxPH8IDs&t=2551s" title="TypeScript Course for Beginners 2020 - Learn TypeScript from Scratch!">this</a> video to get detailed breakthrough of options
+
+    tsc --init 
+
+<b class="HotPink">tsconfig.json</b>: sets compilation option when you run command `tsc`
+``` json
+{ 
+  "compilerOption": {
+    // verbose explanations if you use tsc --init main option listed below 
+    "target" : "es6", // specify ecmascript version,
+    "lib" : [ // this are the default libraries when you set target above 
+      "dom",
+      "es6",
+      "dom.iterable",
+      "scripthost"
+    ],
+    "module" : "commonjs" // so much trouble with this option 
+  },
+  "exclude" : {
+    // files to exclude from compilation
+    "example.ts",
+    "node_modules", // this is default already 
+    "**/**.ts" // could use glob patterns 
+  },
+  "include" : {
+    // opposite of "exclude" could specify files or folders
+  }
+}
+
 ```
 # Learn X in Y
 <a href="https://learnxinyminutes.com/docs/typescript/">Typescript</a>

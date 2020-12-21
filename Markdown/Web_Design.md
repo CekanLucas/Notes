@@ -276,3 +276,64 @@ If there is alot of information or if your site might need a search engine
 ### Supplementary Sites
 Free Web Design Tuts 
 <a href="https://www.entheosweb.com/website_design/">entheosweb</a>
+
+# Page Design 
+
+- 4 factors to consider
+  - Conciseness 
+  - Objectivity
+  - Scanability
+  - Consistency
+
+|   | <span class="Green">Pros</span> | <span class="Crimson">Cons</span>  |
+| ------ | ------ | -----: |
+|  **Fixed**  |  Allows whitespace <br> Limits width of text blocks to improve readability <br> Provides more control over the placement of images within the content areas | can provide too much whitespace <br> Takes away control from the user|
+|  **Liquid**  |  Adapts to most screen resolutions and devices <br> Reduces vertical scrolling  |  A wide line of text is more difficult to read <br> Can result in lack of whitespace and crowded appearance <br> More challenging to accomplish |
+
+### Rule of 3
+Becuase of the <b class="Gold">golden ratio</b> 1.62 we can devide the website by thirds to get pleasing ratios in our grid layout
+
+### Readability
+- People can comfortably read 12 words on a line and return to the next line without losing their place.
+- Consider using a narrow column on the left of your page not only to provide variations in page layout but also to narrow the line of text.
+- Margins define the reading area of your page by providing much needed white space and by separating the main text from nontext elements, such as interface elements (navigation elements) and other unrelated graphics. Whatever you decide to do, do it consistently throughout the site.
+- Print materials use gutters, or narrow columns of white space between columns, in order to give relief to the eye and prevent the columns from running into one another. Using gutters between columns is another way to add much needed white space to your page.
+
+### Usability
+
+- Your visitors should be presented with the home page in 10 seconds or less, so keep the file size at 50K or smaller.
+- Place the logo in the upper left portion of the page, and use it as a link to the home page on other pages.
+- Provide a search engine in the upper right section of the home page. A white box is preferred.
+- Don't use a splash page unless you have a very good reason. And then provide a way for the visitor to skip it.
+- Don't include auto-play music or video, especially on the home page.
+- Stay with the default colors for links as much as possible. If the design calls for different colors, use different colors for visited and unvisited links and make the unvisited links the darkest.
+
+### Development
+
+- If still using tables, set the border attribute of the table tag to "0" so that the borders are not visible on the screen. Hint: Keep the borders visible while working on the page so that you understand how the tables are constructed. Turn them off once you've completed your work.
+- Designers using Web authoring tools like DreamWeaver will find they can create a Web page in a graphics program, like PhotoShop, convert it to a JPG, GIF, or PNG, and import it into the program to use as a guide. This guide is called a tracing image. The designer then uses the tracing page to create the HTML page.
+- Don't use frames unless you're prepared to take extra steps to be sure search engines can find every page of the website.
+
+# Typography 
+
+- **serif** come from roman stone carvings allow eyes to follow the letters good for bodies of text especially in print
+- **sans-serif** sans means without these are good for screen fonts
+- **handwritten** adds personality, *graphology* states that people handwriting can show thier personality
+- **decorative** adds personality just like handwritten adds personallity and novelty use sparingly
+- **fixed width** also known as monospace good for code 
+- **dingbat** good for decoration and artistry
+
+# CSS and Font Embedding
+
+``` css 
+@font-face
+{
+  font-family: name;
+  src: url(filename);
+}
+
+/* To use font */
+.myfont {
+  font-family: name;
+}
+```

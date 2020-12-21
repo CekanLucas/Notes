@@ -23,8 +23,15 @@ body ::selection {
 </style>
 </head>    
 <div id="stack-container">
-  <a href=""><img src="" alt="Logo"></a>
+  <a href="https://stripe.com/docs/development"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Stripe_Logo%2C_revised_2016.svg/362px-Stripe_Logo%2C_revised_2016.svg.png" alt="Logo"></a>
 </div>
-# <span class="react">React</span> <small>Updated</small>
- */
-In <span class="react">React</span> we 
+
+#  <span class="react">StripeJS</span> <small class="Teal">Payment Processing</small>
+ 
+### Create Customer
+Creates a customer object
+
+    $ stripe customers create 
+Listens for transactions
+
+    $ stripe listen
