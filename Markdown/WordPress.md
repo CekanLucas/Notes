@@ -71,3 +71,18 @@ function my_theme_enqueue_styles() {
 }
 > 
 ```
+
+## Web Analytics 
+
+
+- How many have visited
+- Their geographic location
+- How they got to your site
+- The keywords they used
+- The pages and posts they liked and disliked
+- The way they navigated your pages
+- How they got to the places you most want them to visit, such as your sales, contact, or enrollment forms
+- How much time they spent on the site
+- Their arrival and departure pages
+- The proportion of new to repeat visitors
+

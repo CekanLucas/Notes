@@ -337,3 +337,31 @@ Becuase of the <b class="Gold">golden ratio</b> 1.62 we can devide the website b
   font-family: name;
 }
 ```
+
+# CSS Positioning 
+Combination of <b class="Orange">HTML</b> <b class="Cyan">CSS</b> and <b class="Yellow">Javascript</b> is known as <abbr title="Dynamic HTML" class="BlueViolet"><b>DHTML</b></abbr> 
+
+When content goes beyond the edge of the page it is known as a <u class="Crimson">bleed</u>
+
+# Errata
+
+Which of the following navigation tools displays location information?
+- Site Maps 
+
+If you don't want a search engine to provide its own summary of your site in return for a search query, you can use which one of the following meta tags in the head section of your code?
+- Description
+
+Which of the following guidelines will improve readability on your home page?
+- Use a narrow column on the left to provide variations in page layout and narrow the line of text
+
+Who isn't considered a classic typographer?
+- Worthington
+
+What do Web designers choose for Web fonts?
+- Sans serif fonts
+
+130 K would be an appropriate file size for which type of Web page?
+- Pages in a gaming or entertainment site
+
+Which of the following tips reduces both traffic on the net and download time?
+- Reusing your images
