@@ -70,6 +70,15 @@ jobs:
 ### Workflows
 A workflow is a <span class="LightGreen">automated procedure</span> that you add to your repo
 Workflow is madup up of <b class="Violet">job(s)</b> triggered by an <span class="Violet"><b>event</b> when something happens IN or TO your repository</span>
+
+<div class="pagination">
+	<span class="tag is-warning">PR created</span>
+	<span class="tag is-warning">Contributer Joined</span>
+	<span class="tag is-warning">Issue Created</span>
+	<span class="tag is-warning">PR merged</span>
+	<span class="tag is-warning">Other apps</span>
+</div>
+
 _The workflow can be used to build, test, package, release, or deploy a project on GitHub_
 ### Events <small class="LightBlue">list</small>
 > **Example of using multiple events**
