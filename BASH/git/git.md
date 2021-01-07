@@ -248,3 +248,32 @@ git push --force
 ```
 
 the `--force` option is needed if you have already pushed
+
+## Rebase 
+`git rebase` is a way to combine braches 
+In a basic rebase you replay the changes made in one branch to another
+```git 
+git checkout scrollfix
+git rebase master
+```
+
+Base argument can be one of: 
+- a commit id 
+- a branch name 
+- a tag 
+- a relative reference to `HEAD`
+
+use the `i` flag to make a interactive rebase 
+```bash
+git rebase -i branch 
+# for rebased shared commits to let git resolve a simple history
+git pull --rebase
+```
+
+## Unstage files
+`git reset`
+
+## Undo a commited snapshot
+```
+git revert <commit>
+```
