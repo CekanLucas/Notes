@@ -237,3 +237,14 @@ If file is already tracked you need to manually untrack it
 
 ## reflog
 to get a record for a few months `git reflog`
+
+## Squashing commits 
+Say you want to combine 3 commits 
+``` git 
+git reset HEAD-3
+git add .
+git commit -am "Fix bug#14"
+git push --force
+```
+
+the `--force` option is needed if you have already pushed

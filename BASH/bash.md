@@ -6,15 +6,17 @@
 #### Simple Commands 
 <input type="color" name="" id="">
 
-`date` (gives system date)
+`date`(gives system date
 
-`cal` (creates calendar of current month) <span style="color:indianred">doesn't work </span>
+`cal` creates calendar of current month
 
-`df ` (current ammount of free space on disk drive) 
+`df ` current ammount of free space on disk drive
+  - -h flag means human readable
 
-`free` (current ammount of free memory) <span style="color:indianred">doesn't work </span>
+`free ` shows amount of free memory available
+   - -h flag means human readable
 
-`exit` (exit terminal)
+`exit` exit terminal
 
 `pwd` (print name of current working directory)
 * `~ `  is home dir 

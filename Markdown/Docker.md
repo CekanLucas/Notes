@@ -94,3 +94,22 @@ Running on http://localhost:8080
 # Enter the container
 $ docker exec -it <container id> /bin/bash
 ```
+## Extra
+``` bash
+docker ps 
+
+docker ps -a # to find id of even stopped containers 
+
+docker stop <id>
+docker start <id>
+```
+## Debugging Docker
+
+``` docker 
+# docker log
+```
+
+## Docker Network 
+Allow containers to interact with each other 
+
+TOODO: learn more about `Docker Network`
