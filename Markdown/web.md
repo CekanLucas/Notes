@@ -36,7 +36,7 @@
 
 
 ## <big class="SkyBlue">/wdg/</big> Web Dev General 
->Beginner Roadmap and Guide <a href="https://github.com/kamranahmedse/developer-roadmap">link</a>
+>Full Web Development Roadmap <a href="https://github.com/kamranahmedse/developer-roadmap">link</a>
 
 >All useful documentation in one place <a href="https://www.devdocs.io">link</a>
 
@@ -46,11 +46,56 @@ https://javascript.info/ - quite a good JS tutorial according to many posts
 https://www.freecodecamp.org - curriculum including HTML/CSS/JS, React, Node.js, Express, and MongoDB
 https://www.theodinproject.com - curriculum including HTML/CSS/JS, Ruby on Rails, and SQL
 https://fullstackopen.com/en/ - requires you to have basic web dev, db and git knowledge
+https://flutter.dev - flutter resources
 
 #### List of PHP resources
 https://pastebin.com/gfBPg24A
+https://ghostbin.com/paste/sNdM3
+
+
+><big class="HotPink">List of design resources</big>
+https://ghostbin.com/paste/rTwHe
+<b class="HotPink">Refactoring UI</b>
+https://z-lib.org - you can find the book here
+https://refactoringui.com - collection of resources
+https://youtu.be/7Z9rrryIOC4 - talk
+<b class="HotPink">Inspiration</b>
+https://dribbble.com
+https://www.uplabs.com
+https://www.behance.net
+http://www.goodweb.design
+https://onepagelove.com
+https://www.awwwards.com
+
+>All useful documentation in one place
+https://devdocs.io
 
 >Need help? Create an example and post the link
 https://jsfiddle.net - if you need help with HTML/CSS/JS
 https://3v4l.org - if you need help with PHP/HackLang
 https://codesandbox.io - if you need help with React/Angular/Vue
+
+We have own website: https://wdg.one
+Submit your project progress updates using the following format in your posts (the scraper will pick it up):
+
+:: my-project-title ::
+dev:: flutshill
+tools:: Flutter, Also flutter, angel/dart, and dart/flutter
+link:: https://my.website.com
+repo:: https://github.com/user/repo
+progress:: Flutter increases all kinds of erection
+
+
+
+#### List of Javascript Resources 
+<a href="https://danysdevcorner.hashnode.dev/useful-javascript-resources-to-learn-and-remember">link</a>
+
+1. <a href="https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif">JS Concepts Visualized</a> 7 posts about the most important Javascript concepts with really pictures and GIFs to visualize complex concepts and make it easy to understand them
+1. <a href="https://felixgerschau.com/javascript-memory-management/">Memory Management in JS</a> In this article you can learn how JS handles the memory management. You learn about Stack and Heap and how the Garbage Collector works within the JS Environment
+1. <a href="https://github.com/nas5w/javascript-tips-and-tidbits">Tips and Tricks</a> This GitHub repository includes a lot of basics and advanced Javascript concepts and tips and tricks. You can read about closures, async. Javascript or DOM Manipulation and many more. Really well explained for beginners and with nice examples to each topic
+1. <a href="https://dev.to/otamnitram/my-most-used-javascript-methods-1i64">Most Used JS Methods</a> its a nice reference to come back to if you need some help about syntax or some new input. Maybe you see a new method that can help you to deal with a problem you have right now
+1. <a href="https://1loc.dev/">1-liners in JS</a> could be interesting just dont code golf too often
+1. <a href="https://www.joshwcomeau.com/operator-lookup/">JS Operators</a> Here you can look up every Javascript operators and how to use it with examples
+
+## My Resources 
+https://dev.to/ender_minyard/full-stack-developer-s-roadmap-2k12

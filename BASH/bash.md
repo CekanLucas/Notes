@@ -46,7 +46,7 @@ Option | Long | Description
 `less ` (basically starts a pager program to view text files) 
  
 Less | Commands
----- | - | -
+---- | -
 PAGE UP or b | Scroll back one page 
 PAGE DOWN or space | Scroll forward one page 
 Up arrow | Scroll up one line 

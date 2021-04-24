@@ -21,7 +21,7 @@ backgroundColorInput.addEventListener("input",
 
 // TEXT COLOR INPUT
 backgroundColorText.addEventListener("input", 
-  function(e) {
+  (e) => {
     const value = e.target.value; 
     body.style.backgroundColor = value;
     backgroundColorInput.style.backgroundColor = value;

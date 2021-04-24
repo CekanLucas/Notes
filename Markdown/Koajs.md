@@ -19,10 +19,10 @@
 
 <div id="stack-container">
 
-<a href="https://make.wordpress.org/"><img src="https://www.thinktanker.io/wp-content/uploads/2019/12/Koa-nodejs-logo-300x300.png" alt="Node JS Logo"></a>
+<a href="https://koajs.com/"><img src="https://www.thinktanker.io/wp-content/uploads/2019/12/Koa-nodejs-logo-300x300.png" alt="Node JS Logo"></a>
 </div>
 
-# KoaJs <small class="Yellow">NodeJS Framework</small>
+# KoaJs <small class="Yellow">Express Oversimplified</small>
 
 `app.listen(...)` is basically 
 ```js

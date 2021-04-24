@@ -112,3 +112,30 @@ console.log('\x1b[33m%s\x1b[0m', 'hi!')
 ```
 
 But just use <b class="Chalk">Chalk</b>
+
+## Reading Environmental Variables
+Use the `process` core module of <b class="Lime">Node.js</b> provides the `env` 
+``` js 
+process.env.NODE_ENV // development
+```
+
+## Reading Arguments from Command Line
+Use the `argv` core module of <b class="Lime">Node.js</b> provides the `env` 
+``` js 
+const args = process.argv.slice(2) // development
+```
+
+<b><a href="https://www.youtube.com/watch?v=Oe421EPjeBE&list=WL&index=16">Node and Express Full Course</a></b>
+
+### Globals 
+
+
+`__dirname` <b class="HotPink">path to current directory</b>
+
+`__filename` <b class="HotPink">file name</b>
+
+`require` <b class="HotPink">function to use modules (CommonJS)</b>
+
+`module` <b class="HotPink">info about current module (file)</b>
+
+`process` <b class="HotPink">env info where the program is being executed</b>

@@ -18,153 +18,154 @@
 </head>    
 
 # Color cheatsheet
-<span style="color:Black">Black</span>
-<span style="color:Navy">Navy</span>
-<span style="color:DarkBlue">DarkBlue</span>
-<span style="color:MediumBlue">MediumBlue</span>
-<span style="color:Blue">Blue</span>
-<span style="color:DarkGreen">DarkGreen</span>
-<span style="color:Green">Green</span>
-<span style="color:Teal">Teal</span>
-<span style="color:DarkCyan">DarkCyan</span>
-<span style="color:DeepSkyBlue">DeepSkyBlue</span>
-<span style="color:DarkTurquoise">DarkTurquoise</span>
-<span style="color:MediumSpringGreen">MediumSpringGreen</span>
-<span style="color:Lime">Lime</span>
-<span style="color:SpringGreen">SpringGreen</span>
-<span style="color:Aqua">Aqua</span>
-<span style="color:Cyan">Cyan</span>
-<span style="color:MidnightBlue">MidnightBlue</span>
-<span style="color:DodgerBlue">DodgerBlue</span>
-<span style="color:LightSeaGreen">LightSeaGreen</span>
-<span style="color:ForestGreen">ForestGreen</span>
-<span style="color:SeaGreen">SeaGreen</span>
-<span style="color:DarkSlateGray">DarkSlateGray</span>
-<span style="color:DarkSlateGrey">DarkSlateGrey</span>
-<span style="color:LimeGreen">LimeGreen</span>
-<span style="color:MediumSeaGreen">MediumSeaGreen</span>
-<span style="color:Turquoise">Turquoise</span>
-<span style="color:RoyalBlue">RoyalBlue</span>
-<span style="color:SteelBlue">SteelBlue</span>
-<span style="color:DarkSlateBlue">DarkSlateBlue</span>
-<span style="color:MediumTurquoise">MediumTurquoise</span>
-<span style="color:Indigo">Indigo</span>
-<span style="color:DarkOliveGreen">DarkOliveGreen</span>
-<span style="color:CadetBlue">CadetBlue</span>
-<span style="color:CornflowerBlue">CornflowerBlue</span>
-<span style="color:RebeccaPurple">RebeccaPurple</span>
-<span style="color:MediumAquaMarine">MediumAquaMarine</span>
-<span style="color:DimGray">DimGray</span>
-<span style="color:DimGrey">DimGrey</span>
-<span style="color:SlateBlue">SlateBlue</span>
-<span style="color:OliveDrab">OliveDrab</span>
-<span style="color:SlateGray">SlateGray</span>
-<span style="color:SlateGrey">SlateGrey</span>
-<span style="color:LightSlateGray">LightSlateGray</span>
-<span style="color:LightSlateGrey">LightSlateGrey</span>
-<span style="color:MediumSlateBlue">MediumSlateBlue</span>
-<span style="color:LawnGreen">LawnGreen</span>
-<span style="color:Chartreuse">Chartreuse</span>
-<span style="color:Aquamarine">Aquamarine</span>
-<span style="color:Maroon">Maroon</span>
-<span style="color:Purple">Purple</span>
-<span style="color:Olive">Olive</span>
-<span style="color:Gray">Gray</span>
-<span style="color:Grey">Grey</span>
-<span style="color:SkyBlue">SkyBlue</span>
-<span style="color:LightSkyBlue">LightSkyBlue</span>
-<span style="color:BlueViolet">BlueViolet</span>
-<span style="color:DarkRed">DarkRed</span>
-<span style="color:DarkMagenta">DarkMagenta</span>
-<span style="color:SaddleBrown">SaddleBrown</span>
-<span style="color:DarkSeaGreen">DarkSeaGreen</span>
-<span style="color:LightGreen">LightGreen</span>
-<span style="color:MediumPurple">MediumPurple</span>
-<span style="color:DarkViolet">DarkViolet</span>
-<span style="color:PaleGreen">PaleGreen</span>
-<span style="color:DarkOrchid">DarkOrchid</span>
-<span style="color:YellowGreen">YellowGreen</span>
-<span style="color:Sienna">Sienna</span>
-<span style="color:Brown">Brown</span>
-<span style="color:DarkGray">DarkGray</span>
-<span style="color:DarkGrey">DarkGrey</span>
-<span style="color:LightBlue">LightBlue</span>
-<span style="color:GreenYellow">GreenYellow</span>
-<span style="color:PaleTurquoise">PaleTurquoise</span>
-<span style="color:LightSteelBlue">LightSteelBlue</span>
-<span style="color:PowderBlue">PowderBlue</span>
-<span style="color:FireBrick">FireBrick</span>
-<span style="color:DarkGoldenRod">DarkGoldenRod</span>
-<span style="color:MediumOrchid">MediumOrchid</span>
-<span style="color:RosyBrown">RosyBrown</span>
-<span style="color:DarkKhaki">DarkKhaki</span>
-<span style="color:Silver">Silver</span>
-<span style="color:MediumVioletRed">MediumVioletRed</span>
-<span style="color:IndianRed">IndianRed</span>
-<span style="color:Peru">Peru</span>
-<span style="color:Chocolate">Chocolate</span>
-<span style="color:Tan">Tan</span>
-<span style="color:LightGray">LightGray</span>
-<span style="color:LightGrey">LightGrey</span>
-<span style="color:Thistle">Thistle</span>
-<span style="color:Orchid">Orchid</span>
-<span style="color:GoldenRod">GoldenRod</span>
-<span style="color:PaleVioletRed">PaleVioletRed</span>
-<span style="color:Crimson">Crimson</span>
-<span style="color:Gainsboro">Gainsboro</span>
-<span style="color:Plum">Plum</span>
-<span style="color:BurlyWood">BurlyWood</span>
-<span style="color:LightCyan">LightCyan</span>
-<span style="color:Lavender">Lavender</span>
-<span style="color:DarkSalmon">DarkSalmon</span>
-<span style="color:Violet">Violet</span>
-<span style="color:PaleGoldenRod">PaleGoldenRod</span>
-<span style="color:LightCoral">LightCoral</span>
-<span style="color:Khaki">Khaki</span>
-<span style="color:AliceBlue">AliceBlue</span>
-<span style="color:HoneyDew">HoneyDew</span>
-<span style="color:Azure">Azure</span>
-<span style="color:SandyBrown">SandyBrown</span>
-<span style="color:Wheat">Wheat</span>
-<span style="color:Beige">Beige</span>
-<span style="color:WhiteSmoke">WhiteSmoke</span>
-<span style="color:MintCream">MintCream</span>
-<span style="color:GhostWhite">GhostWhite</span>
-<span style="color:Salmon">Salmon</span>
-<span style="color:AntiqueWhite">AntiqueWhite</span>
-<span style="color:Linen">Linen</span>
-<span style="color:LightGoldenRodYellow">LightGoldenRodYellow</span>
-<span style="color:OldLace">OldLace</span>
-<span style="color:Red">Red</span>
-<span style="color:Fuchsia">Fuchsia</span>
-<span style="color:Magenta">Magenta</span>
-<span style="color:DeepPink">DeepPink</span>
-<span style="color:OrangeRed">OrangeRed</span>
-<span style="color:Tomato">Tomato</span>
-<span style="color:HotPink">HotPink</span>
-<span style="color:Coral">Coral</span>
-<span style="color:DarkOrange">DarkOrange</span>
-<span style="color:Orange">Orange</span>
-<span style="color:LightSalmon">LightSalmon</span>
-<span style="color:LightPink">LightPink</span>
-<span style="color:Pink">Pink</span>
-<span style="color:Gold">Gold</span>
-<span style="color:Yellow">Yellow</span>
-<span style="color:PeachPuff">PeachPuff</span>
-<span style="color:NavajoWhite">NavajoWhite</span>
-<span style="color:Moccasin">Moccasin</span>
-<span style="color:Bisque">Bisque</span>
-<span style="color:MistyRose">MistyRose</span>
-<span style="color:BlanchedAlmond">BlanchedAlmond</span>
-<span style="color:PapayaWhip">PapayaWhip</span>
-<span style="color:LavenderBlush">LavenderBlush</span>
-<span style="color:SeaShell">SeaShell</span>
-<span style="color:Cornsilk">Cornsilk</span>
-<span style="color:LemonChiffon">LemonChiffon</span>
-<span style="color:LightYellow">LightYellow</span>
-<span style="color:Ivory">Ivory</span>
-<span style="color:FloralWhite">FloralWhite</span>
-<span style="color:Snow">Snow</span>
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NjQ3MjM3NjNdfQ==
---> 
+<span class="columns">
+<big class="column">
+
+<b style="color:Black">Black</b>
+<b style="color:Navy">Navy</b>
+<b style="color:DarkBlue">DarkBlue</b>
+<b style="color:MediumBlue">MediumBlue</b>
+<b style="color:Blue">Blue</b>
+<b style="color:MidnightBlue">MidnightBlue</b>
+<b style="color:Teal">Teal</b> <span style="color:DarkCyan">DarkCyan</span>
+<b style="color:Aqua">Aqua</b> <span style="color:Cyan">Cyan</span>
+<b style="color:PaleTurquoise">PaleTurquoise</b>
+<b style="color:MediumTurquoise">MediumTurquoise</b>
+<b style="color:Turquoise">Turquoise</b>
+<b style="color:DarkTurquoise">DarkTurquoise</b>
+<b style="color:RoyalBlue">RoyalBlue</b>
+<b style="color:DodgerBlue">DodgerBlue</b>
+<b style="color:SteelBlue">SteelBlue</b>
+<b style="color:LightSteelBlue">LightSteelBlue</b>
+<b style="color:SlateBlue">SlateBlue</b>
+<b style="color:MediumSlateBlue">MediumSlateBlue</b>
+<b style="color:DarkSlateBlue">DarkSlateBlue</b>
+<b style="color:CadetBlue">CadetBlue</b>
+<b style="color:CornflowerBlue">CornflowerBlue</b>
+<b style="color:PowderBlue">PowderBlue</b>
+<b style="color:LightBlue">LightBlue</b>
+<b style="color:LightSkyBlue">LightSkyBlue</b>
+<b style="color:SkyBlue">SkyBlue</b>
+<b style="color:DeepSkyBlue">DeepSkyBlue</b>
+<b style="color:Aquamarine">Aquamarine</b>
+<b style="color:MediumAquaMarine">MediumAquaMarine</b>
+<b style="color:Violet">Violet</b>
+<b style="color:BlueViolet">BlueViolet</b>
+<b style="color:DarkViolet">DarkViolet</b>
+<b style="color:PaleVioletRed">PaleVioletRed</b>
+<b style="color:MediumVioletRed">MediumVioletRed</b>
+<b style="color:Orchid">Orchid</b>
+<b style="color:MediumOrchid">MediumOrchid</b>
+<b style="color:DarkOrchid">DarkOrchid</b>
+<b style="color:Magenta">Magenta</b> <b style="color:Fuchsia">Fuchsia</b>
+<b style="color:DarkMagenta">DarkMagenta</b>
+<b style="color:MediumPurple">MediumPurple</b>
+<b style="color:RebeccaPurple">RebeccaPurple</b>
+<b style="color:Purple">Purple</b>
+<b style="color:Indigo">Indigo</b>
+<b style="color:LightPink">LightPink</b>
+<b style="color:Pink">Pink</b>
+<b style="color:HotPink">HotPink</b>
+<b style="color:DeepPink">DeepPink</b>
+
+</big>
+
+<big class="column">
+
+<b style="color:DarkGreen">DarkGreen</b>
+<b style="color:Green">Green</b>
+<b style="color:ForestGreen">ForestGreen</b>
+<b style="color:MediumSpringGreen">MediumSpringGreen</b>
+<b style="color:SpringGreen">SpringGreen</b>
+<b style="color:LightSeaGreen">LightSeaGreen</b>
+<b style="color:MediumSeaGreen">MediumSeaGreen</b>
+<b style="color:SeaGreen">SeaGreen</b>
+<b style="color:DarkSeaGreen">DarkSeaGreen</b>
+<b style="color:LightGreen">LightGreen</b>
+<b style="color:PaleGreen">PaleGreen</b>
+<b style="color:YellowGreen">YellowGreen</b>
+<b style="color:GreenYellow">GreenYellow</b>
+<b style="color:Chartreuse">Chartreuse</b>
+<b style="color:LawnGreen">LawnGreen</b>
+<b style="color:LimeGreen">LimeGreen</b>
+<b style="color:Lime">Lime</b>
+<b style="color:OliveDrab">OliveDrab</b>
+<b style="color:Olive">Olive</b>
+<b style="color:DarkOliveGreen">DarkOliveGreen</b>
+<b style="color:GoldenRod">GoldenRod</b>
+<b style="color:Gold">Gold</b>
+<b style="color:Yellow">Yellow</b>
+<b style="color:Tomato">Tomato</b>
+<b style="color:Coral">Coral</b>
+<b style="color:LightCoral">LightCoral</b>
+<b style="color:LightSalmon">LightSalmon</b>
+<b style="color:Salmon">Salmon</b>
+<b style="color:DarkSalmon">DarkSalmon</b>
+<b style="color:SaddleBrown">SaddleBrown</b>
+<b style="color:Sienna">Sienna</b>
+<b style="color:RosyBrown">RosyBrown</b>
+<b style="color:Peru">Peru</b>
+<b style="color:SandyBrown">SandyBrown</b>
+<b style="color:BurlyWood">BurlyWood</b>
+<b style="color:Plum">Plum</b>
+<b style="color:FireBrick">FireBrick</b>
+<b style="color:Brown">Brown</b>
+<b style="color:IndianRed">IndianRed</b>
+<b style="color:Orange">Orange</b>
+<b style="color:DarkOrange">DarkOrange</b>
+<b style="color:Chocolate">Chocolate</b>
+<b style="color:OrangeRed">OrangeRed</b>
+<b style="color:Red">Red</b>
+<b style="color:Crimson">Crimson</b>
+<b style="color:DarkRed">DarkRed</b> <b style="color:Maroon">Maroon</b>
+
+</big>
+
+<big class="column">
+
+<b style="color:DarkSlateGray">DarkSlateGray</b> <span style="color:DarkSlateGrey">DarkSlateGrey</span>
+<b style="color:DimGray">DimGray</b> <span style="color:DimGrey">DimGrey</span>
+<b style="color:SlateGray">SlateGray</b> <span style="color:SlateGrey">SlateGrey</span>
+<b style="color:LightSlateGray">LightSlateGray</b> <span style="color:LightSlateGrey">LightSlateGrey</span>
+<b style="color:Gray">Gray</b> <span style="color:Grey">Grey</span>
+<b style="color:DarkGray">DarkGray</b> <span style="color:DarkGrey">DarkGrey</span>
+<b style="color:LightGray">LightGray</b> <span style="color:LightGrey">LightGrey</span>
+<b style="color:Silver">Silver</b>
+<b style="color:PeachPuff">PeachPuff</b>
+<b style="color:NavajoWhite">NavajoWhite</b>
+<b style="color:Moccasin">Moccasin</b>
+<b style="color:Bisque">Bisque</b>
+<b style="color:MistyRose">MistyRose</b>
+<b style="color:BlanchedAlmond">BlanchedAlmond</b>
+<b style="color:PapayaWhip">PapayaWhip</b>
+<b style="color:LavenderBlush">LavenderBlush</b>
+<b style="color:SeaShell">SeaShell</b>
+<b style="color:Cornsilk">Cornsilk</b>
+<b style="color:LemonChiffon">LemonChiffon</b>
+<b style="color:LightYellow">LightYellow</b>
+<b style="color:Ivory">Ivory</b>
+<b style="color:FloralWhite">FloralWhite</b>
+<b style="color:HoneyDew">HoneyDew</b>
+<b style="color:Azure">Azure</b>
+<b style="color:AliceBlue">AliceBlue</b>
+<b style="color:Wheat">Wheat</b>
+<b style="color:Beige">Beige</b>
+<b style="color:WhiteSmoke">WhiteSmoke</b>
+<b style="color:MintCream">MintCream</b>
+<b style="color:GhostWhite">GhostWhite</b>
+<b style="color:AntiqueWhite">AntiqueWhite</b>
+<b style="color:Linen">Linen</b>
+<b style="color:LightGoldenRodYellow">LightGoldenRodYellow</b>
+<b style="color:PaleGoldenRod">PaleGoldenRod</b>
+<b style="color:OldLace">OldLace</b>
+<b style="color:Gainsboro">Gainsboro</b>
+<b style="color:LightCyan">LightCyan</b>
+<b style="color:Snow">Snow</b>
+<b style="color:Thistle">Thistle</b>
+<b style="color:Lavender">Lavender</b>
+<b style="color:Tan">Tan</b>
+<b style="color:Khaki">Khaki</b>
+<b style="color:DarkKhaki">DarkKhaki</b>
+
+</big>
+</span> 

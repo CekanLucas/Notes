@@ -241,7 +241,7 @@ to get a record for a few months `git reflog`
 ## Squashing commits 
 Say you want to combine 3 commits 
 ``` git 
-git reset HEAD-3
+git reset HEAD~3
 git add .
 git commit -am "Fix bug#14"
 git push --force

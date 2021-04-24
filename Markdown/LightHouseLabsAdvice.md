@@ -36,4 +36,4 @@ I don't like to be challenged | When I fail, I learn
 If you suceed, I feel threatened | If you suceed, I am inspired 
 My abilities determine everything | My effort and attitude determines everything 
 
-### Software developement is a  <span class="Cyan">Team Sport</span>
+<big class="Khaki">Software developement is a  <span class="Cyan">Team Sport</span></big>
