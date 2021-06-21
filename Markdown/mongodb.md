@@ -266,3 +266,9 @@ If no argument or {} then it will return first matching document
 unlike above this returns a cursor that limits all documents to the first 20 
 
 `findMany()`
+
+## Array Querries
+
+`$size` for length of array
+`$all` includes specified elements order does not matter
+`$elemMatch` 

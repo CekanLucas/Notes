@@ -64,7 +64,8 @@ myObject["obnoxious property"] // bracket notation
 ### refs 
 [Javascript.info](https://javascript.info/prototype-inheritance) 
 [Javascript Prototype in Plain Language](https://web.archive.org/web/20200513181548/https://javascriptissexy.com/javascript-prototype-in-plain-detailed-language/)
-[Javascript Visualized](https://dev.to/lydiahallie/javascript-visualized-prototypal-inheritance-47co)
+[Javascript Prototypal Inheritance Visualized](https://dev.to/lydiahallie/javascript-visualized-prototypal-inheritance-47co)
+[Prototypal Inheritance Video](https://www.youtube.com/watch?v=sOrtAjyk4lQ) *Very Good* <b class="Brown">from avelx</b>
 
 <style>
 .proto {
@@ -81,7 +82,7 @@ In programming we often want to extend properties and methods in <span class="js
 
 ## [[Prototype]]
 
-In <span class="js">JavaScript</span>, objects have a special hidden property `[[Prototype]]` (as named in the specification), that is either null or references another object. That object is called <b class="Orange">a prototype</b> <span class="Teal">every object has a prototype property</span>
+In <span class="js">JavaScript</span>, objects have a special hidden property `[[Prototype]]` (as named in the specification), that is either null or references another object. That object is called <b class="Orange">a prototype</b> <span class="Teal">every object has a prototype property</span> <i class="RoyalBlue">and we access the properties all the way up the <b>prototype chain</b></i>
 
 ### Prototype-based Inheritance
 The prototype is a little bit <i>magical</i>. When we want to read a property from object, and it’s missing, JavaScript automatically takes it from the prototype. In programming, such thing is called “prototypal inheritance”. Many cool language features and programming techniques are based on it.
@@ -279,5 +280,9 @@ const bob = new Mentor('Bob Ross', 'I like mountains way too much');
 console.log(bob.bio());
 ```
 
-`Object.create()`
+## `Object.create()`
+Recomended way of creating objects
+> <b class="Tomato">This more closely aligns with the <span class="LightBlue">prototype inheritance model</span> in <span class="Yellow">Javascript</span> than the `new` keyword</b>
 
+[Object.create() Video](https://www.youtube.com/watch?v=CDFN1VatiJA) *Very Good* <b class="Gold">from FunFunFunction</b>
+[Another Object.create() Video](https://www.youtube.com/watch?v=CDFN1VatiJA) <b class="LightCoral">from TechSmith</b>

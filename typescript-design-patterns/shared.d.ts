@@ -1,18 +1,39 @@
+type DataType = "value" | "increment";
+
 export interface ClientChange {
+  // lastModifiedTime: number;
+  // value: string;
+}
+
+export interface ClientValueChange<T> extends ClientChange {
+  type: "value";
   lastModifiedTime: number;
-  value: string;
+  value: T;
+}
+
+export interface ClientIncrementChange<T> extends ClientChange {
+  type: "increment";
+  synced: boolean;
+  uid: string;
+  increment: number;
+}
+
+export interface ClientChangeList<T extends ClientChange> {
+  type: DataType;
+  changes: T[];
 }
 export interface SyncingRequest {
   timestamp: number;
-	clientTime: number;
-  changes: {
-    [id: string]: string;
+  clientTime: number;
+  changeLists: {
+    [id: string]: ClientChangeList<ClientChange>;
   };
 }
 
 export interface SyncingResponse {
   timestamp: number;
   changes: {
-    [id: string]: string;
+    [id: string]: any;
   };
 }
+# Moving Blazingly Fast with Vim Motions

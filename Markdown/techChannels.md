@@ -85,3 +85,6 @@ http://moglen.law.columbia.edu/publications/dcm.html
 
 /fglt/'s website and copypasta collection:
 http://fglt.nl && https://p.teknik.io/wJ9Zy
+
+# Other Channels 
+[Derek Banas](https://www.youtube.com/c/derekbanas/about) - general tuts

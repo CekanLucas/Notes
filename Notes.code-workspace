@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../node-bulletin-board"
+		},
+		{
+			"path": "../twilioQuest/starter-node"
 		}
 	],
 	"settings": {

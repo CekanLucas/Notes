@@ -141,7 +141,19 @@ Remember to write a git commit message especially for simple commits
 
         * new version is saftely stored in repository 
 
-    * use `$git add` command add modified file to staging area then use `$git commit` to add those file to the git repository 
+    * use `$git add` command add modified file to staging area then use `$git commit` to add those file to the git repository
+
+### Finding Commits
+#### by commit message keyword `--grep`
+``` zsh
+git log --pretty=format:"%h: %s" --grep=README
+```
+
+# Logging 
+unlike `git status` `git log` shows only <b class="Crimson">commited</b> history
+```zsh 
+git log # shows curent branch commit history
+```
 # Branches
 
 The killer feature of git 
@@ -271,8 +283,13 @@ git pull --rebase
 ```
 
 ## Unstage files
-`git reset`
-
+If you mistakenly have staged a file and want to *undo* this operation you use`git reset`
+``` zsh
+git add *
+# mistakenly staged all files
+git reset HEAD README.txt
+# unstage README.txt
+```
 ## Undo a commited snapshot
 ```
 git revert <commit>

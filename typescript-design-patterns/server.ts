@@ -1,48 +1,121 @@
-import { SyncingRequest, SyncingResponse } from "./shared";
+import {
+  ClientValueChange,
+  DataType,
+  SyncingRequest,
+  SyncingResponse,
+} from "./shared";
+
+const hasOwnProperty = Object.prototype.hasOwnProperty;
 
 export class Server {
-  store: ServerDataStore = {
-    timestamp: 0,
-    items: Object.create(null),
-  };
+  store: ServerDataStore;
 
-  constructor(public server: Server) {}
+  synchronize(request: SyncingRequest): SyncingResponse {
+    let lastTimestamp = request.timestamp;
+    let items = this.store.items;
+    // let serverChanges = Object.create(null);
+    let clientChangeLists = request.changeLists;
+    let now = Date.now();
+    let clientTimeOffset = now - request.clientTime;
 
-  getData(clientTimestamp: number): ServerDataStore {
-    if (clientTimestamp < this.store.timestamp) {
-      return this.store;
-    } else {
-      return undefined;
-    }
-  }
+    for (let id of Object.keys(clientChangeLists)) {
+      let clientChangeList = clientChangeLists[id];
+      let type = clientChangeList.type;
+      let clientChanges = clientChangeList[id];
 
-    synchronize(request: SyncingRequest): SyncingResponse {
-      let lastTimestamp = request.timestamp;
-      let now = Date.now();
-      let serverChanges = Object.create(null);
-      let items = this.store.items;
-      for (let id of Object.keys(items)) {
-        let item = items[id];
-        if (item.timestamp > lastTimestamp) {
-          serverChanges[id] = item.value;
+      if (type === "value") {
+        let clientChange = clientChanges[0] as ClientValueChange<any>;
+        let lastModifiedTime = Math.min(
+          clientChange.lastModifiedTime + clientTimeOffset,
+          now
+        );
+
+        if (
+          hasOwnProperty.call(items, id) &&
+          items[id].lastModifiedTime > lastModifiedTime
+        ) {
+          delete clientChangeLists[id];
+          continue;
         }
+
+        items[id] = {
+          id,
+          type,
+          timestamp: now,
+          lastModifiedTime,
+          value: clientChange.value,
+        };
+      } else if (type === "increment") {
+        let item: ServerDataItem<any>;
+
+        if (hasOwnProperty.call(items, id)) {
+          item = items[id];
+          item.timestamp = now;
+        } else {
+          item = items[id] = {
+            id,
+            type,
+            timestamp: now,
+            uids: [],
+            value: 0,
+          };
+        }
+
+        for (let clientChange of clientChanges as ClientIncrementChange[]) {
+          let { uid, increment } = clientChange;
+
+          if (item.uids.indexOf(uid) < 0) {
+            item.value += increment;
+            item.uids.push(uid);
+          }
+        }
+
+        delete clientChangeLists[id];
       }
-      return {
+
+      if (
+        this.hasOwnProperty.call(items, id) &&
+        items[id].lastModifiedTime > clientChange[id]
+      ) {
+        continue;
+      }
+
+      items[id] = {
+        id,
         timestamp: now,
-        changes: serverChanges,
+        lastModifiedTime,
+        value: clientChange.value,
       };
     }
+
+    for (let id of Object.keys(items)) {
+      let item = items[id];
+      if (item.timestamp > lastTimestamp && item.timestamp !== now) {
+        serverChanges[id] = item.value;
+      }
+    }
+
+    return {
+      timestamp: now,
+      changes: serverChanges,
+    };
+  }
 }
 
-export interface ServerDataItem {
+export interface ServerDataItem<T> {
   id: string;
+  type: DataType;
   timestamp: number;
-  lastModifiedTime: number;
+  lastModifiedTime?: number;
   value: string;
 }
 export interface ServerDataStore {
   timestamp: number;
   items: {
-    [id: string]: ServerDataItem;
+    [id: string]: ServerDataItem<any>;
   };
+}
+
+interface ServerChangeMap {
+  [id: string]: any;
 }
