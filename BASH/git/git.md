@@ -1,6 +1,9 @@
 <head><link href="git.css" rel="stylesheet" type="text/css"></head>
 <img src="./gitLogo.png" width=50% style="margin-left:50%"/>
 
+[git logging](git-log.md)
+[git staging](git-staging.md)
+
 `$git config --list`<br>
 Could also add and modify configurations
 ```bash
@@ -63,7 +66,8 @@ we can name the the remote connection anything but mostly people name it upstrea
 <img src="./branchesE.png">
 
 ```bash
-# to see branch currently working on 
+# to see info 
+# use -s or --short for quick info
 git status
 
 # creating and naming branch 
@@ -143,17 +147,6 @@ Remember to write a git commit message especially for simple commits
 
     * use `$git add` command add modified file to staging area then use `$git commit` to add those file to the git repository
 
-### Finding Commits
-#### by commit message keyword `--grep`
-``` zsh
-git log --pretty=format:"%h: %s" --grep=README
-```
-
-# Logging 
-unlike `git status` `git log` shows only <b class="Crimson">commited</b> history
-```zsh 
-git log # shows curent branch commit history
-```
 # Branches
 
 The killer feature of git 

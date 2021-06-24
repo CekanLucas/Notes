@@ -8,13 +8,17 @@
 		},
 		{
 			"path": "../twilioQuest/starter-node"
+		},
+		{
+			"path": "../twilioQuest"
 		}
 	],
 	"settings": {
 		"liveServer.settings.multiRootWorkspaceName": "Notes",
 		"markdown.styles": [
+			"/home/dubi/projects/Notes/color.css",
 			"/home/dubi/projects/Notes/dist/CSS.css",
-			"/home/dubi/projects/Notes/color.css"
+			"/home/dubi/projects/Notes/tailwind.css"
 		],
 		"markdown.preview.fontSize": 16,
 		"markdown.preview.lineHeight": 1.3,

@@ -4,8 +4,8 @@
     href="https://fonts.googleapis.com/css?family=Fira+Mono:500&display=swap" 
     rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-<style> 
-body ::selection {
+  <style>
+  body ::selection {
   /*highlighting*/
   background: transparent;
   text-shadow: 
@@ -21,37 +21,35 @@ body ::selection {
 }
 h1,h2,h3,h4,h5,h6{
     font-family:;
-    color:yellow;
+    color:RoyalBlue;
     font-weight: bolder;
     text-align: center;
 }
 dt{
   font-weight: bold;
   font-size: 22px;
-  color: GoldenRod
+  color: BlueViolet
 }
 dd{
   font-weight: bold;
   font-size: 16px;
-  color: PaleGoldenRod
+  color: Cyan; 
 }
 </style>
-</head>    
+</head>
 <div id="stack-container">
-  <a href=""><img src="" alt="Logo"></a>
+<img src="https://raw.githubusercontent.com/remojansen/logo.ts/master/ts.png" alt="Typescript Logo">
 </div>
 
-#  Javascript Object Orientated Principles
+# TypeScript <span class="text-blue-300 font-extralight">Generics</span>
+<span class="text-blue-600 font-semibold ">Without generics, we would either have to give the identity function a specific type or give it a any type</span>
+```typescript
+function identity(arg: number): number {
+  return arg;
+} 
 
-<dl class='text-blue-30'>
-  <dt class=''>Aggregation</dt>
-  <dd>One object can reference another</dd>
-  <dt>Encapsulation</dt>
-  <dd>Data can be grouped together with functionalty that can act on that data</dd>
-  <dt>Inheritance</dt>
-  <dd>An object has characteristics from another object without duplication</dd>
-  <dt>Polymorphism</dt>
-  <dd>One interface may be implemented by multiple objects</dd>
-</dl>
-
-Becuase in javascript the fact that functions are objects makes them <span class="font-bold text-purple-500">first order functions</span> 
+// working with types rater than values 
+function identity<Type>(arg: Type): Type {
+  return arg;
+}
+``` 
