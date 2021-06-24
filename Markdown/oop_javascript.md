@@ -25,6 +25,16 @@ h1,h2,h3,h4,h5,h6{
     font-weight: bolder;
     text-align: center;
 }
+dt{
+  font-weight: bold;
+  font-size: 22px;
+  color: GoldenRod
+}
+dd{
+  font-weight: bold;
+  font-size: 16px;
+  color: PaleGoldenRod
+}
 </style>
 </head>    
 <div id="stack-container">
@@ -33,11 +43,13 @@ h1,h2,h3,h4,h5,h6{
 
 #  Javascript Object Orientated Principles
 
-<dl>
-  <dt>aggregation</dt>
-  <dd>definition</dd>
-  <dt>aggregation</dt>
-  <dd>definition</dd>
-  <dt>aggregation</dt>
-  <dd>definition</dd>
+<dl class='text-red-00'>
+  <dt class=''>aggregation</dt>
+  <dd>One object can reference another</dd>
+  <dt>Encapsulation</dt>
+  <dd>Data can be grouped together with functionalty tat can act on that data</dd>
+  <dt>Inheritance</dt>
+  <dd>An object can obtain data and methods from some parent object</dd>
+  <dt>Polymorphism</dt>
+  <dd>One interface may be implemented by multiple objects</dd>
 </dl>

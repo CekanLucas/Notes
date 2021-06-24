@@ -71,7 +71,7 @@ col | field | d | r | w | | notes
 06|<b class="HotPink">Sales Group</b>|<b class="BlueViolet">N</b>  |<b class="BlueViolet">N</b>  |<b class="BlueViolet">N</b>|<b class="BlueViolet">Doesn't Exist</b> 
 07|<b class="HotPink">Sales Office</b>|<b class="BlueViolet">N</b>  |<b class="BlueViolet">N</b>  |<b class="BlueViolet">N</b>|<b class="BlueViolet">Doesn't Exist</b> 
 08|<b class="HotPink">Sold-To Customer</b>|<b class="Orange">P</b>|<b class="Orange">P</b>|<b class="Orange">P</b>| <b class="Orange">3690619906</b> 
-09|<b class="HotPink">Ship-To Customer</b>|<b class="BlueViolet">N</b>  |<b class="BlueViolet">N</b>  |<b class="BlueViolet">N</b>|<b class="BlueViolet">Doesn't Exist</b>
+09|<b class="HotPink">Ship-To Customer</b>|<b class="Orange">P</b>  |<b class="Orange">P</b>  |<b class="Orange">P</b>|<b class="Orange">3690619906</b>
 10|<b class="HotPink">Name 1 Ship-To</b>|<b class="Lime">F</b>|<b class="Lime">F</b>|<b class="Lime">F</b>| <b class="Lime">Full Name eg John Doe</b>
 11|<b class="HotPink">Name 2 Shi-To</b>|<b class="Lime">F</b>|<b class="Lime">F</b>|<b class="Lime">F</b>| <b class="Lime">? eg c/o Jim Doe</b> 
 12|<b class="HotPink">Street Ship-To</b>|<b class="Lime">F</b>|<b class="Lime">F</b>|<b class="Lime">F</b>|<b class="Lime">Full Address eg 170 Edinborough Street</b>
@@ -82,10 +82,10 @@ col | field | d | r | w | | notes
 17|<b class="HotPink">Street Bill-To</b>|<b class="Lime">F</b>|<b class="BlueViolet">N</b>  |<b class="BlueViolet">N</b>|<b class="Lime">Billing, eg 39 Rockcrest Ave.</b>
 18|<b class="HotPink">Postal Code Bill-To</b>|<b class="Lime">F</b>|<b class="BlueViolet">N</b>  |<b class="BlueViolet">N</b>|<b class="Lime">Billing, eg V6W 0A8</b>
 19|<b class="HotPink">City Bill-To</b>|<b class="Lime">F</b>|<b class="BlueViolet">N</b>  |<b class="BlueViolet">N</b>|<b class="Lime">Billing, eg Ladysmith, BC </b>
-20|<b class="HotPink">Purchase Order Numbe</b>|<b class="Lime">F</b>|<b class="Lime">F</b>  |<b class="Lime">F</b>| <b class="Yellow">10-digit Medavie unique ID transactional ID, e.g. 21015T0004</b>
+20|<b class="HotPink">Purchase Order Numbe</b>|<b class="Lime">F</b>|<b class="Lime">F</b>  |<b class="Lime">F</b>| <b class="Yellow">10-digit unique transactional ID made from date and pogroup, e.g. 21015T0004</b>
 21|<b class="HotPink">Purchase Order Date</b>|<b class="Lime">F</b>  |<b class="Lime">F</b>|<b class="Lime">F</b>| <b class="Lime">eg 1/14/2021 seems format doesn't matter</b> 
 22|<b class="HotPink">Purchase Order Type</b>|<b class="Orange">P</b>|<b class="Orange">P</b>|<b class="Orange">P</b>| <b class="Orange">ZEMS</b> 
-23|<b class="HotPink">Your Reference</b>|<b class="Lime">F</b>|<b class="Lime">F</b>|<b class="Lime">F</b>| <b class="Yellow">should be the 11-digit Medavie patient ID</b> 
+23|<b class="HotPink">Your Reference</b>|<b class="Lime">F</b>|<b class="Lime">F</b>|<b class="Lime">F</b>| <b class="Yellow">Doesnt matter as long as it is unique we should use 6 digit user_id</b> 
 24|<b class="HotPink">Order reason</b>|<b class="Orange">P</b>|<b class="Orange">P</b>|<b class="Orange">P</b>| <b class="Orange">A88</b> 
 25|<b class="HotPink">Delivery block</b>|<b class="BlueViolet">N</b>  |<b class="Orange">P</b>|<b class="Orange">P</b>| <b class="Orange">Y</b> 
 26|<b class="HotPink">Text Object</b>|<b class="BlueViolet">N</b>  |<b class="BlueViolet">N</b>  |<b class="Orange">P</b>| <b class="Orange">ZD10</b> 
@@ -100,7 +100,7 @@ col | field | d | r | w | | notes
 35|<b class="HotPink">Material</b>|<b class="Orange">P</b>|<b class="BlueViolet">N</b>  |<b class="Orange">P</b>| <b class="SpringGreen">Need to fill on separate lines for each order</b> 
 36|<b class="HotPink">Order Quantity</b>|<b class="Orange">P</b>|<b class="BlueViolet">N</b>  |<b class="Orange">P</b>| <b class="SpringGreen">Need to fill on separate lines for each order</b> 
 37|<b class="HotPink">CondType ZPPA</b>|<b class="Orange">P</b>|<b class="BlueViolet">N</b>  |<b class="BlueViolet">N</b>|<b class="Orange">ZPPA</b> 
-38|<b class="HotPink">CondVal ZPPA</b>|<b class="Lime">F</b>|<b class="BlueViolet">N</b>  |<b class="BlueViolet">N</b>|<b class="Lime"> patient co-pay value eg 10, 20</b> 
+38|<b class="HotPink">CondVal ZPPA</b>|<b class="Lime">F</b>|<b class="BlueViolet">N</b>  |<b class="BlueViolet">N</b>|<b class="Lime"> patient co-pay value eg 156.0 for no coverage, 15.6 for 10% copay</b> 
 39|<b class="HotPink">Batch</b>|<b class="BlueViolet">N</b>  |<b class="BlueViolet">N</b>  |<b class="BlueViolet">N</b>|<b class="BlueViolet">Doesn't Exist</b> 
 40|<b class="HotPink">Plant</b>|<b class="BlueViolet">N</b>  |<b class="BlueViolet">N</b>  |<b class="BlueViolet">N</b>|<b class="BlueViolet">Doesn't Exist</b> 
 41|<b class="HotPink">Storage Location</b>|<b class="BlueViolet">N</b>  |<b class="BlueViolet">N</b>  |<b class="BlueViolet">N</b>|<b class="BlueViolet">Doesn't Exist</b> 
@@ -109,4 +109,4 @@ col | field | d | r | w | | notes
 44|<b class="HotPink">Cost Center</b>|<b class="BlueViolet">N</b>  |<b class="BlueViolet">N</b>  |<b class="BlueViolet">N</b>|<b class="BlueViolet">Doesn't Exist</b> 
 45|<b class="HotPink">Region</b>|<b class="BlueViolet">N</b>  |<b class="BlueViolet">N</b>  |<b class="BlueViolet">N</b>|<b class="BlueViolet">Doesn't Exist</b> 
 46|<b class="HotPink">Route</b>|<b class="BlueViolet">N</b>  |<b class="BlueViolet">N</b>  |<b class="BlueViolet">N</b>|<b class="BlueViolet">Doesn't Exist</b> 
-47|<b class="HotPink">Contract Number</b>|<b class="Orange">P</b>|<b class="Orange">P</b>|<b class="Orange">P</b>| <b class="SpringGreen">ELL987657</b> 
+47|<b class="HotPink">Contract Number</b>|<b class="Orange">P</b>|<b class="Orange">P</b>|<b class="Orange">P</b>| <b class="SpringGreen">ELL000001</b> 
