@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "../twilioQuest/starter-node"
+		},
+		{
+			"path": "../twilioQuest"
 		}
 	],
 	"settings": {
