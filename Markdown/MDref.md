@@ -84,6 +84,16 @@ First Header | Second Header
 Content from cell 1 | Content from cell 2
 Content in the first column | Content in the second column
 
+| a | b | 
+| --|- | 
+| > | a | 
+|2 | 2 |
+
+| a | b | 
+| --|- | 
+|  | 1 | 
+| ^ | 2 |
+
 Automatic linking for URLs
 Any URL (like dkcenterofarts.netlify.com) will be automatically converted into a clickable link.
 
@@ -220,6 +230,8 @@ This text is in Verdana
 <div style="font-family:Helvetica;font-size: 1.5em">
 This text is in Helvetica 
 </div>
+
+
 
 
 # Chain Middleware to Create a Time Server 
