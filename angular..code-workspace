@@ -1,0 +1,29 @@
+{
+	"folders": [
+		{
+			"path": "/home/dubi/projects/Notes/Angular"
+		},
+		{
+			"path": "/home/dubi/projects/ellerca/ellercacorebackend"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Notes",
+		"markdown.styles": [
+			"/home/dubi/projects/Notes/color.css",
+			"/home/dubi/projects/Notes/dist/CSS.css",
+			"/home/dubi/projects/Notes/tailwind.css"
+		],
+		"markdown.preview.fontSize": 17,
+		"markdown.preview.lineHeight": 1.3,
+		"compile-hero.disable-compile-files-on-did-save-code": false,
+		"markdown.preview.breaks": true,
+		"markdown.trace": "verbose",
+		"[markdown]": {
+
+			"editor.wordWrap": "on",
+			"editor.quickSuggestions": false
+		},
+		"editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'"
+	}
+}

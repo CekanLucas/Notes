@@ -36,30 +36,32 @@ export class sortTable {
     {
       createdBy: 'Connie Tanner',
       title: '353114_01',
-      callTye: 'Initial Call',
+      callType: 'Initial Call',
       callerType: 'Health Navigator (RN)',
       date: '19 Sep 2021 07:06 PM',
     },
     {
       createdBy: 'Stacy Cheng',
       title: '353114_11',
-      callTye: 'Initial Call',
+      callType: 'Initial Call',
       callerType: 'Dietician',
       date: '21 Sep 2021 07:17 PM',
     },
     {
       createdBy: 'Connie Tanner',
       title: '353114_21',
-      callTye: 'Other Interactions',
+      callType: 'Other Interactions',
       callerType: 'Health Navigator (RN)',
       date: '23 Sep 2021 02:29 PM ',
     },
   ];
 
   sortedData: Dessert[];
+  sortedTable: any[];
 
   constructor() {
     this.sortedData = this.desserts.slice();
+    this.sortedTable = this.table.slice();
   }
 
   sortData(sort: Sort) {
@@ -82,6 +84,32 @@ export class sortTable {
           return compare(a.carbs, b.carbs, isAsc);
         case 'protein':
           return compare(a.protein, b.protein, isAsc);
+        default:
+          return 0;
+      }
+    });
+  }
+
+  sortTable(sort: Sort) {
+    const data = this.table.slice();
+    if (!sort.active || sort.direction === '') {
+      this.sortedTable = data;
+      return;
+    }
+
+    this.sortedTable = data.sort((a, b) => {
+      const isAsc = sort.direction === 'asc';
+      switch (sort.active) {
+        case 'createdBy':
+          return compare(a.createdBy, b.createdBy, isAsc);
+        case 'title':
+          return compare(a.title, b.title, isAsc);
+        case 'callType':
+          return compare(a.callType, b.callType, isAsc);
+        case 'callerType':
+          return compare(a.callerType, b.callerType, isAsc);
+        case 'date':
+          return compare(a.date, b.date, isAsc);
         default:
           return 0;
       }
