@@ -1,0 +1,5 @@
+This is a larger file that contains more characters.
+This demonstrates that no matter how big the input
+stream is, the generated hash is the same size (but
+of course, not the same value). If two files have
+a different hash, they surely contain different data.
