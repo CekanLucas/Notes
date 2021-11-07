@@ -1,5 +1,5 @@
 h1,h2,h3,h4,h5,h6{
-    color:tomato;
+    color:chartreuse;
     font-weight: bolder;
 }
 
@@ -10,5 +10,5 @@ p{
 }
 
 code {
-    filter: hue-rotate(90);
+    filter: hue-rotate(10) !important;
 }
