@@ -208,7 +208,49 @@ Note: use -a (append) to apend the origin's head to the new branch from **.git/F
 
 ## Rebasing 
 
-`git rebase` is used to combine branches
+`git rebase` is used to combine branches <i class="HotPink">basically this is a series of cherry picks</i>
+
+<div class="text-center">
+
+``` mermaid
+graph LR;
+    C0-->C1;
+    C1-->C2;
+    C2-->C3;
+    C2-->C4;
+    C3-->Main;
+    C4-->Feature_;
+```
+</div>
+<div class="columns">
+<div class="column">
+
+<b><big class="Red">Merging</big></b>
+``` mermaid
+graph LR;
+C0-->C1;
+C1-->C2;
+C2-->C3_Feature_;
+C2-->C4;
+C3_Feature_-->C5_Master_;
+C4-->C5_Master_;
+
+```   
+</div>
+
+<div class="column">
+
+<b><big class="Lime">Rebasing</big></b>
+``` mermaid
+graph LR;
+C0-->C1;
+C1-->C2;
+C2-->C3_Main_;
+C3_Main_-->C4_Rebased_
+C2-->C4_Deleted_;
+```  
+</div>
+</div>
 
 
 # extra features
