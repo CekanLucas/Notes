@@ -76,3 +76,26 @@ function loggingIdentity<Type>(arg: Array<Type>): Array<Type> {
 ## Generics Types
 lets learn how to create generic types like `Array<Type>`
 
+>Note: <span class="FireBrick">enums and namespaces cant have generic types</span>
+
+<b class="SteelBlue">We need to create a interface for our identity function</b>
+
+```ts
+interface GenericIdentityFn {
+  <Type>(arg:Type): Type
+}
+
+const identityFunction = <Type>(arg: Type): Type => arg;
+
+let identityFn:GenericIdentityFn = identityFunction
+
+// Here us a slightly different type
+
+interface GenericIdentityFn<Type> {
+  (arg:Type): Type
+}
+
+const identityFunction = <Type>(arg: Type): Type => arg;
+
+identityFunction<string>('12')
+```
