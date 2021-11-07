@@ -4,7 +4,10 @@
 			"path": "/home/dubi/projects/Notes/Angular"
 		},
 		{
-			"path": "/home/dubi/projects/ellerca/ellercacorebackend"
+			"path": "/home/dubi/projects/ellerca/ellercaangular"
+		},
+		{
+			"path": "../ellerca/script"
 		}
 	],
 	"settings": {
