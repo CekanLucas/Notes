@@ -26,7 +26,7 @@ h1 {
 #library {
   visibility: hidden;
   text-align: center;
-  margin: 5% auto;
+  margin: 20px auto;
   width: 30%;
   margin-left: 35.5%;
 }
@@ -41,7 +41,7 @@ h1 {
   color: #fff;
   background-color: transparent;
   width: 80%;
-  margin: auto;
+  margin: 10px auto;
 }
 
 .card > span {
@@ -95,6 +95,19 @@ input {
   transition: 0.5s;
   margin: 10px;
   text-align: center;
+  background: radial-gradient(transparent 60%, whitesmoke);
+}
+
+input:hover {
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0);
+  background: radial-gradient(transparent 40%, white);
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0);
+  background: radial-gradient(transparent 70%, white);
 }
 
 input::placeholder {
@@ -124,10 +137,7 @@ button:focus {
   outline: none;
 }
 
-input:focus {
-  outline: none;
-  border: 1px solid rgba(255, 255, 255, 0);
-}
+
 
 hr {
   visibility: hidden;
@@ -175,5 +185,5 @@ hr {
 }
 
 #afterAnimationHeader {
-  margin-top: 400px;
+  margin-top: 120px;
 }

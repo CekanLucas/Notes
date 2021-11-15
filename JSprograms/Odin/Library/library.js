@@ -34,6 +34,5 @@ function initLibrary() {
     var newSciFiLibrary = new Library(initialLibrary);
     var duneBook = new Book('Dune', 'Frank Herbert', '1965');
     newSciFiLibrary.addBookToLibrary(duneBook);
-    console.log(newSciFiLibrary.library);
     return newSciFiLibrary;
 }
