@@ -23,7 +23,7 @@
 			"/home/dubi/projects/Notes/dist/CSS.css",
 			"/home/dubi/projects/Notes/tailwind.css"
 		],
-		"markdown.preview.fontSize": 16,
+		"markdown.preview.fontSize": 20,
 		"markdown.preview.lineHeight": 1.3,
 		"compile-hero.disable-compile-files-on-did-save-code": false,
 		"markdown.preview.breaks": true,
