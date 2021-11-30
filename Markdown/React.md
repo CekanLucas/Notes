@@ -263,6 +263,3 @@ This will join all `colors array items` into a *comma separated string and produ
 
 ## Use Default Props
 React also has an option to set default props. You can assign default props to a component as a property on the component itself and React assigns the default prop if necessary. This allows you to specify what a prop value should be if no value is explicitly provided. For example, if you declare `MyComponent.defaultProps = { location: 'San Francisco' }`, you have defined a location prop that's set to the string San Francisco, unless you specify otherwise. <mark> **React assigns default props if props are undefined, but if you pass null as the value for a prop, it will remain null** </mark>.
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg4MjA5OTc0NF19
--->

@@ -348,8 +348,148 @@ function Application(props) {
   )
 };
 ```
+## Using State Correctly
+<span class="react">there are 3 things you should know about `setState()`</span>
+
+1. Do Not Modify State Directly
+```jsx
+//wrong
+this.state.comment = 'Hello';
+
+//Correct - Use setState()
+this.setState({comment: 'Hello'});
+```
+<span class="HotPink">The only place where you can assign `this.state` is the constructor</span>
+
+2. State Updates May be Asynchronous
+React may batch multiple `setState()` calls into a single update for performance 
+
+Because `this.props` and `this.state` may be updated asynchronously, you should not rely on their values for calculating the next state.
+
+For example, this code may fail to update the counter:
+
+```jsx
+// wrong
+this.setState({
+  counter: this.state.counter + this.props.increment,
+})
+```
+<b class="GoldenRod">Fix</b> :<span class="Gold"> use a form that accepts a function rather than an object</span>
+<span class="PaleGoldenRod">Function should will receive the previous state as the first argument, and the props at the time the update is applied as the second argument</span>
+
+```jsx
+//correct
+this.setState((state, props) => {
+  counter: this.state.counter + this.props.increment,
+})
+```
+<small>note we used arrow function but normal works as well</small>
+
+3. State Updates are Merged 
+  When you call `setState()`, React merges the object you provide into the current state
+
+```jsx
+ constructor(props) {
+    super(props);
+    this.state = {
+      posts: [], comments: [] };
+  }
+
+// then update them seperately with setState() calls
+
+componentDidMount() {
+    fetchPosts().then(response => {
+      this.setState({
+        posts: response.posts});
+    });
+
+    fetchComments().then(response => {
+      this.setState({
+        comments: response.comments});
+    });
+  }
+```
+## Data Flows Down
+
+> <b class="RoyalBlue">A component is the only one that cares about its state but it may choose to pass its state down as props to its child components</b>
+
+<b class="react">Think Waterfall</b>
+
+# Handling Events
+
+<div class="columns">
+  <div class="column">
+
+```html
+<!-- HTML -->
+<button onclick="activateLasers()">
+  Activate Lasers
+</button>
+```
+  </div>
+  <div class="column">
+
+```jsx
+// React (jsx)
+<button onClick={activateLasers()}>
+  Activate Lasers
+</button>
+```
+  
+  </div>
+</div>
+
+## Prevent Defaults
+Unlike <b class="Orange">html</b> where you `return false` to prevent default behaviour in <b class="react">React</b> you call `preventDefault()`
+
+``` html 
+<form onsubmit="console.log('You clicked submit.'); return false">
+  <button type="submit">Submit</button>
+</form>
+```
+In react
+```jsx
+function Form() {
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log('You clicked submit.');
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+```
+<big class="SpringGreen">Passing Arguments to Event Handlers</big>
+Inside a loop, it is common to want to pass an extra parameter to an event handler. For example, if `id` is the row ID, either of the following would work:
+
+Note below both lines are equivalent
+```jsx
+<button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
+<button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
+```
+
+## Keys 
+These help <span class="react">React</span> identify which items have changed, are added or are removed
+
+Keys should be given to the elements inside the array to give the elements a stable identity
+
+Its reccomended not to use the index as the keys becuase indexes of elements may change
+
+```tsx
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map( (number) => 
+  <li key={number.toString()}>
+    {number}
+  </li>
+);
+```
+> A good rule of thumb is that elements inside the `map()` call need keys.
+
 ## Controlled Components
-<span class="Orange">Certain HTML form elements maintain their state.</span> An `<input>` element keeps track of what the current value is. The same is true for `<textarea>` and `<select>`. <span class="LimeGreen">It is preferable for React to manage all of the application state including what is currently typed into an </span>`<input>`
+<span class="Orange">Certain HTML form elements maintain their state.</span> An `<input>` element keeps track of what the current value is. The same is true for `<textarea>` and `<select>` <span class="LimeGreen">It is preferable for React to manage all of the application state including what is currently typed into an </span>`<input>`
 
 > We call this pattern a **controlled component**
 
@@ -361,10 +501,9 @@ function Application(props) {
     <main>
       <input
         value={name}
-        onChange={(event) => setName(event.target.value)}
-        placeholder="Please enter your name"
-      />
-      <h1>Hello, {name}.</h1>
+        onChange={ (event) => setName(event.target.value) }
+        placeholder="Please enter your name" />
+      <h1> Hello, {name} </h1>
     </main>
   );
 }
