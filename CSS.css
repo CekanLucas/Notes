@@ -6809,7 +6809,6 @@ h2 > code, p > code, li > code, div > code, span > code {
   margin: 5px;
   padding: 2px 1em;
   font-family: "Fira Mono", monospace;
-  font-weight: bold;
   font-size: 0.8em; }
 
 body ::selection {
