@@ -99,3 +99,59 @@ progress:: Flutter increases all kinds of erection
 
 ## My Resources 
 https://dev.to/ender_minyard/full-stack-developer-s-roadmap-2k12
+
+
+## <big class="Gray">/wdg/</big> Friendly GNU/Linux
+
+
+If you would like to try out GNU/Linux you can do one of the following:
+
+0) Install a GNU/Linux distribution of your choice in a Virtual Machine
+1) Use a live image and to boot directly into the GNU/Linux distribution without installing anything
+2) Dual boot the GNU/Linux distribution of your choice along with Windows or macOS
+3) Go balls deep and replace everything with GNU/Linux
+
+Resources: Please spend at least a minute to check a web search engine with your question.
+*Many free software projects have active mailing lists*
+
+    $ man %command%
+    $ info %command%
+    $ %command% -h/--help/-?
+    $ help %builtin/keyword%
+
+Don't know what to look for?
+    
+    $ apropos %something%
+
+Check the Wikis (most troubleshoots work for all distros):
+https://wiki.archlinux.org
+https://wiki.gentoo.org
+
+/g/'s Wiki on GNU/Linux:
+https://wiki.installgentoo.com/index.php/Category:GNU/Linux
+>What distro should I choose?
+
+https://wiki.installgentoo.com/index.php/Babbies_First_Linux
+>What are some cool programs?
+
+https://wiki.archlinux.org/index.php/list_of_applications
+https://directory.fsf.org/wiki/Main_Page
+>What are some cool terminal commands?
+
+https://www.commandlinefu.com/commands/browse
+https://cheat.sh/
+>Where can I learn the command line?
+
+https://mywiki.wooledge.org/BashGuide
+https://www.grymoire.com/Unix/
+https://overthewire.org/wargames/bandit
+>Where can I learn more about Free Software?
+
+https://www.gnu.org/philosophy/philosophy.html
+>How to break out of the botnet?
+
+https://prism-break.org/en/categories/gnu-linux
+
+/fglt/'s website and copypasta collection:
+https://fglt.nl && https://p.teknik.io/wJ9Zy
+
