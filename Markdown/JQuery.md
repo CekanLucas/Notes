@@ -1,6 +1,10 @@
 <link rel=stylesheet href="./css.css" >
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="../JSprograms/JQuery.ts"></script>
 
-# JQuery <span style="color:lightgreen">-courtesy of freecodecamp</span> 
+[link to JQuery JS File](../JSprograms/JQuery.ts)
+
+# <span class="OrangeRed">JQuery</span> <span style="color:lightgreen">freecodecamp</span> & <span class="Aqua">John Duckett Book</span>
 
 jQuery is one of the many libraries for JavaScript. It is designed to simplify scripting done on the client side. jQuery's most recognizable characteristic is its **dollar sign (`$`) syntax**. With it, you can easily manipulate elements, create animations and handle input events.
 
@@ -40,9 +44,9 @@ jQuery is one of the many libraries for JavaScript. It is designed to simplify s
 
     });
 </script>
-
 ``` 
-Now we have a _**document ready function**_.
+> **Note:** `.ready()` method is <i class="text-red-600 bg-red-300">&nbsp;deprecated &nbsp;</i> use <code style="filter: hue-rotate(190deg);" class="hover:hue-rotate-15">jQuery(function() { })</code>
+
 All jQuery functions start with a `$`, usually referred to as a `dollar sign operator`, or as `bling`.
 jQuery often selects an HTML element with a selector, then does something to that element.
 

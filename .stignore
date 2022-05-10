@@ -1,0 +1,11 @@
+node_modules/
+ruby/
+Resume/
+Etch_A_Sketch/
+DOMmunipulation/
+Gatsby/
+dist/
+.sass-cache/
+.stfolder/
+.git/
+Angular/**
