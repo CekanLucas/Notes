@@ -20,8 +20,8 @@
 		"liveServer.settings.multiRootWorkspaceName": "Notes",
 		"markdown.styles": [
 			"/home/dubi/projects/Notes/color.css",
-			"/home/dubi/projects/Notes/dist/CSS.css",
-			"/home/dubi/projects/Notes/tailwind.css"
+			"https://use.fontawesome.com/releases/v5.7.1/css/all.css",
+			"/home/dubi/projects/Notes/CSS.css"
 		],
 		"markdown.preview.fontSize": 20,
 		"markdown.preview.lineHeight": 1.3,
