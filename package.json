@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "Iterator.js",
+  "proxy": "http://localhost",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "style": "sass --watch CSS.sass dist/CSS.css"
+    "style": "npx sass -w CSS.sass:CSS.css"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,9 @@
   "homepage": "https://github.com/Dubi911/Notes#readme",
   "dependencies": {
     "@types/jquery": "^3.5.14",
-    "bulma": "^0.8.2"
+    "bulma": "^0.8.2",
+    "fetch": "^1.1.0",
+    "sass": "^1.51.0"
   },
   "devDependencies": {
     "@types/node": "^14.14.22",
