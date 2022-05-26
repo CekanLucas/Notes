@@ -2,6 +2,7 @@
   "name": "cekanlucasnotes",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "Iterator.js",
   "proxy": "http://localhost",
   "scripts": {
@@ -22,6 +23,7 @@
     "@types/jquery": "^3.5.14",
     "bulma": "^0.8.2",
     "fetch": "^1.1.0",
+    "node-fetch": "^3.2.4",
     "sass": "^1.51.0"
   },
   "devDependencies": {
