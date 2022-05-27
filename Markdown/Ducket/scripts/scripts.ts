@@ -1,6 +1,16 @@
+//@ts-nocheck
 /*******
  * Note that types seem to break the code
  */
+
+/* Load Event Script */
+const setup = () => {
+  const textInput = document.getElementById('username')
+  textInput.focus()
+}
+
+// note you can add the load event to anything not just window, img, scripts etc
+window.addEventListener('load', setup, false)
 
 /* DOM muipulations scripts */
 
@@ -153,17 +163,32 @@ usernameInput.addEventListener('blur', () => {
   return checkUsername(3)
 }) // event listener method
 
+const [elMsg, elUsername, elBody, elMessage] = [
+  document.getElementById('feedback'),
+  document.getElementById('username'),
+  document.getElementById('body'),
+  document.getElementById('message')
+]
+
+elUsername.addEventListener('blur', () => {
+  return checkUsername(5)
+}) // event listener method
+elUsername.addEventListener('focus', tipUsername, false)
+
 function checkUsername(maxlength) {
-  const elMsg = document.getElementById('feedback')
-  const elUsername = document.getElementById('username')
-  // @ts-ignore // HTMLINPUT TYPE BREAKS CODE
   const userLength = elUsername.value.length
-  elMsg.textContent =
-    userLength < maxlength
-      ? `Username must be ${maxlength} characters or more\nYou need ${
-          maxlength - userLength
-        } more`
-      : ''
+
+  if (userLength < maxlength) {
+    elMsg.className = 'tip'
+    elMsg.textContent = 'Not long enough, yet...'
+  } else {
+    elMsg.textContent = ''
+  }
+}
+
+function tipUsername() {
+  elMsg.className = 'tip'
+  elMsg.innerHTML = 'Username must be at least 5 characters'
 }
 
 /** EVENT FLOW **/
@@ -175,7 +200,7 @@ function addClickEvent(el) {
   el.addEventListener ? defaultAddListenerMethod(el) : oldAddListenerMethod(el)
 
   function defaultAddListenerMethod(el) {
-    el.addEventListener('click',  (e) => {
+    el.addEventListener('click', (e) => {
       // e.stopPropagation() // note important to prevent bubbling causing link to go elsewhere
       itemDone(e)
     })
@@ -212,3 +237,42 @@ function itemDone(e) {
   e.stopPropagation ? e.stopPropagation() : (e.cancelBubble = true)
   e.preventDefault ? e.preventDefault() : (e.returnValue = false)
 }
+
+/* Position */
+
+function showPosition(event) {
+  const [sx, sy, px, py, cx, cy] = [
+    document.getElementById('sx'),
+    document.getElementById('sy'),
+    document.getElementById('px'),
+    document.getElementById('py'),
+    document.getElementById('cx'),
+    document.getElementById('cy'),
+  ]
+
+  // event object has mouse position data
+  sx.value = event.screenX
+  sy.value = event.screenY
+  px.value = event.pageX
+  py.value = event.pageY
+  cx.value = event.clientX
+  cy.value = event.clientY
+}
+
+window.addEventListener('mousemove', showPosition, false)
+
+/* Keyboard Events */
+
+function charCount(e) {
+  const [textEntered, charDisplay, lastkey] = [
+    elMessage.value,
+    document.getElementById('charactersLeft'),
+    document.getElementById('lastKey'),
+  ]
+
+  const counter = 180 - textEntered.length
+  charDisplay.textContent = counter
+  lastkey.textContent = 'Last key in ASCII code: ' + e.keyCode
+}
+
+elMessage.addEventListener('keyup', charCount, false)

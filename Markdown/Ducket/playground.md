@@ -68,7 +68,6 @@ Click to Run Chosen Below Script & For Code link here [<i class="fas fa-external
 
 <iframe src="http://127.0.0.1:5500/Duckket/javascript-and-jquery-book-code/javascript-and-jquery-book-code-0915/c06/event-attributes.html" frameborder="5" width='50%' height='500' class=''></iframe>
 
-<script src="scripts/scripts.ts"></script>
 
 
   </div>
@@ -169,3 +168,22 @@ function itemDone(e) {
   e.preventDefault ? e.preventDefault() : (e.returnValue = false)
 }
 ```
+
+<div id="stats">
+  screenX: <input type="text" id="sx" /> 
+  screenY: <input type="text" id="sy" /><span class="divider">|</span> 
+  pageX: <input type="text" id="px" /> 
+  pageY: <input type="text" id="py" /><span class="divider">|</span>
+  clientX: <input type="text" id="cx" /> 
+  clientY: <input type="text" id="cy" />
+</div>
+
+<form id="messageForm">
+  <h2>My profile</h2>
+  <textarea id="message"></textarea>
+  <div id="charactersLeft">180 characters</div>
+  <div id="lastKey"></div>
+</form>
+
+
+<script src="scripts/scripts.ts"></script>

@@ -111,6 +111,9 @@ di-->a[attribute<hr><code>nodeValue</code><br><br><code>className / id</code> <b
 | **mouseover** | user moves the mouse over an element *not on a touchscreen*    |
 | **mouseout**  | user moves the mouse off an element *not on a touchscreen*     |
 
+preferable technique is to use CSS eg `:hover` pseudo-class
+mousedown/up are seperate for drag and drop functionality
+
 | Focus                   | Events                 |
 | ----------------------- | ---------------------- |
 | **focus** / **focusin** | elements gains a focus |
