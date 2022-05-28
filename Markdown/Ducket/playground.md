@@ -66,10 +66,6 @@ Click to Run Chosen Below Script & For Code link here [<i class="fas fa-external
     </ul>
   </div>
 
-<iframe src="http://127.0.0.1:5500/Duckket/javascript-and-jquery-book-code/javascript-and-jquery-book-code-0915/c06/event-attributes.html" frameborder="5" width='50%' height='500' class=''></iframe>
-
-
-
   </div>
 
 
@@ -185,5 +181,19 @@ function itemDone(e) {
   <div id="lastKey"></div>
 </form>
 
+<form method="post" action="http://www.example.org/register" id="formSignup">
+  <h2>Membership</h2>
+  <label for="package" class="selectbox"> Select a package: </label>
+  <select id="package">
+    <option value="annual">1 year ($50)</option>
+    <option value="monthly">1 month ($5)</option>
+  </select>
+  <div id="packageHint" class="tip"></div>
+  <input type="checkbox" id="terms" />
+  <label for="terms" class="checkbox"> Check to agree to terms &amp; conditions</label>
+  <div id="termsHint" class="warning"></div>
+  <input type="submit" value="next" />
+</form>
 
+<!-- keep script at the bottom -->
 <script src="scripts/scripts.ts"></script>
