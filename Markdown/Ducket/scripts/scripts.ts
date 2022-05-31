@@ -167,7 +167,7 @@ const [elMsg, elUsername, elBody, elMessage] = [
   document.getElementById('feedback'),
   document.getElementById('username'),
   document.getElementById('body'),
-  document.getElementById('message')
+  document.getElementById('message'),
 ]
 
 elUsername.addEventListener('blur', () => {
@@ -276,3 +276,32 @@ function charCount(e) {
 }
 
 elMessage.addEventListener('keyup', charCount, false)
+
+/* FORM EVENTS */
+const [elForm, elSelectPackage, elPackageHint, elTerms, elTermsHint] = [
+  document.getElementById('formSignup'),
+  document.getElementById('package'),
+  document.getElementById('packageHint'),
+  document.getElementById('terms'),
+  document.getElementById('termsHint'),
+]
+
+function packageHint() {
+  const pack = this.options[this.selectedIndex].value
+
+  elPackageHint.innerHTML =
+    pack === 'monthly' ? 'Save $10 if you pay for 1 year!' : 'Wise choice!'
+}
+
+function checkTerms(event) {
+  console.log(event);
+  event.preventDefault()
+  if (!elTerms.checked) {
+    elTermsHint.innerHTML = 'You must agree to the terms'
+  }
+}
+
+elSelectPackage.addEventListener('change', packageHint, false)
+// note submit event doen't work in markdown due to iframe sandbox setting not having allow-forms  
+// elForm.addEventListener('submit', checkTerms, false)
+elForm.addEventListener('dblclick', checkTerms, false)
