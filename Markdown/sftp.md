@@ -56,37 +56,7 @@ h1, h2{
 
 </div>
 
-
-
-``` bash
+```
 -oPort=custom_port # option to set custom port if default 22 is not used 
 ip addr show # to find relevant ip address
 ```
-
-    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
-        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-        inet 127.0.0.1/8 scope host lo
-          valid_lft forever preferred_lft forever
-        inet6 ::1/128 scope host 
-          valid_lft forever preferred_lft forever
-    2: enp0s31f6: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN group default qlen 1000
-        link/ether 24:4b:fe:95:b7:e0 brd ff:ff:ff:ff:ff:ff
-    3: wlo1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
-        link/ether a8:7e:ea:eb:39:21 brd ff:ff:ff:ff:ff:ff
-        inet 192.168.0.2/24 brd 192.168.0.255 scope global dynamic noprefixroute wlo1
-IP to connect with <b class="HotPink">192.168.0.2</b>
-
-          valid_lft 603690sec preferred_lft 603690sec
-        inet6 2001:1970:5c99:5200::ab12/128 scope global dynamic noprefixroute 
-          valid_lft 42097sec preferred_lft 42097sec
-        inet6 2001:1970:5c99:5200:689c:49f3:2974:8ac8/64 scope global temporary dynamic 
-          valid_lft 43180sec preferred_lft 43180sec
-        inet6 2001:1970:5c99:5200:a5f9:7fd7:ae19:bc4a/64 scope global dynamic mngtmpaddr noprefixroute 
-          valid_lft 43180sec preferred_lft 43180sec
-        inet6 fe80::a078:5e03:5326:6cf9/64 scope link noprefixroute 
-          valid_lft forever preferred_lft forever
-    4: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
-        link/ether 02:42:62:23:34:a6 brd ff:ff:ff:ff:ff:ff
-        inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
-          valid_lft forever preferred_lft forever
-

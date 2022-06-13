@@ -25,7 +25,7 @@ Document.getElementsByTagName(TagName: string): HTMLCollectionOf<Element>
 ParentNode.querySelectorAll<Element>(selectors: string): NodeListOf<Element>
 ```
 
-> **Note:** A <i class="SpringGreen">NODELIST</i> is <i class="LightGrey">not</i> a array but instead is a <b class="SpringGreen">collection</b> so it has a `length` property and array like ordered index numbers
+> **Note:** A <i class="SpringGreen ">NODELIST</i> is <i class="LightGrey">not</i> a array but instead is a <b class="SpringGreen">collection</b> so it has a `length` property and array like ordered index numbers
 
 > **Note:** You can use the index number just like array <b class="RoyalBlue">[index : number]</b> the less prefered way is by using `.item(index: number)` method
 
