@@ -1,0 +1,17 @@
+ #container {
+    display: flex;
+    background-color: rgba(30, 10, 120, 0.5);
+    min-height: 50vh;
+    border: 5px double white;
+    border-radius: 1em;
+    border-bottom-style: groove;
+}
+.object{
+  background-color:orange;
+  border: 5px inset red;
+  border-radius: 1em;
+  padding: 20px;
+  margin: 20px;
+  height: 1em;
+  width: 1em;
+}
