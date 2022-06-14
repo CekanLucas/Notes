@@ -56,7 +56,7 @@ h1, h2{
 
 </div>
 
-```
+``` bash
 -oPort=custom_port # option to set custom port if default 22 is not used 
 ip addr show # to find relevant ip address
 ```
