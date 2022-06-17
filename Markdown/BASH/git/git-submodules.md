@@ -5,9 +5,34 @@ link to main [git](git.md)
 # GIT `sub modules`
 
 To start and add a submodule to your git repository
-``` 
-git submodules add <github url>
 ```
+git submodules add [options] <github url> [path/to/dir]
+
+Options: 
+> --name name-of-submodule
+```
+### `.gitmodules`
+```bash
+[submodule "SUBMODULE_NAME"]
+	path = "path/to/dir"
+	url = "git@github.com:GithubUser/Repo.git"
+```
+
+
+#### Once you have a repo with `sub modules`
+
+To initialise local config `.gitmodules`
+```
+git submodule init 
+```
+To fetch data and pull for modules
+```
+git submodule update [path/to/dir]
+```
+## cloning with <span class="Khaki">submodules</span>
+Use `recursive` option to automatically initialise and update all containing submodules 
+
+    git clone --recursive git@github.com:GithubUser/Repo.git
 
 
 `git log` to see version history
