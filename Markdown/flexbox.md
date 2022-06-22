@@ -28,6 +28,7 @@
       align-items: flex-start;
     }
     .object{
+      flex-basis: 30px
     }
     .object:nth-of-type(2) {
       align-self:flex-end;
@@ -42,6 +43,8 @@
 </head>    
 
 # FlexBox
+
+[Excellent way to learn -> flexbox zombies](https://mastery.games/flexboxzombies/)
 
 <div id="container">
   <div class="object" id="object1">1</div>
@@ -109,3 +112,34 @@ align-items-values {
 }
 
 ```
+
+## Other Properties
+
+`flex-wrap` : `wrap` or `wrap-reverse` default: `no wrap`
+
+**Deals with how wrapping works** similiar to `align-items`
+
+`align-content` : `flex-[start | end]` | `space-[around -between]` 
+
+## Short Hand 
+
+``` css
+flex: [flex-grow] [flex-shrink] [flex-basis]
+flex-flow: [flex-direction] [flex direction]
+
+example {
+  flex: 1 1 450px;
+
+  /* These are identical */
+  flex: auto;
+  flex: 1 1 auto:
+
+  /* These are identical */
+  flex: none;
+  flex: 0 0 auto:
+
+  flex-flow: column wrap
+}
+```
+
+> *Note:* default for `flex-basis` becomes **0px** need to set it **auto** 
