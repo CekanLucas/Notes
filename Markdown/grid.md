@@ -27,7 +27,8 @@
       grid-template-columns: 100px 1fr 2fr;
       grid-row-gap: 10px;
       grid-column-gap: 10px;
-      grid-gap: 1em
+      grid-gap: 1em 20px;
+      grid-auto-flow: ;
     }
     .object{
     }
@@ -50,6 +51,7 @@
     #object10 {
         grid-row-start: span 2;
         grid-column-start: span 2;
+        order: -1; /* change from 0 1 -1 see what happens */
     }
 
   </style>
@@ -193,3 +195,82 @@ container {
 object {
   grid-area: center;
 }
+```
+## Grid Template Shorthand
+Need a short hand for
+
+<code class="filter -hue-rotate-90">grid-template-rows</code>
+
+<code class="filter -hue-rotate-90">grid-template-columns</code>
+
+<code class="filter -hue-rotate-90">grid-template-areas</code>
+
+**The shorthand is** <code class="filter -hue-rotate-180">grid-template</code>
+
+<b class="text-purple-400">grid-template:</b>
+<span class="text-purple-400">[row settings] / [column settings] / [area settings]</span>
+```css
+grid-template-shorthand{
+  grid-template: 1fr 20% / 1fr 1fr 1fr 1fr;
+  <!-- styled for readability -->
+  grid-template: 1fr 
+                20% 
+                / 1fr 1fr 1fr 1fr;
+  <!-- with grid area --> 
+  grid-template: ". rocky rocky ." 200px
+                ". rocky rocky ." 1fr
+                / 1fr 1fr 1fr 1fr;
+}
+```
+### Order of items
+
+**default is** `order: 0`
+
+but if you give a item `order: 1` it will move to be <u>**last position**</u>
+
+if you give `order: -1` it will move to be <u>**first position**</u>
+
+**Note:** Row positioning takes precendence so *grid-row: 1* overrides *order: 1*
+
+### Change flow of items into grid
+
+This option sets 2 things
+1. **direction**: `row` or `column`
+2. **packing**: `sparse` or `dense`
+
+```css
+grid {
+  grid-auto-flow: [default: row] [column]
+                  [default: sparse] [dense]
+}
+```
+### Implicit rows and columns 
+
+Rows and Columns that are defined outside the normal explicitly defined grid *ie more items that can fit on grid* can still exist. 
+
+The default behaviour is auto meaning if there is no content that it will callapse to 0
+```css
+grid-auto-columns: [default= auto] [standard measures]
+```
+
+### Alignment *within* cell
+<p class="text-red-400 text-center">[start] [center] [end] [default=stretch]</p>
+
+`justify-items` alignment left and right *within* a grid cell
+
+`justify-self` same as above but for individual items
+
+`align-items` `align-self` alignment vertically *within* a grid cell
+
+### Justify and Align content
+
+`justify-content` `align-content`
+
+
+<p class="text-red-400 text-center">[default=start] [center] [end] [space-around] [space-between] [space-evenly]</p>
+
+> These settings align items when the grid has extra space available
+
+#### stretch
+
+`auto` columns would be stretched by the **default** <i class="text-red-400 text-center">stretch</i> setting
