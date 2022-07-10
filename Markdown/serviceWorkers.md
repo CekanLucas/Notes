@@ -140,3 +140,7 @@ addEventListener("activate", e => {
 
 ## Cache
 <span class="text-xl text-yellow-400 capitalize">working with caches</span>
+How to create, populate, and delete caches
+How to respond to requests with cached items
+How to make pages work offline
+How to version your caches and avoid conflicts
