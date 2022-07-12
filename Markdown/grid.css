@@ -1,0 +1,14 @@
+#container {
+  background-color: rgba(30, 10, 120, 0.5);
+  padding: 5px;
+  border: 5px double white;
+  border-radius: 1em;
+  border-bottom-style: groove;
+}
+.object {
+  background: radial-gradient(circle, rgb(255, 6, 205) 0%, orangered 80%);
+  border: 5px inset red;
+  border-radius: 1em;
+  padding: 20px;
+  font-weight: bold;
+}
