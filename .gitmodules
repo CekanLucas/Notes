@@ -1,3 +1,6 @@
 [submodule "notebook"]
 	path = notebook
 	url = git@github.com:CekanLucas/notebook.git
+[submodule "European_War_6"]
+	path = European_War_6
+	url = git@github.com:CekanLucas/Eur-War-6.git
