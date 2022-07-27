@@ -29,7 +29,8 @@
 
 5. To insert or append text type:
    - type `i`  inserted text   <ESC>         insert before the cursor
-   - type `A`    appended text   <ESC>         append after the line
+   - type `I` for inserting text *before* the line 
+   - type `A`    appended text   <ESC>         append *after* the line
 
 NOTE: Pressing <ESC> will place you in Normal mode or will cancel
       an unwanted and partially completed command.
@@ -209,4 +210,34 @@ use `,` to repeat command `;` for background
 `~` to switch case for a single character
 </span>
 
+### Splits
+*very good to use in vscode*
 
+      :sp {relative-path-to-file}
+      :vsp {relative-path-to-file}
+
+**V**ertical **Sp**lit
+
+### Tabs 
+Within a split you can `open` multiple tabs
+
+1. Open a file in new tab
+   :tabnew {file}
+2. Go to **n**ext tab
+   :tabn (:tabnext)
+3. Go to **p**revious tab
+   :tabp (: tabprevious)
+4. Close all other tabs
+   :tabo (:tabonly)
+
+### Suround
+
+By default we have `s` operator **suround** which operates on the suroundings *quotes, parenthesis, tags, braces etc*
+
+`ds` to delete surroundings
+`cs` to change surroundings
+`ys` to add surrounding
+
+#### Example
+
+`cs*tem>` change the surrounded * for the *<em>* tag
