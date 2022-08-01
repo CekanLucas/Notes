@@ -179,7 +179,7 @@ function itemDone(e) {
   <textarea id="message"></textarea>
   <div id="charactersLeft">180 characters</div>
   <div id="lastKey"></div>
-</form>
+</form><br>
 
 <form method="post" action="http://www.example.org/register" id="formSignup">
   <h2>Membership</h2>
@@ -194,6 +194,8 @@ function itemDone(e) {
   <div id="termsHint" class="warning"></div>
   <input type="submit" value="next" />
 </form>
+
+**Note**: Above does not work because `submit` events for forms *do not work* in markdown go to [html](./ducket.html) to test feature
 
 <!-- keep script at the bottom -->
 <script src="scripts/scripts.ts"></script>

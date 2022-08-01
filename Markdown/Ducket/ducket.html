@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/playground.css">
+  <title>Forms</title>
+</head>
+
+<body>
+  <h1>Form Events</h1>
+  Becuase forms dont really work in Markdown we need to use a html template
+
+  <form method="post" action="http://www.example.org/register" id="formSignup">
+    <h2>Membership</h2>
+    <label for="package" class="selectbox"> Select a package: </label>
+    <select id="package">
+      <option value="annual">1 year ($50)</option>
+      <option value="monthly">1 month ($5)</option>
+    </select>
+    <div id="packageHint" class="tip"></div>
+    <input type="checkbox" id="terms" />
+    <label for="terms" class="checkbox"> Check to agree to terms &amp; conditions</label>
+    <div id="termsHint" class="warning"></div>
+    <input type="submit" value="next" />
+  </form>
+  <script>
+    /* FORM EVENTS */
+    const [elForm, elSelectPackage, elPackageHint, elTerms, elTermsHint] = [
+      document.getElementById('formSignup'),
+      document.getElementById('package'),
+      document.getElementById('packageHint'),
+      document.getElementById('terms'),
+      document.getElementById('termsHint'),
+    ]
+
+    function packageHint() {
+      const pack = this.options[this.selectedIndex].value
+
+      elPackageHint.innerHTML =
+        pack === 'monthly' ? 'Save $10 if you pay for 1 year!' : 'Wise choice!'
+    }
+
+    function checkTerms(event) {
+      console.log(event);
+      event.preventDefault()
+      if (!elTerms.checked) {
+        elTermsHint.innerHTML = 'You must agree to the terms'
+      }
+    }
+
+    elSelectPackage.addEventListener('change', packageHint, false)
+    elForm.addEventListener('submit', checkTerms, false)
+
+    /* MUTATION OBSERVERS */
+    const observer = new MutationObserver(() => {
+      console.log("There was a DOM change detected");
+      observer.disconnect();
+    })
+
+    observer.observe(elTermsHint, { attributes: true, childList: true, subtree: true })
+  </script>
+</body>
+
+</html>

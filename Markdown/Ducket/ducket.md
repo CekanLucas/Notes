@@ -350,3 +350,38 @@ function itemDone(e) {
   e.preventDefault ? e.preventDefault() : (e.returnValue = false)
 }
 ```
+
+## Form Events
+
+<code class="font-bold filter -hue-rotate-30" >submit</code>
+
+When a form is submitted, this event fires on the node representing the `form` element
+
+Ussually used when user is ready to send form data to server
+
+<code class="font-bold filter -hue-rotate-30" >change</code>
+
+Fires when a one of several form elements changes <b class="SkyBlue">eg</b>
+- a slection is made from a drop down *select* box 
+- a *radio* is selected
+- a *checkbox* is ticked or unticked
+  
+<code class="font-bold filter -hue-rotate-30" >input</code>
+
+Used on `<input>` or `<textarea>` elements
+
+## Mutation Observer
+
+    
+    The MutationObserver interface provides the ability to watch for changes being made to the DOM tree. It is designed as a replacement for the older Mutation Events feature
+    
+
+```ts 
+const observer = new MutationObserver(() => {
+  console.log("There was a DOM change detected");
+  observer.disconnect();
+})
+
+observer.observe(targetNode, { attributes: true, childList: true, subtree: true } as config)
+
+```
