@@ -385,3 +385,38 @@ const observer = new MutationObserver(() => {
 observer.observe(targetNode, { attributes: true, childList: true, subtree: true } as config)
 
 ```
+
+## HTML5 events 
+
+<code class="font-bold filter -hue-rotate-30 text-xl" >DOMContentLoaded</code>
+
+This event fires when the DOM tree is loaded <span class="text-red-500 font-normal"> <u>but</u> images, CSS, Javascript may turn out to still be loading</span>
+
+It can be attached to the `window` or `document` object
+
+> **Note**: Since the load event for scripts could be fired after above event this means that the html inserted by script might not have finished yet
+
+```ts
+    window.addEventListener('DOMContentLoaded',
+      () => textInput.focus() as callback
+      , false)
+```
+<code class="font-bold filter -hue-rotate-30 text-xl" >beforeunload</code>
+
+This event should <span class="text-red-500 font-extrabold">only</span> be used to tell the user that form data will not be saved, thus browsers make sure that this cannot be abused for anything else *such as telling user to not redirect from page*
+
+<img src="./images/beforeunload.png" class="" width="50%" alt="ask before redirect">
+
+```ts
+    window.addEventListener('beforeunload', (event) => {
+      // for firefox this is the only way to activate this event
+      event.preventDefault()
+
+      /* Alternative way to activate event for other browsers */
+      // const message = 'You have changes that have not been saved... '
+      // (event || window.event).returnValue = message
+      // return message
+    })
+```
+
+**There are other events for mobile and some not listed here**

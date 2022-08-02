@@ -26,14 +26,21 @@
     <div id="termsHint" class="warning"></div>
     <input type="submit" value="next" />
   </form>
+
+  <form id="messageForm" action="http://example.org/">
+    <textarea id="message"></textarea>
+    <input type="submit" value="next" />
+  </form>
+
   <script>
     /* FORM EVENTS */
-    const [elForm, elSelectPackage, elPackageHint, elTerms, elTermsHint] = [
+    const [elForm, elSelectPackage, elPackageHint, elTerms, elTermsHint, textInput] = [
       document.getElementById('formSignup'),
       document.getElementById('package'),
       document.getElementById('packageHint'),
       document.getElementById('terms'),
       document.getElementById('termsHint'),
+      document.getElementById('message'),
     ]
 
     function packageHint() {
@@ -61,7 +68,21 @@
     })
 
     observer.observe(elTermsHint, { attributes: true, childList: true, subtree: true })
+
+    /* HTML5 Events */
+    window.addEventListener('DOMContentLoaded',
+      () => textInput.focus()
+      , false)
+
+    window.addEventListener('beforeunload', (event) => {
+      event.preventDefault()
+      console.log('before content load')
+      // const message = 'You have changes that have not been saved... '
+      // (event || window.event).returnValue = message
+      // return message
+    })
+
   </script>
-</body>
+</body>0
 
 </html>
