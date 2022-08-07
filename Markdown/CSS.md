@@ -196,3 +196,30 @@ a:active {
 ```
 
 <a href="#">Example LInk</a>
+
+## Text Styles
+### Text Transform
+<span class="" style="text-transform: uppercase">upper case</span>
+<span class="" style="text-transform: capitalize">upper case</span>
+<span class="" style="text-transform: lowercase">LOWER CASE</span>
+
+### Text Decoration
+
+<u class="" style="text-decoration: none">none: remove decoration</u>
+<span class="" style="text-decoration: underline">underline</span>
+<span class="" style="text-decoration: overline; line-height:3">overline</span>
+<span class="" style="text-decoration: line-through">line-through</span>
+
+### Text Shadow
+1st value --> **horizontal offset** 
+2nd value --> **vertical offset** 
+3rd value --> **blur offset** 
+4th value --> **color of shadow** 
+
+> Multiple Shadows can be added if comma seperated
+
+```css
+selectors {
+  text-shadow: 3px 2px 1px red, 1px 5px 6px blue;
+}
+```
