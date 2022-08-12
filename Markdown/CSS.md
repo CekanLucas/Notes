@@ -227,13 +227,14 @@ selectors {
 # The Box Model
 
 <style>
-#box, #margin, #padding, #content{
+#box, #margin, #padding, #content, .borders{
   background: rgba(100, 100, 100, 0.4);
   height: 100%;
   border: dotted 10px 5px red;
   padding: 1em;
   margin: 0;
   line-height: 2em;
+  box-sizing: border-box;
 }
 
 #padding {
@@ -245,15 +246,12 @@ selectors {
   width: 50%;
   text-align: center;
   margin: auto;
+  height: 100%;
 }
 #box:before {
   content: 'Box Model';
   font-weight: bold;
   font-size: 1.1em;
-}
-
-#box{
-  height: 100%;
 }
 </style>
 
@@ -268,4 +266,48 @@ selectors {
     </div>
   </fieldset>
   </div>
+</div>
+
+Use `box-sizing` of value `border-box` so that padding and border width are not added to box size so that the width is the final determination of size
+
+### Border Styles
+
+<style>
+  .borders>fieldset>legend {
+    color: palegoldenrod;
+    padding: 0 1em;
+    font-weight: bolder;
+    font-family: monospace;
+    height: 2em;
+  }
+</style>
+
+<div class="borders">
+  <fieldset class="borders" style="border:goldenrod 5px solid">
+    <legend>solid</legend>
+  </fieldset>
+  <fieldset class="borders" style="border:goldenrod 5px dotted">
+    <legend>dotted</legend>
+  </fieldset>
+  <fieldset class="borders" style="border:goldenrod 5px dashed">
+    <legend>dashed</legend>
+  </fieldset>
+  <fieldset class="borders" style="border:goldenrod 5px double">
+    <legend>double</legend>
+  </fieldset>
+  <fieldset class="borders" style="border:goldenrod 5px groove">
+    <legend>groove</legend>
+  </fieldset>
+  <fieldset class="borders" style="border:goldenrod 5px ridge">
+    <legend>ridge</legend>
+  </fieldset>
+  <fieldset class="borders" style="border:goldenrod 5px solid">
+    <legend>border7</legend>
+  </fieldset>
+  <fieldset class="borders" style="border:goldenrod 5px inset">
+    <legend>inset</legend>
+  </fieldset>
+  <fieldset class="borders" style="border:goldenrod 5px outset">
+    <legend>outset</legend>
+  </fieldset>
 </div>
