@@ -223,3 +223,49 @@ selectors {
   text-shadow: 3px 2px 1px red, 1px 5px 6px blue;
 }
 ```
+
+# The Box Model
+
+<style>
+#box, #margin, #padding, #content{
+  background: rgba(100, 100, 100, 0.4);
+  height: 100%;
+  border: dotted 10px 5px red;
+  padding: 1em;
+  margin: 0;
+  line-height: 2em;
+}
+
+#padding {
+  border: dotted 5px white; 
+}
+
+#box {
+  background: none;
+  width: 50%;
+  text-align: center;
+  margin: auto;
+}
+#box:before {
+  content: 'Box Model';
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+#box{
+  height: 100%;
+}
+</style>
+
+<div id="box">
+  <div id="margin">
+  Margin
+  <fieldset id="padding">
+    <legend>Border</legend>
+    Padding <br class="emptyline">
+    <div id="content">
+      Content
+    </div>
+  </fieldset>
+  </div>
+</div>
