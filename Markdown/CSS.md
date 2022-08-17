@@ -311,3 +311,78 @@ Use `box-sizing` of value `border-box` so that padding and border width are not 
     <legend>outset</legend>
   </fieldset>
 </div>
+
+## Styling Lists
+
+* **default** `ul` `list-style-type:disc`
+1. **default** `ol` `list-style-type:decimal`
+
+<ul style="list-style-type:square;list-style-position:inside;list-style-color:yellow">
+  <li>square</li>
+  <li>here the <code>list-style-position: inside</code></li>
+  <li>default <code>list-style-position: outside</code></li>
+</ul>
+<ul style="list-style-type:decimal">
+  <li>decimal</li>
+</ul>
+<ul style="list-style-type:disc">
+  <li>disc</li>
+</ul>
+<div class="columns">
+  <ul class="column" style="list-style-type:lower-alpha">
+    <li>lower-alpha</li>
+    <li>lower-alpha</li>
+    <li>lower-alpha</li>
+  </ul>
+  <ul class="column" style="list-style-type:upper-alpha">
+    <li>upper-alpha</li>
+    <li>upper-alpha</li>
+    <li>upper-alpha</li>
+  </ul>
+</div>
+
+<div class="columns">
+  <ul class="column" style="list-style-type:lower-roman">
+    <li>lower-roman</li>
+    <li>lower-roman</li>
+    <li>lower-roman</li>
+    <li>lower-roman</li>
+    <li>lower-roman</li>
+    <li>lower-roman</li>
+    <li>lower-roman</li>
+    <li>lower-roman</li>
+    <li>lower-roman</li>
+    <li>lower-roman</li>
+  </ul>
+  <ul class="column" style="list-style-type:upper-roman">
+    <li>upper-roman</li>
+    <li>upper-roman</li>
+    <li>upper-roman</li>
+    <li>upper-roman</li>
+    <li>upper-roman</li>
+    <li>upper-roman</li>
+    <li>upper-roman</li>
+    <li>upper-roman</li>
+    <li>upper-roman</li>
+    <li>upper-roman</li>
+  </ul>
+</div>
+
+```css
+ul, ol {
+  /* default for ol=decimal ul=disc */
+  list-style-type: circle | disc | lower-roman etc;
+  list-style-position: default=outside | inside;
+  /* Probably better to set list-style-type=none and position background image left */
+  list-style-image: url("bullet.jpg");
+}
+
+long-cut {
+  list-style-type: circle;
+  list-style-position: inside;
+  list-style-image: url('demo.png');
+}
+short-cut {
+  list-style: circle inside url('demo.jpg');
+}
+```
