@@ -386,3 +386,53 @@ short-cut {
   list-style: circle inside url('demo.jpg');
 }
 ```
+
+## Styling Links
+
+```css 
+a {
+  color: green; /* default=blue */
+  text-decoration: none; /* default=underline */
+}
+```
+
+### Psuedo Selector
+
+a:link
+a:visited
+a:active
+a:hover
+
+#### example
+
+<style>
+  ul#link-styling {
+    padding: 0;
+    margin-top 10px;
+    width: 100%;
+  }
+  ul#link-styling>li {
+    display: inline;
+  }
+  ul#link-styling>li>a {
+    outline: none;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 1%;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 31%;
+    color: white;
+    background: green;
+  }
+  ul#link-styling>li>a:hover {
+    background: blue;
+  }
+</style>
+
+<ul id="link-styling">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">Contacts</a></li>
+</ul>
