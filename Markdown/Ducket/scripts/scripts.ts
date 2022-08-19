@@ -356,10 +356,18 @@ const recorderControls = (e) => {
   }
 }
 
-if(document.addEventListener) {
-  document.addEventListener('click', (e) => recorderControls(e), false)
+if (document.addEventListener) {
+  document.addEventListener(
+    'click',
+    (e) => {
+      // need to stop propagation becuase otherwise link will try to redirect and cause error
+      e.stopPropagation ? e.stopPropagation() : (e.cancelBubble = true)
+      recorderControls(e)
+    },
+    true,
+  )
   noteInput.addEventListener('input', writeLabel, false)
 } else {
-  document.attachEvent('onclick', (e) => recorderControls(e)) 
+  document.attachEvent('onclick', (e) => recorderControls(e))
   noteInput.attachEvent('onkeyup', writeLabel)
 }
