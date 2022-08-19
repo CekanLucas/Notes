@@ -278,12 +278,22 @@ function charCount(e) {
 elMessage.addEventListener('keyup', charCount, false)
 
 /* FORM EVENTS */
-const [elForm, elSelectPackage, elPackageHint, elTerms, elTermsHint] = [
+const [
+  elForm,
+  elSelectPackage,
+  elPackageHint,
+  elTerms,
+  elTermsHint,
+  noteName,
+  noteInput,
+] = [
   document.getElementById('formSignup'),
   document.getElementById('package'),
   document.getElementById('packageHint'),
   document.getElementById('terms'),
   document.getElementById('termsHint'),
+  document.getElementById('noteName'),
+  document.getElementById('noteInput'),
 ]
 
 function packageHint() {
@@ -294,7 +304,7 @@ function packageHint() {
 }
 
 function checkTerms(event) {
-  console.log(event);
+  console.log(event)
   event.preventDefault()
   if (!elTerms.checked) {
     elTermsHint.innerHTML = 'You must agree to the terms'
@@ -302,6 +312,54 @@ function checkTerms(event) {
 }
 
 elSelectPackage.addEventListener('change', packageHint, false)
-// note submit event doen't work in markdown due to iframe sandbox setting not having allow-forms  
+// note submit event doen't work in markdown due to iframe sandbox setting not having allow-forms
 // elForm.addEventListener('submit', checkTerms, false)
 elForm.addEventListener('dblclick', checkTerms, false)
+
+// Example Audio Note
+
+const writeLabel = (e) => {
+  if (!e) e = window.event // IE Fallback
+
+  const target = e.target || e.srcElement
+  const textEntered = target.value
+  noteName.textContent = textEntered
+}
+
+const [record, stop] = [
+  (target) => {
+    target.setAttribute('data-state', 'stop')
+    target.textContent = 'stop'
+  },
+  (target) => {
+    target.setAttribute('data-state', 'record')
+    target.textContent = 'record'
+  },
+]
+
+const recorderControls = (e) => {
+  if (!e) e = window.event // IE Fallback
+  e.preventDefault()
+  const target = e.target || e.srcElement
+  if (e.preventDefault) e.preventDefault()
+  else e.returnValue = false
+
+  switch (target.getAttribute('data-state')) {
+    case 'record':
+      record(target)
+      break
+
+    case 'stop':
+      stop(target)
+      break
+    // More Buttons could go here
+  }
+}
+
+if(document.addEventListener) {
+  document.addEventListener('click', (e) => recorderControls(e), false)
+  noteInput.addEventListener('input', writeLabel, false)
+} else {
+  document.attachEvent('onclick', (e) => recorderControls(e)) 
+  noteInput.attachEvent('onkeyup', writeLabel)
+}
