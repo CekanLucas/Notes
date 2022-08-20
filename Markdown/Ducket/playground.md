@@ -197,5 +197,15 @@ function itemDone(e) {
 
 **Note**: Above does not work because `submit` events for forms *do not work* in markdown go to [html](./ducket.html) to test feature
 
+<h1>List King</h1>
+<h2 id="noteName">Audio Note</h2>
+<form action="http://example.org/">
+  <label for="noteInput">Enter note name:</label>
+  <input type="text" id="noteInput" />
+  <div id="buttons">
+    <a data-state="record" href="">record</a>
+  </div>
+</form>
+
 <!-- keep script at the bottom -->
 <script src="scripts/scripts.ts"></script>
