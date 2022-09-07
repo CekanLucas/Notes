@@ -436,3 +436,37 @@ a:hover
   <li><a href="#">About</a></li>
   <li><a href="#">Contacts</a></li>
 </ul>
+
+<style>
+  .alert {
+    color: red
+  }
+  .warn {
+    color: yellow
+  }
+  .error {
+    color: firebrick;
+  }
+  /* Notice the :is psuedoselector */
+  li:is(.error, .alert, .warn) {
+    text-decoration: underline;
+    font-weight: bolder;
+  }
+</style>
+
+<ul class="columns">
+  <li class="alert column">alert</li>
+  <li class="warn column">warn</li>
+  <li class="error column">error</li>
+  <li class="alert warn column">alert warn</li>
+  <li class="alert warn error column">alert warn error</li>
+</ul>
+
+### `:is` psuedoselector 
+`:is` allows the application of rules to a _group of selectors_
+```css
+  li:is(.error, .alert, .warn) {
+    text-decoration: underline;
+    font-weight: bolder;
+  }
+```
