@@ -439,10 +439,10 @@ a:hover
 
 <style>
   .alert {
-    color: red
+    color: red;
   }
   .warn {
-    color: yellow
+    color: yellow;
   }
   .error {
     color: firebrick;
@@ -452,6 +452,9 @@ a:hover
     text-decoration: underline;
     font-weight: bolder;
   }
+  li:empty+li:before {
+    content:"This li is empty";
+  }
 </style>
 
 <ul class="columns">
@@ -459,7 +462,8 @@ a:hover
   <li class="warn column">warn</li>
   <li class="error column">error</li>
   <li class="alert warn column">alert warn</li>
-  <li class="alert warn error column">alert warn error</li>
+  <li class="column"></li>
+  <li class="column"> </li>
 </ul>
 
 ### `:is` psuedoselector 
@@ -468,5 +472,15 @@ a:hover
   li:is(.error, .alert, .warn) {
     text-decoration: underline;
     font-weight: bolder;
+  }
+```
+
+### `:blank` & `:empty` psuedoselector 
+`:empty` select elements if there are no children textnodes or whitespace
+`:blank` like above but allows for blank spaces <span class="warn">experimental and most browsers not having support</span>
+> <span class="text-red-500 font-bold">Note:</span> *content* cant be changed except for **:before** and **:after** this is why we use the addition **+** remember css and content where supposed to be separate 
+```css
+  li:empty+li:before {
+    content:"This li is empty";
   }
 ```
