@@ -484,3 +484,28 @@ a:hover
     content:"This li is empty";
   }
 ```
+
+### `:in-range` & `:out-range`
+
+<style>
+  #range-input:in-range {
+    color: yellow;
+    font-weight: bold;
+    background-color: grey;
+    outline: 5px green solid;
+  }
+  #range-input:out-of-range {
+    color: yellow;
+    font-weight: bold;
+    background-color: grey;
+    outline: 5px red solid;
+  }
+</style>
+
+The `:in-range` and `:out-of-range` allows the use of styling feedback to users without javascript
+The range is specified by the *min* *max* attribute values
+
+<form action="">
+  <label for="range-input">Range 18-20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <input type="number" name="range-input" id="range-input" min="18" max="20" value="0">
+</form>
