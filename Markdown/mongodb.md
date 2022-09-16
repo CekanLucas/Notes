@@ -34,6 +34,7 @@ body ::selection {
 #  <small class="SpringGreen">MongoDB</small>
 
 <span class="mongo">mongo</span> 
+[mongo-shell](./mongodb-shell.md)
 
 Database
 
