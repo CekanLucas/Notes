@@ -1,6 +1,5 @@
 /* From Javascriptmancer by J. G. Garcia */
 
-
 /* Array.from() is a method to convert array like objects into normal arrays */
 
 function sortItems() {
@@ -55,4 +54,36 @@ let itemsArray = ItemsArray.of(
   { name: 'unicorn horn', price: 10000 },
   { name: 'sesame seeds', price: 1 },
 )
-console.log(`the price of all your wares is ${itemsArray.price()} golden coins`);
+console.log(`the price of all your wares is ${itemsArray.price()} golden coins`)
+
+// copywithin allows copying a portion of the array
+// this copies the the portion 3 to 4 (item 4) into the index position 1
+;[1, 2, 3, 4, 5, 6].copyWithin(
+  /* target index */ 1,
+  /* start index */ 3,
+  /* end index */ 4,
+)
+;[1, 2, 3].fill('1:') //?
+;[1, 2, 3].fill('1:', 1) //?
+;[1, 2, 3].fill('1:', 1, 2) //?
+Array(1, 2, 3).fill('1:', 1, 2) //?
+Array(3).fill('1:', 1, 2) //?
+![1, 2, 3, 4, 5, 6].includes(2) //?
+;[1, 2, 3, 4, 5, 6].indexOf(3) //?
+
+/* UNSAFE METHODS */
+;[].push(1) //?
+;[].push(1, 2, 3) //?
+;[1, 2].pop() //?
+;[1, 2].shift() //?
+;[1, 2].unshift(1) //?
+;[1, 2].unshift(1, 3) //?
+
+// Array.prototype.slice( start, length n1, n2)
+;[1, 2].splice(0, 1) //?
+;[1, 2].splice(-1, 1) //?
+;[1, 2, 3, 4].splice(1, 2) //?
+;[1, 2].splice(0, 1, 'ash') //?
+
+// Array.protoype.sort(compareFunc)
+// Array.protoype.reverse()
