@@ -87,3 +87,27 @@ Array(3).fill('1:', 1, 2) //?
 
 // Array.protoype.sort(compareFunc)
 // Array.protoype.reverse()
+
+/* SAFE METHODS */
+
+;[1, 2, 3].concat(['1', 5]) //?
+;[1, 2, 3].join(',' /* seperator */) //?
+
+// Array.prototype.indexOf(n) 
+// return index of item or -1 if not found
+
+;[1, 2, 3].indexOf(3) //?
+;[1, 2, 3].indexOf(55) //?
+
+// Array.prototype.lastIndexOf(n) 
+// return last occurence index of item of array -1 if not found
+
+;[2, 1, 1].lastIndexOf(3) //?
+;[1, 1, 1].lastIndexOf(55) //?
+
+// Array.prototype.slice(start, end) 
+// return sub array from start to end
+
+;[1,2,3].slice(1,2) //?
+;[1,2,3].slice(1) //?
+;[1,2,3].slice(-1) //?
