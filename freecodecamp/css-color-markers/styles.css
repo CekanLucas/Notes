@@ -1,0 +1,153 @@
+h1,
+h2 {
+  text-align: center;
+}
+
+.container {
+  background-color: rgb(255, 255, 255);
+  padding: 10px 0;
+}
+
+.marker {
+  width: 200px;
+  height: 25px;
+  margin: 10px auto;
+}
+
+.sleeve {
+  width: 110px;
+  height: 25px;
+  background-color: rgba(255, 255, 255, 50%);
+  /* opacity: 0.5; */
+  /* border-left-width: 10px;
+  border-left-style: solid;
+  border-left-color: black; */
+  border-left: 10px double rgba(0, 0, 0, 75%);
+}
+
+.cap {
+  width: 60px;
+  height: 25px;
+}
+
+.sleeve,
+.cap {
+  display: inline-block;
+}
+
+.one {
+  /* background-color: rgb(255, 127, 0);
+  background: hsl(240, 100%, 50%);
+  background: linear-gradient(90deg, red, green);
+  background: linear-gradient(180deg, rgb(122, 74, 14) 0%, rgb(245, 62, 113) 50%, rgb(162, 27, 27) 100%);
+  box-shadow: 5px 5px 5px 5px blue;
+  box-shadow: 0 0 20px 0 rgba(83, 14, 14, 0.8) */
+  background: linear-gradient(
+    rgb(122, 74, 14),
+    rgb(245, 62, 113),
+    rgb(162, 27, 27)
+  );
+  box-shadow: 0 0 20px 0 rgba(83, 14, 14, 0.8);
+}
+
+.two {
+  /* background-color: rgb(0, 255, 255); */
+  background: linear-gradient(#55680d, #71f53e, #116c31);
+  box-shadow: 0 0 20px 0 #3b7e20cc;
+}
+
+.three {
+  background: linear-gradient(
+    hsl(186, 76%, 16%),
+    hsl(223, 90%, 60%),
+    hsl(240, 56%, 42%)
+  );
+  box-shadow: 0 0 20px 0 hsla(233, 59%, 31%, 0.8);
+}
+
+/* Primary Colors */
+.red {
+  background-color: red;
+  background-color: rgb(255, 0, 0);
+}
+
+.green {
+  background-color: green;
+  background-color: lightgreen;
+  background-color: rgb(0, 255, 0);
+}
+
+.blue {
+  background-color: blue;
+  background-color: rgb(0, 0, 255);
+}
+
+/* Secondary Colors */
+.cyan {
+  background-color: cyan;
+  background-color: rgb(0, 255, 255);
+}
+
+.magenta {
+  background-color: violet;
+  background-color: magenta;
+  background-color: rgb(255, 0, 255);
+}
+
+.yellow {
+  background-color: yellow;
+  background-color: rgb(255, 255, 0);
+}
+
+/* Tertiary Colors */
+.orange {
+  background-color: orange;
+  background-color: orangered;
+  background-color: rgb(255, 127, 0);
+}
+
+.spring-green {
+  background-color: rgb(0, 255, 127);
+}
+
+.violet {
+  background-color: violet;
+  background-color: darkviolet;
+  background-color: blueviolet;
+  background-color: rgb(127, 0, 255);
+}
+
+/* tertiary green (green + yellow) */
+.chartreuse {
+  background-color: chartreuse;
+  background-color: rgb(127, 255, 0);
+}
+
+/* tertiary azure (blue + cyan) */
+.azure {
+  background-color: azure;
+  background-color: rgb(0, 127, 255);
+}
+
+/* tertiary rose (red + magenta) */
+.rose {
+  background-color: crimson;
+  background-color: deeppink;
+  background-color: rgb(255, 0, 127);
+}
+
+/* 
+A color wheel is a circle where similar colors, or hues, are near each other, and different ones are further apart. For example, pure red is between the hues rose and orange.
+
+Two colors that are opposite from each other on the color wheel are called complementary colors. If two complementary colors are combined, they produce gray. But when they are placed side-by-side, these colors produce strong visual contrast and appear brighter.
+*/
+
+/* he HSL color model, or hue, saturation, and lightness, is another way to represent colors.
+
+The CSS hsl function accepts 3 values: a number from 0 to 360 for hue, a percentage from 0 to 100 for saturation, and a percentage from 0 to 100 for lightness.
+
+If you imagine a color wheel, the hue red is at 0 degrees, green is at 120 degrees, and blue is at 240 degrees.
+
+Saturation is the intensity of a color from 0%, or gray, to 100% for pure color.
+
+Lightness is how bright a color appears, from 0%, or complete black, to 100%, complete white, with 50% being neutral. */
