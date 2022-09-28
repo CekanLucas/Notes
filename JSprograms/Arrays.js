@@ -89,25 +89,51 @@ Array(3).fill('1:', 1, 2) //?
 // Array.protoype.reverse()
 
 /* SAFE METHODS */
-
 ;[1, 2, 3].concat(['1', 5]) //?
 ;[1, 2, 3].join(',' /* seperator */) //?
 
-// Array.prototype.indexOf(n) 
+// Array.prototype.indexOf(n)
 // return index of item or -1 if not found
-
 ;[1, 2, 3].indexOf(3) //?
 ;[1, 2, 3].indexOf(55) //?
 
-// Array.prototype.lastIndexOf(n) 
+// Array.prototype.lastIndexOf(n)
 // return last occurence index of item of array -1 if not found
-
 ;[2, 1, 1].lastIndexOf(3) //?
 ;[1, 1, 1].lastIndexOf(55) //?
 
-// Array.prototype.slice(start, end) 
+// Array.prototype.slice(start, end)
 // return sub array from start to end
+;[1, 2, 3].slice(1, 2) //?
+;[1, 2, 3].slice(1) //?
+;[1, 2, 3].slice(-1) //?
 
-;[1,2,3].slice(1,2) //?
-;[1,2,3].slice(1) //?
-;[1,2,3].slice(-1) //?
+/* ITERATING ARRAYS */
+
+let arr = [1, 2, 3, 'example', 'array', { example: 'object' }]
+
+// for / in loop
+
+for (let i in arr) {
+  // iterates indexes
+  console.log('for / in:\t', i)
+}
+
+for (let i of arr) {
+  // iterates items
+  console.log('for / of:\t', i)
+}
+
+// Array.prototype.forEach()
+
+/* NEW ARRAY METHODS OF ES6 */
+
+// Array.from // creates array from array like objects eg arr.from(arguments)
+
+const arrFrom = (...args) => {
+  console.log(
+    'arguments is ' + (Array.isArray(args) ? 'a array' : 'not a array'),
+  )
+  return Array.from(args[0])
+}
+arrFrom(arr) //?
