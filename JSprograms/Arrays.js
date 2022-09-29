@@ -137,3 +137,9 @@ const arrFrom = (...args) => {
   return Array.from(args[0])
 }
 arrFrom(arr) //?
+
+/* NEW ARRAY METHODS OF ES7 */
+
+// Array.prototype.includes()
+
+;[1, 2, 3].includes(2, /* start */ 2) //?
