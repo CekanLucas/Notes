@@ -82,3 +82,17 @@ When you use float elements (my favorite) they don't expand the div parent conta
 <script>
   $("#toggle-clearfix").click( () => $("#clearfix-container").toggleClass('clearfix'))
 </script>
+
+### Input
+
+*emmet:* input:password
+
+#### Interesting Attributes
+
+`minlength` 
+
+`pattern` used to set regular expression 
+
+#### example
+
+<input type="password" name="" id="" minlength="8" pattern="[a-z0-5]{8,}">
