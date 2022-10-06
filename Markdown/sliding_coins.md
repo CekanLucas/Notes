@@ -73,10 +73,10 @@ Drag and Drop Puzzles from [Brilliant](https://brilliant.org/courses/joy-problem
 
 <div class="coin-container" id="coin-case">
   <div class="coin-slot">
-    <div class="coin coin-left"></div>
+    <div class="coin coin-left" id="base-coin-left" draggable="true"></div>
   </div>
   <div class="coin-slot">
-    <div class="coin coin-right"></div>
+    <div class="coin coin-right" id="base-coin-right" draggable="true"></div>
   </div>
 </div>
 
@@ -99,7 +99,7 @@ Drag and Drop Puzzles from [Brilliant](https://brilliant.org/courses/joy-problem
     <div class="coin coin-right"></div>
   </div>
     <div class="coin-slot">
-    <div class="coin coin-right"></div>
+    <div class="coin coin-right" id="coin_1" draggable="true"></div>
   </div>
 </div>
 
@@ -108,6 +108,29 @@ Drag and Drop Puzzles from [Brilliant](https://brilliant.org/courses/joy-problem
 </form>
 
 <script>
+   document.getElementById('base-coin-left').addEventListener('dragstart', dragStart_handler)
+   document.getElementById('base-coin-right').addEventListener('dragstart', dragStart_handler)
 
+  function dragStart_handler(e){
+    console.log("dragstart fired:\t", e)
+    const coin_type = (e.path[0]).id === 'base-coin-left' ? 'left' : 'right'
+    create_new_coin(coin_type);
+  }
+
+  function create_new_coin(coin_type) {
+    console.log('new coin created of type ', coin_type)
+    const baseCoin = document.getElementById('base-coin-' + coin_type) 
+    const newCoin = baseCoin.cloneNode()
+    
+    let i = 1;
+    while(i !== null) {
+     if(document.getElementById(`coin_${i}`)) i++
+     else {
+       newCoin.id = `coin_${i}`;
+       i = null;
+     }
+     console.log(newCoin)
+    }
+  }
 </script>
 
