@@ -99,7 +99,7 @@ Drag and Drop Puzzles from [Brilliant](https://brilliant.org/courses/joy-problem
     <div class="coin coin-right"></div>
   </div>
     <div class="coin-slot">
-    <div class="coin coin-right"></div>
+    <div class="coin coin-right" id="coin_1" draggable="true"></div>
   </div>
 </div>
 
@@ -108,6 +108,6 @@ Drag and Drop Puzzles from [Brilliant](https://brilliant.org/courses/joy-problem
 </form>
 
 <script>
-
+  
 </script>
 
