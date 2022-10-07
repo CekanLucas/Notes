@@ -81,24 +81,24 @@ Drag and Drop Puzzles from [Brilliant](https://brilliant.org/courses/joy-problem
 </div>
 
 <div class="coin-container">
-  <div class="coin-slot">
+  <div class="coin-slot active-slot" id="slot_1">
     <div class="coin coin-left"></div>
   </div>
-  <div class="coin-slot">
+  <div class="coin-slot active-slot" id="slot_2">
     <div class="coin coin-left"></div>
   </div>
-  <div class="coin-slot"></div>
-  <div class="coin-slot"></div>
-  <div class="coin-slot">
+  <div class="coin-slot active-slot" id="slot_3"></div>
+  <div class="coin-slot active-slot" id="slot_4"></div>
+  <div class="coin-slot active-slot" id="slot_5">
     <div class="coin coin-right"></div>
   </div>
-  <div class="coin-slot">
+  <div class="coin-slot active-slot" id="slot_6">
     <div class="coin coin-right"></div>
   </div>
-    <div class="coin-slot">
+  <div class="coin-slot active-slot" id="slot_7">
     <div class="coin coin-right"></div>
   </div>
-    <div class="coin-slot">
+  <div class="coin-slot active-slot" id="slot_8">
     <div class="coin coin-right" id="coin_1" draggable="true"></div>
   </div>
 </div>
@@ -129,8 +129,31 @@ Drag and Drop Puzzles from [Brilliant](https://brilliant.org/courses/joy-problem
        newCoin.id = `coin_${i}`;
        i = null;
      }
+     newCoin.className += ' active-slot' 
      console.log(newCoin)
     }
   }
+
+  // define coin-slots should be able to handle dragged items being dropped there
+  const coinSlots = document.querySelectorAll('.active-slot')
+  coinSlots.forEach(
+    (slot, i) => {
+      console.log('Slot element', slot, i)
+      const el = document.getElementById(slot.id)
+      el.addEventListener('dragenter', dragEnter_handler)
+      el.addEventListener('dragover', dragOver_handler)
+    }
+  )
+
+  function dragEnter_handler(e) {
+    e.preventDefault()
+    console.log("dragenter fired:\t", e)
+  } 
+  function dragOver_handler(e) {
+    e.preventDefault()
+    console.log("dragover fired:\t", e)
+  } 
+
+    
 </script>
 
