@@ -14,6 +14,9 @@
       margin-left:1em;
       display: inline;
    }
+   #logo {
+      filter: 
+   }
 </style>
 <header>
 <a title="brilliant.org, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Brilliant_(website)_Logo.svg"><img id="logo" width="200" alt="Brilliant (website) Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Brilliant_%28website%29_Logo.svg/512px-Brilliant_%28website%29_Logo.svg.png"></a>
@@ -27,28 +30,6 @@
       $$ ... $$  -> block display
       $$ ... $$ (1)  -> display with equation number
 
+$2^n=3910000000000$ *how to we find n?*
 
-
-
-## Quadratic Formula
-
-$$\large ax^2+bx+c$$
-$$\large \frac{-b\plusmn\sqrt{b^2-4ac}}{2a}$$
-
-## Combinations <a href="https://simple.wikipedia.org/wiki/Combination_(mathematics)">link</a>
-
-Looks at the number of possibilities to pick `k` objects from a set of `n`
-
-$$_nC_k = \frac{!n}{!k!(n-k)}$$
-
-## Permutations <a href="https://simple.wikipedia.org/wiki/Permutation">link</a>
-
-Looks at the number of possibilities to pick `k` objects from a set of `n`
-
-$$_nP_k = \binom{n}{k} = \frac{!n}{!(n-k)}$$
-
-## Floor Functions
-
-$$
-⌊25.1⌋=25, ⌊−0.4⌋=−1, ⌊−9.9⌋=−10, ⌊7⌋=7.
-$$
+<p class="text-gray-500 font-bold text-xl font-mono space-x-1"> log<sub class="text-green-500">2</sub> (<span class="text-red-500">32</span>) = <span class="text-purple-600">n</span> <=> <span class="text-green-500">2</span><sup class="text-purple-600">n</sup> = <span class="text-red-500">32</span></p>

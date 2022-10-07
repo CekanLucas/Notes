@@ -16,7 +16,7 @@
    }
 </style>
 <header>
-   <a title="User:D0ktorz [GPL (http://www.gnu.org/licenses/gpl.html)], via Wikimedia Commons" href="https://upload.wikimedia.org/wikipedia/en/8/81/Brilliant_Logo.svg"><img height="200" alt="brilliant" src="https://upload.wikimedia.org/wikipedia/en/8/81/Brilliant_Logo.svg"></a>
+<a title="brilliant.org, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Brilliant_(website)_Logo.svg"><img id="logo" width="200" alt="Brilliant (website) Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Brilliant_%28website%29_Logo.svg/512px-Brilliant_%28website%29_Logo.svg.png"></a>
 <h1 class="Cream" id="brilliant">Brilliant</h1>
 </header>
 

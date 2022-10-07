@@ -13,3 +13,7 @@ p{
 code {
     filter: hue-rotate(90);
 }
+
+#logo {
+    filter: invert(0.7)
+ }
