@@ -72,35 +72,9 @@ function* toKeyValue(arr, keySelector) {
   }
 }
 
-/* CHEAT SHEET */
-
-/* 
-//// Basic ////
-const map = new Map() // create a new map
-const map = new Map(iterator) // create a map from iterator
-const value = map.get('key) // if key is not in map returns undefined
-map.set('key', 'value') // add item to map
-map.delete('key') // delete item from map return true if successful else false
-map.has('key) // returns boolean on wether item exists in map
-map.size // returns number of items in map
-map.clear() // removes all items in map
-
-//// Iterating Map ////
-
-map.forEach((key, value, map) => {})
-
-map.entries() // returns [key, value] collection DEFAULT ITERATOR 
-
-map.keys()
-map.values()
-*/
 
 
-/* ////////////// SETS //////////////
-
-- like Map but avoid duplications 
-- based on use of strict equalities === NOT ==
-*/
+/* ////////////// SETS ////////////// */
 
 
 const newSet = new Set()
