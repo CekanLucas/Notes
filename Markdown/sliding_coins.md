@@ -107,77 +107,19 @@ Drag and Drop Puzzles from [Brilliant](https://brilliant.org/courses/joy-problem
   <label class="label" for="length">Length <input class="input is-success" type="number" name="length" id="input-length"></label>
 </form>
 
+
 <script>
-   document.getElementById('base-coin-left').addEventListener('dragstart', dragStart_handler)
-   document.getElementById('base-coin-right').addEventListener('dragstart', dragStart_handler)
-
-  function dragStart_handler(e){
-    const coin_type = (e.path[0]).id === 'base-coin-left' ? 'left' : 'right'
-    const newCoin = create_new_coin(coin_type);
-
-    // newCoin html in datatransfer object
-    const dt = e.dataTransfer
-    // dt.setData("text/html", newCoin.innerHTML)
-    dt.setData('application/x-moz-node', newCoin)
-    dt.effectAllowed = 'move'
-    console.log("dragstart fired:\t", e)
-
-    const data = dt.getData('application/x-moz-node')
-    console.log(data.id);
-    // debugger;
-  }
-
-  function create_new_coin(coin_type) {
-    console.log('new coin created of type ', coin_type)
-    const baseCoin = document.getElementById('base-coin-' + coin_type) 
-    const newCoin = baseCoin.cloneNode()
-    
-    let i = 1;
-    while(i !== null) {
-     if(document.getElementById(`coin_${i}`)) i++
-     else {
-       newCoin.id = `coin_${i}`;
-       i = null;
-     }
-     newCoin.className += ' active-slot' 
-     console.log(newCoin)
-    }
-    return newCoin
-  }
-
-  // define coin-slots should be able to handle dragged items being dropped there
-  const coinSlots = document.querySelectorAll('.active-slot')
-  coinSlots.forEach(
-    (slot, i) => {
-      console.log('Slot element', slot, i)
-      const el = document.getElementById(slot.id)
-      el.addEventListener('dragenter', dragEnter_handler)
-      el.addEventListener('dragend', dragEnd_handler)
-      
-      // el.addEventListener('dragover', dragOver_handler)
-    }
-  )
-
-  function dragEnter_handler(e) {
-    event.dataTransfer.dropEffect = 'move';
+  function dragLeave_handler(e) {
+    e.dataTransfer.dropEffect = 'move';
     e.preventDefault()
-    console.log("dragenter fired:\t", e)
-  } 
-  function dragOver_handler(e) {
-    event.dataTransfer.dropEffect = 'move';
-    e.preventDefault()
-    console.log("dragover fired:\t", e)
-  } 
-  function dragEnd_handler(e) {
-    event.dataTransfer.dropEffect = 'move';
-    e.preventDefault()
-    if (event.dataTransfer.dropEffect == 'move') {  
+    if (e.dataTransfer.dropEffect == 'move') {  
       // remove the dragged element
-      event.target.parentNode.removeChild(event.target);
+      debugger;
+      const slot = e.target.parentNode
+      if(slot.firstChild !== null)
+      e.target.parentNode.removeChild(e.target);
     }
-    console.log("dragend fired:\t", e)
+    console.log("dragLeave fired:\t", e)
   } 
-
-    
 </script>
-
+<script src="sliding_coins.js"></script>
