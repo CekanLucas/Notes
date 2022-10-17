@@ -1,0 +1,11 @@
+#!/bin/bash
+
+FILENAME=sys_info_page
+
+# Generate HTML PAGE
+./$FILENAME >dist/$FILENAME.html
+
+# Run page in browser
+ firefox dist/$FILENAME.html
+
+ 
