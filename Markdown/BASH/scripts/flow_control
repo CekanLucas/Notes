@@ -1,0 +1,9 @@
+#!/bin/bash
+
+x=5 # change this
+
+if [ "$x" -eq 5 ]; then
+  echo "x equal 5."
+else
+  echo "x does not equal 5."
+fi
