@@ -42,12 +42,20 @@
 
 $a^0=1$
    </td>
+   <td>
+
+$\log_a{1} = 0$
+   </td>
 </tr>
 <tr>
    <th>Product</th>
    <td>
 
 $a^m\times a^n=a^{m+n}$
+   </td>
+   <td>
+
+$\log_a{mn} = \log_a{m} + \log_a{n}$
    </td>
 </tr>
 <tr>
@@ -56,12 +64,20 @@ $a^m\times a^n=a^{m+n}$
 
 $a^m\div a^n=a^{m-n}$
    </td>
+   <td>
+
+$\log_a{m/n} = \log_a{m} - \log_a{n}$
+   </td>
 </tr>
 <tr>
    <th>Power of Product</th>
    <td>
 
 $(ab)^m = a^mb^m$
+   </td>
+   <td>
+
+$ $
    </td>
 </tr>
 <tr>
@@ -70,12 +86,20 @@ $(ab)^m = a^mb^m$
 
 $(a/b)^m = a^m/b^m$
    </td>
+   <td>
+
+$ $
+   </td>
 </tr>
 <tr>
    <th>Power of Power</th>
    <td>
 
 $(a^m)^n = a^{mn}$
+   </td>
+   <td>
+
+$\log_am^n = n\log_am$
    </td>
 </tr>
 <tr>
@@ -84,14 +108,30 @@ $(a^m)^n = a^{mn}$
    
 $a^{-m}= 1/a^m$  
    </td>
+      <td>
+
+$\log_a1/x=-\log_ax$
+   </td>
 </tr>
 <tr>
    <th>Fractional Exponent</th>
    <td>
 
-$a^m/n=(\sqrt[n]{a})^m$
+$a^{m/n}=(\sqrt[n]{a})^m$
+   </td>
+      <td>
+
+$ $
    </td>
 </tr>
 
 
 </table>
+
+# logarithms
+
+<p class="text-gray-200 font-bold text-xl font-mono space-x-1">What value exponent does <span class="text-purple-600">n</span> need to be raised to in order to get <span class="text-red-500">x</span></p>
+
+<p class="text-gray-500 font-bold text-xl font-mono space-x-1">log<sub class="text-green-500">b</sub> (<span class="text-red-500">x</span>) = <span class="text-purple-600">n</span> <=> <span class="text-green-500">b</span><sup class="text-purple-600">n</sup> = <span class="text-red-500">x</span></p>
+
+<p class="text-gray-500 font-bold text-xl font-mono space-x-1"> <i></i> log<sub class="text-green-500">2</sub> (<span class="text-red-500">8</span>) = <span class="text-purple-600">3</span> <=> <span class="text-green-500">2</span><sup class="text-purple-600">3</sup> = <span class="text-red-500">8</span></p>
