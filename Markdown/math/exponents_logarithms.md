@@ -124,7 +124,16 @@ $a^{m/n}=(\sqrt[n]{a})^m$
 $ $
    </td>
 </tr>
+<tr>
+   <th>Change of Base</th>
+   <td>
 
+   </td>
+      <td>
+
+$\log_ab = \log_cb/\log_ca$
+   </td>
+</tr>
 
 </table>
 
