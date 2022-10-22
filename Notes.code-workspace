@@ -36,6 +36,7 @@
         "other": "off"
       }
     },
-    "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'"
+    "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "markdown.preview.scrollPreviewWithEditor": false
   }
 }
