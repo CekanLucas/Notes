@@ -29,6 +29,7 @@ body ::selection {
 ## Drag and Drop
 
 [Mozzila Ref](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
+[Project - Sliding Coins](./sliding_coins.md)
 
 <style>
 .drag-and-drop{
@@ -36,6 +37,7 @@ body ::selection {
   text-decoration: none;
   display: inline-block;
   margin-left: 1%;
+  margin-bottom: 1em;
   text-align: center;
   padding: 10px;
   box-sizing: border-box;
@@ -50,8 +52,36 @@ body ::selection {
 
 <div class="drag-and-drop" id="drag" draggable="true">Drag Me</div>
 
-### Event types
+### Basic Use
 
+To make other HTML elements draggable, three things must be done:
+
+1. Set the `draggable` attribute to `true` on the relevant element
+1. Add a listener for the `dragstart` event
+1. Set the drag data in the above listener
+
+#### Drag Image 
+
+This is ussually `<img>` `<canvas>` *or any other element*
+```js
+event.dataTransfer.setDragImage(image, xOffset, yOffset);
+```
+
+### Data Transfer
+
+All drag events have a property called `dataTransfer` of type `DataTransfer<object>` which holds the drag data
+
+```js
+
+const dt = event.dataTransfer
+
+dt.setData('text/plain', newCoin.outerHTML) // fallback type should always be used
+dt.setData('text/html', newCoin.outerHTML) // for html
+dt.setData('application/x-moz-node', newCoin) // in order to drag elements
+```
+
+
+### Event types
 <dl>
 <dt id="drag"><a href="/en-US/docs/Web/API/HTMLElement/drag_event" title="drag"><code>drag</code></a></dt>
 <dd>

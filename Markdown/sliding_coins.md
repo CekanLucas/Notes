@@ -109,17 +109,6 @@ Drag and Drop Puzzles from [Brilliant](https://brilliant.org/courses/joy-problem
 
 
 <script>
-  function dragLeave_handler(e) {
-    e.dataTransfer.dropEffect = 'move';
-    e.preventDefault()
-    if (e.dataTransfer.dropEffect == 'move') {  
-      // remove the dragged element
-      debugger;
-      const slot = e.target.parentNode
-      if(slot.firstChild !== null)
-      e.target.parentNode.removeChild(e.target);
-    }
-    console.log("dragLeave fired:\t", e)
-  } 
+console.log('Markdown Script')
 </script>
 <script src="sliding_coins.js"></script>
