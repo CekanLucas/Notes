@@ -21,12 +21,9 @@ body ::selection {
 }
 
 </style>
-</head>    
-<div id="stack-container">
-  <a href=""><img src="" alt="Logo"></a>
-</div>
+</head>
 
-## Drag and Drop
+# Drag and Drop
 
 [Mozzila Ref](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
 [Project - Sliding Coins](./sliding_coins.md)
@@ -60,24 +57,27 @@ To make other HTML elements draggable, three things must be done:
 1. Add a listener for the `dragstart` event
 1. Set the drag data in the above listener
 
-#### Drag Image 
+## Data Transfer
+
+All drag events have a property called `dataTransfer` of type `DataTransfer<object>` which holds the drag data
+
+### Drag Image 
 
 This is ussually `<img>` `<canvas>` *or any other element*
 ```js
 event.dataTransfer.setDragImage(image, xOffset, yOffset);
 ```
+> **Note** if the image is a element it must exist on the DOM [see here](https://www.kryogenix.org/code/browser/custom-drag-image.html)
 
-### Data Transfer
-
-All drag events have a property called `dataTransfer` of type `DataTransfer<object>` which holds the drag data
+### Drag Data
 
 ```js
-
 const dt = event.dataTransfer
 
-dt.setData('text/plain', newCoin.outerHTML) // fallback type should always be used
-dt.setData('text/html', newCoin.outerHTML) // for html
-dt.setData('application/x-moz-node', newCoin) // in order to drag elements
+dt.setData('text/plain', el.outerHTML) // fallback type should always be used
+dt.setData('text/html', el.outerHTML) // for html
+dt.setData('application/x-moz-node', el) // in order to drag elements firefox says security risk
+dt.setData('custom-type', el) // works but probably use MIME conventions
 ```
 
 
