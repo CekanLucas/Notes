@@ -6,18 +6,20 @@ document
   .addEventListener('dragstart', dragStart_handler)
 
 function dragStart_handler(e) {
-  const coin_type = e.target.id === 'base-coin-left' ? 'left' : 'right'
-  const newCoin = create_new_coin(coin_type)
+  const coinType = e.target.id === 'base-coin-left' ? 'left' : 'right'
   const dt = e.dataTransfer
 
-  dt.setData('text/plain', coin_type)
-  dt.setData('text/html', newCoin.outerHTML)
-  // dt.setData('application/x-moz-node', newCoin) // firefox says security risk
+  e.target.classList.forEach((cl) => {
+    if(cl==='coin-left') dt.setData('coin_type', 'left')
+    if(cl==='coin-right') dt.setData('coin_type', 'right')
+    if(cl==='base-coin') dt.setData('coin_slot', 'base')
+  })
 
   dt.effectAllowed = 'move'
-  console.log('dragstart fired:\t', e)
 
-  // dt.items[0].getAsString(  (d) => console.log('getAsString', d)   )
+  e.dataTransfer.setDragImage(e.target, 25, 25);
+
+  console.log('dragstart fired:\t', e)
 }
 
 // define coin-slots should be able to handle dragged items being dropped there
@@ -45,6 +47,8 @@ function dragLeave_handler(e) {
 }
 
 function dragEnter_handler(e) {
+  // here append newcoin onto slot
+  // const newCoin = create_new_coin(coinType)
   e.dataTransfer.dropEffect = 'move'
   e.preventDefault()
   console.log('dragenter fired:\t', e)
@@ -57,9 +61,9 @@ function dragOver_handler(e) {
 
 // DOM METHODS
 
-function create_new_coin(coin_type) {
+function create_new_coin(coinType) {
   // console.log('new coin created of type', coin_type)
-  const baseCoin = document.getElementById('base-coin-' + coin_type)
+  const baseCoin = document.getElementById('base-coin-' + coinType)
   const newCoin = baseCoin.cloneNode()
 
   let i = 1
@@ -73,4 +77,12 @@ function create_new_coin(coin_type) {
     //  console.log('new coin created of type',newCoin)
   }
   return newCoin
+}
+
+function dragImageCoin(coinType) {
+  const baseCoin = document.getElementById('base-coin-' + coinType)
+  const coinEl = baseCoin.cloneNode()
+  coinEl.className += ' drag-image' 
+  console.log('dragImage Coin:', coinEl)
+  return coinEl
 }
