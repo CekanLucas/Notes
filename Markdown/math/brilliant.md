@@ -63,3 +63,28 @@ $$_nP_k = \binom{n}{k} = \frac{!n}{!(n-k)}$$
 $$
 ⌊25.1⌋=25, ⌊−0.4⌋=−1, ⌊−9.9⌋=−10, ⌊7⌋=7.
 $$
+
+# Conic Sections and Parametric Equations
+
+## Conic Sections
+
+![](https://ds055uzetaobb.cloudfront.net/brioche/uploads/lessons/1-4HeF4o.png?width=1440)
+
+All conic sections can be described by this form
+
+$$Ax^2+Bxy+Cy^2+Dx+Ey+F=0$$
+
+![](https://ds055uzetaobb.cloudfront.net/brioche/uploads/lessons/1-30vspN.GIF?width=1440)
+
+Distance of **focus** to any point <b class="text-green-400">$P$ </b>on the parabola is the same as between any point <b class="text-green-400">$P$</b> and the <b class="text-red-600">directrix</b>
+
+<canvas id="focus-parabola"></canvas>
+
+<script>
+// Make a graph
+const canvas = document.getElementById("focus-parabola");
+const ctx = canvas.getContext("2d");
+
+ctx.fillStyle = "grey";
+ctx.fillRect(0, 0, 1000, 1000);
+</script>
