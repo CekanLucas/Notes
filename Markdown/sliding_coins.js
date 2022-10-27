@@ -5,23 +5,6 @@ document
   .getElementById('base-coin-right')
   .addEventListener('dragstart', dragStart_handler)
 
-function dragStart_handler(e) {
-  const coinType = e.target.id === 'base-coin-left' ? 'left' : 'right'
-  const dt = e.dataTransfer
-
-  e.target.classList.forEach((cl) => {
-    if(cl==='coin-left') dt.setData('coin_type', 'left')
-    if(cl==='coin-right') dt.setData('coin_type', 'right')
-    if(cl==='base-coin') dt.setData('coin_slot', 'base')
-  })
-
-  dt.effectAllowed = 'move'
-
-  e.dataTransfer.setDragImage(e.target, 25, 25);
-
-  console.log('dragstart fired:\t', e)
-}
-
 // define coin-slots should be able to handle dragged items being dropped there
 const coinSlots = document.querySelectorAll('.active-slot')
 coinSlots.forEach((slot, i) => {
@@ -29,42 +12,74 @@ coinSlots.forEach((slot, i) => {
   const el = document.getElementById(slot.id)
   el.addEventListener('dragenter', dragEnter_handler)
   el.addEventListener('dragleave', dragLeave_handler)
+  el.addEventListener('dragover', dragOver_handler)
+  el.addEventListener('drop', drop_handler)
 
-  // el.addEventListener('dragover', dragOver_handler)
 })
 
-function dragLeave_handler(e) {
-  // e.dataTransfer.dropEffect = 'move';
-  e.preventDefault()
-  // debugger;
-  if (e.dataTransfer.dropEffect == 'move') {
-    // remove the dragged element
-    const slot = e.target
-    const coin = slot.firstChild
-    if (coin !== null) coin.remove()
-  }
-  console.log('dragLeave fired:\t', e)
-}
+function dragStart_handler(e) {
+  // e.preventDefault() //breaks functionality for some reason
+  const dt = e.dataTransfer
+  e.target.classList.forEach((cl) => {
+    if(cl==='coin-left') dt.setData('coin_type', 'left')
+    if(cl==='coin-right') dt.setData('coin_type', 'right')
+    if(cl==='base-coin') dt.setData('coin_slot', 'base')
+  })
 
-function dragEnter_handler(e) {
-  // here append newcoin onto slot
-  // const newCoin = create_new_coin(coinType)
-  e.dataTransfer.dropEffect = 'move'
-  e.preventDefault()
-  console.log('dragenter fired:\t', e)
+  dt.effectAllowed = 'copy'
+  dt.dropEffect = 'copy'
+
+  dt.setDragImage(e.target, 25, 25);
+
+  console.log('datatransfer', dt.getData('coin_type'))
+  console.log('dragstart fired:\t', e, dt.items.length)
+}
+function dragEnter_handler(e) { 
+  e.preventDefault();
+  const slot = e.target
+
+  slot.replaceChildren()
+  e.target.appendChild(create_new_coin('blank'))
+  
+  console.log('dragenter fired:\t', e, e.dataTransfer.items.length)
+}
+function dragLeave_handler(e) {
+  e.preventDefault();
+  const slot = e.target
+  slot.replaceChildren()
+  console.log('dragLeave fired:\t', e, e.dataTransfer.items.length)
 }
 function dragOver_handler(e) {
-  e.dataTransfer.dropEffect = 'move'
+  e.preventDefault();
+  const slot = e.target
+
+  slot.replaceChildren()
+  e.target.appendChild(create_new_coin('blank'))
+
+  console.log('dragover fired:\t', e, e.dataTransfer.items.length)
+}
+
+function drop_handler(e) {
+  // e.dataTransfer.dropEffect = 'move'
   e.preventDefault()
-  console.log('dragover fired:\t', e)
+
+  const dt = e.dataTransfer
+  const coin_type = dt.getData('coin_type')
+  const slot = e.target
+  slot.replaceChildren()
+  const newCoin = create_new_coin(coin_type)
+  slot.appendChild(newCoin)
+  console.log('drop event fired:\t', e, e.dataTransfer.items.length)
 }
 
 // DOM METHODS
 
 function create_new_coin(coinType) {
   // console.log('new coin created of type', coin_type)
-  const baseCoin = document.getElementById('base-coin-' + coinType)
+  const baseCoin = document.getElementById('base-coin-left')
   const newCoin = baseCoin.cloneNode()
+  newCoin.classList.remove('base-coin')
+  newCoin.classList.replace('coin-left', 'coin-' + coinType)
 
   let i = 1
   while (i !== null) {
@@ -73,16 +88,7 @@ function create_new_coin(coinType) {
       newCoin.id = `coin_${i}`
       i = null
     }
-    newCoin.className += ' active-slot'
-    //  console.log('new coin created of type',newCoin)
+    console.log('new coin created of type',newCoin)
   }
   return newCoin
-}
-
-function dragImageCoin(coinType) {
-  const baseCoin = document.getElementById('base-coin-' + coinType)
-  const coinEl = baseCoin.cloneNode()
-  coinEl.className += ' drag-image' 
-  console.log('dragImage Coin:', coinEl)
-  return coinEl
 }
