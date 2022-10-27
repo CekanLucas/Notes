@@ -71,17 +71,75 @@ event.dataTransfer.setDragImage(image, xOffset, yOffset);
 
 ### Drag Data
 
-```js
+```ts
 const dt = event.dataTransfer
 
 dt.setData('text/plain', el.outerHTML) // fallback type should always be used
-dt.setData('text/html', el.outerHTML) // for html
-dt.setData('application/x-moz-node', el) // in order to drag elements firefox says security risk
+dt.setData('text/html', el.outerHTML) // for html in text format
+dt.setData('application/x-moz-node', el) // to drag elements but firefox says security risk
 dt.setData('custom-type', el) // works but probably use MIME conventions
+
+dt.getData('data type') // see note
+
+dt.types // eg ['coin_type', 'coin_slot']
+
+dt.items // Iterable Object
+
+const exampleDTItems<DataTransferItemList> = {
+  0: DataTransferItem {kind: 'string', type: 'coin_type'}
+  1: DataTransferItem {kind: 'string', type: 'coin_slot'}
+  length: 2
+}
+
+
+dt.clearData() // clear all data
+dt.clearData('data type') // can specify type
 ```
+> **Note** according to convention it seems only `dragStart` and `drop` events to use `getData()` although the items and their formats can still be enumerated
+
+## Drop Effect
+
+`Drag&DropEvent.dataTransfer.dropEffect`
+
+### Values
+
+This sets the cursor and other visual feedback to users
+
+These are the only values that have a effect
+<dl>
+  <dt>copy</dt>
+  <dd>
+    <p>A copy of the source item is made at the new location</p>
+  </dd>
+  <dt>move</dt>
+  <dd>
+    <p>An item is moved to a new location</p>
+  </dd>
+  <dt>link</dt>
+  <dd>
+    <p>A link is established to the source at the new location</p>
+  </dd>
+  <dt>none</dt>
+  <dd>
+    <p>The item may not be dropped</p>
+  </dd>
+</dl>
+
+## Effect Allowed 
+`Drag&DropEvent.dataTransfer.effectAllowed`
+
+Determines the effect permitted
+
+Assigning a value to `effectAllowed` in events other than `dragstart` has no effect
+
+<b class="text-green-400 text-xl">values</b>
+
+`none` `copy` `copyLink` `copyMove` `link` `linkMove` `move` `all` `uninitialized`
 
 
-### Event types
+
+
+## Event types
 <dl>
 <dt id="drag"><a href="/en-US/docs/Web/API/HTMLElement/drag_event" title="drag"><code>drag</code></a></dt>
 <dd>
