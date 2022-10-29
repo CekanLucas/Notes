@@ -81,19 +81,32 @@ dt.setData('custom-type', el) // works but probably use MIME conventions
 
 dt.getData('data type') // see note
 
-dt.types // eg ['coin_type', 'coin_slot']
+dt.clearData() // clear all data
+dt.clearData('data type') // can specify type
 
-dt.items // Iterable Object
+dt.types // eg ['coin_type', 'coin_slot']
+```
+
+#### Data Transfer Item List 
+
+```ts
+const items<DataTransferItemList> = dt.items // Iterable Object
 
 const exampleDTItems<DataTransferItemList> = {
   0: DataTransferItem {kind: 'string', type: 'coin_type'}
   1: DataTransferItem {kind: 'string', type: 'coin_slot'}
   length: 2
 }
+items.length // => 2
 
+// see note about adding data
+items.add(data, type)
+items.add('left', 'coin_slot') // example
+items.add(file)
 
-dt.clearData() // clear all data
-dt.clearData('data type') // can specify type
+items.clear()
+items.remove(index: number)
+
 ```
 > **Note** according to convention it seems only `dragStart` and `drop` events to use `getData()` although the items and their formats can still be enumerated
 
