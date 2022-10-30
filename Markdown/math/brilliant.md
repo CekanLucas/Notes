@@ -14,6 +14,7 @@
       margin-left:1em;
       display: inline;
    }
+
 </style>
 <header>
 <a title="brilliant.org, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Brilliant_(website)_Logo.svg"><img id="logo" width="200" alt="Brilliant (website) Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Brilliant_%28website%29_Logo.svg/512px-Brilliant_%28website%29_Logo.svg.png"></a>
@@ -26,9 +27,6 @@
       $ ... $  -> inline
       $$ ... $$  -> block display
       $$ ... $$ (1)  -> display with equation number
-
-
-
 
 ## Quadratic Formula
 
@@ -78,13 +76,4 @@ $$Ax^2+Bxy+Cy^2+Dx+Ey+F=0$$
 
 Distance of **focus** to any point <b class="text-green-400">$P$ </b>on the parabola is the same as between any point <b class="text-green-400">$P$</b> and the <b class="text-red-600">directrix</b>
 
-<canvas id="focus-parabola"></canvas>
 
-<script>
-// Make a graph
-const canvas = document.getElementById("focus-parabola");
-const ctx = canvas.getContext("2d");
-
-ctx.fillStyle = "grey";
-ctx.fillRect(0, 0, 1000, 1000);
-</script>
