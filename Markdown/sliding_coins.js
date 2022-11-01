@@ -23,6 +23,8 @@ function dragStart_handler(e) {
     if (cl === 'base-coin') dt.setData('coin_slot', 'base')
   })
 
+  dt.setData(dt.getData('coin_type'), e.target.id)
+
   dt.effectAllowed = 'move'
   dt.dropEffect = 'move'
 
@@ -39,24 +41,44 @@ function dragEnter_handler(e) {
   const slot = e.target
 
   slot.replaceChildren()
-  e.target.appendChild(create_new_coin('blank'))
+  // e.target.appendChild(create_new_coin('blank'))
+
+  const dt = e.dataTransfer
+
+  const coinType = dt.types.find((type) =>
+    type === 'left' || type === 'right' ? true : false,
+  )
+
+  const ghostCoin = create_new_coin(coinType + ' coin-blank')
+  console.log('ghostCoin',ghostCoin)
+  slot.appendChild(ghostCoin)
 
   console.log('dragenter fired:\t', e, e.dataTransfer.items.length)
 }
-function dragLeave_handler(e) {
-  e.preventDefault()
-  const slot = e.target
-  slot.replaceChildren()
-  console.log('dragLeave fired:\t', e, e.dataTransfer.items.length)
-}
+
 function dragOver_handler(e) {
   e.preventDefault()
   const slot = e.target
 
   slot.replaceChildren()
-  e.target.appendChild(create_new_coin('blank'))
+  // e.target.appendChild(create_new_coin('blank'))
+
+  const dt = e.dataTransfer
+
+  const coinType = dt.types.find((type) =>
+    type === 'left' || type === 'right' ? true : false,
+  )
+
+  slot.appendChild(create_new_coin(coinType + ' coin-blank'))
 
   console.log('dragover fired:\t', e, e.dataTransfer.items.length)
+}
+
+function dragLeave_handler(e) {
+  e.preventDefault()
+  const slot = e.target
+  slot.replaceChildren()
+  console.log('dragLeave fired:\t', e, e.dataTransfer.items.length)
 }
 
 function drop_handler(e) {
@@ -75,12 +97,11 @@ function drop_handler(e) {
 // DOM METHODS
 
 function create_new_coin(coinType) {
-  // console.log('new coin created of type', coin_type)
   const baseCoin = document.getElementById('base-coin-left')
   const newCoin = baseCoin.cloneNode()
   newCoin.classList.remove('base-coin')
-  newCoin.classList.replace('coin-left', 'coin-' + coinType)
-
+  const coinClasses = newCoin.className.replace('coin-left', 'coin-' + coinType)
+  newCoin.className = coinClasses
   let i = 1
   while (i !== null) {
     if (document.getElementById(`coin_${i}`)) i++
@@ -88,7 +109,7 @@ function create_new_coin(coinType) {
       newCoin.id = `coin_${i}`
       i = null
     }
-    console.log('new coin created of type', newCoin)
+    console.log('new coin created of type', newCoin, newCoin.className)
   }
   return newCoin
 }
