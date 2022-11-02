@@ -230,7 +230,12 @@ Within a split you can `open` multiple tabs
 4. Close all other tabs
    :tabo (:tabonly)
 
+## Important
+> `b` is for bracket characters **( )**
+> `B` is especially made for **{ }**
+
 ### Suround
+[vim extension](https://github.com/tpope/vim-surround)
 
 By default we have `s` operator **suround** which operates on the suroundings *quotes, parenthesis, tags, braces etc*
 
@@ -241,3 +246,31 @@ By default we have `s` operator **suround** which operates on the suroundings *q
 #### Example
 
 `cs*tem>` change the surrounded * for the *<em>* tag
+
+It's easiest to explain with examples. Press `c` `s` `"` `'` inside
+
+      "Hello world!"
+
+to change it to
+
+      'Hello world!'
+
+
+> Play with these examples 
+> 
+> <tag>example_tag</tag> 
+> {key: value} 
+> (brackets)
+
+### Increment / Decrement
+
+`<C+a>` Increment
+`<C+x>` Decrement
+
+> Play with these examples 
+> 
+> 9
+
+### Toggle Vim
+
+Change in setting here it is set to `Cntrl + Alt + v` so you are back to using vscode key bindings
