@@ -20,7 +20,8 @@ function dragStart_handler(e) {
   e.target.classList.forEach((cl) => {
     if (cl === 'coin-left') dt.setData('coin_type', 'left')
     if (cl === 'coin-right') dt.setData('coin_type', 'right')
-    if (cl === 'base-coin') dt.setData('coin_slot', 'base')
+    if (cl === 'base-coin') dt.setData('coin_id', 'base')
+    else dt.setData('coin_id', e.target.id)
   })
 
   dt.setData(dt.getData('coin_type'), e.target.id)
