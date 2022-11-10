@@ -4,13 +4,12 @@ coinSlots.forEach((slot, i) => {
   console.log('Slot element', slot, i)
   const el = document.getElementById(slot.id)
   el.addEventListener('dragenter', dragEnter_handler)
-  el.addEventListener('dragleave', dragLeave_handler)
   el.addEventListener('dragover', dragOver_handler)
+  el.addEventListener('dragleave', dragLeave_handler)
   el.addEventListener('drop', drop_handler)
 })
 const coins = document.querySelectorAll('.coin')
-coins.forEach((coin, i) => {
-  console.log('coin', coin, i)
+coins.forEach((coin) => {
   coin.addEventListener('dragstart', dragStart_handler)
 })
 
@@ -33,56 +32,38 @@ function dragStart_handler(e) {
     `base-coin-${dt.getData('coin_type')}`,
   )
   dt.setDragImage(dragGhostImg, 25, 25)
-
-  console.log('datatransfer', dt.getData('coin_type'))
   console.log('dragstart fired:\t', e, dt.items.length)
 }
 function dragEnter_handler(e) {
   e.preventDefault()
-  const slot = e.target
-
-  slot.replaceChildren()
-  // e.target.appendChild(create_new_coin('blank'))
-
   const dt = e.dataTransfer
-
-  const coinType = dt.types.find((type) =>
-    type === 'left' || type === 'right' ? true : false,
-  )
-
-  const ghostCoin = create_new_coin(coinType + ' coin-blank')
-  console.log('ghostCoin',ghostCoin)
-  slot.appendChild(ghostCoin)
-
+  const slot = e.target
+  if (!slot.firstElementChild) {
+    const coinType = dt.types.find((type) =>
+      type === 'left' || type === 'right' ? true : false,
+    )
+    slot.appendChild(create_new_coin(coinType + ' coin-blank'))
+  }
   console.log('dragenter fired:\t', e, e.dataTransfer.items.length)
 }
 
 function dragOver_handler(e) {
   e.preventDefault()
-  const slot = e.target
-
-  slot.replaceChildren()
-  // e.target.appendChild(create_new_coin('blank'))
-
-  const dt = e.dataTransfer
-
-  const coinType = dt.types.find((type) =>
-    type === 'left' || type === 'right' ? true : false,
-  )
-
-  slot.appendChild(create_new_coin(coinType + ' coin-blank'))
-
   console.log('dragover fired:\t', e, e.dataTransfer.items.length)
 }
 
 function dragLeave_handler(e) {
   e.preventDefault()
   const slot = e.target
-  slot.replaceChildren()
+  if (slot.children) {
+    const coin = slot.firstElementChild
+    if (coin.classList.contains('coin-blank')) slot.replaceChildren()
+  }
   console.log('dragLeave fired:\t', e, e.dataTransfer.items.length)
 }
 
 function drop_handler(e) {
+  //toodo delete coin if dropped outside coinSlots
   // e.dataTransfer.dropEffect = 'move'
   e.preventDefault()
 
@@ -90,8 +71,11 @@ function drop_handler(e) {
   const coin_type = dt.getData('coin_type')
   const slot = e.target
   slot.replaceChildren()
-  const newCoin = create_new_coin(coin_type)
-  slot.appendChild(newCoin)
+
+  if (dt.getData('coin_id') === 'base') {
+    const newCoin = create_new_coin(coin_type)
+    slot.appendChild(newCoin)
+  } else move_coin(dt.getData('coin_id'), slot.id)
   console.log('drop event fired:\t', e, e.dataTransfer.items.length)
 }
 
@@ -113,4 +97,17 @@ function create_new_coin(coinType) {
     console.log('new coin created of type', newCoin, newCoin.className)
   }
   return newCoin
+}
+
+function move_coin(coinId, slotId) {
+  const coin = document.getElementById(coinId)
+  const id = coinId.match(/\d+/)[0]
+  const oldSlot = coin.parentElement.id
+  const oldSlotId = oldSlot.match(/\d+/)[0]
+  const slot = document.getElementById(slotId)
+  const slotIdNum = slotId.match(/\d+/)[0]
+
+  ;(function isMoveLegal(slot, oldslot) {})(slotIdNum, oldSlotId)
+
+  slot.append(coin)
 }
