@@ -50,7 +50,9 @@ function dragEnter_handler(e) {
 
 function dragOver_handler(e) {
   e.preventDefault()
+  const coin = new Coin(e);
   console.log('dragover fired:\t', e, e.dataTransfer.items.length)
+
 }
 
 function dragLeave_handler(e) {
@@ -115,4 +117,17 @@ function move_coin(coinId, slotId) {
   ;(function isMoveLegal(slot, oldslot) {})(slotIdNum, oldSlotId)
 
   slot.append(coin)
+}
+
+
+class Coin {
+  constructor(e) {
+    this.event = e
+    this.dt = e.dataTransfer
+    this.coinType = this.dt.types.find((type) =>
+      type === 'left' || type === 'right' ? true : false,
+    )
+  }
+
+
 }
