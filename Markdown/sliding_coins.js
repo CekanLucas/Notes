@@ -37,11 +37,12 @@ function dragStart_handler(e) {
 function dragEnter_handler(e) {
   e.preventDefault()
   const dt = e.dataTransfer
-  const slot = e.target
+  const slot = e.target.parentElement
+  const coinType = dt.types.find((type) =>
+    type === 'left' || type === 'right' ? true : false,
+  )
+
   if (!slot.firstElementChild) {
-    const coinType = dt.types.find((type) =>
-      type === 'left' || type === 'right' ? true : false,
-    )
     slot.appendChild(create_new_coin(coinType + ' coin-blank'))
   }
   console.log('dragenter fired:\t', e, e.dataTransfer.items.length)
@@ -55,7 +56,7 @@ function dragOver_handler(e) {
 function dragLeave_handler(e) {
   e.preventDefault()
   const slot = e.target
-  if (slot.children) {
+  if (slot.firstElementChild) {
     const coin = slot.firstElementChild
     if (coin.classList.contains('coin-blank')) slot.replaceChildren()
   }
@@ -70,7 +71,11 @@ function drop_handler(e) {
   const dt = e.dataTransfer
   const coin_type = dt.getData('coin_type')
   const slot = e.target
-  slot.replaceChildren()
+  
+  if (slot.firstElementChild) {
+    const coin = slot.firstElementChild
+    if (coin.classList.contains('coin-blank')) slot.replaceChildren()
+  }
 
   if (dt.getData('coin_id') === 'base') {
     const newCoin = create_new_coin(coin_type)
