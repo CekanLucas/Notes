@@ -76,4 +76,13 @@ $$Ax^2+Bxy+Cy^2+Dx+Ey+F=0$$
 
 Distance of **focus** to any point <b class="text-green-400">$P$ </b>on the parabola is the same as between any point <b class="text-green-400">$P$</b> and the <b class="text-red-600">directrix</b>
 
+## Eclipses 
+
+The **eccentricity** of an ellipse describes the general shape of the ellipse. The more elongated or stretched an ellipse is, the higher its eccentricity. A circle has an eccentricity of 0.0
+
+## Mirror Lense
+
+All reflections pass through a focus point
+
+![](https://ds055uzetaobb.cloudfront.net/uploads/EkAWbuECvH-pbounce1.svg?width=1)
 
