@@ -164,3 +164,19 @@ function TheBard(instrument, mana, name, hp){
 > this is known as ***concatenative prototypical inheritance*** ^
 > This objects are usually called ***mixins***
 > *In Javascript this is just a object you compose with other objects to provide additional behaviors or states*
+
+### Object Composition with Classes
+
+```js
+class ClassyBard extends ClassyMinion{
+  constructor(instrument, mana, name, hp){
+    super(name, hp)
+    this.instrument = instrument
+    this.mana = mana
+  }
+}
+
+Object.assign(ClassyBard.prototype, canSteal, CanCastSpells, canPlayMusic)
+```
+
+This is an example of <span class="text-yellow-500 font-bold">delegation-based prototypical inheritance</span> this means that methods like *steals* or *castsSpell* delegated to a single <u class="bg-indigo-500">prototype object</u>
