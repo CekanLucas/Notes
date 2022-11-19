@@ -146,7 +146,7 @@ wget
 whatis
 which
 who
-whereis
+**whereis** - locate the binary, source, and manual page files for a command
 xargs
 yes
 youtube-dl
