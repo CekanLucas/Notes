@@ -509,3 +509,132 @@ The range is specified by the *min* *max* attribute values
   <label for="range-input">Range 18-20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
   <input type="number" name="range-input" id="range-input" min="18" max="20" value="0">
 </form>
+
+# Animations
+
+<style>
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .spinny-boi {
+    animation: spin 1.5s infinite linear;
+    display: inline-block;
+    font-size: 30px;
+  }
+</style>
+<div class="spinny-boi">🤢</div>
+<div class="spinny-boi">🤢</div>
+<div class="spinny-boi">🤢</div>
+<div class="spinny-boi">🤢</div>
+<div class="spinny-boi">🤢</div>
+<div class="spinny-boi">🤢</div>
+
+Using `keyframe` you can define your animation 
+You can name these animations anything it doesn't have to be *spin*
+
+<style>
+  @keyframes move {
+    to {
+      transform: translate(50px);
+    }
+  }
+  .dancer {
+    position: relative;
+    display: inline-block;
+    font-size: 30px;
+    position: absolute;
+    right: 0;
+
+    /*
+    this is the log way of doing:
+    animation: move 1s infinite alternate;
+    */
+    animation-name: move;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  .dancers-list {
+    width: 100%;
+    max-width: 300px;
+    position: relative;
+  }
+
+  .linear {
+    animation-timing-function: linear;
+  }
+  .ease {
+    animation-timing-function: ease;
+  }
+  .ease-in-out {
+    animation-timing-function: ease-in-out;
+  }
+  .ease-in {
+    animation-timing-function: ease-in;
+  }
+  .ease-out {
+    animation-timing-function: ease-out;
+  }
+  .cubic-bezier {
+    animation-timing-function: cubic-bezier(0,1,.5,1);
+  }
+</style>
+
+<ul class="dancers-list">
+  <li>linear: <span class="dancer linear">💃</li>
+  <li>ease: <span class="dancer ease">💃</li>
+  <li>ease-in-out: <span class="dancer ease-in-out">💃</li>
+  <li>ease-in: <span class="dancer ease-in">💃</li>
+  <li>ease-out: <span class="dancer ease-out">💃</li>
+  <li>cubic-bezier: <span class="dancer cubic-bezier">💃</li>
+</ul>
+
+<style>
+  @keyframes rainbow {
+    100%,
+    0% {
+      color: rgb(255, 0, 0);
+    }
+    8% {
+      color: rgb(255, 127, 0);
+    }
+    16% {
+      color: rgb(255, 255, 0);
+    }
+    25% {
+      color: rgb(127, 255, 0);
+    }
+    33% {
+      color: rgb(0, 255, 0);
+    }
+    41% {
+      color: rgb(0, 255, 127);
+    }
+    50% {
+      color: rgb(0, 255, 255);
+    }
+    58% {
+      color: rgb(0, 127, 255);
+    }
+    66% {
+      color: rgb(0, 0, 255);
+    }
+    75% {
+      color: rgb(127, 0, 255);
+    }
+    83% {
+      color: rgb(255, 0, 255);
+    }
+    91% {
+      color: rgb(255, 0, 127);
+    }
+  }
+  .rainbow-boi {
+    animation: rainbow 4s infinite linear;
+    font-size: 30px;
+  }
+</style>
+<div class="rainbow-boi">Rainbow</div>
