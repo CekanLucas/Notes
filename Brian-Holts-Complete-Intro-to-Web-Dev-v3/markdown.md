@@ -11,6 +11,9 @@
 
 - [x] HTML 
 - [ ] CSS
+  - [x] Project - make this design
+
+![](./the_news_times/the_news_times.png)
 - [ ] Javascript
 - [ ] Putting together
 - [ ] Talking to Server
