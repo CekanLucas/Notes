@@ -524,6 +524,8 @@ The range is specified by the *min* *max* attribute values
     font-size: 30px;
   }
 </style>
+
+<div class="rainbow-boi">Rainbow</div><br>
 <div class="spinny-boi">🤢</div>
 <div class="spinny-boi">🤢</div>
 <div class="spinny-boi">🤢</div>
@@ -637,4 +639,23 @@ You can name these animations anything it doesn't have to be *spin*
     font-size: 30px;
   }
 </style>
-<div class="rainbow-boi">Rainbow</div>
+
+
+### More detail on the `cubic-bezier()`
+
+The four parameters of the `cubic-bezier()` function control the shape of the easing curve, which determines the speed and timing of the animation or transition. The four parameters represent the **( <span class="text-green-300">x</span> , <span class="text-yellow-300">y</span> )** coordinates of the *two control points* that define the curve.
+
+<span class="text-xl font-bold text-red-500 capitalize">example</span>
+
+The first two parameters, **( <span class="text-green-300">px1</span> , <span class="text-yellow-300">py1</span> )**, control the starting point of the curve. The next two parameters, **( <span class="text-green-300">px2</span> , <span class="text-yellow-300">py3</span> )**, control the ending point of the curve. 
+> These four parameters define the <span class="text-red-400">shape of the curve</span>
+
+    cubic-bezier(0.25, 0.1, 0.25, 1)
+
+This easing curve starts slowly, accelerates quickly, and then slows down again. It is often used for **ease-in-out** transitions, which gradually speed up and then slow down again at the end
+
+for other example try [easing cheatsheet](https://easings.net/)
+
+[MDN- transition timing functions](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function)
+
+[CSS tricks- transition timing functions ](https://css-tricks.com/almanac/properties/t/transition-timing-function/)
