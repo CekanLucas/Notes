@@ -4,8 +4,8 @@
 
 .page {
   padding: 2em;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 nav, ul, article {
@@ -17,15 +17,17 @@ nav, ul, article {
   font-size: 20px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   border: none;
-  width: 100%;
+  grid-column-start: span 3;
+  grid-row-start: 0;
 }
 
 .nav-links {
   display: flex;
   justify-content: space-around;
-  padding: 2em;
+  padding: 1em;
   margin: 0;
-  width: 100%;
+  grid-column-start: span 3;
+  grid-row-start: 0;
 }
 
 .site-section {
@@ -47,13 +49,16 @@ nav, ul, article {
 .story {
   text-align: center;
   padding: 1em;
-  width: 30vw;
-  flex-grow: 1;
 }
 
-.story-5 {
-  flex-grow: 2;
+.story-1 {
+  grid-row-start: 3;
 }
+.story-5 {
+  grid-column-start: span 2;
+}
+
+
 
 .article-title {
   font-style: italic;
@@ -61,7 +66,4 @@ nav, ul, article {
 }
 .article-text {
   text-align: justify;
-}
-.article-img {
-  width: 200px;
 }
