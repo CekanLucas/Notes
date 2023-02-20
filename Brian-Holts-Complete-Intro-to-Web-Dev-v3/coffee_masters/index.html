@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <title>Coffee Masters</title>
+</head>
+
+<body>
+
+  <header class="top-header">
+    <img class="header-logo" src="https://btholt.github.io/complete-intro-to-web-dev-v3/images/coffee_masters_logo.png"
+      alt="" srcset="">
+    <h1 class="header-text">Coffee Masters</h1>
+  </header>
+<main class="sections">
+  
+    <section class="section items">
+      <h2 class="section-header">items</h2>
+  
+      <article class="item item-1">
+        <span class="item-count">1</span>
+        <div class="item-and-extras">
+          <p class="item-name">cappuccino</p>
+          <p class="item-extra">lite foam</p>
+        </div>
+        <span class="item-price">3.35</span>
+      </article>
+      <article class="item item-2">
+        <span class="item-count">1</span>
+        <div class="item-and-extras">
+          <p class="item-name">cappuccino</p>
+          <p class="item-extra">lite milk</p>
+          <p class="item-extra">double espresso</p>
+        </div>
+        <span class="item-price">3.85</span>
+      </article>
+      <article class="item item-3">
+        <span class="item-count">1</span>
+        <div class="item-and-extras">
+          <p class="item-name">Croissant</p>
+          <p class="item-extra">butter</p>
+        </div>
+        <span class="item-price">2.45</span>
+      </article>
+    </section>
+  
+    <section class="section name">
+      <h2 class="section-header">name</h2>
+      <form action="">
+        <label for="name">Name of Order</label>
+        <input type="text" name="name" id="input-name" placeholder="Name of order">
+      </form>
+      <h2 class="section-header">payment</h2>
+      <form>
+        <label for="card-number">Card Number</label>
+        <input type="text" name="card-number" id="input-card" placeholder="card-number">
+      </form>
+      <form action="">
+        <label for="card-ccv">CCV number</label>
+        <input type="text" name="card-ccv" id="input-ccv" placeholder="CCC Number">
+      </form>
+    </section>
+  
+    <section class="section order">
+        <div class="receipt">
+          <p class="line-item"><span class="line-label">Subtotal</span><span class="line-value">$9.65</span></p>
+          <p class="line-item"><span class="line-label">Tax</span><span class="line-value">$0.82</span></p>
+          <p class="line-item reciept-total"><span class="line-label">Total</span><span class="line-value">$10.47</span></p>
+        </div>
+        <button class="submit-button">Place Order</button>
+    </section>
+</main>
+
+</body>
+
+</html>
