@@ -19,8 +19,9 @@
 
 ![](./coffee_masters/coffee_masters.png)
 
-- [ ] Javascript
+- [x] Javascript
 - [ ] Putting together
+  - [ ] Project - calculator
 - [ ] Talking to Server
 - [ ] Other
 - [ ] Wrap Up
