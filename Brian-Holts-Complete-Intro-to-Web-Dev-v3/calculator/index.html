@@ -11,7 +11,10 @@
 
 <body>
   <main class="total-calculator">
-    <section class="output-view">0123456789</section>
+    <section class="output-view">
+      <span class="output-number-view">0123456789</span>
+      <span class="output-operator-view">x</span>
+    </section>
     <section class="input-buttons">
       <button class="button number-button number-button-1">1</button>
       <button class="button number-button number-button-2">2</button>
@@ -23,18 +26,19 @@
       <button class="button number-button number-button-8">8</button>
       <button class="button number-button number-button-9">9</button>
       <button class="button number-button number-button-0">0</button>
-      
+
       <button class="button button-operator button-add">+</button>
-      <button class="button button-operator button-subtract">-</button>
-      <button class="button button-operator button-multiplication">&times;</button>
-      <button class="button button-operator button-divide">&div;</button>
-      
-      <button class="button button-operator button-clear">C</button>
-      <button class="button button-operator button-back">&xlarr;</button>
+      <button class="button button-operator button-subtract">&minus;</button>
+      <button class="button button-operator button-multiplication">×</button>
+      <button class="button button-operator button-divide">÷</button>
+
+      <button class="button button-function button-clear">C</button>
+      <button class="button button-function button-back">&xlarr;</button>
+      <button class="button button-function button-equal">=</button>
     </section>
   </main>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
