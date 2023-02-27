@@ -21,18 +21,25 @@ body {
 }
 
 .output-view {
+  font-family: 'technology-bold', monospace;
   background-color: black;
   color: limegreen;
   height: 10vh;
   margin: 10px;
   padding: 10px;
+  text-align: end;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.output-number-view{
   font-size: 9vh;
-  text-align: right;
-  font-weight: bold;
-  font-family: 'technology-bold', monospace;
 }
 .output-operator-view {
-  font-size: 5vh;
+  width: 2ch;
+  font-size: 4ch;
+  display: inline-block;
+  align-self: end;
+  order: -1
 }
 
 .input-buttons {
@@ -53,8 +60,9 @@ body {
 .button:hover {
   filter: brightness(1.2);
 }
-.button:focus {
-  filter: brightness(0.5);
+.button:active {
+  filter: brightness(0.7);   
+  box-shadow: none;
 }
 
 .button-operator {
