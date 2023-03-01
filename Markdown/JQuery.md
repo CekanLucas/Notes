@@ -66,3 +66,269 @@ Note that while the `<i>` tag has traditionally been used to emphasize text, it 
 
 >Query uses CSS Selectors to target elements. The `target:nth-child(n)` CSS selector allows you to select all the nth elements with the target class or element type. 
 <span style="color:orange">You can also target elements based on their positions using `:odd` or `:even` selectors.</span>
+
+## Finding Elements
+
+Jquery uses CSS kind of selectors
+### Basic Selectors
+Selector | Description
+--|-
+<span class="text-yellow-500">*</span> | All Elements
+<span class="text-yellow-500"><i>element</i></span> | All element name
+<span class="text-yellow-500">#id</span> | Element with **id** 
+<span class="text-yellow-500">.class</span> | Element with the **class**
+<i><span class="text-yellow-500">selector, selector</span></i> | Way to add multiple selectors 
+
+### Hierarchy 
+
+Selector | Description
+-|-
+<span class="text-yellow-500"><i>ancestor descendant</i></span> | A element that is a descendant of another element *eg. li a*
+<span class="text-yellow-500"><i>parent > child</i></span> | If you want direct child of another element **use * in place of child to select all children of parent**
+<span class="text-yellow-500"><i>previous ~ siblings</i></span> | select all elements that are siblings of previous element
+
+### Basic Filters
+
+Selector | Description
+-|-
+<span class="text-yellow-500 font-mono">:not(<i>selector</i>)</span> | All Elements except ones in the *selector*
+<span class="text-yellow-500 font-mono">:first</span> | The first element in selection
+<span class="text-yellow-500 font-mono">:last</span> | The last element in selection
+<span class="text-yellow-500 font-mono">:even</span> | Elements with a even index in selection
+<span class="text-yellow-500 font-mono">:odd</span> | Elements with a odd index in selection
+<span class="text-yellow-500 font-mono">:eq(<i>index</i>)</span> | Elements with a index equal to the one in the parameter
+<span class="text-yellow-500 font-mono">:gt(<i>index</i>)</span> | Elements with a index number greater than the one in the parameter
+<span class="text-yellow-500 font-mono">:lt(<i>index</i>)</span> | Elements with a index number lesser than the one in the parameter
+<span class="text-yellow-500 font-mono">:header</span> | All `<h1> - <h6>` elements
+<span class="text-yellow-500 font-mono">:animated</span> | Elements that are currently being animated 
+<span class="text-yellow-500 font-mono">:focus</span> | The element that currently has focus
+
+### Content Filters 
+Selector | Description
+-|-
+<span class="text-yellow-500 font-mono">:contains(<i>text</i>)</span> | All Elements that contain the specified text in parameter
+<span class="text-yellow-500 font-mono">:empty</span> | All Elements that have no children
+<span class="text-yellow-500 font-mono">:parent</span> | All Elements that have a child note *can be text or element*
+<span class="text-yellow-500 font-mono">:has(<i>selector</i>)</span> | Elements that contain at least one element that matches that selector
+
+### Visibility Filters 
+Selector | Description
+-|-
+<span class="text-yellow-500 font-mono">:hidden</span> | All Elements that are hidden
+<span class="text-yellow-500 font-mono">:visible</span> | All Elements that <u>take up space on a page </u>
+
+### Child Filters 
+Selector | Description
+-|-
+<span class="text-yellow-500 font-mono">:nth-child(<i>expr</i>)</span> | Value here is non zero based 
+<span class="text-yellow-500 font-mono">:first-child</span> | First child from current selection
+<span class="text-yellow-500 font-mono">:last-child</span> | Last child from current selection
+<span class="text-yellow-500 font-mono">:only-child</span> | When there is only one child of the element
+
+### Attribute Filters 
+Selector | Description
+-|-
+<span class="text-yellow-500 font-mono">[attribute]</span> | Elements that carry the specified attribute **any value**
+<span class="text-yellow-500 font-mono">[attribute='value']</span> | Elements that carry the specified attribute with the specified value
+<span class="text-yellow-500 font-mono">[attribute!='value']</span> | Elements that carry the specified attribute but not that specified value
+<span class="text-yellow-500 font-mono">[attribute^='value']</span> | The value of the attribute begins with this value
+<span class="text-yellow-500 font-mono">[attribute$='value']</span> | The value of the attribute ends with this value
+<span class="text-yellow-500 font-mono">[attribute*='value']</span> | The value appears somewhere in the attribute
+<span class="text-yellow-500 font-mono">[attribute|='value']</span> | Equal to a given string, or starting with string followed by a hyphen
+<span class="text-yellow-500 font-mono">[attribute~='value']</span> | The value should be one of the values in a space separate list
+<span class="text-yellow-500 font-mono">[attribute1][attribute2]</span> | Elements that match all selectors
+
+### Forms
+Selector | Description
+-|-
+<span class="text-yellow-500 font-mono">:input</span> | All input elements
+<span class="text-yellow-500 font-mono">:text</span> | All text elements
+<span class="text-yellow-500 font-mono">:password</span> | All password inputs
+<span class="text-yellow-500 font-mono">:radio</span> | All radio buttons
+<span class="text-yellow-500 font-mono">:checkbox</span> | All checkboxes
+<span class="text-yellow-500 font-mono">:submit</span> | All `submit` buttons
+<span class="text-yellow-500 font-mono">:image</span> | All `<img>` elements
+<span class="text-yellow-500 font-mono">:reset</span> | All reset buttons
+<span class="text-yellow-500 font-mono">:button</span> | All `<button>` elements
+<span class="text-yellow-500 font-mono">:file</span> | All file inputs
+<span class="text-yellow-500 font-mono">:selected</span> | All selected items from drop-down lists
+<span class="text-yellow-500 font-mono">:enabled</span> | All enabled form elements 
+<span class="text-yellow-500 font-mono">:disabled</span> | All disabled form elements 
+<span class="text-yellow-500 font-mono">:checked</span> | All checked radio buttons or checkboxes
+
+## Doing things with selections
+
+### Content Filters
+Get or change content of elements, attribute, text node
+<div class="columns">
+
+<div class="column">
+
+#### Get / Change Contents
+<span class="text-blue-500 font-mono">.html()</span>
+<span class="text-blue-500 font-mono">.text()</span>
+<span class="text-blue-500 font-mono">.replaceWith()</span>
+<span class="text-blue-500 font-mono">.remove()</span>
+</div>
+
+<div class="column">
+
+#### Elements
+<span class="text-purple-300 font-mono">.before()</span>
+<span class="text-purple-300 font-mono">.after()</span>
+<span class="text-purple-300 font-mono">.prepend()</span>
+<span class="text-purple-300 font-mono">.append()</span>
+<span class="text-purple-300 font-mono">.remove()</span>
+<span class="text-purple-300 font-mono">.clone()</span>
+<span class="text-purple-300 font-mono">.unwrap()</span>
+<span class="text-purple-300 font-mono">.detach()</span>
+<span class="text-purple-300 font-mono">.empty()</span>
+<span class="text-purple-300 font-mono">.add()</span>
+</div>
+
+<div class="column">
+
+#### Attributes
+<span class="text-pink-300 font-mono">.attr()</span>
+<span class="text-pink-300 font-mono">.removeAttr()</span>
+<span class="text-pink-300 font-mono">.addClass()</span>
+<span class="text-pink-300 font-mono">.css()</span>
+</div>
+
+<div class="column">
+
+#### Form Values
+<span class="text-pink-300 font-mono">.val()</span>
+<span class="text-pink-300 font-mono">.isNumeric()</span>
+</div>
+</div>
+
+### Finding Element
+Find and select elements to work with & traverse the DOM
+
+<div class="columns">
+       <div class="column">
+
+#### General
+<span class="text-green-600 font-mono">.find()</span>
+<span class="text-green-600 font-mono">.closest()</span>
+<span class="text-green-600 font-mono">.parent()</span>
+<span class="text-green-600 font-mono">.parents()</span>
+<span class="text-green-600 font-mono">.children()</span>
+<span class="text-green-600 font-mono">.sibling()</span>
+<span class="text-green-600 font-mono">.next()</span>
+<span class="text-green-600 font-mono">.nextAll()</span>
+<span class="text-green-600 font-mono">.prev()</span>
+<span class="text-green-600 font-mono">.prevAll()</span>
+</div>
+
+<div class="column">
+
+#### Filter / Test
+<span class="text-green-300 font-mono">.filter()</span>
+<span class="text-green-300 font-mono">.not()</span>
+<span class="text-green-300 font-mono">.has()</span>
+<span class="text-green-300 font-mono">.is()</span>
+<span class="text-green-300 font-mono">.contain()</span>
+</div>
+
+<div class="column">
+
+#### Order in Selection
+<span class="text-green-100 font-mono">.eq()</span>
+<span class="text-green-100 font-mono">.lt()</span>
+<span class="text-green-100 font-mono">.gt()</span>
+</div>
+</div>
+
+### Dimension/Position
+Get or update the dimensions or position of a box
+<div class="columns">
+
+<div class="column">
+
+#### Dimension
+<span class="text-red-100 font-mono">.height()</span>
+<span class="text-red-100 font-mono">.width()</span>
+<span class="text-red-100 font-mono">.innerHeight()</span>
+<span class="text-red-100 font-mono">.innerWidth()</span>
+<span class="text-red-100 font-mono">.outerHeight()</span>
+<span class="text-red-100 font-mono">.outerWidth()</span>
+<span class="text-red-100 font-mono">\$(document).height()</span>
+<span class="text-red-100 font-mono">\$(document).width()</span>
+<span class="text-red-100 font-mono">$(window).height()</span>
+<span class="text-red-100 font-mono">\$(window).width()</span>
+</div>
+<div class="column">
+
+#### Position
+<span class="text-red-200 font-mono">.offset()</span>
+<span class="text-red-200 font-mono">.position()</span>
+<span class="text-red-200 font-mono">.scrollLeft()</span>
+<span class="text-red-200 font-mono">.scrollRight()</span>
+</div>
+</div>
+
+<div class="column">
+
+</div>
+
+### Effect & Animation
+Add effects and animations to parts of the page
+
+<div class="columns">
+
+<div class="column">
+
+#### Basic
+<span class="text-indigo-500 font-mono">.show()</span>
+<span class="text-indigo-500 font-mono">.hide()</span>
+<span class="text-indigo-500 font-mono">.toggle()</span>
+</div>
+
+<div class="column">
+
+#### Fading
+<span class="text-indigo-200 font-mono">.fadeIn()</span>
+<span class="text-indigo-200 font-mono">.fadeOut()</span>
+<span class="text-indigo-200 font-mono">.fadeTo()</span>
+<span class="text-indigo-200 font-mono">.fadeToggle()</span>
+</div>
+
+<div class="column">
+
+#### Sliding
+<span class="text-indigo-400 font-mono">.slideDown()</span>
+<span class="text-indigo-400 font-mono">.slideUp()</span>
+<span class="text-indigo-400 font-mono">.slideToggle()</span>
+</div>
+
+<div class="column">
+
+#### Custom
+<span class="text-indigo-700 font-mono">.delay()</span>
+<span class="text-indigo-700 font-mono">.stop()</span>
+<span class="text-indigo-700 font-mono">.animate()</span>
+</div>
+</div>
+
+### Events
+Create event listener for each element in the selection
+
+<div class="columns">
+
+<div class="column">
+
+#### Document / File
+<span class="text-yellow-100 font-mono">.ready()</span>
+<span class="text-yellow-100 font-mono">.load()</span>
+</div>
+
+<div class="column">
+
+#### User Interaction
+<span class="text-yellow-800 font-mono">.on()</span>
+
+>**Note:** Old methods like <span class="text-yellow-800 font-mono">.click()</span>, <span class="text-yellow-800 font-mono">.hover()</span> and deprecated in favour of <span class="text-yellow-800 font-mono">.on()</span>
+</div>
+</div>
