@@ -274,3 +274,16 @@ to change it to
 ### Toggle Vim
 
 Change in setting here it is set to `Cntrl + Alt + v` so you are back to using vscode key bindings
+
+
+## Macros 
+1. Start recording a macro by pressing `q` followed by a letter (e.g. `q` `a`).
+1. Perform a series of commands that you want to repeat (e.g. search for a pattern, delete a line, etc.).
+1. Stop recording the macro by pressing `q`.
+1. Replay the macro by typing` @` followed by the letter of the macro (e.g. `@` `a`).
+
+You can also specify a count before the `@` command to repeat the macro multiple times. For example, `3` `@` a would replay the macro stored in register a three times.
+
+Macros are stored in registers (letters a-z). You can view the contents of a register by typing `:reg` in command mode, followed by the letter of the register you want to view (e.g. `:reg` `a`)
+
+> **Note:** You can repeat commands including macros with the `.` key
