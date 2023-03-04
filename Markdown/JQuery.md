@@ -332,3 +332,41 @@ Create event listener for each element in the selection
 >**Note:** Old methods like <span class="text-yellow-800 font-mono">.click()</span>, <span class="text-yellow-800 font-mono">.hover()</span> and deprecated in favour of <span class="text-yellow-800 font-mono">.on()</span>
 </div>
 </div>
+
+## Jquery Example
+
+Recommend to go to example and try JQuery code
+
+[link](./Ducket/jqueryExample.html)
+
+
+### Matched Sets or Jquery Selections
+*You can select one or more elements when you select elements a jQuery object is returned* 
+
+```js
+const singleElement = $('ul')
+```
+
+Index | Element Node
+--|--
+0 | ul
+
+```js
+const multipleElement = $('li')
+```
+
+Index | Element Node
+--|--
+0 | ul#one.hot
+0 | ul#two.hot
+0 | ul#three.hot
+0 | ul#four
+
+```js
+const content =  multipleElement.html()
+> '<em>fresh</em> figs'
+// Notice it returned only the first element 
+
+multipleElement.html('updated')
+// this updates all the innerHtml to 'updated'
+```
