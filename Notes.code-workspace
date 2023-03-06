@@ -2,18 +2,6 @@
   "folders": [
     {
       "path": "."
-    },
-    {
-      "path": "../node-bulletin-board"
-    },
-    {
-      "path": "../twilioQuest/starter-node"
-    },
-    {
-      "path": "../twilioQuest"
-    },
-    {
-      "path": "Angular"
     }
   ],
   "settings": {
