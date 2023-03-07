@@ -370,3 +370,40 @@ const content =  multipleElement.html()
 multipleElement.html('updated')
 // this updates all the innerHtml to 'updated'
 ```
+### Ready Page
+
+```js
+// Shortcut for ready event method on DOM
+// note: $(document).ready() is now deprecated
+// another means is to use the load event 
+// note: don't use .load() use .on() as with all events
+
+$( function() {
+  // script goes here
+} )
+
+jQuery(function () {
+  // script goes here
+})
+```
+
+with the above we now don't need to have scripts at the end of the closing body tag
+
+### Element Content
+
+```javascript
+$().html() // to get even the tags and other markup
+
+// => <em>emphasized text</em> other text 
+
+$().text() // to get just get text
+
+// => emphasized text other text 
+```
+
+### Update Element Content
+
+```javascript
+$().replaceWith() // also returns the replaced elements
+$().remove()
+```
