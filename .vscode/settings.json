@@ -1,6 +1,7 @@
 {
   "sass.lint.enable": true,
   "cSpell.words": [
-    "concatenative"
+    "concatenative",
+    "Duckett"
   ]
 }
