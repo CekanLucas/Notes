@@ -22,6 +22,42 @@
 
 >Practice CSS selectors <br>
 <b class="Orange">CSS diner:</b> [link](http://flukeout.github.io/)
+
+### pseudo-selectors
+
+<p class="flex justify-around filter -hue-rotate-30">
+  <code>`selector:first-child`</code> <code>`selector:last-child`</code> <code>`selector:only-child`</code>
+</p>
+
+> If a element has only one child it will be all <span class="text-400 font-bold">first last and only child</span>
+
+<p class="text-center text-green-100">counting from beginning > <code>:nth-child( [n] ) </code><code>:nth-last-child( [n] )</code> < counting from last</p>
+
+`:empty`
+
+`:not(x)` negation
+
+### `of-type` Selectors
+
+`:first-of-type`
+
+`:nth-of-type(n)`
+`:nth-of-type(even)`
+`:nth-of-type(6n+2)`
+
+`:only-of-type`
+`:last-of-type`
+
+
+
+### Attribute Selectors
+
+<p class="font-mono">[ <em>attribute</em> ] eg <code>[id]</code></p>
+<p class="font-mono">[ <em>attribute</em> = <em>value</em> ] eg <code>[id=col23]</code></p>
+<p class="font-mono">[ <em>attribute</em> ^= <em><strong>starts</strong>-with-value</em> ] eg <code>[id^=col]</code></p>
+<p class="font-mono">[ <em>attribute</em> $= <em><strong>ends</strong>-with-value</em> ] eg <code>[id$=3]</code></p>
+<p class="font-mono">[ <em>attribute</em> *= <em><strong>contains</strong>-value</em> ] eg <code>[id*=3]</code></p>
+
 ## Centering Recipes
 ### Horizontal Centering Fluid Blocks 
 Horizontal centering of blocks of unkown width 
