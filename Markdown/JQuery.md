@@ -508,3 +508,56 @@ $('li').each(function() {
   $(this).append('appended content')
 })
 ```
+
+## Events with Jquery
+
+<style>
+  table.jquery-events {
+    font-family: mono;
+    color: lemonchiffon
+  }
+  table.jquery-events tr>:first-child {
+    color: bisque;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 1em;
+    text-shadow: 1px 1px  1px white;
+    text-align: center;
+  }
+</style>
+
+<table class="jquery-events text-blue-300">
+  <tr>
+    <td>ui</td>
+    <td>focus, blur, change</td>
+  </tr>
+  <tr>
+    <td>keyboard</td>
+    <td>input, keydown, keyup, keypress</td>
+  </tr>
+  <tr>
+    <td>mouse</td>
+    <td>click, dblclick, mouseup, mousedown, mouseover, mousedown</td>
+  </tr>
+  <tr>
+    <td>form</td>
+    <td>submit, select, change</td>
+  </tr>
+  <tr>
+    <td>document</td>
+    <td>ready, load, unload</td>
+  </tr>
+  <tr>
+    <td>browser</td>
+    <td>error, resize, scroll</td>
+  </tr>
+</table>
+
+### Event Object
+
+```javascript
+$('selector').on('event', function(e){
+  // e is the event object
+  eventType = e.type
+})
+```
