@@ -38,7 +38,7 @@ $(function () {
     updateCount();
   });
 
-  // add Date 
+  // add Date //todo: doesn't work
   $('li').on('click', function addClickDate(e) {
     $('li span').remove();
     const date = new Date();
