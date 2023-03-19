@@ -34,7 +34,6 @@ h1, h2, h3, h4, h5, h6 {
 
 <style>
   #playground, #regex{
-    color: white;
     width: 100%;
     font-size: 1.2em;
     padding: 1em;
@@ -44,14 +43,11 @@ h1, h2, h3, h4, h5, h6 {
     background-color: rgba(100, 100, 100, 0.3);
     height: 50vh;
   }
-  #regex {
-    color: steelblue;
-  }
 </style>
 
-<p id="playground">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident expedita temporibus nesciunt ullam autem numquam voluptas commodi accusantium. Temporibus voluptatum facilis sed aliquid debitis aut ullam reprehenderit deleniti? Exercitationem, quos?</p>
+<p id="playground" contenteditable="true">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident expedita temporibus nesciunt ullam autem numquam voluptas commodi accusantium. Temporibus voluptatum facilis sed aliquid debitis aut ullam reprehenderit deleniti? Exercitationem, quos?</p>
 
-<input type="text" name="regex" id="regex" class="font-mono bg-gray-400 bg-opacity-25">
+<input type="text" name="regex" id="regex" class="font-mono text-blue-400 bg-gray-400 bg-opacity-25">
 
 <script src="regex.js"></script>
 
@@ -77,3 +73,16 @@ You can search repeated patterns using a number in the `{}`
 /a{3}/g.test('aaa') //=> true
 /a{4}/g.test('aaa') //=> false
 ```
+
+## List of meta characters <a href="#playground" class="text-xs">playground &circlearrowleft;</a>
+
+| Character | Description                                                   |
+| --------- | ------------------------------------------------------------- |
+| `.`       | matches any single character                                  |
+| `*`       | matches zero or more of the preceding character or group      |
+| `+`       | matches one or more of the preceding character or group       |
+| `?`       | matches zero or one of the preceding character or group       |
+| `[]`      | matches any character in the specified set                    |
+| `^`       | matches the start of a line or string                         |
+| `$`       | matches the end of a line or string                           |
+| `\`       | escapes a special character, allowing it to be used literally |
