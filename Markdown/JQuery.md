@@ -561,3 +561,24 @@ $('selector').on('event', function(e){
   eventType = e.type
 })
 ```
+
+<p class="text-center text-xl text-yellow-600 font-mono font-bold">
+  .on( 
+    <span class="event-parameter text-red-500">events</span>[, 
+    <span class="event-parameter text-blue-500">selector</span>, 
+    <span class="event-parameter text-green-500">data</span> ], 
+    <span class="event-parameter text-purple-500">function(
+    <span class="event-parameter text-pink-500">e</span> )</span> )
+</p>
+
+<script src="./jquery.js"></script>
+
+<blockquote id="event-parameter"></blockquote>
+
+
+
+
+
+
+
+
