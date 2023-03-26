@@ -36,6 +36,9 @@ h1, h2, h3, h4, h5, h6 {
 
 
 ## Jupiter Command Line
+
+> **note:** `jb` is the shorthand for the `jupyter-book` command
+
     Usage: jupyter-book [OPTIONS] COMMAND [ARGS]...
 
       Build and manage books with Jupyter.
@@ -54,3 +57,43 @@ h1, h2, h3, h4, h5, h6 {
 
 ### Create Jupyter Book
     $ jupyter-book create mynewbook/
+
+### Directory Structure
+
+<div class="columns">
+  <div class="column">
+
+    $ tree mynewbook/
+      ├── _config.yml
+      ├── intro.md
+      ├── logo.png
+      ├── markdown.md
+      ├── markdown-notebooks.md
+      ├── notebooks.ipynb
+      ├── references.bib
+      ├── requirements.txt
+      └── _toc.yml
+
+      0 directories, 9 files
+  </div>
+  <pre class="column font-mono text-red-600">
+  Importance  
+
+
+    !important
+    
+    
+    
+    
+    
+    
+    
+    !important (table of content)
+  </pre>
+</div>
+
+### Build
+
+    $ jb build mynewbook/
+
+Creates a build directory `_build` folder where html and website assets are built using a *static site generator*
