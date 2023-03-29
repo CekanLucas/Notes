@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 
 **Markedly Structured Text** is a superset of **CommonMark Markdown**
 
-## Unique Syntax [note working]
+## Unique Syntax
 
 Most will need extensions check out documentation
 
@@ -56,11 +56,13 @@ Term 2
 
 ### Glossary List
 
-{.glossary}
-my-term
-: Definition of the term
+```{glossary}
+Term one
+  An indented explanation of term 1
 
-{my-term}`my term`
+A second term
+  An indented explanation of term2
+```
 
 ### Comments
 You can make comments that are not parsed
@@ -137,3 +139,8 @@ Similar to **Directives** but done on one line
     {doc}`../intro`
 
 {doc}`../intro`
+
+#### Terms defined in `glossary`
+
+- {term}`Term one`
+- {term}`A second term`
