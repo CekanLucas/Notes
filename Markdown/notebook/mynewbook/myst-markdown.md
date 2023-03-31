@@ -144,3 +144,14 @@ Similar to **Directives** but done on one line
 
 - {term}`Term one`
 - {term}`A second term`
+
+```{tip}
+When you nest directive within directives you need to add another <code>`</code>
+
+    ````{outer-directive}
+      outer content
+    ```{inner-directive}
+      inner content
+    ```
+    ````
+```
