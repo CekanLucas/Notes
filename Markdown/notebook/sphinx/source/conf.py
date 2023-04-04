@@ -28,10 +28,38 @@ author = 'Lucas Cekan'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-  'myst_parser', # use myST instead of reST
-  'sphinx_rtd_dark_mode' # toggle-able dark mode
+    'myst_parser',  # use myST instead of reST
+    # 'myst_nb',
+    'jupyter_book',
+    'sphinx_thebe',
+    'sphinx_comments',
+    # 'sphinx_external_toc',
+    # 'sphinx.ext.intersphinx',
+    'sphinx_design',
+    # 'sphinx_book_theme',
+    # 'sphinx_jupyterbook_latex'
+    # 'sphinx_rtd_dark_mode'  # toggle-able dark mode
+    # other extensions...
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.ifconfig',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.githubpages',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.todo',
+    'sphinx.ext.autosectionlabel',
+    'sphinx.ext.graphviz',
+    'sphinx.ext.inheritance_diagram',
+    'sphinx.ext.imgconverter',
+    'sphinx.ext.mathjax',
+    'sphinx.ext.extlinks',
+    'sphinx.ext.doctest',
+    'sphinx_togglebutton',
+    'sphinx_copybutton',
+
 ]
-myst_enable_extensions = ['deflist','colon_fence', 'dollarmath', 'linkify', 'substitution', 'tasklist']
+myst_enable_extensions = ['deflist', 'colon_fence',
+                          'dollarmath', 'linkify', 'substitution', 'tasklist']
 # user starts in dark mode
 default_dark_mode = True
 
