@@ -19,6 +19,11 @@ help:
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-# use autobuilder for development 
+# use autobuilder for development
+#  with sass compilation
 dev: 
-	sphinx-autobuild "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	@echo "Starting SASS compilation and Sphinx autobuild..."
+	$( \
+		npx sass source/_static/sass/main.scss source/_static/css/style.css --watch & \
+		sphinx-autobuild -v "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O) \
+	)
