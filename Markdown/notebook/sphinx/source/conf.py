@@ -56,7 +56,6 @@ extensions = [
     'sphinx.ext.doctest',
     'sphinx_togglebutton',
     'sphinx_copybutton',
-
 ]
 myst_enable_extensions = ['deflist', 'colon_fence',
                           'dollarmath', 'linkify', 'substitution', 'tasklist']
@@ -85,5 +84,5 @@ html_theme = 'sphinx_book_theme'
 html_static_path = ['_static']
 
 # paths relative to _static
-html_js_files = ['custom_script.js']
-html_css_files = ['style.css']
+html_js_files = ['scripts/custom_script.js']
+html_css_files = ['css/style.css']
