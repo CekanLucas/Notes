@@ -54,15 +54,15 @@ pre {
 body ::selection {
   /*highlighting*/
   background: transparent;
-  text-shadow: 
-    1px  0px 1px ,
-    0px  1px 1px ,
-    -1px  0px 1px ,
-    0px -1px 1px ,
-    0px  1px black ,
-    1px  0px black ,
-    -1px  0px black ,
-    0px -1px black ;
+  text-shadow:
+    1px 0px 1px,
+    0px 1px 1px,
+    -1px 0px 1px,
+    0px -1px 1px,
+    0px 1px black,
+    1px 0px black,
+    -1px 0px black,
+    0px -1px black;
   // text-outline: black;  
 }
 
@@ -94,4 +94,14 @@ em {
 
 s {
   color: LightCoral;
+}
+
+//  Fixes for Sphinx themes
+
+.bg-main {
+  flex-grow: 1;
+}
+
+div.bd-page-width, .bd-main .bd-content .bd-article-container {
+  max-width: none;
 }
