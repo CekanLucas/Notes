@@ -1,5 +1,5 @@
 # Table of Contents
-The Table of Contents (TOC) Tree Directive is a Jupyter-Book feature that allows you to create a table of contents tree for your markdown files. This table of contents tree can be used to navigate through the different sections of your document, making it easier for readers to find the information they are looking for.
+The Table of Contents (TOC) Tree Directive is a Sphinx feature that allows you to create a table of contents tree for your markdown files. This table of contents tree can be used to navigate through the different sections of your document, making it easier for readers to find the information they are looking for.
 
 ## `toctree` directive
 
@@ -73,11 +73,9 @@ With `:hidden:` Sphinx will take hierachy but not insert links into the document
 
 `:includehidden:` if you want to only show the top level toc tree
 
-
 ## Conclusion
 
-The TOC Tree Directive is a useful feature of Jupyter-Book that allows you to create a table of contents tree for your markdown files. By including this directive in your markdown files, you can create a more user-friendly document that is easier to navigate.
-
+The TOC Tree Directive is a useful feature for any Sphinx project that allows you to create a table of contents tree for your markdown files. By including this directive in your markdown files, you can create a more user-friendly document that is easier to navigate.
 
         ```{toctree}
         :maxdepth: 3
