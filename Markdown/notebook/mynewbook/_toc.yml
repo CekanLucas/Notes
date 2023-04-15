@@ -2,11 +2,14 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
+root: pages/intro
 chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
-- file: mymarkdownfile
-- file: myst-markdown
-- file: sphinx-design
+- file: pages/markdown
+- file: pages/notebooks
+- file: pages/markdown-notebooks
+- file: pages/mymarkdownfile
+- file: pages/myst-markdown
+  sections:
+  - file: pages/myst/DirectivesAndRoles
+  - file: pages/myst/math
+- file: pages/sphinx-design

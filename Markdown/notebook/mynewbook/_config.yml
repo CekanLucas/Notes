@@ -1,9 +1,10 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: My sample book
-author: The Jupyter Book Community
-logo: logo.png
+title: 'Learn Programming'
+author: 'Lucas Cekan'
+copyright: '2023'
+logo: logo.svg
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -35,8 +36,6 @@ parse:
   myst_enable_extensions:
     # don't forget to list any other extensions you want enabled,
     # including those that are enabled by default!
-    - deflist
-    - colon_fence
-  
-sphinx_design:
-  enable_grid: true
+    - deflist # definition lists
+    - colon_fence # check to see if it is working
+    - dollarmath # $dollar syntax$
