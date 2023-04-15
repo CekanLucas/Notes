@@ -25,6 +25,9 @@ body ::selection {
 h1, h2, h3, h4, h5, h6 {
   color: goldenrod;
 }
+.bg-custom{
+  background: firebrick;
+}
 
 </style>
 </head>    
@@ -36,13 +39,56 @@ h1, h2, h3, h4, h5, h6 {
 
 **Markedly Structured Text** is a flavour of markdown that is used in <span class="text-yellow-500">Jupyter Books</span>
 
-## Syntax 
-
 **Markedly Structured Text** is a superset of **CommonMark Markdown**
 
-## Unique Syntax
+
+
+## Syntax
+
+~~strikethrough with *emphasis*~~ {bdg-danger}`not working` {bdg-warning}`working only for html`
+
+Smart-quotes 'single quotes' and "double quotes".
+
++-, --, ---, ... and other replacements {bdg-warning}`working only for html`
+
+A paragraph with a span of [text with attributes]{.bg-warning} {bdg-danger}`not working`
+
+
+### Line Breaks
+
+> `\` is equivalent to `<br>` from html
+
+Fleas \
+Adam \
+Had `em
+
+### Alternative list
+
+- [ ] An item that needs doing
+- [x] An item that is complete
+
+
+### Super and Sub scripts 
+    H{sub}`2`O, and 4{sup}`th` of July
+H{sub}`2`O, and 4{sup}`th` of July
+
+### Attribution {bdg-danger}`not working` {bdg-danger}`needs attr_block extension`
+{attribution="Hamlet act 4, Scene 5"}
+> We know what we are, but know not what we may be.
+
+### Definition Lists
 
 Most will need extensions check out documentation
+
+    MyST
+    : Markedly Structured Text
+
+    Term 2
+    : Longer definition
+
+      With multiple paragraphs
+
+      - And bullet points
 
 MyST
 : Markedly Structured Text
@@ -70,9 +116,8 @@ You can make comments that are not parsed
 
     % my comment
 
-### Math
-$\pi = 3.14159$
-$$\pi = 3.14159$$
+
+
 
 ## Figures
 
@@ -85,13 +130,23 @@ Figure caption
 ## Typography
 
 ### `attr_block` {bdg-danger}`not working`
-{.bg-primary}
-### Paragraph heading
 
-{#mypara .bg-warning}
-Here is a paragraph with attributes.
 
-{ref}`A reference to my paragraph <mypara>`
+    ```{#my-id .my-class style="color: red;"}
+    This is a block of text with multiple attributes.
+    ```
+
+```{.my-custom style="color: black;"}
+This is a block of text with multiple attributes.
+```
+
+{.bg-custom}
+Here is a paragraph with a class to control its formatting.
+
+    {#mypara .bg-warning}
+    Here is a paragraph with attributes.
+
+    {ref}`A reference to my paragraph <mypara>`
 ### Foot Notes 
     - This is a manually-numbered footnote reference.[^3]
     - This is an auto-numbered footnote reference.[^myref]
@@ -109,99 +164,21 @@ Here is a paragraph with attributes.
 
 You can create a thematic break, to break content between themes, using three or more `*`, `-`, or `_` characters on a line by themselves.
 
+three `*`
+
 ***
+
+three `-`
+
 ---
+
+three `_`
+
 ___
 
 ### Text Formatting
 **strong**, _emphasis_, `literal text`, \*escaped symbols\*
 
-## Directives & Roles
-
-These are like functions ***Directives* are multiline** and ***Roles* are single line** 
-
-~~strikethrough with *emphasis*~~ {bdg-danger}`not working` {bdg-warning}`working only for html`
-
-Smart-quotes 'single quotes' and "double quotes".
-
-+-, --, ---, ... and other replacements {bdg-warning}`working only for html`
-
-A paragraph with a span of [text with attributes]{.bg-warning} {bdg-danger}`not working`
-
-
-### Line Breaks
-
-> `\` is equivalent to `<br>` from html
-
-Fleas \
-Adam \
-Had `em
-
-### Alternative list {bdg-danger}`not working`
-
-- [ ] An item that needs doing
-- [x] An item that is complete
-
-
-### Super and Sub scripts 
-    H{sub}`2`O, and 4{sup}`th` of July
-H{sub}`2`O, and 4{sup}`th` of July
-
-### Attribution {bdg-danger}`not working` {bdg-danger}`needs attr_block extension`
-{attribution="Hamlet act 4, Scene 5"}
-> We know what we are, but know not what we may be.
-### Directives 
-
-Directives can be used as so with optional arguments
-
-    ```{mydirectivename} arg1 arg2
-    My directive content
-    ```
-
-#### Example
-
-    ```{note}
-    Here is a note
-    ```
-```{note}
-Here is a note
-```
-
-#### Directive Keywords
-
-Here’s an example of directive keywords using the `:key: val` syntax:
-
-    ```{directivename}
-    :key1: metadata1
-    :key2: metadata2
-    My directive content.
-    ```
-
-and here’s an example of directive keywords using the enclosing --- syntax:
-
-    ```{directivename}
-    ---
-    metadata1: metadata2
-    metadata3: metadata4
-    ---
-    My directive content.
-    ```
-
-```{tip}
-
-Remember, specifying directive keywords with `:key:` or `---` will make no difference. We recommend using `---` if you have many keywords you wish to specify, or if some values will span multiple lines. Use the :key: val syntax as a shorthand for just one or two keywords
-```
-
-### Roles 
-Similar to **Directives** but done on one line
-
-    Some content {rolename}`and here is my role's content!`
-
-`doc` keyword is for making link to another page
-
-    {doc}`../intro`
-
-{doc}`../intro`
 
 #### Terms defined in `glossary`
 
@@ -255,16 +232,16 @@ note
 ```{seealso}
 seealso
 ```
-[link to](#a) {bdg-danger}`link not working`
+    [link to](#a) {bdg-danger}`link not working`
 
-#### Custom Admonitions
+### Custom Admonitions
 ```{admonition} My custom title with *Markdown*!
 :class: tip
 
 This is a custom title for a tip admonition.
 ```
 
-#### Dropdown Admonitions
+### Dropdown Admonitions
 ```{note}
 :class: dropdown
 
@@ -288,7 +265,7 @@ Explanation of the deprecation.
 ## Other
 
 {bdg-danger}`not working`
-```bg-primary
+```bg-custom
 This is a container with a custom CSS class.
 
 - It can contain multiple blocks
