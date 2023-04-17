@@ -18,3 +18,9 @@ Check out the content pages bundled with this sample book to see more.
 use `sphinx-autobuild` for convenience
 
     $ sphinx-autobuild . _build/html -b html
+
+## Generating `_toc.yml`
+
+    $ jupyter-book toc from-project path/to/book/project/root -f [jb-book/jb-article]
+
+The `-f` option specifies whether you are generating a table of contents for a book or an article. If you are generating a table of contents for a book, use `jb-book`. If you are generating a table of contents for an article, use `jb-article`.
