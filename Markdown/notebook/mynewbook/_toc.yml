@@ -3,13 +3,11 @@
 
 format: jb-book
 root: pages/intro
-chapters:
-- file: pages/markdown
-- file: pages/notebooks
-- file: pages/markdown-notebooks
-- file: pages/mymarkdownfile
-- file: pages/myst-markdown
-  sections:
-  - file: pages/myst/DirectivesAndRoles
-  - file: pages/myst/math
-- file: pages/sphinx-design
+parts:
+  - caption: Introduction
+    chapters:
+    - glob: pages/*
+  - caption: Next Part
+    chapters:
+    - url: https://example.com
+      title: Link to Browser
