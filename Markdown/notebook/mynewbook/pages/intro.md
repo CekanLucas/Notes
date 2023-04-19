@@ -17,6 +17,7 @@ Check out the content pages bundled with this sample book to see more.
 
 use `sphinx-autobuild` for convenience
 
+    $ jupyter-book config sphinx . # generate conf.py
     $ sphinx-autobuild . _build/html -b html
 
 ## Generating `_toc.yml`
