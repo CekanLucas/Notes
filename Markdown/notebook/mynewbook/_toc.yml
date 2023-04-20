@@ -6,8 +6,16 @@ root: pages/intro
 parts:
   - caption: Introduction
     chapters:
-    - glob: pages/*
-  - caption: Next Part
+    - url: https://jupyterbook.org/en/stable/intro.html
+      title: Link to Docs
+    - file : pages/mymarkdownfile
+    - file : pages/markdown
+    - file : pages/markdown-notebooks
+    - file : notebooks
+  - caption: Alphabet Sorted Notes
     chapters:
-    - url: https://example.com
-      title: Link to Browser
+    - file : pages/myst-markdown
+      sections:
+        - file: pages/notes/myst/DirectivesAndRoles
+        - file: pages/notes/myst/math
+    - glob: pages/notes/*
