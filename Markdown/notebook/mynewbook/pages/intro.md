@@ -20,6 +20,10 @@ use `sphinx-autobuild` for convenience
     $ jupyter-book config sphinx . # generate conf.py
     $ sphinx-autobuild . _build/html -b html
 
+```{note}
+For `sphinx-autobuild` command it uses directory `jupyter_execute` to prevent recursive building please exclude this directory from build
+```
+
 ## Generating `_toc.yml`
 
     $ jupyter-book toc from-project path/to/book/project/root -f [jb-book/jb-article]

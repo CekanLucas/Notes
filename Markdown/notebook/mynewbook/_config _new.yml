@@ -1,0 +1,62 @@
+sphinx:
+  config:
+    # Add Sphinx extensions
+    extensions:
+      - 'sphinx.ext.autodoc'
+      - 'sphinx.ext.napoleon'
+      - 'sphinx.ext.todo'
+      - 'sphinx.ext.autosectionlabel'
+      - 'sphinx.ext.graphviz'
+      - 'sphinx.ext.inheritance_diagram'
+      - 'sphinx.ext.imgconverter'
+      - 'sphinx.ext.mathjax'
+
+    # Enable MyST extensions
+
+    myst_enable_extensions:
+
+      - 'deflist'
+      - 'colon_fence'
+      - 'dollarmath'
+      - 'linkify'
+      - 'substitution'
+      - 'tasklist'
+
+    # Set default_dark_mode
+
+    default_dark_mode: true
+
+    # Set templates path
+
+    templates_path:
+      - '_templates'
+    exclude_patterns:
+      - '_build'
+      - 'Thumbs.db'
+      - '.DS_Store'
+
+# -- HTML Configuration ------------------------------------------------------
+
+html:
+
+  # Set Jupyter Book theme
+
+  theme: 'sphinx_book_theme'
+
+  # Set static path
+
+  static_path:
+
+    - '_static'
+
+  # Add custom JavaScript files
+
+  extra_js:
+
+    - 'scripts/custom_script.js'
+
+  # Add custom CSS files
+
+  extra_css:
+
+    - 'css/style.css'

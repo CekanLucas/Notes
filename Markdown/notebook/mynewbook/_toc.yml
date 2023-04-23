@@ -12,6 +12,8 @@ parts:
     - file : pages/markdown
     - file : pages/markdown-notebooks
     - file : notebooks
+    - file : pages/tslabNotebookMarkdown
+    - file : pages/tslabNotebook
   - caption: Alphabet Sorted Notes
     chapters:
     - file : pages/myst-markdown
