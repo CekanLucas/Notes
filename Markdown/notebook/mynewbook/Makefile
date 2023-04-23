@@ -24,8 +24,5 @@ help:
 dev: 
 	@echo "Starting SASS compilation and Sphinx autobuild..." 
 	jupyter-book config sphinx . # generate conf.py 
-	npx sass _static/sass/main.scss _static/css/style.css --watch & \
-	sphinx-autobuild -v "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O) \
-
-#### normal dev command #####
-# make dev -b html
+	npx sass sass/main.scss _static/css/style.css --watch & \
+	sphinx-autobuild -v "$(SOURCEDIR)" "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
