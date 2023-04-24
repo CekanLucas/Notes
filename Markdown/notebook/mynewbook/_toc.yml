@@ -6,8 +6,14 @@ root: pages/intro
 parts:
   - caption: Introduction
     chapters:
-    - url: https://jupyterbook.org/en/stable/intro.html
-      title: Link to Docs
+    - file : pages/docs
+      sections:
+      - url: https://jupyterbook.org
+        title: Jupyter-Book
+      - url: https://myst-parser.readthedocs.io
+        title: Myst Markdown Parser
+      - url: https://www.sphinx-doc.org
+        title: Sphinx Document Generator
     - file : pages/mymarkdownfile
     - file : pages/markdown
     - file : pages/markdown-notebooks
