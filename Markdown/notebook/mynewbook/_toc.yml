@@ -27,3 +27,9 @@ parts:
         - file: pages/notes/myst/DirectivesAndRoles
         - file: pages/notes/myst/math
     - glob: pages/notes/*
+  - caption: Math Notes
+    chapters:
+    - glob: pages/math/*
+  - caption: Computer Science Notes
+    chapters:
+    - glob: pages/cs/*
