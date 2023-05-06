@@ -241,6 +241,12 @@ seealso
 This is a custom title for a tip admonition.
 ```
 
+    ```{admonition} My custom title with *Markdown*!
+    :class: tip
+
+    This is a custom title for a tip admonition.
+    ```
+
 ### Dropdown Admonitions
 ```{note}
 :class: dropdown
@@ -249,6 +255,14 @@ This admonition has been collapsed,
 meaning you can add longer form content here,
 without it taking up too much space on the page.
 ```
+
+    ```{note}
+    :class: dropdown
+
+    This admonition has been collapsed,
+    meaning you can add longer form content here,
+    without it taking up too much space on the page.
+    ```
 
 ### Version Change
 
@@ -261,6 +275,16 @@ Explanation of the change.
 ```{deprecated} 1.2.3
 Explanation of the deprecation.
 ```
+
+    ```{versionadded} 1.2.3
+    Explanation of the new feature.
+    ```
+    ```{versionchanged} 1.2.3
+    Explanation of the change.
+    ```
+    ```{deprecated} 1.2.3
+    Explanation of the deprecation.
+    ```
 
 ## Other
 
