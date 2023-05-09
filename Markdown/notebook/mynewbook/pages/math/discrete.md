@@ -81,6 +81,7 @@ F   |  F  |      F       |
 
 > Let *p* and *q* be propositions. The conditional statement *$p\rightarrow  q$* is the proposition *if p, then q.* The conditional statement *$p\rightarrow  q$* is false when *p* is true and *q* is false, and true otherwise.  In the conditional statement *$p\rightarrow  q$*, *p* is called the *hypothesis* (or *antecedent* or *premise*) and *q* is called the *conclusion* (or *consequence*).
 >> *$p\rightarrow  q$* is a **conditional statement** or a **implication** *q* is true on the condition that *q* holds
+>>> "*if* it is raining, *then* the ground is wet."
 
 *p* | *q* |*$p\rightarrow q$* |
 --- |:---:|:-----------------:|
@@ -98,15 +99,22 @@ The concept of conditionals doesn't make much sense in terms of truth table. All
 
 Proposition
 : $p\rightarrow q$ A conditional statement
+: **"*if* it is raining, *then* the ground is wet"**
 
-Converse
+Converse {bdg-danger}`not necessarily equivalent to the original proposition`
 : $q\rightarrow p$ is the *converse* of $p\rightarrow q$
+: > **"*if* the ground is wet, *then*  it is raining"**
+: **"it could be wet for other reasons other than rain"**
 
-Inverse
+Inverse {bdg-danger}`not necessarily equivalent to the original proposition`
 : $\neg p\rightarrow\neg q$ is the *inverse* of $p\rightarrow q$
+: > **"*if* it is not raining, *then* the ground is not wet"**
+: **"ground could be either wet or dry without rain"**
 
-Contrapositive
+Contrapositive {bdg-info}`equivalent to the original proposition`
 : $\neg q\rightarrow\neg p$ is the *contrapositive* of $p\rightarrow q$
+: > **" *if* the ground is not wet, *then*  it is not raining "**
+: **"because if it were raining then the ground will be wet"**
 
 Equivalent 
 : When two propositional statement have the same truth value
@@ -154,3 +162,43 @@ We can express true and false statements in terms of binary
 > Used in artificial intelligence
 
 It means `1` for truth and `0` for false but there could be <u>degrees</u> between these two values for example `0.7` for *Bill is happy means that it is usually true*
+
+## Propositional Equivalence
+
+```{admonition} Definitions
+> A *compound proposition* that is ...
+
+**tautology**
+: always true no matter what the truth values of the propositional variables that occur in it
+
+**contradiction**.
+: always false
+
+**contingency**
+: neither that is neither a tautology nor a contradiction 
+```
+
+$p \lor \neg p$ is always true hence *tautology* and $p \wedge \neg p$ is always false hence *contradiction*
+
+````{admonition} Logical Equivalences
+The compound proposition $p$ and $q$ are called **logically equivalent** if $p \leftrightarrow q$ is a tautology the notation $p \equiv q$ denotes that $p$ and $q$ are logically equivalent
+  ```{note}
+  $\equiv$ is *not* a conditional statement nor does it denote a compound proposition but rather that $p \leftrightarrow q$ is a tautology and alternative symbol is thus $\Leftrightarrow$
+  ```
+````
+
+````{admonition} De Morgan's Laws
+$$\neg(p\wedge q) \equiv \neg p \lor \neg q$$
+$$\neg(p\lor q) \equiv \neg p \wedge \neg q$$
+```{admonition} Augustus De Morgan **Coiner of Mathematical Induction**
+:class: dropdown
+![AUGUSTUS DE MORGAN](https://cdn.britannica.com/46/181346-050-4E025466/Augustus-De-Morgan.jpg) **AUGUSTUS DE MORGAN (1806–1871)** Augustus De Morgan was born in India, where his father was a colonel in the Indian army. De Morgan’s family moved to England when he was 7 months old. He attended private schools, where in his early teens he developed a strong interest in mathematics. De Morgan studied at Trinity College, Cambridge, graduating in 1827. Although he considered medicine or law, he decided on mathematics for his career. He won a position at University College, London, in 1828, but resigned after the college dismissed a fellow professor without giving reasons. However, he resumed this position in 1836 when his successor died, remaining until 1866.  De Morgan was a noted teacher who stressed principles over techniques. His students included many famous mathematicians, including Augusta Ada, Countess of Lovelace, who was Charles Babbage’s collaborator in his work on computing machines. (De Morgan cautioned the countess against studying too much mathematics, because it might interfere with her childbearing abilities!) De Morgan was an extremely prolific writer, publishing more than 1000 articles in more than 15 periodicals. De Morgan also wrote textbooks on many subjects, including logic, probability, calculus, and algebra. In 1838 he presented what was perhaps the first clear explanation of an important proof technique known as mathematical induction, a term he coined. In the 1840s De Morgan made fundamental contributions to the development of symbolic logic. He invented notations that helped him prove propositional equivalences, such as the laws that are named after him. In 1842 De Morgan presented what is considered to be the first precise definition of a limit and developed new tests for convergence of infinite series. De Morgan was also interested in the history of mathematics and wrote biographies of Newton and Halley.  In 1837 De Morgan married Sophia Frend, who wrote his biography in 1882. De Morgan’s research, writing, and teaching left little time for his family or social life. Nevertheless, he was noted for his kindness, humor, and wide range of knowledge.
+```
+
+
+```{admonition} Ada Countess of Lovelace **Woman of Computer Science**
+:class: dropdown
+![Ada of Lovelace](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Ada_Lovelace_portrait.jpg/1280px-Ada_Lovelace_portrait.jpg)
+Augusta Ada was the only child from the marriage of the flamboyant and notorious poet Lord Byron and Lady Byron, Annabella Millbanke, who separated when Ada was 1 month old, because of Lord Byron’s scandalous affair with his half sister. The Lord Byron had quite a reputation, being described by one of his lovers as “mad, bad, and dangerous to know.” Lady Byron was noted for her intellect and had a passion for mathematics; she was called by Lord Byron “The Princess of Parallelograms.” Augusta was raised by her mother, who encouraged her intellectual talents especially in music and mathematics, to counter what Lady Byron considered dangerous poetic tendencies. At this time, women were not allowed to attend universities and could not join learned societies. Nevertheless, Augusta pursued her mathematical studies independently and with mathematicians, including William Frend. She was also encouraged by another female mathematician, Mary Somerville, and in 1834 at a dinner party hosted by Mary Somerville, she learned about Charles Babbage’s ideas for a calculating machine, called the Analytic Engine.  In 1838 Augusta Ada married Lord King, later elevated to Earl of Lovelace. Together they had three children.  Augusta Ada continued her mathematical studies after her marriage. Charles Babbage had continued work on his Analytic Engine and lectured on this in Europe. In 1842 Babbage asked Augusta Ada to translate an article in French describing Babbage’s invention. When Babbage saw her translation, he suggested she add her own notes, and the resulting work was three times the length of the original. The most complete accounts of the Analytic Engine are found in Augusta Ada’s notes. In her notes, she compared the working of the Analytic Engine to that of the Jacquard loom, with Babbage’s punch cards analogous to the cards used to create patterns on the loom. Furthermore, she recognized the promise of the machine as a general purpose computer much better than Babbage did. She stated that the “engine is the material expression of any indefinite function of any degree of generality and complexity.” Her notes on the Analytic Engine anticipate many future developments, including computer-generated music. Augusta Ada published her writings under her initials A.A.L., concealing her identity as a woman as did many women at a time when women were not considered to be the intellectual equals of men. After 1845 she and Babbage worked toward the development of a system to predict horse races. Unfortunately, their system did not work well, leaving Augusta Ada heavily in debt at the time of her death at an unfortunately young age from uterine cancer.  In 1953 Augusta Ada’s notes on the Analytic Engine were republished more than 100 years after they were written, and after they had been long forgotten. In his work in the 1950s on the capacity of computers to think (and his influential Turing test for determining whether a machine is intelligent), Alan Turing responded to Augusta Ada’s statement that “The Analytic Engine has no pretensions whatever to originate anything. It can do whatever we know how to order it to perform.” This “dialogue” between Turing and Augusta Ada is still the subject of controversy. Because of her fundamental contributions to computing, the programming language Ada is named in honor of the Countess of Lovelace.
+```
+````
