@@ -27,7 +27,7 @@ In 1849 he was appointed professor of mathematics at Queen’s College in Cork, 
 ![John Wilder Tukey](https://upload.wikimedia.org/wikipedia/en/e/e9/John_Tukey.jpg) **John Wilder Tukey (1915–2000)** Tukey, born in New Bedford, Massachusetts, was an only child.  His parents, both teachers, decided home schooling would best develop his potential. His formal education began at Brown University, where he studied mathematics and chemistry. He received a master’s degree in chemistry from Brown and continued his studies at Princeton University, changing his field of study from chemistry to mathematics. He received his Ph.D. from Princeton in 1939 for work in topology, when he was appointed an instructor in mathematics at Princeton. With the start of World War II, he joined the Fire Control Research Office, where he began working in statistics. Tukey found statistical research to his liking and impressed several leading statisticians with his skills. In 1945, at the conclusion of the war, Tukey returned to the mathematics department at Princeton as a professor of statistics, and he also took a position c The LIFE Picture at AT&T Bell Laboratories. Tukey founded the Statistics Department at Princeton in 1966 and was its first Collection/Getty Images chairman. Tukey made significant contributions to many areas of statistics, including the analysis of variance, the estimation of spectra of time series, inferences about the values of a set of parameters from a single experiment, and the philosophy of statistics. However, he is best known for his invention, with J. W. Cooley, of the fast Fourier transform. In addition to his contributions to statistics, Tukey was noted as a skilled wordsmith; he is credited with coining the terms bit and software.  Tukey contributed his insight and expertise by serving on the President’s Science Advisory Committee. He chaired several important committees dealing with the environment, education, and chemicals and health. He also served on committees working on nuclear disarmament. Tukey received many awards, including the National Medal of Science
 ```
 
-A **proposition** is a declarative sentence that is either *true* or *false* but not both
+A **proposition** is a declarative sentence that is either *true* or *false* but *not both*
 
 ```{tip}
 Let *p* be a proposition. The *negation of p*, denoted by *$\neg p$* is the statement:
@@ -36,6 +36,12 @@ Let *p* be a proposition. The *negation of p*, denoted by *$\neg p$* is the stat
 
 *$\neg p$* is the <u>opposite</u> of *p*
 ``` 
+
+A **<u>atomic</u>  proposition** is a simple statement, one that is not a combination of *simpler* statements
+
+A **<u>compound</u>  proposition** is a proposition, made up of two or more proposition joined by *logical connective operators*
+
+**logical connective operators**: $\neg \wedge \lor \rightarrow \leftrightarrow$
 
 ### Truth Table for the negation of a Proposition
 
@@ -77,11 +83,15 @@ F   |  T  |      T       |
 T   |  F  |      T       |
 F   |  F  |      F       |
 
-#### Conditional Statements
+### Conditional Statements
 
-> Let *p* and *q* be propositions. The conditional statement *$p\rightarrow  q$* is the proposition *if p, then q.* The conditional statement *$p\rightarrow  q$* is false when *p* is true and *q* is false, and true otherwise.  In the conditional statement *$p\rightarrow  q$*, *p* is called the *hypothesis* (or *antecedent* or *premise*) and *q* is called the *conclusion* (or *consequence*).
->> *$p\rightarrow  q$* is a **conditional statement** or a **implication** *q* is true on the condition that *q* holds
+> Let *p* and *q* be propositions. The conditional statement *$p\rightarrow  q$* is the proposition *if p, then q* The conditional statement *$p\rightarrow  q$* is false when *p* is true and *q* is false, and true otherwise.  In the conditional statement *$p\rightarrow  q$*, *p* is called the *hypothesis* (or *antecedent* or *premise*) and *q* is called the *conclusion* (or *consequence*).
+>> *$p\rightarrow  q$* is a **conditional statement** or a **implication** *q* is true on the condition that *q* holds *to put more bluntly: **only when p is true, but q is false is the statement $p\rightarrow  q$ completely incorrect***
 >>> "*if* it is raining, *then* the ground is wet."
+>>>> "when it is *not* raining, *then* the state of the ground is doesn't matter we call this the *vacuous case*."
+
+```{admonition} Truth Table for conditional statement
+:class: info
 
 *p* | *q* |*$p\rightarrow q$* |
 --- |:---:|:-----------------:|
@@ -90,6 +100,7 @@ F   |  T  |           T       |
 T   |  F  |           F       |
 F   |  F  |           T       |
 
+```
 ```{tip}
 The concept of conditionals doesn't make much sense in terms of truth table. All that is important is that if $p \rightarrow q$, then it means that if *p* is true then it means that *q* can not be false otherwise, the statement is not just false but doesn't make sense
 
@@ -123,6 +134,22 @@ Equivalent
 Only *contrapositive* is equivalent to the original proposition but *inverse and converse* statements are 
 <u>not necessarily equivalent</u>  
 ```
+&nbsp;    |Conditional        |Converse           |Contrapositive              |Inverse                         |
+---------:|:-----------------:|:-----------------:|:--------------------------:|:------------------------------:|
+*pq*      |*$p\rightarrow q$* |*$q\rightarrow p$* |*$\neg q\rightarrow\neg p$* |*$\neg p\leftrightarrow\neg q$* |
+**T T**   |        T          |         T         |T                           |T                               |
+**T F**   |        F          |         T         |F                           |T                               |
+**F T**   |        T          |         F         |T                           |F                               |
+**F F**   |        T          |         T         |T                           | T                              |
+
+```{note}
+Thus from the truth tables we can say the following...
+
+$$ p\rightarrow q\equiv\neg q\rightarrow\neg p $$
+$$ q\rightarrow p\equiv\neg p\rightarrow\neg q $$
+
+we'll learn about logical equivalence later
+```
 
 #### Biconditionals 
 
@@ -145,7 +172,7 @@ In **compound propositions** the order of precedence that we calculate is from l
 
 $$ \neg \wedge \lor \rightarrow \leftrightarrow$$
 
-### Bitwise Operations
+#### Bitwise Operations
 
 We can express true and false statements in terms of binary
 
@@ -156,7 +183,42 @@ We can express true and false statements in terms of binary
 0   |  1  |0             |1           |1             |1                  |0                      |
 0   |  0  |0             |0           |0             |1                  |1                      |
 
+#### Electronic Diagrams
 
+Here is the logic propositions that the circuit is simulating:
+1. $p1\wedge q1$
+1. $p2\lor q2$
+1. $p3\wedge (p3\lor q3)$
+1. $p4\lor (p4\wedge q4)$
+
+```mermaid
+---
+title: Logic Circuits
+---
+stateDiagram-v2
+[*] --> p1
+p1   --> q1
+q1   --> [*]
+
+[*] --> p2
+[*] --> q2
+p2  --> [*]
+q2  --> [*]
+
+[*] --> p3
+p3  --> q3
+p3  --> [*]
+q3  --> [*]
+
+[*] --> p4
+p4   --> q4
+q4   --> [*]
+p4   --> [*]
+```
+> We see that *AND* circuits are basically **serialized** and *OR* circuits are **parallel**
+
+
+Note how $p\wedge (p\lor q)\equiv p\equiv p\lor(p\wedge q)$ this is called the **absorption law**
 #### Fuzzy Logic
 
 > Used in artificial intelligence
@@ -164,6 +226,17 @@ We can express true and false statements in terms of binary
 It means `1` for truth and `0` for false but there could be <u>degrees</u> between these two values for example `0.7` for *Bill is happy means that it is usually true*
 
 ## Propositional Equivalence
+
+$pq\neg p\neg q$ |$p\rightarrow q$ |$\neg q\rightarrow \neg p$ |$(p\rightarrow q)\leftrightarrow(\neg p\rightarrow \neg q)$ 
+----------------:|:-----------------:|:---------------------:|:---------------------:|
+1 1 0 0          |1                  |1                      |1
+1 0 0 1          |0                  |0                      |1
+0 1 1 0          |1                  |1                      |1
+0 0 0 1          |1                  |1                      |1
+
+Note that $(p\rightarrow q)\leftrightarrow(\neg p\rightarrow \neg q)$ is true in all cases it's a *tautology*
+
+This is becuase $(p\rightarrow q)\equiv(\neg p\rightarrow \neg q)$
 
 ```{admonition} Definitions
 > A *compound proposition* that is ...
@@ -175,7 +248,17 @@ It means `1` for truth and `0` for false but there could be <u>degrees</u> betwe
 : always false
 
 **contingency**
-: neither that is neither a tautology nor a contradiction 
+: - neither that is neither a tautology nor a contradiction 
+  - sometimes true sometimes false it depends
+
+##### Satisfiability
+**satisfiable**
+: if compound propositions is true for a assignment of truth values
+> it't either a tautology or contingency
+
+**unsatisfiable**
+: compound propositions can't be true no matter the truth values 
+> its a contradiction
 ```
 
 $p \lor \neg p$ is always true hence *tautology* and $p \wedge \neg p$ is always false hence *contradiction*
@@ -202,3 +285,38 @@ $$\neg(p\lor q) \equiv \neg p \wedge \neg q$$
 Augusta Ada was the only child from the marriage of the flamboyant and notorious poet Lord Byron and Lady Byron, Annabella Millbanke, who separated when Ada was 1 month old, because of Lord Byron’s scandalous affair with his half sister. The Lord Byron had quite a reputation, being described by one of his lovers as “mad, bad, and dangerous to know.” Lady Byron was noted for her intellect and had a passion for mathematics; she was called by Lord Byron “The Princess of Parallelograms.” Augusta was raised by her mother, who encouraged her intellectual talents especially in music and mathematics, to counter what Lady Byron considered dangerous poetic tendencies. At this time, women were not allowed to attend universities and could not join learned societies. Nevertheless, Augusta pursued her mathematical studies independently and with mathematicians, including William Frend. She was also encouraged by another female mathematician, Mary Somerville, and in 1834 at a dinner party hosted by Mary Somerville, she learned about Charles Babbage’s ideas for a calculating machine, called the Analytic Engine.  In 1838 Augusta Ada married Lord King, later elevated to Earl of Lovelace. Together they had three children.  Augusta Ada continued her mathematical studies after her marriage. Charles Babbage had continued work on his Analytic Engine and lectured on this in Europe. In 1842 Babbage asked Augusta Ada to translate an article in French describing Babbage’s invention. When Babbage saw her translation, he suggested she add her own notes, and the resulting work was three times the length of the original. The most complete accounts of the Analytic Engine are found in Augusta Ada’s notes. In her notes, she compared the working of the Analytic Engine to that of the Jacquard loom, with Babbage’s punch cards analogous to the cards used to create patterns on the loom. Furthermore, she recognized the promise of the machine as a general purpose computer much better than Babbage did. She stated that the “engine is the material expression of any indefinite function of any degree of generality and complexity.” Her notes on the Analytic Engine anticipate many future developments, including computer-generated music. Augusta Ada published her writings under her initials A.A.L., concealing her identity as a woman as did many women at a time when women were not considered to be the intellectual equals of men. After 1845 she and Babbage worked toward the development of a system to predict horse races. Unfortunately, their system did not work well, leaving Augusta Ada heavily in debt at the time of her death at an unfortunately young age from uterine cancer.  In 1953 Augusta Ada’s notes on the Analytic Engine were republished more than 100 years after they were written, and after they had been long forgotten. In his work in the 1950s on the capacity of computers to think (and his influential Turing test for determining whether a machine is intelligent), Alan Turing responded to Augusta Ada’s statement that “The Analytic Engine has no pretensions whatever to originate anything. It can do whatever we know how to order it to perform.” This “dialogue” between Turing and Augusta Ada is still the subject of controversy. Because of her fundamental contributions to computing, the programming language Ada is named in honor of the Countess of Lovelace.
 ```
 ````
+
+## Logical Equivalences 
+
+Equivalence                                                           | Name                |                  
+-----------                                                           | ----                |                  
+$p\wedge T\equiv p$ <br> $p\lor   F\equiv p$                          | Identity laws       |                  
+$p\lor T\equiv T$ <br> $p\wedge   F\equiv F$                          | Domination laws     |                  
+$p\lor p\equiv p$ <br> $p\wedge   p\equiv p$                          | Idempotent laws     |                  
+$\neg (\neg p ) \equiv p$                                             | Double negation law |              
+$p\lor q\equiv q\lor p$ <br> $p\wedge q\equiv q\wedge p$              | Commutative laws    | 
+$(p\lor q)\lor r\equiv p\lor (q \lor r)$<br>$(p\wedge q)\wedge r\equiv p\wedge (q\wedge r)$ |Associative laws|
+$p\wedge(q\wedge r)\equiv(p\lor q)\wedge(p\lor r)$<br>$p\lor(q \lor r)\equiv(p \wedge q)\lor(p\wedge q)$|Distributive laws
+$\neg(p\wedge q) \equiv \neg p \lor \neg q$<br>$\neg(p\lor q) \equiv \neg p \wedge \neg q$| De Morgan's Laws|
+$p\lor (p\wedge q)\equiv p$<br>$p\lor (p\lor q)\equiv p$              | Absorption laws     |
+$p\wedge \neg p\equiv T$<br>$p\lor \neg p\equiv F$                    | Negation laws       |
+
+### Logical Equivalence - Conditional Statements 
+$$p\rightarrow q\equiv\neg p\lor q$$
+$$p\rightarrow q\equiv\neg q\rightarrow\neg p$$
+$$p\lor q\equiv\neg p\rightarrow q$$
+$$p\wedge q\equiv\neg (p\rightarrow\neg q)$$
+$$(p\rightarrow q)\wedge(p\rightarrow r)\equiv p\rightarrow(q\wedge r)$$
+$$(p\rightarrow r)\wedge(q\rightarrow r)\equiv (p\lor q)\rightarrow r$$
+$$(p\rightarrow q)\lor(p\rightarrow r)\equiv p\rightarrow(q\lor r)$$
+$$(p\rightarrow r)\lor(q\rightarrow r)\equiv (p\wedge q)\rightarrow r$$
+
+### Logical Equivalence - Biconditional Statements 
+$$p\leftrightarrow q\equiv(p\rightarrow q)\wedge(q\rightarrow p)$$
+$$p\leftrightarrow q\equiv\neg p\leftrightarrow\neg q$$
+$$p\leftrightarrow q\equiv(p\wedge q)\lor(\neg p\wedge\neg q)$$
+$$\neg(p\leftrightarrow q)\equiv p\leftrightarrow\neg q$$
+
+## Predicates and Quantifiers 
+
+### Predicates 
