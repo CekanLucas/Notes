@@ -83,15 +83,15 @@ Card footer 1
 
 #### Badges
 ````{card}
-Badges syntax: `{bdg-[type]}`
-
-{bdg-primary}`example-primary`
-{bdg-secondary}`example-secondary`
-{bdg-warning}`example-warning`
-{bdg-info}`example-info`
-{bdg-danger}`example-danger`
-{bdg-black}`example-black`
-{bdg-white}`example-white`
+Badges syntax: `{bdg-[type]}`\
+{bdg-plain}`plain`\
+{bdg-primary}`primary` {bdg-primary-line}`primary-line`\
+{bdg-secondary}`secondary` {bdg-secondary-line}`secondary-line`\
+{bdg-warning}`warning` {bdg-warning-line}`warning-line`\
+{bdg-info}`info` {bdg-info-line}`info-line`\
+{bdg-danger}`danger` {bdg-danger-line}`danger-line`\
+{bdg-black}`black` {bdg-black-line}`black-line`\
+{bdg-white}`white` {bdg-white-line}`white-line`
 ````
 
 ## Grid
