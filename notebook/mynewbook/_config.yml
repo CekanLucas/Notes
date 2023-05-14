@@ -40,4 +40,10 @@ parse:
     - colon_fence # check to see if it is working
     - dollarmath # $dollar syntax$
 
+execution:
+  sphinx:
+    extra_extensions:
+      - sphinxcontrib.mermaid
+
+
 exclude_patterns: [sass, jupyter_execute]

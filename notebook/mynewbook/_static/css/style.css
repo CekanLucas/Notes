@@ -79,7 +79,11 @@ s {
   color: LightCoral;
 }
 
-.bg-main {
+.math {
+  color: khaki;
+}
+
+.bd-main {
   flex-grow: 1;
 }
 
