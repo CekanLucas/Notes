@@ -40,10 +40,11 @@ parse:
     - colon_fence # check to see if it is working
     - dollarmath # $dollar syntax$
 
+sphinx:
+  extra_extensions:
+    # - sphinxcontrib.mermaid # only works with jb build
+
 execution:
-  sphinx:
-    extra_extensions:
-      - sphinxcontrib.mermaid
+  notebook_interface: jupyterbook
 
-
-exclude_patterns: [sass, jupyter_execute]
+exclude_patterns: ['_build', '**/.ipynb_checkpoints', '.venv', '**/.venv', '**/sphinxcontrib/mermaid.py']

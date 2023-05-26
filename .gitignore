@@ -13,3 +13,4 @@ Duckket
 notebooks
 **_build
 **build
+**.venv # python environment
