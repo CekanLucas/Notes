@@ -42,7 +42,8 @@ parse:
 
 sphinx:
   extra_extensions:
-    # - sphinxcontrib.mermaid # only works with jb build
+    - sphinx_proof
+    - sphinxcontrib.mermaid
 
 execution:
   notebook_interface: jupyterbook
