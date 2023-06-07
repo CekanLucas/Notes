@@ -25,7 +25,6 @@ parts:
     - file : pages/myst-markdown
       sections:
         - file: pages/notes/myst/DirectivesAndRoles
-        - file: pages/notes/myst/math
     - glob: pages/notes/*
   - caption: Math Notes
     chapters:
