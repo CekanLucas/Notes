@@ -234,13 +234,13 @@ Within a split you can `open` multiple tabs
 > `b` is for bracket characters **( )**
 > `B` is especially made for **{ }**
 
-### Suround
+### Surround
 [vim extension](https://github.com/tpope/vim-surround)
 
-By default we have `s` operator **suround** which operates on the suroundings *quotes, parenthesis, tags, braces etc*
+By default we have `s` operator **suround** which operates on the surroundings *quotes, parenthesis, tags, braces etc*
 
 `ds` to delete surroundings
-`cs` to change surroundings
+`cs` to change surrounding
 `ys` to add surrounding
 
 #### Example
@@ -254,7 +254,46 @@ It's easiest to explain with examples. Press `c` `s` `"` `'` inside
 to change it to
 
       'Hello world!'
+      'Hello world!'
 
+**Warning** doesn't Work
+now press `c` `s` <code>&#96;</code> `<` `q` `>` <code>cs&#96;\<q></code> 
+
+      <q>Hello world!</q>
+
+To go full circle `c` `s` `t` `"` `cst"` 
+
+      "Hello world!"
+
+To remove the delimiters entirely press `d` `s` `"` `ds"` 
+
+      Hello world!
+
+Now with the cursor on "Hello", press `ysiw[` (***iw is a text object***)
+
+   [ Hello ] world!
+
+Wrap entire line in curly braces `yssB` or `yss}`
+   
+   {[ Hello ] world!}
+
+Revert the original text `ds{ds]`
+   
+   Hello world!
+
+Emphasis hello `ysiw<em>`
+   
+   <em>Hello</em> world!
+
+Finally, let's try out visual mode. Press a capital V (for linewise visual mode)\ 
+followed by `S<p class="important">`
+
+      <p class="important">
+         <em>Hello</em> world!
+      </p>
+
+> **Note** opening delimiter means surround *with space*\
+> whilst closing means without space
 
 > Play with these examples 
 > 
