@@ -48,8 +48,6 @@
 `:only-of-type`
 `:last-of-type`
 
-
-
 ### Attribute Selectors
 
 <p class="font-mono">[ <em>attribute</em> ] eg <code>[id]</code></p>
@@ -407,7 +405,7 @@ Use `box-sizing` of value `border-box` so that padding and border width are not 
 ```css
 ul, ol {
   /* default for ol=decimal ul=disc */
-  list-style-type: circle | disc | lower-roman etc;
+  list-style-type: circle | disc | square | lower-roman etc;
   list-style-position: default=outside | inside;
   /* Probably better to set list-style-type=none and position background image left */
   list-style-image: url("bullet.jpg");
