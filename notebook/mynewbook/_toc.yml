@@ -29,6 +29,9 @@ parts:
   - caption: Math Notes
     chapters:
     - glob: pages/math/*
+  - caption: Discrete Math 2
+    chapters:
+    - glob: pages/math/math2/*
   - caption: Computer Science Notes
     chapters:
     - glob: pages/cs/*
