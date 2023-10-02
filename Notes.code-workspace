@@ -2,6 +2,12 @@
   "folders": [
     {
       "path": "."
+    },
+    {
+      "path": "../Algoma/Math"
+    },
+    {
+      "path": "../Algoma"
     }
   ],
   "settings": {
@@ -24,6 +30,7 @@
         "other": "off"
       }
     },
+    "latex-workshop.view.pdf.invert": 1,
     "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "markdown.preview.scrollPreviewWithEditor": false
   }
