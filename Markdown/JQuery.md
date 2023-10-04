@@ -6,7 +6,9 @@
 
 # <span class="OrangeRed">JQuery</span> <span style="color:lightgreen">freecodecamp</span> & <span class="Aqua">John Duckett Book</span>
 
-jQuery is one of the many libraries for JavaScript. It is designed to simplify scripting done on the client side. jQuery's most recognizable characteristic is its **dollar sign (`$`) syntax**. With it, you can easily manipulate elements, create animations and handle input events.
+jQuery is one of the many libraries for JavaScript. It is designed to simplify scripting done on the client side. jQuery's most recognizable characteristic is its **dollar sign (`$`) syntax**. With it, you can easily manipulate elements, create animations and handle input events
+
+> **Note** *$()* is short-hand of *jQuery()* function
 
 ## Learn How Script Tags and Document Ready Work
 
@@ -66,3 +68,30 @@ Note that while the `<i>` tag has traditionally been used to emphasize text, it 
 
 >Query uses CSS Selectors to target elements. The `target:nth-child(n)` CSS selector allows you to select all the nth elements with the target class or element type. 
 <span style="color:orange">You can also target elements based on their positions using `:odd` or `:even` selectors.</span>
+
+<style>
+.example {
+    outline: none;
+    text-decoration: none;
+    margin: 2em auto;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 31%;
+    color: white;
+    background: green;
+}
+</style>
+
+<div class="example">Example Element</div>
+
+# CSS style Selector
+
+\* All Selectors
+ 
+
+
+<script>
+       $('.example').css('color','yellow');
+</script>
+
