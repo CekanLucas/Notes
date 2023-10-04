@@ -11,3 +11,6 @@ CSS.css.map
 CSS.css
 Duckket
 notebooks
+**_build
+**build
+**.venv # python environment

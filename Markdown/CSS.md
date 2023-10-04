@@ -22,6 +22,40 @@
 
 >Practice CSS selectors <br>
 <b class="Orange">CSS diner:</b> [link](http://flukeout.github.io/)
+
+### pseudo-selectors
+
+<p class="flex justify-around filter -hue-rotate-30">
+  <code>`selector:first-child`</code> <code>`selector:last-child`</code> <code>`selector:only-child`</code>
+</p>
+
+> If a element has only one child it will be all <span class="text-400 font-bold">first last and only child</span>
+
+<p class="text-center text-green-100">counting from beginning > <code>:nth-child( [n] ) </code><code>:nth-last-child( [n] )</code> < counting from last</p>
+
+`:empty`
+
+`:not(x)` negation
+
+### `of-type` Selectors
+
+`:first-of-type`
+
+`:nth-of-type(n)`
+`:nth-of-type(even)`
+`:nth-of-type(6n+2)`
+
+`:only-of-type`
+`:last-of-type`
+
+### Attribute Selectors
+
+<p class="font-mono">[ <em>attribute</em> ] eg <code>[id]</code></p>
+<p class="font-mono">[ <em>attribute</em> = <em>value</em> ] eg <code>[id=col23]</code></p>
+<p class="font-mono">[ <em>attribute</em> ^= <em><strong>starts</strong>-with-value</em> ] eg <code>[id^=col]</code></p>
+<p class="font-mono">[ <em>attribute</em> $= <em><strong>ends</strong>-with-value</em> ] eg <code>[id$=3]</code></p>
+<p class="font-mono">[ <em>attribute</em> *= <em><strong>contains</strong>-value</em> ] eg <code>[id*=3]</code></p>
+
 ## Centering Recipes
 ### Horizontal Centering Fluid Blocks 
 Horizontal centering of blocks of unkown width 
@@ -371,7 +405,7 @@ Use `box-sizing` of value `border-box` so that padding and border width are not 
 ```css
 ul, ol {
   /* default for ol=decimal ul=disc */
-  list-style-type: circle | disc | lower-roman etc;
+  list-style-type: circle | disc | square | lower-roman etc;
   list-style-position: default=outside | inside;
   /* Probably better to set list-style-type=none and position background image left */
   list-style-image: url("bullet.jpg");
@@ -509,3 +543,153 @@ The range is specified by the *min* *max* attribute values
   <label for="range-input">Range 18-20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
   <input type="number" name="range-input" id="range-input" min="18" max="20" value="0">
 </form>
+
+# Animations
+
+<style>
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .spinny-boi {
+    animation: spin 1.5s infinite linear;
+    display: inline-block;
+    font-size: 30px;
+  }
+</style>
+
+<div class="rainbow-boi">Rainbow</div><br>
+<div class="spinny-boi">🤢</div>
+<div class="spinny-boi">🤢</div>
+<div class="spinny-boi">🤢</div>
+<div class="spinny-boi">🤢</div>
+<div class="spinny-boi">🤢</div>
+<div class="spinny-boi">🤢</div>
+
+Using `keyframe` you can define your animation 
+You can name these animations anything it doesn't have to be *spin*
+
+<style>
+  @keyframes move {
+    to {
+      transform: translate(50px);
+    }
+  }
+  .dancer {
+    position: relative;
+    display: inline-block;
+    font-size: 30px;
+    position: absolute;
+    right: 0;
+
+    /*
+    this is the log way of doing:
+    animation: move 1s infinite alternate;
+    */
+    animation-name: move;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  .dancers-list {
+    width: 100%;
+    max-width: 300px;
+    position: relative;
+  }
+
+  .linear {
+    animation-timing-function: linear;
+  }
+  .ease {
+    animation-timing-function: ease;
+  }
+  .ease-in-out {
+    animation-timing-function: ease-in-out;
+  }
+  .ease-in {
+    animation-timing-function: ease-in;
+  }
+  .ease-out {
+    animation-timing-function: ease-out;
+  }
+  .cubic-bezier {
+    animation-timing-function: cubic-bezier(0,1,.5,1);
+  }
+</style>
+
+<ul class="dancers-list">
+  <li>linear: <span class="dancer linear">💃</li>
+  <li>ease: <span class="dancer ease">💃</li>
+  <li>ease-in-out: <span class="dancer ease-in-out">💃</li>
+  <li>ease-in: <span class="dancer ease-in">💃</li>
+  <li>ease-out: <span class="dancer ease-out">💃</li>
+  <li>cubic-bezier: <span class="dancer cubic-bezier">💃</li>
+</ul>
+
+<style>
+  @keyframes rainbow {
+    100%,
+    0% {
+      color: rgb(255, 0, 0);
+    }
+    8% {
+      color: rgb(255, 127, 0);
+    }
+    16% {
+      color: rgb(255, 255, 0);
+    }
+    25% {
+      color: rgb(127, 255, 0);
+    }
+    33% {
+      color: rgb(0, 255, 0);
+    }
+    41% {
+      color: rgb(0, 255, 127);
+    }
+    50% {
+      color: rgb(0, 255, 255);
+    }
+    58% {
+      color: rgb(0, 127, 255);
+    }
+    66% {
+      color: rgb(0, 0, 255);
+    }
+    75% {
+      color: rgb(127, 0, 255);
+    }
+    83% {
+      color: rgb(255, 0, 255);
+    }
+    91% {
+      color: rgb(255, 0, 127);
+    }
+  }
+  .rainbow-boi {
+    animation: rainbow 4s infinite linear;
+    font-size: 30px;
+  }
+</style>
+
+
+### More detail on the `cubic-bezier()`
+
+The four parameters of the `cubic-bezier()` function control the shape of the easing curve, which determines the speed and timing of the animation or transition. The four parameters represent the **( <span class="text-green-300">x</span> , <span class="text-yellow-300">y</span> )** coordinates of the *two control points* that define the curve.
+
+<span class="text-xl font-bold text-red-500 capitalize">example</span>
+
+The first two parameters, **( <span class="text-green-300">px1</span> , <span class="text-yellow-300">py1</span> )**, control the starting point of the curve. The next two parameters, **( <span class="text-green-300">px2</span> , <span class="text-yellow-300">py3</span> )**, control the ending point of the curve. 
+> These four parameters define the <span class="text-red-400">shape of the curve</span>
+
+    cubic-bezier(0.25, 0.1, 0.25, 1)
+
+This easing curve starts slowly, accelerates quickly, and then slows down again. It is often used for **ease-in-out** transitions, which gradually speed up and then slow down again at the end
+
+for other example try [easing cheatsheet](https://easings.net/)
+
+[MDN- transition timing functions](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function)
+
+[CSS tricks- transition timing functions ](https://css-tricks.com/almanac/properties/t/transition-timing-function/)

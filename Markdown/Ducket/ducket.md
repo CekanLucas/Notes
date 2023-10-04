@@ -91,20 +91,20 @@ di-->a[attribute<hr><code>nodeValue</code><br><br><code>className / id</code> <b
 | ---------- | ------------------------------------------------------ |
 | **load**   | web page has finished loading                          |
 | **unload** | web page is unloading                                  |
-| **error**  | broser exncounters a js error or an asset doen't exist |
+| **error**  | browser encounters a js error or an asset doesn't exist |
 | **resize** | browser window has been resized                        |
 | **scroll** | user has scrolled up or down the page                  |
 
 | KeyBoard     | Events                                                         |
 | ------------ | -------------------------------------------------------------- |
 | **keydown**  | user first presses a key *repeats while a key is depressed*    |
-| **keyup**    | user realeases a key                                           |
+| **keyup**    | user releases a key                                           |
 | **keypress** | character is being inserted *repeats while a key is depressed* |
 
 | Mouse         | Events                                                         |
 | ------------- | -------------------------------------------------------------- |
-| **click**     | user presses and realeases abutton over the same element       |
-| **dblclick**  | user presses and realease a button twice over the same element |
+| **click**     | user presses and releases a button over the same element       |
+| **dblclick**  | user presses and release a button twice over the same element |
 | **mousedown** | user presses a mouse button while over an element              |
 | **mouseup**   | user releases a mouse button while over an element             |
 | **mousemove** | user moves the mouse *not on a touchscreen*                    |
@@ -112,7 +112,7 @@ di-->a[attribute<hr><code>nodeValue</code><br><br><code>className / id</code> <b
 | **mouseout**  | user moves the mouse off an element *not on a touchscreen*     |
 
 preferable technique is to use CSS eg `:hover` pseudo-class
-mousedown/up are seperate for drag and drop functionality
+mousedown/up are separate for drag and drop functionality
 
 | Focus                   | Events                 |
 | ----------------------- | ---------------------- |

@@ -10,9 +10,18 @@
 ## Chapter Checklist
 
 - [x] HTML 
-- [ ] CSS
-- [ ] Javascript
+- [x] CSS
+  - [x] Project - make this design
+
+![](./the_news_times/the_news_times.png)
+
+- [x] Project - make this design
+
+![](./coffee_masters/coffee_masters.png)
+
+- [x] Javascript
 - [ ] Putting together
+  - [ ] Project - calculator
 - [ ] Talking to Server
 - [ ] Other
 - [ ] Wrap Up

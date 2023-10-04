@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'technology';
+  src: url(./fonts/technology/Technology.ttf);
+  font-family: 'technology-bold';
+  src: url(./fonts/technology/Technology-Bold.ttf);
+}
+
+body {
+  background-color: black;
+}
+
+.total-calculator {
+  background-color: gray;
+  padding: 10px;
+  margin: 1em;
+  width: 30em;
+}
+
+.output-view {
+  font-family: 'technology-bold', monospace;
+  background-color: black;
+  color: limegreen;
+  height: 10vh;
+  margin: 10px;
+  padding: 10px;
+  text-align: end;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.output-number-view{
+  font-size: 9vh;
+}
+.output-operator-view {
+  width: 2ch;
+  font-size: 4ch;
+  display: inline-block;
+  align-self: end;
+  order: -1
+}
+
+.input-buttons {
+  margin: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 3px
+}
+
+.button {
+  background-color: silver;
+  border: 3px solid;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2em;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px;
+}
+.button:hover {
+  filter: brightness(1.2);
+}
+.button:active {
+  filter: brightness(0.7);   
+  box-shadow: none;
+}
+
+.button-operator {
+  background-color: orange;
+  box-shadow: none;
+  transition: 1px 1px;
+}
+
+.button-function {
+  background-color: darkorange;
+}
+
+.number-button-0{
+  grid-column: span 3;
+}
+
+.button-add {
+  grid-column-start: 4;
+  grid-row-start: 1;
+
+}
+.button-subtract {
+  grid-column-start: 4;
+  grid-row-start: 2;
+
+}
+.button-multiplication{
+  grid-column-start: 4;
+  grid-row-start: 3;
+
+}
+.button-divide{
+  grid-column-start: 4;
+  grid-row-start: 4;
+}
+
+.button-equal{
+  grid-row-start: 5;
+  grid-column-start: 4;
+}
+
+.button-back{
+  grid-row-start: 1;
+}
+.button-clear{
+  grid-row-start: 1;
+  grid-column-start: span 2;
+}
+
+.button-clear{
+  grid-row-start: 1;
+  grid-column-start: span 2;
+}

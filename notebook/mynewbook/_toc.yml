@@ -1,0 +1,37 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: pages/intro
+parts:
+  - caption: Introduction
+    chapters:
+    - file : pages/docs
+      sections:
+      - url: https://jupyterbook.org
+        title: Jupyter-Book
+      - url: https://myst-parser.readthedocs.io
+        title: Myst Markdown Parser
+      - url: https://www.sphinx-doc.org
+        title: Sphinx Document Generator
+    - file : pages/mymarkdownfile
+    - file : pages/markdown
+    - file : pages/markdown-notebooks
+    - file : notebooks
+    - file : pages/tslabNotebookMarkdown
+    - file : pages/tslabNotebook
+  - caption: Alphabet Sorted Notes
+    chapters:
+    - file : pages/myst-markdown
+      sections:
+        - file: pages/notes/myst/DirectivesAndRoles
+    - glob: pages/notes/*
+  - caption: Math Notes
+    chapters:
+    - glob: pages/math/*
+  - caption: Discrete Math 2
+    chapters:
+    - glob: pages/math/math2/*
+  - caption: Computer Science Notes
+    chapters:
+    - glob: pages/cs/*

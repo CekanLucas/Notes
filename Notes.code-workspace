@@ -4,16 +4,10 @@
       "path": "."
     },
     {
-      "path": "../node-bulletin-board"
+      "path": "../Algoma/Math"
     },
     {
-      "path": "../twilioQuest/starter-node"
-    },
-    {
-      "path": "../twilioQuest"
-    },
-    {
-      "path": "Angular"
+      "path": "../Algoma"
     }
   ],
   "settings": {
@@ -36,6 +30,7 @@
         "other": "off"
       }
     },
+    "latex-workshop.view.pdf.invert": 1,
     "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "markdown.preview.scrollPreviewWithEditor": false
   }

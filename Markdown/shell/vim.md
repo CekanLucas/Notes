@@ -234,13 +234,13 @@ Within a split you can `open` multiple tabs
 > `b` is for bracket characters **( )**
 > `B` is especially made for **{ }**
 
-### Suround
+### Surround
 [vim extension](https://github.com/tpope/vim-surround)
 
-By default we have `s` operator **suround** which operates on the suroundings *quotes, parenthesis, tags, braces etc*
+By default we have `s` operator **suround** which operates on the surroundings *quotes, parenthesis, tags, braces etc*
 
 `ds` to delete surroundings
-`cs` to change surroundings
+`cs` to change surrounding
 `ys` to add surrounding
 
 #### Example
@@ -254,7 +254,46 @@ It's easiest to explain with examples. Press `c` `s` `"` `'` inside
 to change it to
 
       'Hello world!'
+      'Hello world!'
 
+**Warning** doesn't Work
+now press `c` `s` <code>&#96;</code> `<` `q` `>` <code>cs&#96;\<q></code> 
+
+      <q>Hello world!</q>
+
+To go full circle `c` `s` `t` `"` `cst"` 
+
+      "Hello world!"
+
+To remove the delimiters entirely press `d` `s` `"` `ds"` 
+
+      Hello world!
+
+Now with the cursor on "Hello", press `ysiw[` (***iw is a text object***)
+
+   [ Hello ] world!
+
+Wrap entire line in curly braces `yssB` or `yss}`
+   
+   {[ Hello ] world!}
+
+Revert the original text `ds{ds]`
+   
+   Hello world!
+
+Emphasis hello `ysiw<em>`
+   
+   <em>Hello</em> world!
+
+Finally, let's try out visual mode. Press a capital V (for linewise visual mode)\ 
+followed by `S<p class="important">`
+
+      <p class="important">
+         <em>Hello</em> world!
+      </p>
+
+> **Note** opening delimiter means surround *with space*\
+> whilst closing means without space
 
 > Play with these examples 
 > 
@@ -274,3 +313,16 @@ to change it to
 ### Toggle Vim
 
 Change in setting here it is set to `Cntrl + Alt + v` so you are back to using vscode key bindings
+
+
+## Macros 
+1. Start recording a macro by pressing `q` followed by a letter (e.g. `q` `a`).
+1. Perform a series of commands that you want to repeat (e.g. search for a pattern, delete a line, etc.).
+1. Stop recording the macro by pressing `q`.
+1. Replay the macro by typing` @` followed by the letter of the macro (e.g. `@` `a`).
+
+You can also specify a count before the `@` command to repeat the macro multiple times. For example, `3` `@` a would replay the macro stored in register a three times.
+
+Macros are stored in registers (letters a-z). You can view the contents of a register by typing `:reg` in command mode, followed by the letter of the register you want to view (e.g. `:reg` `a`)
+
+> **Note:** You can repeat commands including macros with the `.` key
