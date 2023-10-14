@@ -126,16 +126,25 @@ This set is bounded below since if $x\in\mathrm{s},\ x>1$ since $1^2<2$,
 
 However $\mathrm{S}$ has no least member (in $\Bbb{Q}$) since $\sqrt{2}\notin\Bbb{Q}$
 ```
+
+<!-- Label syntax: see https://jupyterbook.org/en/stable/tutorials/references.html?highlight=header#create-a-label -->
+(Division-label)= 
 ## Division
+[See related concept: Division Algorithm](Division-Algorithm-label) \
+[good Youtube video](https://www.youtube.com/watch?v=Qzy6hHgyb1g&list=PLl-gb0E4MII28GykmtuBXNUNoej-vY5Rz&index=42)
 
-The first concept we will deal with is division of integers we examine when $\frac{b}{a}\in\Bbb{Z},\ a,b\in\Bbb{Z}$
+The first concept we will deal with is division of integers we examine when $\displaystyle\frac{b}{a}\in\Bbb{Z},\ a,b\in\Bbb{Z}$
 
-```{admonition} Definition
+```{admonition} Definition **Divides Notation**
 If $a,b\in\Bbb{Z},\ a\ne0$, we say *a divides b* iff $\exists c\in\Bbb{Z}$ such that $b=a\cdot c$ we write $a\mid b$
 
 When $a\mid b$ we say $a$ is a **factor** of $b$ and $b$ is a **multiple** of $a$
 
+$\color {silver} \huge \sf a\mid b \quad iff\quad \exists c: ac=b\qquad (a,b\in\Bbb Z,c\in\Bbb Z^+)$
+
 If *a does not divide b* we write $a\nmid b$
+
+so for $3\mid 15$ we are saying that there is a $c$ such that $3c=5$ in this case of course $c=5$ since $c\in \Bbb Z^+$
 ```
 
 ```{admonition} Examples
@@ -147,7 +156,7 @@ If *a does not divide b* we write $a\nmid b$
 5) $a\mid a$, $\forall a\in\Bbb{Z},\ a\ne 0$  ($a=a\cdot 1$)
 ```
 
-````{admonition} Theorem 1
+````{admonition} Theorem 1: **Properties of Divisibility**
 :class: seealso
 Let $a,a\ne 0,b,c\in\Bbb{Z}$ Then
 1) $a\mid b$ and $a\mid c\to a\mid (b+c)$
@@ -289,11 +298,15 @@ For about the last 300 years the largest known prime number has been a special t
 ```
 
 ## Remainders
+(Division-Algorithm-label)=
 ### Division Algorithm
+[See related concept: Division](Division-label) \
+[good Youtube video](https://www.youtube.com/watch?v=Qzy6hHgyb1g&list=PLl-gb0E4MII28GykmtuBXNUNoej-vY5Rz&index=42)
+
 ````{admonition} Theorem 5 **The Division Algorithm** 
 :class: seealso
 
-Let $a\in\Bbb{Z},\ d\in\Bbb{Z},\ d\ge 2$, Then $\exists$ unique numbers $r,q\in\Bbb{Z}, 0\le r\lt d$ such that
+Let $a,d\in\Bbb{Z},\space d\ge 2\quad$ then $\exists$ unique numbers $r,q\in\Bbb{Z},\qquad 0\le r\lt d$ such that
 
 $$a=d\cdot q+ r$$ 
 
@@ -308,13 +321,14 @@ $r$ the **remainder**
 
 as a short hand we can also write 
 
-$\frac{a}{d}=q+\frac{r}{d}$
+$\displaystyle\frac{a}{d}=q+\frac{r}{d}$
 
 > **Another Way we can express these concepts is as below**
 >
->$q=a$ **div** $d$, and $r=a$ **mod** $d$
+><big>$q=a$ **div** $d$, and $r=a$ **mod** $d$</big>
 
 ```{prf:example}
+:nonumber: true
 
 $37 = 4\cdot 9 + 1$\
 $39 = 4\cdot 9 + 3$\
@@ -456,6 +470,7 @@ $$\frac{1}{(x-2)(x-1)}+\frac{3}{(x-1)(x+1)}=\\
 ```
 
 ## Modular Arithmetic
+[youtube video](https://www.youtube.com/watch?v=tBmuDlpQ0a8&list=PLl-gb0E4MII28GykmtuBXNUNoej-vY5Rz&index=43)
 
 Consider the question:\
 *A computer program takes 117 hours to run. It is started at 4pm. What time if day will it be complete?*

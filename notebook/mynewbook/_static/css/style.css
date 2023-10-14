@@ -2,6 +2,10 @@
   background-color: transparent;
 }
 
+html[data-theme=dark] .bd-content div.cell_output .text_html, html[data-theme=dark] .bd-content div.cell_output img {
+  background-color: transparent;
+}
+
 html body {
   color: azure;
   background-color: #000;
@@ -90,5 +94,3 @@ s {
 div.bd-page-width, .bd-main .bd-content .bd-article-container {
   max-width: none;
 }
-
-/*# sourceMappingURL=style.css.map */

@@ -189,9 +189,22 @@ L\cdot M\ or\ LM =&\Set{10, 001, 111, 001001, 10001, 111001}
 \end{aligned}
 $$
 
-3) **The closure *or star, or Kleene closure***\
-   $L$, denoted $L^*$ and represents the set of those strings that can be formed by taking any number of strings from $L$ possibly with repetitions and concatenating all of them\
-   *eg* $\qquad \color{violet} L=\Set{0,1}$ then $L^*$ consists of those strings where $0$s and $1$s come in pairs\
-   $\color{lightgreen} 001, 11110$ but not $\color{indianred} 01011, 101$\
-   $LL\cdots L$ concatenation of i copies of L
+3) ***Closure or Star, or Kleene Closure***\
+   $L$, denoted $L^*$ and represents the set of those strings that can be formed by taking any number of strings from $L$ possibly with repetitions and concatenating all of them
+   *eg* $\qquad \color{violet} L=\Set{0,11}$ then $L^*$ consists of those strings where $0$s and $1$s come in pairs
+   $\color{lightgreen} 001, 11110$ but not $\color{indianred} 01011, 101$ $LL\cdots L$ concatenation of i copies of L
+
+#### Building Regular Expressions
+
+We will use the three operators <font color="violet">union</font>, <font color="palegreen">dot</font> and <font color="brown">star</font>
+
+1. The constants $\epsilon$ and $\theta$ are regular expressions, denoting the languages $\Set{\epsilon}$ and $\theta$, respectively 
+That is $L(\epsilon)=\Set{\epsilon}$, and $L(\theta)=\theta$
+
+2. If $a$ is any symbol, then $a$ is a regular expression
+This expression denotes the language $\Set{a}$ That is, $L(\mathbf{a})=\Set{a}$ 
+**Note** boldface font denote an expression corresponding to a symbol
+
+3. A variable usually capitalized and italic such as $\mathit{L}$ is a variable representing any language
+
 

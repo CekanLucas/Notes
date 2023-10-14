@@ -20,6 +20,19 @@ $$
   w_{t+1} = (1 + r_{t+1}) s(w_t) + y_{t+1}
 $$ (my_other_label)
 
+## Macros
+You can define macros that can be used later on
+You can define up to 9 variables
+
+$$
+\def\foo#1{#1^2}
+$$
+
+$$
+\foo{y} + \foo{y}\\
+\foo{x} + \foo{x}
+$$
+
 ## Linking to equations
 - A link to an equation directive: {eq}`my_label`
 - A link to a dollar math block: {eq}`my_other_label`

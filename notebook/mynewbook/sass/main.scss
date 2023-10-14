@@ -2,6 +2,11 @@
   background-color: transparent;
 }
 
+html[data-theme=dark] .bd-content div.cell_output .text_html, html[data-theme=dark] .bd-content div.cell_output img{
+  background-color: transparent;
+}
+
+
 html {
   body {
     color: azure;

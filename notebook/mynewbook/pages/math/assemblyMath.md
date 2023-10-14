@@ -229,7 +229,7 @@ $$
 
 \textrm{\textcolor{skyblue}{(b) 0x3B – 0x12}}\qquad\qquad&\\[1em]
 3B&\\
--12&\\
+
 \text{\textcolor{khaki}{ $\overline{29}$}}&\\[1em]
 \end{aligned}
 $$
@@ -247,7 +247,7 @@ x | y | z | $\neg z$ | $y \wedge \neg z$ | $x \lor (y \wedge \neg z)$| $... \opl
 0 | 1 | 1 | 0        | 0                 | 0                         |1               
 0 | 1 | 0 | 1        | 1                 | 1                         |0               
 0 | 0 | 1 | 0        | 0                 | 0                         |0               
-0 | 0 | 0 | 1        | 0                 | 1                         |1               
+0 | 0 | 0 | 1        | 0                 | 0                         |0               
        
 (b) (x + y) & ~z xor y\
 **Mathematical Notation**: $(x \lor y) \wedge \neg z \oplus y$
@@ -258,7 +258,7 @@ x | y | z | $\neg z$ | $x \lor y$ | $(x\lor y)\wedge \neg z$  | $... \oplus y$
 1 | 1 | 0 | 1        | 1          | 1                         |0               
 1 | 0 | 1 | 0        | 1          | 0                         |0               
 1 | 0 | 0 | 1        | 1          | 1                         |1               
-0 | 1 | 1 | 0        | 1          | 0                         |0               
+0 | 1 | 1 | 0        | 1          | 0                         |1               
 0 | 1 | 0 | 1        | 1          | 1                         |0               
 0 | 0 | 1 | 0        | 0          | 0                         |0               
 0 | 0 | 0 | 1        | 0          | 0                         |0               

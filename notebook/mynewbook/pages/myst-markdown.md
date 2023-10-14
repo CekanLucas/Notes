@@ -36,13 +36,14 @@ h1, h2, h3, h4, h5, h6 {
 </div>
 
 # Markedly Structured Text
-
+My reaction is :+1: :smiley:.
 **Markedly Structured Text** is a flavour of markdown that is used in <span class="text-yellow-500">Jupyter Books</span>
 
 **Markedly Structured Text** is a superset of **CommonMark Markdown**
 
 
 
+{bg.primary}
 ## Syntax
 
 ~~strikethrough with *emphasis*~~ {bdg-danger}`not working` {bdg-warning}`working only for html`
@@ -51,7 +52,7 @@ Smart-quotes 'single quotes' and "double quotes".
 
 +-, --, ---, ... and other replacements {bdg-warning}`working only for html`
 
-A paragraph with a span of [text with attributes]{.bg-warning} {bdg-danger}`not working`
+A paragraph with a span of [text with attributes]{.k} {bdg-danger}`not working`
 
 
 ### Line Breaks
@@ -136,11 +137,11 @@ Figure caption
     This is a block of text with multiple attributes.
     ```
 
-```{.my-custom style="color: black;"}
+```{k style="color: black;"}
 This is a block of text with multiple attributes.
 ```
 
-{.bg-custom}
+{k}
 Here is a paragraph with a class to control its formatting.
 
     {#mypara .bg-warning}
@@ -289,7 +290,7 @@ Explanation of the deprecation.
 ## Other
 
 {bdg-danger}`not working`
-```bg-custom
+```k
 This is a container with a custom CSS class.
 
 - It can contain multiple blocks
@@ -367,3 +368,28 @@ If omitted, the renderer determines the width of the table based on its contents
 `grid` determines column widths from the widths of the input columns (in characters)
 
 ```
+
+(target-headers)=
+### Target Headers
+
+    (myst_cheatsheet)=
+    # MyST Cheat Sheet
+
+#### Referencing target headers
+
+Targets can be referenced with the ref inline role which uses the section title by default:
+
+    {ref}`myst_cheatsheet`
+
+You can specify the text of the target:
+
+    {ref}`MyST syntax lecture <myst_cheatsheet>`
+
+Another alternative is to use Markdown syntax:
+
+    [MyST syntax lecture](myst_cheatsheet)
+
+
+{ref}`target-headers`\
+{ref}`Target header with text<target-headers>`\
+[Target header with text](target-headers)

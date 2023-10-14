@@ -51,3 +51,51 @@ If you have a markdown file and you'd like to quickly add YAML metadata to it, s
 ```
 jupyter-book myst init path/to/markdownfile.md
 ```
+
+### ObservableHq
+
+```{code-cell}
+
+%%html
+
+<!DOCTYPE html>
+<h1>Titular title </h1>
+<div id="myplot">my plot div</div>
+<script type="module">
+
+import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/+esm";
+
+const relations = [
+  {A: 0, B:"e"},
+  {A: 1, B:"d"},
+  {A: 2, B:"c"},
+  {A: 1, B:"b"},
+  {A: 0, B:"a"},
+  {A: 2, B:"a"},
+]
+
+const plot = Plot.plot({
+  title: "For charts, an informative title",
+  subtitle: "Subtitle to follow with additional context",
+  caption: "Figure 1. A chart with a title, subtitle, and caption.",
+  width: 300, // default is 640
+  aspectRatio: 4,
+  inset: 20, // no corner data think padding
+  marginTop: 10,
+  marginRight: 20,
+  marginBottom: 30,
+  marginLeft: 40,
+  grid: true,
+  marks: [
+    Plot.dot(relations, { x: "A", y: "B", stroke: "black", fill: "cyan", reverse: "A" }),
+    Plot.frame(), // draw the box frame
+    Plot.text(["R^2"], {lineWidth: 1, frameAnchor: "top"})
+  ]
+})
+
+
+const div = document.querySelector("#myplot");
+div.append(plot);
+
+</script>
+```
