@@ -135,22 +135,148 @@ end
 
 ### Deterministic vs NonDeterministic
 
+#### Deterministic Finite Automata
+
 Control is 
 **deterministic *DFA*** meaning that the automaton cannot be in more than one state at any one time 
 or **nondeterministic *NFA*** meaning that it may be in several states at once
 
-### Key Components of DFAs'
+##### Key Components of DFAs'
 
 $\tt{Q}_{\phantom{0}} \Rrightarrow \color{yellow}\text{a finite set of states}$
 $\tt\Sigma_{\phantom{0}} \Rrightarrow  \color{yellow}\text{a finite set of input symbols (\color{darkkhaki}{alphabet}})$
 $\tt{q}_0 \Rrightarrow  \color{yellow}\text{a start state}$
-$\tt{F}_{\phantom{0}} \Rrightarrow  \color{yellow}\text{a set of accepting states}$
+$\tt{F}_{\phantom{0}} \Rrightarrow  \color{yellow}\text{a set of final or accepting states}$
 $\displaystyle \tt{\delta}_{\phantom{0}} \Rrightarrow  \color{yellow}\text{a transition function which is mapping between}
-\quad \color{lightsteelblue} \delta:  Q \times \Sigma \rightarrow Q $
+\quad \color{lightsteelblue} \delta:  Q \times \Sigma \rightarrow Q$
+
+$\displaystyle\color{Orange}\text{If q is a state, and a is a input symbol then }\delta(q,a)\\
+\text{is that state p such that there is an arc labeled a from q to p}$
+
+
 
 A **DFA** is defined by a *5 tuple* $\color{skyblue}{\sf\qquad\Set{Q,\Sigma,F, q_0, \delta}}$
 
-### Summary 
+###### How a DFA Processes Strings
+
+A DFA needs to decide wether to <font color="lime"><b>accept</b></font> or <font color="red"><b>reject</b></font> a given set of inputs 
+
+$\tt{a_1a_2\cdots a_n} \Rrightarrow \color{yellow}\text{a sequence of input symbols}$
+$\tt{\delta(q_0,a_1) = q_1} \Rrightarrow \color{yellow}\text{We begin at the start state and given the first input symbol we transition to the next state}$
+$\tt{\delta(q_1,a_2) = q_2} \Rrightarrow \color{yellow}\text{Next the next input symbol using the transition function we move to the next state}$
+$\tt{q_0q_1\cdots q_n} \Rrightarrow \color{yellow}\text{a sequence states that are traversed with the transition functions}$
+$\tt{\delta(q_{i-1},a_i) = q_i} \Rrightarrow \color{yellow}\text{In general we keep finding states given this transition functions}$
+
+$\displaystyle\color{Orange}\text{If the last state is the final state, accept or reject if it is not}$
+
+![Edge-example](./FiniteAutomataDrawings/edgeExample.svg)
+
+<div class="columns">
+  <div class="column">
+
+![Edge-example](./FiniteAutomataDrawings/finiteAutomataExample.svg)
+  </div>
+  <div class="column">
+
+$\tt{M}_1 = (Q, \Sigma, \delta, q_1, F)$
+$\tt Q_{\phantom{0}} =  \Set{q_1, q_2, q_3}$
+$\tt \Sigma_{\phantom{0}} =  \Set{0,1}$
+$\tt F_{\phantom{0}} =  \Set{q_3}$
+
+  </div>
+  <div class="column">
+
+ $\delta =$ | 0 | 1
+--: | :--: | :--:
+ $q_1$ | $q_1$ | $q_2$  
+ $q_2$ | $q_1$ | $q_3$  
+ $q_3$ | $q_3$ | $q_3$  
+  </div>
+</div>
+
+
+
+> We can either use a **transition diagram** or a **transition table** to show the automaton
+
+#### Non-Deterministic Finite Automatons
+These have the power to be in **several states at once**
+
+They are really useful for searching in a string\
+and they are more terse than their DFA counterparts\
+they can be converted to and back easily to DFAs
+
+$L = \Set{w\mid w \text{ contains all the strings that end with }00}$
+
+![Dfa & NFA](./FiniteAutomataDrawings/finiteAutomata.svg){width=600px height=400px}
+
+Convert the following NFA into a NFA 
+$* \text{ means accepting state}$
+
+&nbsp; | 0 | 1
+--: | :--: | :--:
+$\rightarrow p$ | $\Set{p,q}$ | $\Set{p}$
+$q$ | $\Set{r}$ | $\Set{r}$
+$r$ | $\Set{s}$ | $\emptyset$
+$*s$ | $\Set{s}$ | $\Set{s}$
+
+define all the subsets $Q_D =\text{ all subsets }Q_n$
+
+&nbsp; | 0 | 1
+--: | :--: | :--:
+ $\Set{p}$ | $\Set{p,q}$ | $\Set{p}$
+ $\Set{p,q}$ | $\Set{p, q, r}$ | $\Set{p, r}$
+ $\Set{p,r}$ | $\Set{p,q, s}$ | $\Set{p}$
+ $\Set{p,q,r}$ | $\Set{p, q, r, s}$ | $\Set{p, r}$
+ $\Set{p,q,s}$ | $\Set{p, q, r, s}$ | $\Set{p, r, s}$
+ $\ddots$ |  $\vdots$ | $\vdots$
+
+
+**Important distinctions between DFAs and NFAs**
+The machine never really terminates
+*It is always waiting for the next input symbol or making transitions*
+
+The machine decides when to <u>consume</u> the next symbol from the input and when to <u>ignore</u> it
+*but the machine can <u>never skip</u> a symbol* 
+
+A single transition *cannot* consume more that one (non-$\epsilon$) symbol
+
+#### FA with $\epsilon$-Transitions
+• We can allow explicit $\epsilon$-transitions in finite automata
+• i.e., a transition from one state to another state without consuming any
+additional input symbol
+• Explicit $\epsilon$-transitions between different states introduce non-determinism
+• Makes it easier sometimes to construct NFAs
+
+> **Definition** $\epsilon$-NFAs are those NFAs with at least one explicit $\epsilon$-transition defind
+
+• $\epsilon$-NFAs have one more column in their transition table
+
+##### Examples of an $\epsilon$-NFA
+
+$L=\Set{w\mid w \text{ is empty, or if non-empty will end in }01}$
+
+![ε-nfa example](./FiniteAutomataDrawings/epsilonNFA-example1.svg)
+
+ $\delta_E$ | 0 | 1 | $\epsilon$-closure
+--: | :--: | :--: | :--:
+ $\rightarrow *q'_0$ | $\emptyset$ | $\emptyset$ | $\Set{q'_0, q_0}$
+ $q_0$ | $\Set{q_0, q_1}$ | $\Set{q_0}$ | $\Set{q_0}$ 
+ $q_1$ | $\emptyset$ | $\Set{q_2}$ | $\Set{q_1}$ 
+ $*q_2$ | $\emptyset$ | $\emptyset$| $\Set{q_2}$ 
+
+ε-closures of a state q, <font color="royalblue">ECLOSE(q)</font> is the set of all states (including itself) 
+that can be reached from q by repeatedly making an arbitraty number of ε-transitions 
+
+![DFA from ε-nfa](./FiniteAutomataDrawings/DFAfromNFA.svg)
+
+ $\delta_E$ | 0 | 1
+--: | :--: | :--: | :--:
+ $\rightarrow *\Set{q'_0,q_0}$ | $\Set{q_0, q_1}$ | $\Set{q_0}$
+ $\Set{q_0, q_1}$ | $\Set{q_0, q_1}$ | $\Set{q_0, q_2}$
+ $\Set{q_0}$ | $\Set{q_0, q_1}$ | $\Set{q_0}$  
+ $*\Set{q_0, q_2}$ | $\Set{q_0, q_1}$ | $\Set{q_0}$ 
+
+### Summary
 <span style="color:violet"><b> FINITE AUTOMATA</b> </span>
 
 <ul style="list-style-type:'💠&nbsp;&nbsp;&nbsp;';padding-left:1em">
@@ -167,11 +293,11 @@ A **DFA** is defined by a *5 tuple* $\color{skyblue}{\sf\qquad\Set{Q,\Sigma,F, q
 
 ## Regular Expressions and Languages
 
-*Regular Expressions* are a type of <u>language-defining notation</u> 
+*Regular Expressions* are a type of <u>language-defining notation</u>
 
 ### Operators of Regular Expression
 
-> for example $01^*+10^*$ denotes the language consisting of all strings that are either $0$ or $1$ followed by any number of $0$s
+> **example** $01^*+10^*$ denotes the language consisting of all strings that are either $0$ or $1$ followed by any number of $0\mid 1$s
 
 1) **The union of two languages**\
    $L$ and $M$, denoted $L\cup M$, is the set of strings that are in either $L$ or $M$, or both
