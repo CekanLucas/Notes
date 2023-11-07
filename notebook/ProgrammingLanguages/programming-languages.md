@@ -1,5 +1,176 @@
 # Programming Languages
 
+- [Programming Languages](#programming-languages)
+  - [Preliminaries](#preliminaries)
+    - [Reasons for Study](#reasons-for-study)
+    - [Programming Domains](#programming-domains)
+      - [Scientific Applications](#scientific-applications)
+      - [Business Applications](#business-applications)
+      - [Artificial Intelligence](#artificial-intelligence)
+      - [Web Software](#web-software)
+    - [Language Evaluation Criteria](#language-evaluation-criteria)
+      - [Readability](#readability)
+        - [Simplicity](#simplicity)
+        - [Orthogonality](#orthogonality)
+        - [Data Types](#data-types)
+        - [Syntax Design](#syntax-design)
+        - [`Grep`](#grep)
+      - [WriteAbility](#writeability)
+        - [Expressivity](#expressivity)
+      - [Reliability](#reliability)
+        - [Type Checking](#type-checking)
+        - [Exception Handling](#exception-handling)
+        - [Restricted Aliasing](#restricted-aliasing)
+      - [Cost](#cost)
+    - [Influence on Language Design](#influence-on-language-design)
+      - [Computer Architecture](#computer-architecture)
+      - [Programming Design Methodology](#programming-design-methodology)
+    - [Language Categories](#language-categories)
+    - [Language Design Trade-Offs](#language-design-trade-offs)
+    - [Implementation Methods](#implementation-methods)
+      - [Pre-processors](#pre-processors)
+    - [Programming Environments](#programming-environments)
+      - [LISP](#lisp)
+  - [Describing Syntax and Semantics](#describing-syntax-and-semantics)
+    - [Language Recognizers](#language-recognizers)
+    - [Formal Methods of Describing Syntax](#formal-methods-of-describing-syntax)
+      - [Context-Free Grammars](#context-free-grammars)
+      - [Origins of Backus-Naur Form](#origins-of-backus-naur-form)
+      - [Fundamentals](#fundamentals)
+      - [Leftmost Derivation](#leftmost-derivation)
+      - [Parse Trees](#parse-trees)
+      - [Ambiguity](#ambiguity)
+      - [Describing Lists](#describing-lists)
+      - [Extended BNF](#extended-bnf)
+        - [EBNF Example](#ebnf-example)
+    - [Attribute Grammars](#attribute-grammars)
+    - [Static Semantics](#static-semantics)
+      - [Static semantics examples:](#static-semantics-examples)
+        - [Type compatibility](#type-compatibility)
+        - [Variables must be declared before they are used.](#variables-must-be-declared-before-they-are-used)
+          - [Attribute Grammar Example](#attribute-grammar-example)
+        - [Attribute Grammar Example](#attribute-grammar-example-1)
+    - [Semantics](#semantics)
+  - [Lexical and Syntax Analysis](#lexical-and-syntax-analysis)
+    - [Lexical Analysis](#lexical-analysis)
+      - [Example](#example)
+      - [State Transition Diagram](#state-transition-diagram)
+    - [Parsing Problem](#parsing-problem)
+      - [Top-Down Parsers](#top-down-parsers)
+  - [Names, Bindings and Scopes](#names-bindings-and-scopes)
+    - [Variables](#variables)
+      - [Alias Creation](#alias-creation)
+    - [Binding](#binding)
+      - [Type Binding](#type-binding)
+        - [Static Type Binding](#static-type-binding)
+        - [Dynamic Type Binding](#dynamic-type-binding)
+    - [Storage Bindings and Lifetime](#storage-bindings-and-lifetime)
+    - [Scope](#scope)
+      - [Static Scope](#static-scope)
+        - [Blocks](#blocks)
+        - [Evaluation of Static Scoping](#evaluation-of-static-scoping)
+      - [Global Scope](#global-scope)
+      - [Dynamic Scope or Temporal Scope](#dynamic-scope-or-temporal-scope)
+        - [Evaluation of Dynamic Scoping](#evaluation-of-dynamic-scoping)
+        - [Scope and Lifetime](#scope-and-lifetime)
+    - [Referencing Environments](#referencing-environments)
+    - [Named Constants](#named-constants)
+    - [Variable type Summary](#variable-type-summary)
+      - [Static Variables](#static-variables)
+      - [Stack-Dynamic variables](#stack-dynamic-variables)
+    - [Explicit Heap-Dynamic](#explicit-heap-dynamic)
+    - [Implicit Heap-Dynamic](#implicit-heap-dynamic)
+  - [Data Types](#data-types-1)
+    - [Primitive Data Types](#primitive-data-types)
+      - [Integer](#integer)
+      - [Floating Point](#floating-point)
+        - [IEEE Floating Point Formats](#ieee-floating-point-formats)
+      - [Complex](#complex)
+      - [Decimal](#decimal)
+      - [Boolean](#boolean)
+      - [Character](#character)
+        - [Unicode](#unicode)
+      - [Character Strings Types](#character-strings-types)
+        - [String length options](#string-length-options)
+          - [Implementation](#implementation)
+    - [Non-primitive types](#non-primitive-types)
+      - [Enumeration Types](#enumeration-types)
+      - [Arrays](#arrays)
+        - [Categories of arrays](#categories-of-arrays)
+        - [Array Initialization](#array-initialization)
+        - [Array Operations](#array-operations)
+        - [Array Slice](#array-slice)
+        - [Array Access Function](#array-access-function)
+    - [Memory Cells](#memory-cells)
+      - [Row Major](#row-major)
+          - [Compile-Time Descriptors](#compile-time-descriptors)
+        - [Associative Arrays](#associative-arrays)
+      - [Records](#records)
+        - [Record Field References](#record-field-references)
+        - [Compile-time descriptor of a record](#compile-time-descriptor-of-a-record)
+      - [Unions](#unions)
+    - [Pointers](#pointers)
+      - [Pointer Operations](#pointer-operations)
+      - [C and C++ Pointers](#c-and-c-pointers)
+      - [Java References](#java-references)
+      - [Problems with Pointers](#problems-with-pointers)
+    - [Heap Management](#heap-management)
+    - [Type Checking](#type-checking-1)
+      - [Strong Typing](#strong-typing)
+      - [Type Compatibility](#type-compatibility-1)
+  - [Expressions and Assignment Statements](#expressions-and-assignment-statements)
+    - [Arithmetic Expressions](#arithmetic-expressions)
+      - [Operators](#operators)
+        - [Conditional Expressions](#conditional-expressions)
+        - [Operator Precedence](#operator-precedence)
+      - [Operands](#operands)
+    - [Overloaded Operators](#overloaded-operators)
+    - [Type Conversions](#type-conversions)
+      - [Mixed Mode](#mixed-mode)
+      - [Explicit Type Conversions](#explicit-type-conversions)
+    - [Relational and Boolean Expressions](#relational-and-boolean-expressions)
+    - [Short-Circuit Evaluation](#short-circuit-evaluation)
+    - [Assignment Statements](#assignment-statements)
+    - [Mixed-Mode Assignment](#mixed-mode-assignment)
+  - [Statement-Level Control Structures](#statement-level-control-structures)
+    - [Selection Statements](#selection-statements)
+    - [Iterative Statements](#iterative-statements)
+      - [Counter-controlled loops](#counter-controlled-loops)
+      - [Logically-controlled loop](#logically-controlled-loop)
+      - [User-Located Loop Control](#user-located-loop-control)
+    - [Unconditional Branching](#unconditional-branching)
+  - [SubPrograms](#subprograms)
+    - [Fundamentals of Subprograms](#fundamentals-of-subprograms)
+      - [Categories of subprograms](#categories-of-subprograms)
+      - [Definitions](#definitions)
+        - [Example](#example-1)
+      - [Actual/Formal Parameter Correspondence](#actualformal-parameter-correspondence)
+        - [Positional](#positional)
+        - [Keyword](#keyword)
+    - [Parameter Passing Methods](#parameter-passing-methods)
+      - [Pass-by-value](#pass-by-value)
+      - [Pass-by-result](#pass-by-result)
+      - [Pass-by-value-result](#pass-by-value-result)
+      - [Pass-by-reference](#pass-by-reference)
+      - [Pass-by-name](#pass-by-name)
+      - [Parameter Passing Methods for Various Languages](#parameter-passing-methods-for-various-languages)
+    - [Multidimensional Arrays as Parameters](#multidimensional-arrays-as-parameters)
+    - [Subprograms as Parameters](#subprograms-as-parameters)
+      - [Shallow binding](#shallow-binding)
+      - [Deep binding](#deep-binding)
+    - [Overloaded Subprograms](#overloaded-subprograms)
+    - [Generic Subprograms](#generic-subprograms)
+      - [Ada example](#ada-example)
+      - [C++ example](#c-example)
+      - [Java 5.0+ example](#java-50-example)
+    - [Design Issues for Functions](#design-issues-for-functions)
+    - [User-Defined Overloaded Operators](#user-defined-overloaded-operators)
+      - [Ada Example](#ada-example-1)
+    - [Coroutines](#coroutines)
+    - [Summary](#summary)
+
+
+
 [textbook companion site](https://media.pearsoncmg.com/ph/esm/ecs_sebesta_concepts_12/cw/)
 [python grammar](https://docs.python.org/3/reference/grammar.html)
 
@@ -795,3 +966,2395 @@ term();
 printf("Exit <expr>\n");
 } /* End of function expr */
 ```
+
+## Names, Bindings and Scopes
+
+Attributes of Variables
+- type
+- address
+- value
+- issue of *aliases*
+
+**Binding** and **Binding Times**
+
+4 Types of variables
+
+Two different scoping rules for names
+1. static
+2. dynamic
+- referencing environment of a statement
+- named constants and variable initialization
+
+A **name** is a string of characters used to identify some entity in a program
+
+**special words** are reserved words in a language that can't be used in names
+
+**Special characters**
+- PHP all variable names must begin with `$`
+- Perl all variable names begin with special characters
+  which specify variables's type
+    - `@` array
+    - `$` strings and numbers
+    - `%` hash
+- Ruby variables names beginning with `@` *instance variables*
+  names beginning with `@@` *class variables*
+
+### Variables
+> A variable is a abstraction of a memory cell
+A variable is a sextuple of attributes
+1. **name** - camel-casing, case sensitivity, rules for naming and so on
+    - not all variables have names *anonymous*
+    - **Design Issues**
+      - maximum length?
+      - are names case sensitive
+      - are special words *reserved words* or *keywords*? **COBOL has 300 words, Java has 51**
+      - a *keyword* becomes reserved by the user in certain context
+      for example as a type `Real VarName () {...}`  `Real` is a keyword
+2. **address** - needs to be a unique address in memory
+   - **l-value** alternative name for address because name of variable appears on the *left side* of an assignment 
+   - in many languages many variables can be associated with a single address
+      - these are then called **aliases** so relationship is *one to many*
+3. **type** - determines range of values *eg the difference between `int` and `double`*
+4. **value** - stored in bits and bytes of a *memory cells*
+   - **r-value** values appears on the *right side* of an assignment
+5. **lifetime** - allocation, de-allocation
+6. **scope** - when a variable can be accessed
+
+#### Alias Creation
+
+Aliases are created via pointers, reference variables
+and for C and C++ via unions
+
+```cpp
+// Example in C++
+int x;
+int &y = x; // here we define a "reference variable" with &
+// so y would have same address as x
+// it is not saying that y is being assigned value of x like it looks like
+
+int *z = &x; // the pointer (*) named z points to the address (&) of x
+```
+      Say this is a memory cell         -> [ ]
+      x = 4 would put a 4 in that cell  -> [4]
+      y = 5 would put a 5 in that cell  -> [5]
+      so x is pointing to the value 5
+      so any change in x is a change in y and vice versa
+
+      So what happens if we do z = 6?
+      We cant do that we need to do 
+      "the object pointed by z change to 6"
+      *z = 6 means                      -> [6]
+      the place (*) that z points to should be equal to 6
+      so now all three variables are equal to 6
+      except for maybe z we need the * notation other than that statement is true
+        
+### Binding
+
+<big><font color=violet>An <u>association</u> between an <font color="blueviolet"><b>attribute</b></font> and an  <font color="rebeccapurple"><b>entity</b></font></font></big>
+
+so `int x;` means *`x` is bound to `int`*
+
+*examples*
+between a variable and its type or value
+between an operation and a symbol
+
+The time at which binding takes place is called **binding time** below are the kinds
+- **Language Design Time** eg bind operator symbols to operations
+- **Compile Time** eg bind a variable to a type in C or Java
+- **Load Time** eg bind a C or C++ `static` variable to a memory cell
+- **Run Time** eg bind a non-static local variable to a memory cell
+
+A binding is `static` if it first occurs before run time begins and remains
+unchanged throughout program execution
+
+If the binding first occurs during run time or can change in the course of program execution, it is called `dynamic`
+
+> *remember* the words "static" and "dynamic" are in reference to whether there is change or not
+
+#### Type Binding
+
+The binding between variable and its type
+
+##### Static Type Binding
+
+A **explicit declaration** happens when you specify the type along with the name and values of a variable
+
+A **implicit declaration** is a way of association of variables with types through means outside explicit declarative statements
+   - one type of implicit declaration **type inference** uses context\
+    For example, in C# a `var` declaration of a variable must include an initial value,\
+    whose type is taken as the type of the variable
+
+```cpp
+int x = 5;  // explicit declaration of type int in C++
+auto x = 5; // implicit declaration of type int in C++
+```
+
+##### Dynamic Type Binding
+
+Dynamic type binding is used in <font color="royalblue"><b>Python</b></font>, <font color="Yellow"><b>JavaScript</b></font>and <font color="SteelBlue"><b>PHP</b></font>
+
+Specified through an assignment statement  
+```js
+// JavaScript  example:
+list = [2, 4.33, 6, 8];
+list[2] = 4.3 // costly due to  reallocation of memory to new type 
+list = 17.3;
+```
+**Advantage**: flexibility 
+**Disadvantages**: 
+High cost (*dynamic type checking and interpretation*)
+Type error detection by the compiler is difficult
+
+### Storage Bindings and Lifetime
+
+At the point of binding memory must be found and set aside **allocation**
+to unbound and giving memory back to pool of available memory **de-allocation**
+
+> The lifetime of a variable is the time during which the variable is bound to a specific memory location
+
+**Variables can be classified into 4 categories, according to their lifetimes**
+1. **static** one that is bound to memory cell before program execution
+   and remain bound to the same memory cell through out execution
+   as long as program is executing bounding is forever
+     - All FORTRAN 77 variables and C and C++ static variables
+     - good for **global** variables used throughout execution of program
+     - good when you need subprograms that are history sensitive -> local static variables
+     - usually more efficient in terms of memory allocation, addressing, overhead etc
+     - <b>Disadvantage</b>: lack of flexibility (*no recursion*)
+2. **stack-dynamic** storage bindings are created for variables when their declaration statements are *elaborated*
+   So in a loop `int x = 4;` means x  is always being assigned to 4 for every iteration
+    - A declaration is <u>elaborated</u> when the executable code associated with it is executed
+    - e.g. local variables in C/C++ subprograms and Java methods
+    - <b>Advantages</b>: allows recursion; conserves storage
+      - conserves storage because for example if you have 2 large arrays you don't need them to be in play at the same time and you can reallocate memory when you need them
+    - <b>Disadvantages</b>
+      - Overhead of allocation and de-allocation
+      - Subprograms cannot be history sensitive.
+      - Inefficient references (*indirect addressing*) addresses are always changing
+3. **explicit heap-dynamic** are nameless (*abstract*) memory cells that are
+   allocated and de-allocated by <u>explicit directives</u>, specified by the programmer,
+   which take effect during execution referenced only through pointers or references.
+	e.g. dynamic objects in C++ (*via new and delete*)
+	all objects in Java
+<b>Advantage</b>: provides for dynamic storage management
+<b>Disadvantage</b>: inefficient and unreliable
+
+4. **implicit heap-dynamic** 
+   Implicit heap-dynamic—variables are bound to storage only when they are assigned values
+e.g. Perl, JavaScript and PHP
+So same as as above except it is *implicit*
+<b>Advantage</b>: flexibility
+<b>Disadvantages</b>: 
+Inefficient, because all attributes are dynamic
+Loss of error detection
+
+### Scope
+
+> range of statements in which the variable is visible
+
+#### Static Scope
+
+- Sometimes called *lexical scoping*
+  Based on program text
+  **<big>Method of Binding names to non-local variables</big>**
+  Named <i>static</i> because the scope of a variable can be statically determined
+  <i>-</i> that is <i>prior to execution</i>
+- To connect a name reference to a variable,
+  you (*or the compiler*) must find the declaration
+- **Search process**: search declarations,
+  first locally, then in increasingly larger enclosing scopes,
+  until one is found for the given name.
+- Enclosing static scopes (*to a specific scope*) are called its <b>static ancestors</b>;
+  the nearest static ancestor is called a <b>static parent</b>
+
+- Some languages allow nested subprogram definitions, which create nested static scopes
+  <i>e.g., Ada, Common Lisp, Scheme, F#, Python, JavaScript,  Fortran 2003, and PHP</i>
+  but C-based languages and Java do not
+- Variables can be *hidden* from a unit by having a <i>closer</i> variable with the same name.
+- Ada allows access to these *hidden* variables.
+  - In Ada:  `unit.name`
+
+```ada
+-- example in Ada program Big with sub-programs Sub1 and Sub2
+procedure Big is
+    X: Integer; -- this is what we use for X in Sub2
+      procedure Sub1 is
+        X: Integer; -- this is not what we use X in Sub2
+        begin
+          …
+        end;
+      procedure Sub2 is
+          begin
+            …X…
+          end;
+      begin
+          …
+      end
+```
+
+##### Blocks
+
+A method of creating static scopes inside program units called blocks delimited by `{}`
+```c++
+void sub() {
+    int count = 0;
+    while (...) {
+      int count = 1;
+        count++;
+        ...
+    }
+        …
+  }
+```
+
+```{note}
+ <i>legal</i> in C and C++,
+ but not in Java and C# <i>too error-prone</i>
+```
+
+##### Evaluation of Static Scoping
+
+- Works well in many situations hence why most languages use this
+
+**Problems**:
+- In most cases, it allows more access to both variables and subprograms than is necessary
+- As a program evolves, the initial structure is destroyed and local variables often become global.
+
+**Overall** <b>static scoping often encourages many globals</b>
+
+#### Global Scope
+
+Some languages including C, C++, PHP, <b><font color="royalblue">Python</font></b> and Javascript
+allow program structure in which variable definitions can appear outside the functions 
+<font color="orange">Remember how you can't do this in <b>Java</b> where everything has to be in a class</font>
+
+```c
+// In C you can declare a global variable within a local scope
+extern int sum;
+```
+
+```c++
+/*
+In C++ if there is a name clash between local variable and some global variable
+then one can use the scope operator :: to access the global version along with the local version */
+int variable;
+int globalScope::variable; 
+```
+
+#### Dynamic Scope or Temporal Scope
+
+The scope of variables in APL, SNOBOL4, and the early versions of Lisp is dynamic
+
+Perl and Common Lisp also allow variables to be declared to have dynamic scope, although the default scoping mechanism in these languages is static
+
+<big><strong>Dynamic scoping is based on the calling sequence of subprograms,<br> not on their spatial relationship to each other</strong></big>
+Thus, the scope can be determined only at run time
+So static is based on placement and dynamic is based on time
+
+```js
+function big() {
+  function sub1() {
+    var x = 7; // this is what x is in dynamic scoping
+  }
+  function sub2() {
+    var y = x; // x is dynamically scoped 
+    var z = 3;
+  }
+  var x = 3; // this would be the declaration in static scoping
+}
+```
+
+So the meaning of identifier `x` referenced in `sub2` is **dynamic**
+it cannot be determined at compile time
+it may reference either declaration of `x` 
+*depending on the calling sequence*
+
+##### Evaluation of Dynamic Scoping
+
+- <b>Advantage</b>: convenience
+- <b>Disadvantage</b>: poor readability
+
+##### Scope and Lifetime
+You may think that a high lifetime means a big scope but you can create a local static variable that would have a small lifetime
+
+### Referencing Environments
+
+THe **referencing environment** of a statement is the collection of all variables that are visible in the statement
+
+```python
+# A skeletal Python Program
+g = 3; # A global
+def sub1():
+    a = 5; # Creates a local
+    b = 7; # Creates another local
+    . . . ⬅------------------------------ 1
+  def sub2():
+  global g; # Global g is now assignable here
+    c = 9; # Creates a new local
+    . . . ⬅------------------------------ 2
+    def sub3():
+      nonlocal c: # Makes non-local c visible here
+      g = 11; # Creates a new local
+      . . . ⬅------------------------------ 3
+```
+
+Point | Referencing Environment
+-- | --
+1 | local `a` and `b` *of `sub1`* <br> global `g` for reference but not for assignment
+2 | local `c` *of `sub2`* <br> global `g` for both reference and for assignment
+3 | non-local `c` *of `sub2`* , local `g` *of `sub3`*
+
+### Named Constants
+
+A **named constant** is a variable that is bound to a value only once
+
+```c
+const int PI = 3.12;
+```
+
+### Variable type Summary
+
+#### Static Variables
+- **Lifetime** have a <u>fixed</u> lifetime that extends throughout the <u>entire</u> execution of a program
+- **Storage Allocation** memory is allocated at compile-time and
+  remains constant throughout the program's execution
+- **Scope** typically accessible within the scope of the function or file where they are defined
+
+```c
+void incrementStatic() {
+    // This static variable retains its value between function calls.
+    static int counter = 0;
+    counter++;
+    printf("Static Counter: %d\n", counter);
+}
+
+int main() {
+    incrementStatic();
+    incrementStatic();
+    incrementStatic();
+    return 0;
+}
+```
+```
+Static Counter: 1
+Static Counter: 2
+Static Counter: 3
+```
+#### Stack-Dynamic variables
+- **Lifetime** variables have a lifetime limited to the scope or block where they are defined
+  They are created when entering a scope and destroyed when leaving it
+- **Storage Allocation** memory is allocated on the program's call stack
+  It is automatically reclaimed when the variable goes out of scope
+- **Scope** variables are accessible only within the block or function where they are defined
+
+```c
+#include <stdio.h>
+
+void scopeExample() {
+    int localVar = 42; // Stack-dynamic variable
+    printf("Local Variable: %d\n", localVar);
+}
+
+int main() {
+    int mainVar = 10; // Stack-dynamic variable
+    scopeExample();
+    // The local variable "localVar" in "scopeExample" is no longer accessible here.
+    printf("Main Variable: %d\n", mainVar);
+    return 0;
+}
+```
+```
+Local Variable: 42
+Main Variable: 10
+```
+
+**In most contemporary languages, local variables in a subprogram are by
+<u>default</u> stack dynamic**
+
+In <b>C</b> and <b>C++</b> functions, locals are stack dynamic unless
+specifically declared to be static
+
+For example, in the following C (or C++)
+function, the variable `sum` is <i>static</i> and `count` is <i>stack dynamic</i>
+```C
+int adder(int list[], int listlen) {
+  static int sum = 0;
+  int count;
+  for (count = 0; count < listlen; count ++)
+    sum += list [count];
+  return sum;
+}
+```
+
+
+
+### Explicit Heap-Dynamic
+
+Memory allocation and de-allocation are controlled explicitly by the programmer
+
+These variables are typically
+allocated on the heap (*dynamic memory*) using functions like `malloc` or `new`
+and de-allocated using `free` or `delete`
+
+The programmer has precise control over the variable's lifetime
+
+```c
+int* dynamicInt = (int*)malloc(sizeof(int));
+*dynamicInt = 42; // Assign a value
+free(dynamicInt); // De-allocate memory when done
+```
+### Implicit Heap-Dynamic
+
+This is basically <font color="yellow"><b>Javascript</b></font> where variable type is set when the variables are assigned 
+
+## Data Types
+
+A **data type** defines a collection of data values and a set of predefined operations on those values
+
+Data types can be 
+**unstructured** (*also called scalar*) eg `char`, `int`, `double`
+**structured** eg `array`, `record`, `struct`
+
+### Primitive Data Types
+
+**primitive data types** those not defined in terms of other data types
+*-* almost all languages provide a set of primitive data types
+
+#### Integer
+> supported directly by the hardware
+
+There may be as many as eight different integer types in a language
+Java includes four signed integer types `byte`, `short`, `int`, `long`
+
+#### Floating Point
+Models real numbers, *but only as approximations*
+
+Most languages include two types `float` & `double`
+
+##### IEEE Floating Point Formats
+
+          8 bits        23 bits            Single Precision
+      -----------------------------------
+      | | Exponent   | Fraction         |
+      -----------------------------------
+       ^ signed bit
+
+          11 bits         52 bits          Doublee Precision
+      -----------------------------------------------------
+      | | Exponent      | Fraction                        |
+      -----------------------------------------------------
+       ^ signed bit
+#### Complex
+Some languages support this usually with operations type *eg **Fortran & Python***
+
+Each value consists of two floats
+the real part and the imaginary part
+
+```python
+# Example in Python
+complex = (7 + 3j) # 7 is real and 3 is the imaginary type
+```
+#### Decimal
+
+For business applications (*money*) *eg 1.99*
+Stored in **binary coded decimal (BCD)**
+Important data type for **COBOL** ***Co**mmon **B**usiness **O**riented **L**anguage*
+C# also offers a decimal data type
+**Advantage**: accuracy
+**Disadvantages**: limited range, wastes memory
+
+#### Boolean
+*Two elements* `1` for `true` and `0` for `false`
+could be implemented as bits but often as bytes
+
+#### Character
+Stored as numeric coding *eg ASCII, Unicode*
+
+##### Unicode
+Originally in Java but also supported by Python, C# and Javascript
+
+#### Character Strings Types
+Sequences of characters
+
+Typical operations
+- assignment
+- comparison (*=,>, etc*)
+- concatenation
+- substring reference
+- pattern matching *usually with regular expression* 
+  - `[A-Z]` A to Z in alphabet `[0-9]*` string of digits    
+
+C and C++
+- Not supported as a primitive data type
+- use `char` arrays and a library of functions that provide operations
+
+Java
+- Supported by the `String` class
+
+##### String length options
+
+1. **Static Length** - FORTRAN, COBOL, Java’s String class
+   string length is fixed and can't be changed *immutable*
+
+```fortran
+c in fortran
+CHARACTER (LEN = 15) NAME;
+```
+
+2. **Limited Dynamic Length** - C and C++ 
+    A special character (**null**) is used to indicate the end of a string’s characters,
+    rather than maintaining the length
+3. **Dynamic Length** - Perl, JavaScript
+	Strings have varying length with no maximum
+
+Ada supports all three string length options
+
+###### Implementation
+1. **Static** - compile time descriptor
+2. **Limited Dynamic Length** - may need a run-time descriptor for length (*but not in C and C++*)
+3. **Dynamic** - need run-time descriptor; allocation/de-allocation is the biggest implementation problem
+  
+**descriptor**: A collection of the attributes of a variable
+
+<div class="columns">
+  <div class="column">
+
+Static string |
+:--: |
+Length | 
+Address | 
+
+<caption>Compile-time descriptor for static strings</caption></div>
+  <div class="column">
+
+Limited Dynamic string |
+:--: |
+Maximum Length | 
+Current Length | 
+Address |    
+
+<caption>Run-time descriptor for limited dynamic strings</caption></div>
+</div>
+
+### Non-primitive types
+
+#### Enumeration Types
+
+<big><em>one in which the user enumerates all of the possible values, which are symbolic constants</em></big>
+
+**Examples**: 
+- **Pascal** - can be used for array subscripts, for variables, case selectors;  No input or output; can be compared.
+
+- **C and C++** - like Pascal, except they can be output as integers e.g. 
+```c
+enum colors {red, green, blue};
+colors x, y; 
+x = red;  y=green; 
+```
+
+So now no need to code a color as a number
+and compiler could check that there was no operations that allow a color to be added
+
+Ada C# and Java provide better support for enumerations than C++ because enumeration type variables in these languages are not coerced into integer types
+
+#### Arrays
+
+> An aggregate of homogenous data elements in which an individual element identified by its position in the aggregate relative to the first element
+
+```bnf
+array_name (index_value_list) -> an element
+```
+**indexing** is a mapping from indices to elements
+- Fortran and Ada use parenthesis `( )` to mimic mathematical functions $f(x)$
+- most use brackets `[ ]`
+
+**index range checking** to avoid *index out of bound* errors
+- C, C++, Perl, and Fortran do not specify range checking
+- Java, C# specify range checking
+- In Ada, the default is to require range checking, but it can be turned off
+  - to avoid checking overhead
+
+`A[-1]` you would think this would be a compile-time error but no actually it is a run-time error 
+
+##### Categories of arrays
+<big>*based on the binding to subscript ranges and the binding to storage*</big>
+
+**Static** - range of subscripts and storage allocation are static
+   e.g. FORTRAN 77, static arrays in C++
+<b>Advantage</b>: execution efficiency *no dynamic allocation or de-allocation*
+
+**Fixed stack-dynamic** - range of subscripts is statically bound but storage is *bound at declaration elaboration time*
+   e.g. C and C++ local arrays that are not `static`
+<b>Advantage</b>: space efficiency
+
+**Fixed heap-dynamic** - similar to fixed stack-dynamic: storage binding is dynamic but fixed after allocation (*i.e., binding is done when requested and storage is allocated from heap, not stack*)
+- e.g. 
+  - <b>C</b>: `malloc` and `free`
+  - <b>C++</b>: `new` and `delete`
+
+```cpp
+int *list = new int[size];
+```
+Java arrays are fixed heap-dynamic
+
+**Heap-dynamic** - subscript range and storage bindings are dynamic and can change any number of times
+
+e.g., In Perl, and JavaScript, arrays grow and shrink as needed.
+```js
+// Example in Javascript
+var list = new Array(6);    // creates an array of size 6
+list[40] = 7;               // now the size of the array becomes 41
+```
+
+##### Array Initialization
+
+Some languages allow initialization at the time of storage allocation
+example **C C++ C#**
+```c
+int list[] = { 4, 5, 7, 83 };
+char name[] = "freddie"; // Character strings in C and C++
+char[7]; // remember last character is null terminator or \0
+char *names[] = {"Bob", "Jake", "Joe"}; // Arrays of strings in C and C++
+```
+```java
+String[] names = {"Bob","Jake","Joe"};// Java initialization of String objects
+```
+##### Array Operations
+
+Array operation examples:
+1. `APL` **A Programming Language** provides the most powerful array processing operations
+   - Hence why it should be renamed <b>Array Processing Language</b>
+2. `Ada`
+<b>Assignment</b>: RHS can be an aggregate constant or an array name.
+<b>Catenation</b>: for all single-dimensioned arrays
+<b>Relational operators</b>: = and /= only *checking equality or not equality*
+1. `Fortran` 
+provides elemental operations because they are between pairs of array elements
+For example, 
+   + operator between two arrays results in an array of the sums of the element pairs of the two arrays
+
+##### Array Slice
+A **slice** is some substructure of an array
+References part of an array as a unit
+Useful to be a part of languages
+
+```fortran
+C fortran example (4 by 4 array) 
+C you can even slice higher dimensional arrays 
+INTEGER MAT (1:4, 1:4)  
+  MAT(1:4, 1) - the first column
+  MAT(2, 1:4) - the second row
+  MAT(2:3, 1:2) - include rows 2 and 3, include columns 1 and 2 so we get a 2X2 subsquare
+```
+##### Array Access Function
+
+**Implementation of Arrays**
+- **Access function** maps subscript expressions to addresses in memory
+- suppose the array index goes from `lo` to `hi`
+- We have integer so `size` is usually equal to 4 bytes
+
+      a : array [lo..hi] of integer;
+
+element $\tt a[i]$ is located at $\tt b+(i-lo)*size$
+
+`a` *is the array*
+`b` *is the beginning address*
+`size` *is the size of an element*
+
+            =  b+i*size – lo*size
+            =  (b-lo*size) + i*size
+
+**Access function for two-dimensional array**
+Row major (*by rows*) or column major order (*by columns*)
+assume row major order
+
+      a : array [lo_i .. hi_i] of [lo_j .. hi_j] of integer;
+
+The number of elements per row is 
+
+      n = hi_j - lo_j+1 
+
+Element $\tt a[i][j]$ is located at
+
+      b+ ((i-lo_i)*n +(j-lo_j))*size
+
+element $\tt a[i][j]$ is located at
+
+      b+ ((i-lo_i)*(hi_j-lo_j+1)+(j-lo_j))*size
+    = b+ (i-lo_i)*(hi_j-lo_j+1)*size+(j-lo_j)*size
+    = b+ i*(hi_j-lo_j+1)*size-lo_i*(hi_j-lo_j+1)*size +j*size-lo_j*size
+    = b -lo_i*(hi_j-lo_j+1)*size- lo_j*size + i*(hi_j -lo_j+1)*size+j*size
+
+but now certain parts of this formulae can be *precalculated* by the compiler once at compile time and kept as constants minimizing the work at run time:
+
+    k1= b -lo_i*(hi_j-lo_j+1)*size - lo_j*size
+    k2=(hi_j-lo_j+1)*size
+    k3= size
+
+at runtime, element $\tt i,j$ is located at   $\tt k1 + k2 * i + k3 * j$
+
+### Memory Cells
+
+say size is a `int` or $4\ bytes$
+say index goes from *low* 0 to *high* 16
+$\tt a[i]$ is located at $\tt b+(i-lo)*size$
+
+| &nbsp; | k   | i    | Memory Cell |
+| ------ | --- | ---- | :---------: |
+|        | `0` | `0`  |   `10001`   |
+|        | 0   | 1    |    10002    |
+|        | 0   | 2    |    10003    |
+|        | 0   | 3    |    10004    |
+|        | `1` | `4`  |   `10005`   |
+|        | 1   | 5    |    10006    |
+|        | 1   | 6    |    10007    |
+|        | 1   | 7    |    10008    |
+|        | `2` | `8`  |   `10009`   |
+|        | 2   | 9    |    10010    |
+|        | 2   | 10   |    10011    |
+|        | 2   | 11   |    10012    |
+|        | `3` | `12` |   `10013`   |
+|        | 3   | 13   |    10014    |
+|        | 3   | 14   |    10015    |
+|        | 3   | 15   |    10016    |
+
+#### Row Major 
+All major programming uses the *row major* methods for multidimensional arrays
+
+$$
+\begin{aligned}
+3\qquad 4\qquad 7 \\
+6\qquad 2\qquad 5 \\
+1\qquad 3\qquad 8 \\
+\end{aligned}
+\\
+\text{ It would be stored as :}\\[1em]
+\Large\clap{3 4 7 6 2 5 1 3 8} \\
+\scriptsize \llap{Memory Address} =
+Base Address + 
+[(Row\_Index \cdot Number\_of\_Columns + Column\_Index) \cdot Element\_Size] \\
+
+\tt \large a[i][j]\ \texttt{for m }\times\ n \qquad=\qquad
+b +
+[(i \cdot n + j) \cdot size]
+$$
+
+###### Compile-Time Descriptors
+
+<div class="columns">
+  <div class="column">
+
+Array |
+:--: |
+Element Types | 
+Index Type | 
+Index lower Bound | 
+Index upper Bound | 
+Address | 
+
+  <div class="column">
+
+Multidimensional Array |
+:--: |
+Element Types | 
+Index Type |
+Number of dimensions |
+Index range 1 | 
+... | 
+Index range n | 
+Address | 
+</div>
+
+##### Associative Arrays
+An **associative array** is an <font color="violet"><u>unordered collection</u></font> of data elements that are indexed by an equal number of values called keys.
+
+
+Structure and operations in Perl:
+- Names begin with %
+- Literals are delimited by parentheses.
+```perl
+%hi_temps = ("Monday" => 77, "Tuesday" => 79,…);
+```
+- Subscripting is done using braces and keys.
+```perl
+$hi_temps{"Wednesday"} = 83;
+```
+- Elements can be removed with `delete`.
+```perl
+delete $hi_temps{"Tuesday"};
+```
+
+#### Records
+
+A **record** is a possibly heterogeneous aggregate of data elements in which the individual elements are identified by names *not by indexes like arrays*
+
+A record type with `k` fields in Pascal can have the following form:
+
+```pascal
+// PASCAL EXAMPLE
+// In general
+record
+  <name1> : <type1>;
+  ……
+  <namek> : <typek>;
+end
+
+// Example
+type complex = record 
+  re: real;	
+  im: real;
+end;
+
+a.re = 7.2;
+a.im = 3.6;
+a = 7.2 + 3.6j;
+```
+
+Java has no record type
+
+But C has a equivalent type which they call `struct`
+
+```c
+struct complex {
+  double re;
+  double im;
+}
+
+complex a; // initialize complex struct
+a.re = 7.2; // assign values to members
+a.im = 3.6; // assign values to members
+
+// here is a typically linked list node is defined
+struct node {
+  int data;
+  node *next;
+}
+```
+
+```ada
+-- ada Example
+type Employee_Name_Type is record
+  First : String (1..20); -- string of 20 characters
+  Middle : String (1..20);
+  Last : String (1..20);
+end record;
+
+type Employee_Record_Type is record
+  Employee_Name : Employee_Name_Type; -- record within a record
+  Hourly_rate : Float;
+end record;
+```
+
+##### Record Field References
+1. COBOL
+```cobol
+    field_name OF record_name_1 OF... OF record_name_n
+```
+2. Others (dot notation)
+    
+        record_name_1.record_name_2. ... record_name_n.field_name
+
+Fully qualified references must include <u>all</u> record names
+Elliptical references allow leaving out record names as long as the reference is unambiguous
+
+Record Operations
+1. <b>Assignment</b>
+Pascal, Ada, and C allow it if the types are identical
+2. <b>Comparison</b>
+In Ada, = and /=; one operand can be an aggregate constant
+3. `MOVE CORRESPONDING`
+In COBOL - it moves all fields in the source record to fields with the same names in the destination record
+
+##### Compile-time descriptor of a record
+```
+            |  Record
+  field_1   |  Name
+            |  Type
+   :        |  Offset
+   :            ...
+            |  Record
+  field_n   |  Name
+            |  Type
+            |  Offset
+               ...
+```
+
+#### Unions
+
+A type whose variables are allowed to store different type values at different times during execution
+
+Discriminated unions include a tag to record the current type value
+A free union is one without the tag
+C and C++ - free unions (no tags)
+
+```c
+union number {
+  int x;      // 4 bytes
+  float y;    // 4 bytes
+  double d;   // double 8 bytes
+}
+```
+
+No type checking of references
+Unions can be potentially unsafe in most languages (except Ada)
+Java has neither records nor unions
+
+Examples:
+1. **Pascal** - supports both discriminated and free unions.
+
+```pascal
+type intreal =
+record tagg : Boolean of
+  true : (blint : integer);
+  false : (blreal : real);
+end; 
+```
+<b>Problem with Pascal’s design</b>: type checking is ineffective
+
+Reasons why Pascal’s unions cannot be type checked effectively:
+a. User can create inconsistent unions (because the tag can be individually assigned).
+b. The tag is optional!
+
+```pascal
+var blurb : intreal;
+        x : real;
+blurb.tagg := true;   { it is an integer }
+blurb.blint := 47;    { ok }      
+blurb.tagg := false;  { it is a real }
+x := blurb.blreal;    { assigns an integer to real }
+```
+
+**Ada** - discriminated unions
+Reasons they are safer than Pascal:
+a. Tag <u>must</u> be present
+b. It is impossible for the user to create an inconsistent union (because tag cannot be assigned by itself--All assignments to the union must include the tag value, because they are aggregate values).
+
+```ada
+-- Ada example Variant Record basically a Union
+type Shape is (Circle, Triangle, Rectangle);
+type Colors is (Red, Green, Blue);
+type Figure (Form : Shape ) is record 
+		Filled : Boolean;
+		Color : Colors;
+		Case Form is
+		   when Circle => Diameter : Float;
+		   when Triangle =>  -- if tag is triangle set these 3 fields
+              Left_Side : Integer; 
+              Right_Side : Integer;
+              Angle: Float;
+		   when Rectangle => Side_1 : Integer; Side_2 : Integer;
+		end Case;
+end record;
+
+Figure_1 : Figure; // Declare a Figure
+
+Figure_1:= (Filled =>true, 
+		       Color => Blue,
+		       Form => Rectangle,
+		       Side_1 => 12,
+		       Side_2 => 3);
+```
+
+### Pointers
+
+- A pointer type is one in which the variables have a range of values that consist of memory addresses and a special value, nil
+- A pointer can be used to access a location in the area where storage is dynamically created 
+  (*usually called a **heap***)
+- Pointers provide the power of indirect addressing and a way to manage dynamic memory
+- Pointers (or references) are necessary for dynamic data structures--so we can't design a language without them
+
+#### Pointer Operations
+
+<b>Two fundamental operations</b>: **assignment** and **dereferencing**.
+
+Assignment is used to set a pointer variable’s value to some useful address.
+
+Dereferencing yields the value stored at the location represented by the pointer’s value.
+
+Dereferencing can be explicit or implicit.
+C++ uses an explicit operator *.
+```cpp
+int *ptr = new int(206); // create a anonymous variable
+j = *ptr; // to retrieve a value from address pointing
+```
+```{tip}
+You can think of `*` as *the object pointed to by ptr*
+
+```
+
+#### C and C++ Pointers
+
+Extremely flexible but must be used with care
+Pointers can point at any variable regardless of when or where it was allocated
+C and C++ pointers can do address arithmetic in restricted forms, e.g.:
+```c
+float stuff[100];
+float *p;
+p = stuff;
+*(p+5) /*is equivalent to */ stuff[5] /* and */  p[5]
+*(p+i) /*is equivalent to */ stuff[i] /* and */  p[i]
+```
+**note** you can think of `stuff` as a *constant pointer* because you can't make it point somewhere else
+
+C++ reference types: constant pointers that are implicitly dereferenced.
+Used for parameter passing:
+Advantages of both pass-by-reference and pass-by-value 
+
+#### Java References
+
+Java extends C++’s reference variables and allows them to replace pointers entirely
+No pointer arithmetic
+Can only point at objects (*which are all on the heap*)
+No explicit de-allocator (*garbage collection is used*)
+Means there can be no dangling references
+Dereferencing is always implicit
+
+#### Problems with Pointers
+
+Dangling pointers <font color="red"><b><sup>dangerous</sup></b></font>
+- A pointer points to a heap-dynamic variable that has been de-allocated
+- The sequence of operations creates a dangling pointer in many languages (with explicit de-allocation):
+
+**a.** Allocate a heap-dynamic variable and set a pointer to point at it.
+**b.** Set a second pointer to the value of the first pointer.
+**c.** De-allocate the heap-dynamic variable, using the first pointer.
+
+```cpp
+// dangling pointer problem
+
+int *ptr1, *ptr2;
+ptr1 = new int(4);
+ptr2 = ptr1;
+delete ptr1;
+// ptr2 is still pointing in memory even though ptr1 was supposed to be free
+```
+
+Lost heap-dynamic variables <font color="orange"><b><sup>wasteful</sup></b></font>
+A heap-dynamic variable that is no longer referenced by any program pointer
+The sequence of operations creates a lost heap-dynamic variable
+**a.** Pointer p1 is set to point to a newly created heap-dynamic variable
+**b.** p1 is later set to point to another newly created heap-dynamic variable
+The process of losing heap-dynamic variables is called **memory leakage**
+
+**Solution to Dangling Pointer Problem**
+1. **Tombstone**: extra heap cell that is a pointer to the heap-dynamic variable
+The actual pointer variable points only at tombstones
+When a heap-dynamic variable is de-allocated, the tombstone remains but set to nil
+
+2. **Locks and keys**: Pointer values are represented as (<font color="violet">key</font>, <font color="azure">address</font>) pairs
+Heap-dynamic variables are represented as variable plus a cell for an integer lock value
+When a heap-dynamic variable is allocated,
+a lock value is created and placed in the lock cell and key cell of pointer
+Every access to the dereferenced pointer compares the key value of the pointer to the lock value in the heap-dynamic variable. It they match, the access is legal; otherwise, runtime error is generated
+
+### Heap Management
+
+Heap management is a very complex run-time process
+
+Two approaches to reclaiming garbage:
+Reference counters  (*eager approach*) vs. mark-sweep (*lazy approach*)
+1. **Reference counters**: *if counter becomes 0 its garbage collect it*
+   maintain a counter in every cell that stores the number of pointers currently pointing at the cell
+<b>Disadvantages</b>: space required, execution time required
+
+1. **Mark-sweep**: 
+   The run-time system allocates storage cells as requested until the list of available space becomes empty;
+   then a mark-sweep process is begun to gather all the garbage
+Every heap cell has an extra bit used by collection algorithm. 
+All cells initially set to garbage.
+All pointers traced into heap, and reachable cells marked as not garbage.
+All garbage cells returned to list of available cells.
+<b>Disadvantages</b>: It causes significant delays in application execution.
+Contemporary mark-sweep algorithms avoid this by doing it more often—called incremental mark-sweep
+
+### Type Checking
+
+*Type checking* is the activity of ensuring that the operands of an operator are of compatible types.
+A *compatible type* is one that is either legal for the operator, or is allowed under language rules to be implicitly converted, by compiler-generated code, to a legal type. 
+This automatic conversion is called a **coercion**
+A *type error* is the application of an operator to an operand of an inappropriate type
+
+#### Strong Typing
+
+A programming language is strongly typed if *type errors are always detected*
+Advantage of strong typing: allows the detection of the misuses of variables that result in type errors.
+Coercion rules strongly affect strong typing--they can weaken it considerably. 
+
+Language examples:
+C and C++ are not strongly typed.
+Java is, almost strongly typed.
+
+#### Type Compatibility
+Our concern is primarily for structured types
+
+**Name type compatibility** means that two variables have compatible types if they are in either the same declaration or in declarations that use the <u>same type name</u>
+
+Easy to implement but highly restrictive:
+Sub-ranges of integer types are not compatible with integer types.
+Formal parameters must be the same type as their corresponding actual parameters.
+
+**Structure type compatibility** means that 
+two variables have compatible types if their types have <u>identical structures</u>
+- More flexible, but harder to implement
+
+Example written in C but C doesn't use structure type compatibility 
+so this would not work in practice
+
+```c
+struct type1 {
+  int x;
+  double y;
+};
+
+struct type2 {
+  int x;
+  double y;
+};
+
+type1 a;
+type2 b;
+
+b=a; // would not work in C++ even though structure is the same
+```
+
+## Expressions and Assignment Statements
+
+Expressions are the fundamental means of specifying computations in a programming language
+
+To understand expression evaluation, we need to be familiar with the orders of operator and operand evaluation
+
+> Essence of imperative languages is dominant role of assignment statements
+
+### Arithmetic Expressions
+
+Arithmetic expression evaluation was one of the motivations for the development of the first programming languages *specifically **FORTRAN** FORMULA TRANSALTION*
+
+Arithmetic expressions consist of *operators*, *operands*, *parentheses*, and *function calls*
+
+#### Operators
+A *unary* operator has <u>one</u> operand $-7,\ count++$
+A *binary* operator has <u>two</u> operands $4 + 5, 3*2$
+A *ternary* operator has <u>three</u> operands $\tt\small <logical\_expression> ? <if\_true> : <if\_false>$
+
+##### Conditional Expressions
+<b>C C++ Java</b> using `?` ternary operator
+
+    average = (count == 0) ? 0 : sum / count
+
+same as
+
+    if (count == 0)
+      average = 0;
+    else
+      average = sum/count;
+
+##### Operator Precedence
+
+The <i>operator precedence</i> rules for expression evaluation 
+define the order in which *adjacent* operators of different precedence levels are evaluated
+
+**Typical precedence levels**
+1. parentheses - *think overrides default precedence*
+2. `**`  - *if the language supports it*
+3. unary operators `++`,  `--`, `+`, `-`
+4. `*`, `/`, `%`
+5. binary `+`, `-`
+
+<b>APL</b> is different; all operators have equal precedence and all operators associate right to left <i>prefix</i>
+
+#### Operands
+**Operand evaluation:**
+- **Variables** just fetch the value
+- **Constants** sometimes a fetch from memory;
+  sometimes the constant is in the machine language instruction
+- **Parenthesized expressions** evaluate all operands and operators first
+- **Function calls** order of evaluation is crucial
+
+**Functional side effects** - when a function changes a two-way parameter or a non-local variable
+**The problem with functional side effects**: 
+When a function referenced in an expression alters another operand of the expression; e.g., for a parameter change:
+```c
+a = 10;
+b = a + fun(&a);  // a is modified  as a side effect outside function
+/* Assume that function changes its parameter */
+```
+- Same problem with global variables
+
+**Two Possible Solutions to the Problem**
+1. Write the language definition to disallow functional side effects.
+No two-way parameters in functions
+No non-local references in functions
+<b>Advantage</b>: it works!
+<b>Disadvantage</b>: inflexibility of one-way parameters and lack of non-local references
+
+1. Write the language definition to demand that operand evaluation order be fixed
+   - Java requires that operands appear to be evaluated in left-to-right order
+
+### Overloaded Operators
+Use of an operator for more than one purpose is called **operator overloading**
+Some are common *e.g., `+` for int and float*
+Some are potential trouble *e.g., *  in C and C++*
+Loss of compiler error detection *omission of an operand should be a detectable error*
+Some loss of readability
+Can be avoided by introduction of new symbols
+
+C++, Ada, Fortran 95, and C# allow user-defined overloaded operators
+**Potential problems**: 
+- Users can define nonsense operations
+- Readability may suffer
+
+### Type Conversions
+
+A **narrowing conversion** converts a value to a type that cannot include all of the values of the original type
+- e.g., `double` to `float`
+
+A **widening conversion** converts a value to a type that can include at least approximations 
+to all of the values of the original type                          
+- e.g., `int` to `double`
+
+#### Mixed Mode
+
+A **mixed-mode expression** is one that has operands of <u>different types</u>
+A *coercion* is an *implicit type conversion*
+
+<b>The disadvantage of coercions</b>:
+They decrease in the type error detection ability of the compiler
+In most languages, all numeric types are coerced in expressions, using widening conversions
+
+#### Explicit Type Conversions
+
+Called casting in C-based languages
+Examples
+<b>C</b>: `(int)angle`
+<b>Ada</b>: `Float (Sum)`
+
+	Note that Ada’s syntax is similar to that of function calls
+
+### Relational and Boolean Expressions
+
+<b>Relational expressions</b> Use relational operators and operands of various types
+- Evaluate to some Boolean representation
+
+Operator symbols used vary somewhat among languages `!=`, `/=`, `.NE.`, `<` `>`
+
+JavaScript and PHP have two additional relational operator, `===` and `!==`
+Similar to their cousins, `==` and `!=`, *except that they do not coerce their operands*
+
+<b>Boolean Expressions</b> Operands are Boolean and the result is Boolean
+
+<b>Boolean operators:</b>
+FORTRAN 77 |   FORTRAN 90  |   C  |    Ada
+:--: | :--: | :--: | :--:
+`.AND.` |     `and`   |      `&&`   |`and`
+`.OR.`  |     `or`    |      `||`   |`or`
+`.NOT.` |     `not`   |     `!`    |`not`
+  | | |                  `xor`
+
+**Versions of C prior C99 have no Boolean type** 
+  - use `int` type with `0` for *false* and **nonzero** for *true*
+  - <i>One odd characteristic of C’s expressions</i> : `a < b < c`  is a legal expression,
+   but the result is not what you might expect
+    - Left operator is evaluated first, producing `0` or `1` 
+    - The evaluation result is then compared with the third operand *eg* `1 > c`
+
+The relational operators have <u>lower precedence</u>  than the arithmetic operators 
+C, C++, and Java have over 40 operators and at least 15 different levels of precedence
+
+Precedence of some C operators:
+
+        Highest ^     postfix:  ++, --
+                |     unary:    +, -, prefix ++, --, !
+                |               *, /, %
+                |     binary:   +, -
+                |               <, >, <=, >=
+                |               ==, !=
+                |               &&
+        lowest  |               ||
+                v
+
+### Short-Circuit Evaluation
+
+A **short circuit evaluation of an expression** is one in which 
+<b>the result is determined without evaluating all of the operands and/or operators</b>
+
+<b>Problem with non-short-circuit evaluation</b>:
+```java
+index = 0;
+while( index < length && LIST[index] != value)
+     index++;
+```
+- When `index=length`, `LIST[index]` will cause an indexing problem
+
+<b>C, C++, and Java</b> use short-circuit evaluation for the usual Boolean operators `&&` and `||`,
+but also provide bitwise Boolean operators that are not short circuit `&` and `|`
+
+<b>Ada</b> programmer can specify either *short-circuit is specified with and then and or else*
+
+````{warning}
+Short-circuit evaluation exposes the potential problem of side effects in expressions                
+e.g. **C++**:
+```cpp
+(a > b || b++ < 3)
+```
+````
+
+### Assignment Statements
+
+<b>Assignment Statement:</b>
+
+    <target variable> <assignment operator> <expression>
+
+<b>The operator symbol:</b>
+1. `=`    FORTRAN, BASIC, PL/I, C, C++, Java
+2. `:=`  ALGOLs, Pascal, Ada
+
+`=`  can be bad if it is overloaded for the relational operator for equality
+
+    e.g. A = B = C;
+
+<b>More complicated assignments</b>
+1. Multiple targets  <b>PL/I</b>
+```perl
+A, B = 10 
+```
+2. Conditional targets <b>Perl</b>
+```perl
+($flag ? $count1 : $count2) = 0;
+```
+
+3. Compound assignment operators <b>C, C++, and Java</b>
+```c
+sum += next;
+```
+4. <b>Perl and Ruby</b> support list assignments
+
+```ruby
+($first, $second, $third) = (20, 30, 40);
+($first, $second) = ($second, $first); # basically a swap 
+```
+
+Unary assignment operators in C-based languages 
+combine increment and decrement operations with assignment
+
+ Examples | Description
+ -- | --
+  `count++` | `count` incremented
+`sum = ++count` | `count` incremented, assigned to `sum`
+`sum = count++` | assigned to `sum`, `count` incremented
+
+<b>In C, C++, and Java</b>, the assignment statement produces a result and can be used as operands.
+The assignment statement produces a result.
+- Example 1:
+```c
+a = b * (c = d * 2 + 1) + 1; // a = b * c + 1
+``` 
+- Example 2:
+```c
+while ( ( ch = getchar() ) != EOF ) { /*...*/ }
+```
+
+### Mixed-Mode Assignment
+
+Assignment statements can also be mixed-mode, for example
+```c
+int a, b;
+float c;
+c = a / b; // coercion allows this
+```
+<b>In Fortran, C, and C++</b>, any numeric type value can be assigned to any numeric type variable
+<b>In Java and C#</b>, only widening assignment coercions are done
+<b>In Ada</b>, there is no assignment coercion
+
+## Statement-Level Control Structures
+A **control structure** is a control statement and the statements whose execution it controls
+
+**Categories**
+- selection
+- iteration
+- unconditional branching
+
+### Selection Statements
+
+A **selection statement** provides the means of choosing between two or more paths of execution
+
+---
+<font color="skyblue"><b>Two general categories</b></font>
+1. #### Two-way selection
+  - <b>General Form </b> :
+
+	 	if control_expression
+		  then clause
+		  else clause
+  - <b>Design issues</b> :
+    1. What is the form and type of the control expression?
+    2. How are the `then` and `else` clauses specified?
+    3. How should the meaning of nested selectors be specified?
+
+  - If the `then` reserved word or some other syntactic marker is not used to introduce
+  the `then` clause, the *control expression is placed in parentheses*
+  - In <b>C, Python, and C++</b>, the *control expression can be arithmetic*
+  - In languages such as<b> Ada, Java, Ruby, and C#</b>, *the control expression must be Boolean*
+  - ##### Clause Form
+  - In many contemporary languages, 
+  the `then` and `else` clauses can be *single statements* or *compound statements*
+<b>In Perl</b>, all clauses must be delimited by braces.
+<b>In Fortran 95, Ada, and Ruby</b>, clauses are statement sequences
+<b>Python</b> uses indentation to define clauses
+```python
+if x > y :
+  x = y
+  print "case 1" 
+```
+
+- ##### Nested Selectors
+- <b>Java example</b>:
+```java
+if (sum == 0)
+  if (count == 0)
+    result = 0;
+else result = 1;
+```
+- Which `if` gets the `else`?  
+**Java's static semantics rule**
+else goes with the nearest previous unpaired `if`
+
+To force an alternative semantics, **compound statements** may be used:
+```java 
+if (sum == 0) {
+  if (count == 0)
+    result = 0;
+}
+  else result = 1; // we should indent to show what happens
+
+```
+The above solution is used in <b>C, C++, C# and Java</b>
+
+<b>Perl</b> requires that all then and `else` clauses to be delimited by braces
+and does not have this problem
+
+<b>FORTRAN 95, Ada and Ruby’s solution</b> – *closing an if with special words*
+e.g. <b>Ada</b>
+
+      if ... then      |    if ... then
+        if ... then    |      if ... then
+          ...          |        ...
+        else           |      end if
+          ...          |    else
+        end if         |      ...
+      end if           |     end if
+
+<b>Ruby examples:</b>
+
+<div class="columns">
+  <pre class="column">
+
+```ruby
+if sum == 0 then
+  if count == 0 then
+    result = 0
+  else
+    result = 1
+  end
+end 
+```
+  </pre>
+  <pre class="column">
+  
+```ruby
+if sum == 0 then
+  if count == 0 then
+      result = 0
+  end
+else
+    result = 1
+end
+```
+  </pre>
+</div>
+
+<b>Python Solution:</b> *Use indentation*
+
+<div class="columns" style="margin-bottom: 0;">
+  <pre class="column" style="margin-bottom: 0;">
+
+```python
+if sum == 0 :
+    if count == 0 :
+      result = 0
+    else :
+      result = 1
+```
+  </pre>
+  <pre class="column" style="margin-bottom: 0;">
+  
+```python
+if sum == 0 :
+  if count == 0 :
+     result = 0
+else :
+   result = 1
+```
+  </pre>
+</div>
+
+2. #### Multiple selection
+
+The **multiple-selection statement** 
+allows the selection of *one of any number of statements or statement groups*
+
+**Design issues**:
+1. What is the form and type of the control expression?
+1. How are the selectable segments specified?
+1. Is execution flow through the structure restricted to include just a single selectable segment?
+1. How are case values specified?
+1. What is done about unrepresented expression values?
+
+```pascal
+{ PASCAL EXAMPLE }
+case expression of
+    constant_list_1 : statement_1;
+    {...}
+    constant_list_n : statement_n;
+    [else statement_n+1] { could include if you want }
+end
+```
+- <b>Expression</b> could be any integer type `int`, `boolean`, `char`, `enum`
+- Segments can be *single* or *compound*
+  <i>Only one segment can be executed per execution of the construct</i>
+
+<b>C, C++, and Java</b>
+
+      switch (expression)  {
+          case constant_expression_1 : statement_1;
+          ...
+          case constant_expression_n : statement_n;
+          [default: statement_n+1] "brackets means optional"
+      }
+
+<font color="skyblue">Design Choices for <b>C</b>’s</font> `switch`
+1. Control expression can be only an integer type
+2. Selectable segments can be statement sequences, blocks
+3. Any number of segments can be executed in one execution of the construct 
+   *there is no implicit branch at the end of selectable segments*
+        - A trade-off between reliability and flexibility—convenience
+        - To avoid it, the programmer must supply a break statement for each segment.
+4. `default` clause is for unrepresented values
+   **if there is no `default`, the whole statement does nothing**
+
+**C#**
+   - Differs from <b>C</b> in that it has a static semantics rule
+  that disallows the implicit execution of more than one segment
+   - Each selectable segment <u>must end</u> with an unconditional branch `goto` <i>or</i> `break`.
+   - The control expression can be strings
+
+<b>Ada</b>
+```ada
+case expression is
+  when constant list => stmt_sequence;
+  …
+  when constant list => stmt_sequence;
+  when others => stmt_sequence;
+end case;
+```
+- More reliable than <b>C</b>’s `switch` once a `stmt_sequence` execution is completed,
+  control is passed to the first statement after the `case` statement.
+
+**Design choices for Ada’s case**
+   1. Expression can be any integer type
+   2. Segments can be single or compound
+   3. Only one segment can be executed per execution of the construct
+   4. Constant lists can include:
+      - Sub-ranges   e.g., `10..15`
+      - Boolean **OR** operators `|`
+      e.g.,  `1..5 | 7 | 15..20`
+   5. Lists of constants must be exhaustive
+      - Often accomplished with others clause
+      - This makes it more reliable
+
+<b>Ruby</b> has two forms of case statements
+**One form uses when conditions**
+```ruby
+leap = case
+        when year % 400 == 0 then true
+        when year % 100 == 0 then false
+        else year % 4 == 0
+        end
+```
+**The other uses a case value and when values**
+```ruby
+case in_val
+when -1 then neg_count++
+when 0 then zero_count++
+when 1 then pos_count++
+else puts "Error – in_val is out of range"
+end
+```
+
+**Mutiple Selection Using `if`**
+
+<b>Ada</b>
+
+    if ...
+      then ...
+    elsif ...
+      then ...
+    elsif ...
+      then ...
+      else ...
+    end if
+
+<b>Python</b>
+
+```python
+if count < 10 :
+  bag1 = True
+elif count < 100 :
+  bag2 = True
+elif count < 1000 :
+  bag3 = True
+```
+
+The <b>Python</b> example can be written as a <b>Ruby</b> case
+
+```python
+case
+  when count < 10 then bag1 = true
+  when count < 100 then bag2 = true
+  when count < 1000 then bag3 = true
+end
+```
+
+### Iterative Statements
+The repeated execution of a statement or compound statement is accomplished either by iteration or recursion
+
+**Two categories**
+- Counter-controlled loops
+- Logically-controlled loop
+
+#### Counter-controlled loops
+**Counter-Controlled Loops**
+a counting iterative statement has a loop variable,
+and a means of specifying the initial and terminal, and step-size values
+
+**Design issues**
+1. What are the type and scope of the loop variable?
+2. Should it be legal for the loop variable or loop parameters to be changed in the loop body,
+   and if so, does the change affect loop control?
+3. Should the loop parameters be evaluated only once,
+   or once for every iteration?
+
+<b>ALGOL 60</b>
+**Syntax** `for var := <list_of_stuff> do statement`
+Where `<list_of_stuff>` can have 
+**-** list of expressions
+**-** `<expression>` `step` `<expression>` `until` `<expression>`
+
+```algol
+for index := 1 step 2 until 50,
+               60, 70, 80,
+               index + 1 until 100 do
+(index = 1, 3, 5, 7, ..., 49, 60, 70, 80, 81, 82, ..., 100) 
+```
+
+<b>ADA</b>
+
+**Syntax**
+
+    for var in [reverse] discrete_range loop             
+      ...
+    end loop
+
+**Ada design choices**
+1. Type of the loop variable is that of the discrete range;
+   its scope is the loop body *it is implicitly declared*
+2. The loop variable does not exist outside the loop.
+3. The loop variable cannot be changed in the loop, but the discrete range can;
+   it does not affect loop control
+4. The discrete range is evaluated just once
+
+<b>C</b> **Syntax**
+
+    for ([expr_1] ; [expr_2] ; [expr_3]) statement
+
+The expressions can be whole statements, 
+or even statement sequences, 
+with the statements separated by commas
+
+e.g.,
+```c
+for (i = 0, j = 10; j == i;  i++) …
+```
+If the second expression is absent, it is an infinite loop
+
+**C design choices**:
+1. There is no explicit loop variable
+2. Everything can be changed in the loop
+3. The first expression is evaluated once, but the other two are evaluated with each iteration
+<big><b>This loop statement is the most flexible</b></big>
+
+<b>PYTHON</b>
+
+    for loop_variable in object:
+          loop body
+    [else:
+          else clause
+
+- The object is often a range, which is either a list of values in brackets `[2, 4, 6]`,
+  or a call to the range function *e.g., `range(5)`, which returns `0, 1, 2, 3, 4`*
+ - The loop variable takes on the values specified in the given range, one for each iteration
+ - The `else` clause, which is optional, is executed if the loop terminates normally
+
+#### Logically-controlled loop
+
+**Logically-Controlled Loops**: repetition control is based on a Boolean expression
+- more general than counter-controlled loops
+  
+<b>pretest</b> the test for loop completion occurs *before* the loop body is executed.
+<b>post-test</b> the test for loop completion occurs *after* the loop body is executed.
+
+<b>Pascal</b> has separate pretest and post-test logical loop statements `while-do` and `repeat-until`
+
+---
+<b>C and C++</b> have both pretest and post-test forms, in which the control expression can be arithmetic:
+
+     while (ctrl_expr)		    do
+        loop body			      loop body
+						        while (ctrl_expr)
+---
+<b>Java</b> is like <b>C</b>, except the control expression <u>must be Boolean</u> 
+<i>and the body can only be entered at the beginning</i> - *Java has no goto*
+
+---
+<b>Ada</b> has a pretest version, but no post-test.
+
+---
+<b>Perl</b> has 
+two pretest logical loops, `while` and `until` 
+and two post-test logical loops, `do…while`, and `do…until`
+<i>difference is while statement is true</i>
+<i>until the statement becomes true</i>
+
+#### User-Located Loop Control
+
+Some languages provide user-located loop control mechanisms.
+
+**Examples**
+1. <b>C , C++, Python, Ruby, and C#</b>
+   have an unconditional unlabeled exit `break`
+   and an unlabeled control statement, `continue`,
+   that skips the remainder of the current iteration, but does not exit the loop
+
+2. <b>Java and Perl</b> have <u>labeled exits</u> 
+   `break` *in* <b>Java</b>, `last` *in* <b>Perl</b>
+   and labeled versions of `continue`
+
+
+
+
+<div class="columns" style="margin-bottom:0">
+  <pre class="column" style="margin-bottom:0">
+
+<b>Ada</b> - 
+conditional or unconditional; <br> for any loop; <br> any number of levels
+```ada
+for ... Loop
+  ...
+  exit when ...
+  ...
+end loop
+```
+  </pre>
+  <pre class="column" style="margin-bottom:0">
+  
+```ada
+LOOP1:
+ while ... loop
+    ...
+   LOOP2:
+    for ... loop
+      ...
+      exit LOOP1 when ..
+      ...
+    end loop LOOP2;
+    ...
+ end loop LOOP1;
+```
+  </pre>
+</div>
+
+### Unconditional Branching
+
+An unconditional branch statement transfers execution control
+to a specified place in the program
+
+<b>Major concern</b> **readability**
+
+Some languages do not support `goto` statement *e.g.,* <b>Java</b>.
+
+Loop exit statements are restricted and somewhat camouflaged goto’s
+
+ > <big><strong>The goto statement has earned the distinction <br> of being the most avoided statement in the world of programming</strong></big>
+
+## SubPrograms
+
+### Fundamentals of Subprograms
+- Each subprogram has a <u>single entry point</u>
+- The calling subprogram is <i>suspended</i> during execution of the called subprogram
+- Control always returns to caller when the called subprogram's execution terminates
+
+#### Categories of subprograms
+
+- ##### Procedures
+  Collection of statements that define parameterized computation
+  they don't return anything *so `void` functions can be thought of as procedures*
+- ##### Functions
+  Provide user-defined operations
+
+#### Definitions
+
+A **subprogram** ... 
+**definition** describes the *interface* to an the *actions* of the <u>subprogram abstraction</u>
+
+**call** is an <u>explicit request</u> that subprogram be executed
+    - A subprogram is **active** if it is still executing after being called
+
+**header** is the first part of the definition, including
+    - <b>name</b>
+    - <b>kind of subprogram</b>
+    - <b>formal parameters</b>
+**parameter profile** of  subprogram
+is the *number*, *order*, and *types* of its parameters
+**protocol** of  subprogram is its **parameter profile**
+    - if its a *function* its return type
+**declaration** provides the protocol, but not the body of the subprogram
+
+> Variables defined <u>inside</u> subprograms are called **local variables**
+> Local variables can be *stack-dynamic* or *static*
+
+**Functions return values and procedures do not**
+
+The **body** of a subprogram defines it's actions it is usually enclosed or delimited by braces
+In <b>Ruby</b> the keyword `end` is used
+
+##### Example
+```python
+# Python Example
+def adder parameters: # header for subprogram adder
+# Ruby subprogram headers also begin with def keyword
+# in Javascript they use "function" instead of "def"
+```
+
+```C
+void adder(parameters) // reserved word void indicates function does not return anything
+```
+
+
+
+#### Actual/Formal Parameter Correspondence
+
+A **formal parameter** is the variables listed in the subprogram header and used in the subprogram
+
+A **actual parameter** represents a value or address used in the subprogram call statement
+
+##### Positional
+
+<b>In most programming languages</b>
+The binding of actual parameters to formal parameters is *by position:* 
+the first actual parameter is <i>bound</i> to the first formal parameter and so forth.
+
+**Safe and effective**
+
+In certain languages *e.g.,* `C++`, formal parameters can have default values 
+<b>if no actual parameter is passed</b>
+
+In `C++`, default parameters must appear last because parameters are *positionally associated*
+
+**Position of variables and order <u>matters</u>**
+
+```{code} python
+def add(a, b):
+    return a + b
+
+result = add(2, 3)  # Here, 2 is bound to 'a' and 3 is bound to 'b'
+```
+
+
+##### Keyword
+
+The name of the formal parameter to which an actual parameter is to be bound
+is specified with the actual parameter
+
+    # example
+    SORT(LIST => A, LENGTH => N);
+
+*Advantage* Parameters can appear in any order
+thereby avoiding parameter correspondence errors
+
+*disadvantage* User must know the names of formal parameter
+
+In some languages *eg `Ada`* formal parameters can have <u>default values</u>
+
+```ada 
+procedure SORT(
+  LIST : LIST_TYPE; LENGTH : INTEGER := 100); ...
+SORT(LIST => A);
+```
+
+Some programming languages (*e.g., in Ada and Python*) support <u>both</u> positional and keyword parameters
+
+Keyword and positional parameters can be mixed in a call. 
+
+```python
+# e.g. in Python
+def fun(a, b, c) :    
+  result = a + b - c   
+  return result        
+# Order of actual (positional) parameters matters 
+print(fun(2, 3, 4)) # positional
+# Order of actual (keyword) parameters does not matter 
+# keyword order does not matter
+print(fun(a = 2, b = 3, c = 4)) or print(fun(b = 3, c = 4, a = 2)) 
+# After a keyword parameter appears in a call,
+# all remaining parameters must be key-worded
+print(fun(2, c = 4, b = 3)) # both positional and keyword
+```
+
+### Parameter Passing Methods
+
+**Parameter passing methods are the ways in which parameters are transmitted to and/or from called subprograms**
+
+data can either go in or out of a subprogram
+
+**in mode** formal parameters receive data from the corresponding actual parameters
+**out mode** formal parameters transmit data to the actual parameters
+**in-out mode** do both
+
+**How data transfers take place**
+- an actual value is copied
+- an access path is transmitted *eg memory address*
+
+<font color="steelblue">
+There are <strong>5</strong> ways to implement the three parameter transmission modes <em>in</em>, <em>out</em>, and <em>inout</em>
+</font>
+
+1) Pass-by-value *in-mode*
+2) Pass-by-result *out-mode*
+3) Pass-by-value-result *in-out-mode*
+4) Pass-by-reference *out-mode*
+5) Pass-by-name *out-mode*
+
+#### Pass-by-value
+> The value of the actual parameter is used to initialize the corresponding formal parameter 
+Normally implemented by **copying** *or*
+Can be implemented by transmitting an access path <i>or memory address</i>
+Thus this a *in-mode* type
+
+<b>Disadvantages of access path method</b>
+Must enforce write-protection in the called subprogram
+
+<b>Disadvantages of copying method</b>
+Requires more storage *duplicate space*
+Cost of copying *if the parameter is large*
+
+
+- In this method, a copy of the actual argument's value is passed to the formal parameter
+- The formal parameter acts as a local variable, and any modifications to it do not affect the actual argument
+- It is strictly an in-mode because it receives data but cannot return any changes to the caller
+
+```c
+sub(x, y);  // declaration of protocol
+
+void sub(int a, int b) {
+  a = x;    // copying formal parameter to actual parameter
+  b = y;    // copying formal parameter to actual parameter
+  /* ... */
+  a++;      // will not actually change actual parameter
+  --b;      // will not actually change actual parameter
+}
+
+```
+
+#### Pass-by-result
+This a implementation of the *out-mode* parameters
+*data is sent <u>out</u> of the sub-program* 
+
+>  The corresponding formal parameter acts as a local variable,
+>  but just before control is transferred back to the caller, 
+>  its value is transmitted back to the caller’s actual parameter,
+>  which obviously must be a variable
+
+**No value is transmitted to the subprogram**
+
+- order dependence matter
+
+> The formal parameter starts with an undefined value,
+> and any modifications made within the function
+> are returned to the caller when the function returns
+- The actual argument does not provide any initial value
+- This method is classified as *out-mode* because it only returns a value back to the caller
+```c
+void sub(int a, int b) {
+  x = a;    // copy out operation formal to actual
+  y = b;    // copy out operation formal to actual
+  /* ... */
+  a++;      // will actually change actual parameter
+  --b;      // will actually change actual parameter
+}
+```
+
+<font color="LightGreen">In comparison to <b>pass-by-value</b></font>
+As with <i>pass-by-value</i> the difficult of implementing transmission of an access path <i>results in copy is usually used</i>
+If method is by **copy** *as opposed to access paths* then requires <u>extra storage and copy operations</u>
+
+<font color="crimson">Another disadvantage <b>actual parameter collision</b></font>
+
+    sub(p1,p1) # can't use the same variable twice because p1 is the actual variable
+
+
+#### Pass-by-value-result
+- This method *combines* <u>pass-by-value</u> and <u>pass-by-result</u>
+  data copies both ways
+  also called **pass-by-copy**
+
+- The formal parameter starts with the value of the actual argument,
+  and any changes made within the function are propagated back to the caller
+- It is classified as an *in-out-mode* because it both 
+  receives data from the caller
+  and returns changes to the caller
+
+```c
+void sub(int a, int b) {
+  // BOTH COPY OUT AND COPY IN IS USED 
+  x = a;    // copy out operation formal to actual
+  y = b;    // copy out operation formal to actual
+  a = x;    // copy in operation  actual to formal 
+  b = y;    // copy in operation  actual to formal 
+  /* ... */
+}
+```
+
+
+#### Pass-by-reference
+- Also called **pass-by-sharing**
+- A *reference* or *memory address* of the actual argument is passed to the formal parameter
+- Any changes made to the formal parameter directly affect the <u>actual argument</u>
+- think pointers or mutable objects
+- This method is classified as an *in-out-mode*
+  because it receives data from the caller
+  and returns changes to the caller
+- <font color="SpringGreen">Advantages</font>
+    - No copying and no duplicated storage 
+- <font color="crimson">Disadvantages</font>
+    - Slower accesses
+    - Allows aliasing
+
+```c
+sub(&x);
+void sub(int *p) {
+  *p; // this p is actually a alias indirect access to x
+}
+```
+
+#### Pass-by-name
+- the text of the actual argument is substituted directly
+  for the formal parameter in the function body
+- <b>No widely used programming language uses this method</b>
+- It is similar to textual substitution,
+  and it can lead to different behaviors compared to other methods
+- Pass-by-name is also classified as an *in-out-mode*
+  because it both receives data and returns changes to the caller
+
+<img src="Parameter_Passing_Methods.drawio.svg" alt="Parameter passing methods diagram" style="filter:invert(0.9)">
+
+```python
+sub(a, b) 
+  a = b + a * 2
+  c = d + x * 2
+sub(c, d)
+
+```
+
+#### Parameter Passing Methods for Various Languages
+
+**Pascal**
+- Default is pass-by-value, pass-by reference is <i>optional</i>
+
+**Ada**
+- All modes *except pass-by-name* are available
+- In-mode parameters cannot be changed by the subprogram
+- Out-mode parameters are assigned by the subprogram and returned to the caller
+```ada
+-- see how in and out are actual keywords to specify mode
+(A: in Integer, B: out Integer) 
+```
+
+**C**
+- Pass-by-value <span class="font-mono text-blue-400"> void sub (int a) {}</span>
+- Pass-by-reference is achieved by using pointers as parameters <span class="font-mono text-blue-400"> void sub (int *p) {}</span>
+
+**C++**
+- Like C, but also allows reference type parameters,
+  which provide the efficiency of pass-by-reference with in-mode semantic
+  <span class="font-mono text-blue-400"> void sub (const int &a) {}</span>
+
+
+**Java**
+- Object parameters are pass by reference
+- All scalar parameters are pass by value
+
+<big><b>One-way</b> or <b>two-way</b>?</big>
+**Good programming** *=>* limited access to variables, which means one-way whenever possible
+**Efficiency** *=>* pass by reference is fastest way to pass structures of significant size
+
+
+<div class="columns">
+  <div class="column">
+  
+*consider the following pseudo-code :*
+
+    int i, A[2];                       
+    func(x, y) {
+      x = x + 1;                       
+      i = i + 1;
+      y = y + 1;
+    }
+    main() {                           
+      A[0] = 1; A[1] = 2;
+      i = 0;
+      func(A[i], A[i]);                
+      println(A[0], A[1]);          
+    }
+  
+  </div>
+  <div class="column">
+  
+<b>a. pass-by-value</b>
+<samp>1 2</samp>
+because func does not affect actual parameters
+
+<b>b. pass-by-reference</b>
+<samp>3 2</samp>
+because func is actually modifying A[0] by reference
+
+<b>c. pass-by-value-result</b>
+<samp>2 2</samp>
+copy out and copy in
+
+<b>d. pass-by-name</b>
+we can rewrite <samp>func(x, y) => func(A[i], A[i])</samp>
+<samp>2 3</samp>
+  
+  </div>
+</div>
+
+### Multidimensional Arrays as Parameters
+> If a multidimensional array is passed to a subprogram and the subprogram is separately compiled,
+> the compiler needs to know the declared size of that array to build the storage mapping function
+
+<b>C</b> and <b>C++</b>
+- Programmer is required to include the declared sizes of all but the first subscript in the actual parameter
+- This disallows writing flexible subprograms
+<font color="SeaFoamGreen"><b><big>Solution</big></b></font>
+pass a pointer to the array and the sizes of the dimensions as other parameters;
+the user must include the *storage mapping function*,
+which is in terms of the size parameters
+
+<b>Pascal</b>, <b>Ada</b> and <b>Java</b>
+Declared array size is part of the object declaration
+
+### Subprograms as Parameters
+<b>Ada</b> does <font color="crimson">not allow</font> subprogram parameters
+<b>Java</b> does <font color="crimson">not allow</font> method names to be passed as parameters
+<b>C</b> and <b>C++</b> functions cannot be passed as parameters
+<font color="orangered">but <b>pointers to function</b> <u>can</u> be passed and their types include the types of the parameters <br> <i>so parameters can be type checked</i></font>
+
+<big><font color="yellow">What is the correct referencing environment for a subprogram that was sent as a parameter? </font></big>
+#### Shallow binding
+The environment of the call statement that enacts the passed subprogram
+<i>Most natural for dynamic-scoped languages</i>
+#### Deep binding
+The environment of the definition of the passed subprogram
+<i>Most natural for static-scoped language</i>
+
+<big><font color="yellow"><b>Example</b></font></big>
+
+<div class="columns">
+  <div class="column">
+  
+```js
+function sub1{
+   var x;
+   function sub2() {
+      alert(x);
+   };
+  function sub3() {
+      var x;
+      x = 3;
+      sub4(sub2);
+   };
+  function sub4(subx){
+      var x;
+      x = 4;
+      subx();
+   };
+   x = 1;
+   sub3();
+};
+```
+  </div>
+  <div class="column">
+  
+  
+     「  sub1 (x=1)                  |
+     |                              |   
+     |      「 sub2                」 |   
+     |                              |   
+     |      「 sub3 (x=3)          | |
+     |      |   call sub4 (sub2)  」 |
+     |                              |
+     |      「 sub4 (subx)(x=4)    | |
+     |      |   call subx         」 |
+                                    」
+What is the referencing environment of `sub2`
+when it is called in `sub4`?   
+
+<b>Shallow binding</b>
+<span style="font-family:monospace;margin-left:1em">=> sub2, sub4, sub3, sub1 (output: 4)</span>
+<b>Deep binding</b> 
+<span style="font-family:monospace;margin-left:1em">=> sub2, sub1 (output: 1)</span>
+  </div>
+</div>
+
+### Overloaded Subprograms
+<font color="overloaded subprogram">An <b>overloaded subprogram</b> is one that has the <u>same name</u><br> <i>as another subprogram in the same referencing environment</i></font>
+
+<b>Ada</b>, <b>Java</b>, <b>C++</b>, and <b>C#</b>
+&nbsp; allow users to write multiple versions of subprograms with the same name
+<b>Java</b>, <b>C++</b>, and <b>C#</b>,
+&nbsp; each version of an overloaded subprogram has a unique parameter profile
+<b>Ada</b>,
+&nbsp; the return type of an overloaded subprogram can be used to disambiguate calls
+&nbsp; <i>thus two overloaded subprograms can have the same parameters</i>
+
+### Generic Subprograms
+A **generic** or **polymorphic subprogram** takes parameters of different types on different activations
+<b>Ada</b>, <b>C++</b>, <b>Java 5.0+</b>, and <b>C# 2005+</b> allow generic subprograms
+
+#### Ada example
+Types, subscript ranges etc., can be generic in <b>Ada</b> subprograms
+```ada
+generic
+  type ELEMENT is private;
+  type VECTOR is array (INTEGER range <>) of ELEMENT;
+  procedure GENERIC_SORT(LIST: in out VECTOR);
+```
+
+#### C++ example
+*function templates* are instantiated implicitly when the function is named in a cal
+```C++
+template <class T>
+T max(T first, T second) 
+{
+  return first > second ? first : second;
+}
+
+template <class T>
+void generic_sort(T list[], int len) 
+{
+  int top, bottom;
+  T temp;
+	for (top = 0; top < len - 2; top++)
+    for (bottom = top + 1; bottom < len - 1;
+         bottom++) {
+      if (list[top] > list[bottom]) {
+        temp = list [top];
+        list[top] = list[bottom];
+        list[bottom] = temp;
+       } 
+ }  //** end of generic_sort
+
+float flt_list[100]; 
+// ...
+generic_sort(flt_list, 100); 
+   // Implicit instantiation
+```
+#### Java 5.0+ example
+
+Differences between generics in <b>Java 5.0+</b> and those of <b>C++</b> and <b>Ada</b>:
+- Generic parameters in <b>Java 5.0+</b> must be classes
+- <b>Java 5.0+</b> generic methods are instantiated just once as truly generic methods
+- Restrictions can be specified on the range of classes
+  that can be passed to the generic method as generic parameters
+
+```java
+public static <T> void print(T[ ] list) 
+{
+    for (int i = 0; i < list.length; i++) 
+        System.out.print(list[i] + " ");
+    
+    System.out.println();
+}
+```
+
+### Design Issues for Functions
+What types of return values are allowed?
+Language examples *for possible return types* :
+1. <b>FORTRAN</b>, <b>Pascal</b> - only simple types
+2. <b>C</b> - any type except arrays
+3. <b>Ada</b> - any type 
+4. <b>C++</b> - like <b>C</b>, but also allow classes to be returned
+5. <b>Java</b> and <b>C#</b> – any type or class
+
+### User-Defined Overloaded Operators
+
+**Nearly all programming languages have overloaded operators**
+Users can further overload operators in <b>C++</b>, <b>Ada</b>, <b>Python</b>,
+and <b>Ruby</b> (*not carried over into <b>Java</b>*)
+
+#### Ada Example
+
+**assume `Vec_Type` has been defined to be an array type with `INTEGER` elements**
+```ada
+function "*" (A,B: in Vec_Type): return Integer is
+	Sum: Integer := 0;
+	begin
+	for Index in A'range loop
+		Sum := Sum + A(Index) * B(Index)
+	end loop
+	return sum;
+end "*";
+…
+c = a * b; -- a and b are of type Vec_Type
+```
+### Coroutines
+
+A **coroutine** is a subprogram that has multiple entries and controls them itself
+
+Also called **symmetric control**: caller and called coroutines are on a more equal basis
+A coroutine call is named a **resume**
+
+The first resume of a coroutine is to its beginning,
+but subsequent calls enter at the point just after the last executed statement in the coroutine
+
+Coroutines repeatedly resume each other, possibly forever
+
+Coroutines provide quasi-concurrent execution of program units (the coroutines);
+their execution is interleaved, but not overlapped
+
+### Summary  
+A subprogram *definition* describes the actions represented by the subprogram.
+
+Subprograms can be either *functions* or *procedures*
+
+<i>Local variables</i> in subprograms can be *stack-dynamic* or *static*
+
+<b>Three models of parameter passing</b>: `in mode`, `out mode`, and `inout mode`
+
+Some languages allow <i>operator overloading</i>
+
+Subprograms can be **generic**
+
+A **coroutine** is a special subprogram with *multiple entries*
+
+
+
