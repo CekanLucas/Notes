@@ -1,0 +1,214 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="555pt" height="328pt" viewBox="0.00 0.00 554.66 328">
+<g id="graph0" class="graph" transform="translate(5.4681036544074,327.0598769183829) scale(1.0000000000000002)" data-name="FiniteAutomata">
+
+<g id="clust1" class="cluster" data-name="cluster_dfa">
+
+<polygon fill="none" stroke="white" points="8,-8 8,-312 538.66,-312 538.66,-8 8,-8"/>
+</g>
+<!-- start -->
+<g id="node1" class="node" pointer-events="visible" data-name="start">
+
+<ellipse fill="linen" stroke="cadetblue" cx="17.8" cy="-227" rx="1.8" ry="1.8"/>
+</g>
+<!-- p0 -->
+<g id="node2" class="node" pointer-events="visible" data-name="A" data-comment="p0">
+
+<ellipse fill="linen" stroke="cadetblue" cx="74.61" cy="-227" rx="18.02" ry="18.02"/>
+<text text-anchor="middle" x="74.61" y="-222.8" font-family="monospace" font-size="14.00">A</text>
+</g>
+<!-- start&#45;&gt;p0 -->
+<g id="edge1" class="edge" data-name="start-&gt;A" data-comment="start-&gt;p0">
+
+<path fill="none" stroke="azure" d="M19.75,-227C22.96,-227 33.8,-227 44.92,-227"/>
+<polygon fill="azure" stroke="azure" points="44.79,-230.5 54.79,-227 44.79,-223.5 44.79,-230.5"/>
+</g>
+<!-- B -->
+<g id="node3" class="node" pointer-events="visible" data-name="B">
+
+<ellipse fill="linen" stroke="cadetblue" cx="332.64" cy="-160" rx="18" ry="18"/>
+<text text-anchor="middle" x="332.64" y="-155.8" font-family="monospace" font-size="14.00">B</text>
+</g>
+<!-- C -->
+<g id="node4" class="node" pointer-events="visible" data-name="C">
+
+<ellipse fill="linen" stroke="cadetblue" cx="160.63" cy="-227" rx="18" ry="18"/>
+<text text-anchor="middle" x="160.63" y="-222.8" font-family="monospace" font-size="14.00">C</text>
+</g><g id="edge2" class="edge" data-name="A-&gt;C" data-comment="C">
+
+<path fill="none" stroke="azure" d="M93.02,-227C103.95,-227 118.3,-227 130.89,-227"/>
+<polygon fill="azure" stroke="azure" points="130.73,-230.5 140.73,-227 130.73,-223.5 130.73,-230.5"/>
+<text text-anchor="start" x="110.62" y="-232.2" font-family="Times,serif" font-size="14.00" fill="rgb(255, 99, 71)"> </text>
+<text text-anchor="start" x="114.12" y="-232.2" font-family="Times,serif" font-weight="bold" font-size="14.00" fill="rgb(255, 99, 71)">0</text>
+<text text-anchor="start" x="121.12" y="-232.2" font-family="Times,serif" font-size="14.00" fill="rgb(255, 99, 71)"> </text>
+</g>
+<!-- D -->
+<g id="node5" class="node" pointer-events="visible" data-name="D">
+
+<ellipse fill="linen" stroke="cadetblue" cx="418.65" cy="-130" rx="18.02" ry="18.02"/>
+<text text-anchor="middle" x="418.65" y="-125.8" font-family="monospace" font-size="14.00">D</text>
+</g>
+<!-- E -->
+<g id="node6" class="node" pointer-events="visible" data-name="E">
+
+<ellipse fill="linen" stroke="cadetblue" cx="508.66" cy="-196" rx="18" ry="18"/>
+<text text-anchor="middle" x="508.66" y="-191.8" font-family="monospace" font-size="14.00">E</text><ellipse fill="none" stroke="cadetblue" cx="508.66" cy="-196" rx="22" ry="22"/>
+
+</g><g id="edge3" class="edge" data-name="A-&gt;D" data-comment="E">
+
+<path fill="none" stroke="azure" d="M87.71,-214.6C111.92,-190.71 169.11,-138.67 228.64,-116.2 292.71,-92.02 317.12,-91.07 382.64,-111 386.04,-112.03 389.48,-113.42 392.81,-114.97"/>
+<polygon fill="azure" stroke="azure" points="391.08,-118.01 401.56,-119.57 394.34,-111.82 391.08,-118.01"/>
+<text text-anchor="start" x="239.64" y="-121.2" font-family="Times,serif" font-size="14.00" fill="rgb(0, 255, 127)"> </text>
+<text text-anchor="start" x="243.14" y="-121.2" font-family="Times,serif" font-weight="bold" font-size="14.00" fill="rgb(0, 255, 127)">1</text>
+<text text-anchor="start" x="250.14" y="-121.2" font-family="Times,serif" font-size="14.00" fill="rgb(0, 255, 127)"> </text>
+</g>
+<!-- F -->
+<!-- F -->
+<g id="node7" class="node" pointer-events="visible" data-name="F">
+
+<ellipse fill="linen" stroke="cadetblue" cx="246.64" cy="-160" rx="18" ry="18"/>
+<text text-anchor="middle" x="246.64" y="-155.8" font-family="monospace" font-size="14.00">F</text>
+</g>
+<!-- G -->
+<!-- G -->
+<g id="edge6" class="edge" data-name="C-&gt;F" data-comment="G">
+
+<path fill="none" stroke="azure" d="M175.13,-216.24C188.03,-205.94 207.74,-190.23 223.04,-178.03"/>
+<polygon fill="azure" stroke="azure" points="225.08,-180.88 230.72,-171.9 220.71,-175.4 225.08,-180.88"/>
+<text text-anchor="start" x="196.64" y="-202.2" font-family="Times,serif" font-size="14.00" fill="tomato"> </text>
+<text text-anchor="start" x="200.14" y="-202.2" font-family="Times,serif" font-weight="bold" font-size="14.00" fill="tomato">0</text>
+<text text-anchor="start" x="207.14" y="-202.2" font-family="Times,serif" font-size="14.00" fill="tomato"> </text>
+</g>
+<!-- G -->
+<!-- C&#45;&gt;F -->
+<g id="edge8" class="edge" data-name="D-&gt;E" data-comment="C-&gt;F">
+
+<path fill="none" stroke="azure" d="M433.79,-140.6C446.59,-150.2 465.76,-164.58 481.37,-176.28"/>
+<polygon fill="azure" stroke="azure" points="479.23,-179.05 489.33,-182.25 483.43,-173.45 479.23,-179.05"/>
+<text text-anchor="start" x="454.66" y="-169.2" font-family="Times,serif" font-size="14.00" fill="rgb(255, 99, 71)"> </text>
+<text text-anchor="start" x="458.16" y="-169.2" font-family="Times,serif" font-weight="bold" font-size="14.00" fill="rgb(255, 99, 71)">0</text>
+<text text-anchor="start" x="465.16" y="-169.2" font-family="Times,serif" font-size="14.00" fill="rgb(255, 99, 71)"> </text>
+</g><g id="edge9" class="edge" data-name="D-&gt;F" data-comment="C-&gt;F">
+
+<path fill="none" stroke="azure" d="M401.27,-123.66C380.66,-116.62 344.39,-107.34 314.64,-116.2 297.87,-121.19 281.39,-131.87 268.97,-141.43"/>
+<polygon fill="azure" stroke="azure" points="267.09,-138.46 261.51,-147.46 271.48,-143.9 267.09,-138.46"/>
+<text text-anchor="start" x="325.64" y="-121.2" font-family="Times,serif" font-size="14.00" fill="springgreen"> </text>
+<text text-anchor="start" x="329.14" y="-121.2" font-family="Times,serif" font-weight="bold" font-size="14.00" fill="springgreen">1</text>
+<text text-anchor="start" x="336.14" y="-121.2" font-family="Times,serif" font-size="14.00" fill="springgreen"> </text>
+</g>
+<!-- G -->
+<!-- D&#45;&gt;F -->
+<!-- E&#45;&gt;E -->
+<g id="edge11" class="edge" data-name="E-&gt;E">
+
+<path fill="none" stroke="azure" d="M500.11,-216.58C498.93,-226.84 501.78,-236 508.66,-236 512.75,-236 515.42,-232.77 516.66,-228"/>
+<polygon fill="azure" stroke="azure" points="520.15,-228.25 517.14,-218.09 513.16,-227.91 520.15,-228.25"/>
+<text text-anchor="start" x="501.66" y="-241.2" font-family="Times,serif" font-size="14.00" fill="rgb(0, 255, 127)"> </text>
+<text text-anchor="start" x="505.16" y="-241.2" font-family="Times,serif" font-weight="bold" font-size="14.00" fill="rgb(0, 255, 127)">1</text>
+<text text-anchor="start" x="512.16" y="-241.2" font-family="Times,serif" font-size="14.00" fill="rgb(0, 255, 127)"> </text>
+</g>
+<!-- G -->
+<!-- F&#45;&gt;F -->
+<g id="edge12" class="edge" data-name="F-&gt;F">
+
+<path fill="none" stroke="azure" d="M239.08,-176.66C237.4,-186.62 239.92,-196 246.64,-196 250.63,-196 253.14,-192.69 254.17,-187.92"/>
+<polygon fill="azure" stroke="azure" points="257.67,-188.19 254.2,-178.18 250.67,-188.17 257.67,-188.19"/>
+<text text-anchor="start" x="239.64" y="-201.2" font-family="Times,serif" font-size="14.00" fill="rgb(255, 99, 71)"> </text>
+<text text-anchor="start" x="243.14" y="-201.2" font-family="Times,serif" font-weight="bold" font-size="14.00" fill="rgb(255, 99, 71)">0</text>
+<text text-anchor="start" x="250.14" y="-201.2" font-family="Times,serif" font-size="14.00" fill="rgb(255, 99, 71)"> </text>
+</g>
+<!-- G -->
+<g id="edge14" class="edge" data-name="G-&gt;E" data-comment="G">
+
+<path fill="none" stroke="azure" d="M178.99,-37.36C195.97,-35.9 222.56,-34 245.64,-34 245.64,-34 245.64,-34 419.65,-34 477.63,-34 497.63,-115.12 504.36,-162.55"/>
+<polygon fill="azure" stroke="azure" points="500.87,-162.84 505.61,-172.31 507.81,-161.95 500.87,-162.84"/>
+<text text-anchor="start" x="325.64" y="-39.2" font-family="Times,serif" font-size="14.00" fill="tomato"> </text>
+<text text-anchor="start" x="329.14" y="-39.2" font-family="Times,serif" font-weight="bold" font-size="14.00" fill="tomato">0</text>
+<text text-anchor="start" x="336.14" y="-39.2" font-family="Times,serif" font-size="14.00" fill="tomato"> </text>
+</g>
+<!-- G -->
+<g id="node8" class="node" pointer-events="visible" data-name="G">
+
+<ellipse fill="linen" stroke="cadetblue" cx="160.63" cy="-39" rx="18.02" ry="18.02"/>
+<text text-anchor="middle" x="160.63" y="-34.8" font-family="monospace" font-size="14.00">G</text>
+</g>
+<!-- H -->
+<!-- H -->
+<g id="edge4" class="edge" data-name="B-&gt;H" data-comment="H">
+
+<path fill="none" stroke="azure" d="M349.44,-166.77C361.22,-171.82 377.57,-178.82 391.31,-184.71"/>
+<polygon fill="azure" stroke="azure" points="389.67,-187.82 400.24,-188.54 392.43,-181.38 389.67,-187.82"/>
+<text text-anchor="start" x="368.64" y="-185.2" font-family="Times,serif" font-size="14.00" fill="tomato"> </text>
+<text text-anchor="start" x="372.14" y="-185.2" font-family="Times,serif" font-weight="bold" font-size="14.00" fill="tomato">0</text>
+<text text-anchor="start" x="379.14" y="-185.2" font-family="Times,serif" font-size="14.00" fill="tomato"> </text>
+</g><g id="edge7" class="edge" data-name="C-&gt;E" data-comment="H">
+
+<path fill="none" stroke="azure" d="M179.07,-227.78C222.64,-229.49 339.73,-232.72 436.66,-223 451.06,-221.56 455.02,-221.82 468.66,-217 472.22,-215.74 475.84,-214.2 479.37,-212.52"/>
+<polygon fill="azure" stroke="azure" points="480.94,-215.66 488.21,-207.95 477.72,-209.44 480.94,-215.66"/>
+<text text-anchor="start" x="325.64" y="-234.2" font-family="Times,serif" font-size="14.00" fill="springgreen"> </text>
+<text text-anchor="start" x="329.14" y="-234.2" font-family="Times,serif" font-weight="bold" font-size="14.00" fill="springgreen">1</text>
+<text text-anchor="start" x="336.14" y="-234.2" font-family="Times,serif" font-size="14.00" fill="springgreen"> </text>
+</g>
+<!-- H -->
+<g id="node9" class="node" pointer-events="visible" data-name="H">
+
+<ellipse fill="linen" stroke="cadetblue" cx="418.65" cy="-196" rx="18.02" ry="18.02"/>
+<text text-anchor="middle" x="418.65" y="-191.8" font-family="monospace" font-size="14.00">H</text>
+</g><g id="edge5" class="edge" data-name="B-&gt;D" data-comment="H">
+
+<path fill="none" stroke="azure" d="M350.01,-153.96C355.88,-151.81 362.55,-149.38 368.64,-147.2 375.77,-144.64 383.5,-141.91 390.67,-139.4"/>
+<polygon fill="azure" stroke="azure" points="391.58,-142.79 399.87,-136.18 389.27,-136.18 391.58,-142.79"/>
+<text text-anchor="start" x="368.64" y="-152.2" font-family="Times,serif" font-size="14.00" fill="springgreen"> </text>
+<text text-anchor="start" x="372.14" y="-152.2" font-family="Times,serif" font-weight="bold" font-size="14.00" fill="springgreen">1</text>
+<text text-anchor="start" x="379.14" y="-152.2" font-family="Times,serif" font-size="14.00" fill="springgreen"> </text>
+</g>
+<!-- q0 -->
+
+
+
+
+<g id="edge10" class="edge" data-name="E-&gt;A" data-comment="q0">
+
+<path fill="none" stroke="azure" d="M491.03,-209.6C484.41,-214.44 476.5,-219.55 468.66,-223 350.05,-275.29 308.27,-252.49 178.64,-254 148.29,-254.35 138.99,-258.77 110.62,-248 107.04,-246.64 103.42,-244.92 99.92,-243.05"/>
+<polygon fill="azure" stroke="azure" points="101.71,-240.04 91.31,-237.98 98.15,-246.08 101.71,-240.04"/>
+<text text-anchor="start" x="282.64" y="-262.2" font-family="Times,serif" font-size="14.00" fill="tomato"> </text>
+<text text-anchor="start" x="286.14" y="-262.2" font-family="Times,serif" font-weight="bold" font-size="14.00" fill="tomato">0</text>
+<text text-anchor="start" x="293.14" y="-262.2" font-family="Times,serif" font-size="14.00" fill="tomato"> </text>
+</g>
+<g id="edge13" class="edge" data-name="F-&gt;B" data-comment="q0">
+
+<path fill="none" stroke="azure" d="M265.05,-160C275.97,-160 290.32,-160 302.91,-160"/>
+<polygon fill="azure" stroke="azure" points="302.75,-163.5 312.75,-160 302.75,-156.5 302.75,-163.5"/>
+<text text-anchor="start" x="282.64" y="-165.2" font-family="Times,serif" font-size="14.00" fill="springgreen"> </text>
+<text text-anchor="start" x="286.14" y="-165.2" font-family="Times,serif" font-weight="bold" font-size="14.00" fill="springgreen">1</text>
+<text text-anchor="start" x="293.14" y="-165.2" font-family="Times,serif" font-size="14.00" fill="springgreen"> </text>
+</g>
+
+<!-- G&#45;&gt;F -->
+<g id="edge15" class="edge" data-name="G-&gt;F">
+
+<path fill="none" stroke="azure" d="M171.6,-53.36C185.81,-73.82 212.06,-111.64 229.19,-136.3"/>
+<polygon fill="azure" stroke="azure" points="226.25,-138.2 234.82,-144.42 232,-134.21 226.25,-138.2"/>
+<text text-anchor="start" x="196.64" y="-111.2" font-family="Times,serif" font-size="14.00" fill="springgreen"> </text>
+<text text-anchor="start" x="200.14" y="-111.2" font-family="Times,serif" font-weight="bold" font-size="14.00" fill="springgreen">1</text>
+<text text-anchor="start" x="207.14" y="-111.2" font-family="Times,serif" font-size="14.00" fill="springgreen"> </text>
+</g>
+<g id="edge17" class="edge" data-name="H-&gt;E" data-comment="G-&gt;F">
+
+<path fill="none" stroke="azure" d="M437.04,-196C447.86,-196 462.11,-196 474.98,-196"/>
+<polygon fill="azure" stroke="azure" points="474.75,-199.5 484.75,-196 474.75,-192.5 474.75,-199.5"/>
+<text text-anchor="start" x="454.66" y="-201.2" font-family="Times,serif" font-size="14.00" fill="rgb(0, 255, 127)"> </text>
+<text text-anchor="start" x="458.16" y="-201.2" font-family="Times,serif" font-weight="bold" font-size="14.00" fill="rgb(0, 255, 127)">1</text>
+<text text-anchor="start" x="465.16" y="-201.2" font-family="Times,serif" font-size="14.00" fill="rgb(0, 255, 127)"> </text>
+</g>
+<!-- G&#45;&gt;F -->
+<g id="edge16" class="edge" data-name="H-&gt;F" data-comment="G-&gt;F">
+
+<path fill="none" stroke="azure" d="M400.86,-199.51C391.39,-201.04 379.35,-202.23 368.64,-201 329.66,-196.53 319.02,-195.72 282.64,-181 279.09,-179.56 275.49,-177.8 272,-175.91"/>
+<polygon fill="azure" stroke="azure" points="273.79,-172.9 263.4,-170.83 270.23,-178.93 273.79,-172.9"/>
+<text text-anchor="start" x="325.64" y="-203.2" font-family="Times,serif" font-size="14.00" fill="tomato"> </text>
+<text text-anchor="start" x="329.14" y="-203.2" font-family="Times,serif" font-weight="bold" font-size="14.00" fill="tomato">0</text>
+<text text-anchor="start" x="336.14" y="-203.2" font-family="Times,serif" font-size="14.00" fill="tomato"> </text>
+</g>
+</g>
+</svg>
