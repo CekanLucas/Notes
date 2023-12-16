@@ -23,7 +23,7 @@
 `EQ?` takes two symbolic atoms as parameters; <i>it returns #T if both parameters are atoms and the two are the same</i>
 
 ```lisp
-( define (x lis) ; define a function called x that takes a lis as a parameter
+( define (x lis) ; define a function called x that takes a list as a parameter
   ( cond ; list predicates if true execute following expression
     ( ( null? lis ) 0 ) ; if lis is a empty list return 0
 
