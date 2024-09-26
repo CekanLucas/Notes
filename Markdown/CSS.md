@@ -353,8 +353,8 @@ Use `box-sizing` of value `border-box` so that padding and border width are not 
 
 <ul style="list-style-type:square;list-style-position:inside;list-style-color:yellow">
   <li>square</li>
-  <li>here the <code>list-style-position: inside</code></li>
-  <li>default <code>list-style-position: outside</code></li>
+  <li style="list-style-position:inside">here the <code>list-style-position: inside</code></li>
+  <li style="list-style-position:outside">default <code>list-style-position: outside</code></li>
 </ul>
 <ul style="list-style-type:decimal">
   <li>decimal</li>
