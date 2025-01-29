@@ -3,7 +3,13 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+parts:
+  - caption: Introduction
+    chapters:
+      - file: markdown
+      - file: notebooks
+      - file: markdown-notebooks
+
+  - caption: Math 
+    chapters:
+    - glob: pages/math/*
