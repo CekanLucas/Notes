@@ -1,0 +1,7 @@
+README.md
+nestor.py
+setup.py
+first_module.egg-info/PKG-INFO
+first_module.egg-info/SOURCES.txt
+first_module.egg-info/dependency_links.txt
+first_module.egg-info/top_level.txt
