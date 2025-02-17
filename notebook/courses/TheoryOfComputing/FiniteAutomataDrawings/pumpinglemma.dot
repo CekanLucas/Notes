@@ -1,0 +1,20 @@
+digraph FiniteAutomata {
+  graph [bgcolor=transparent, rankdir=LR]
+  edge [color=azure, fontcolor=lightblue]
+  node [fontname=monospace, fillcolor=linen, style=filled, color=cadetblue]
+
+  subgraph cluster_dfa {
+    // label= "DFA from NFA";
+    color=white;
+    fontcolor=white;
+    start [label="Start", shape=point]; // Initial state with a point shape  
+    p0 [shape="circle", label= <<b>p<sub>0</sub></b>>];
+    pi [shape="circle", label= <<b>p<sub>i</sub></b>>];
+    pe [shape="doublecircle", label= <>]; // end
+    start -> p0;
+    p0 -> pi[label=< <b>x</b>&nbsp; =<br align="center"/>a<sub>1</sub> ... a<sub>i</sub><br/> >];
+    pi -> pi[label=< <b>y</b>&nbsp; =<br align="center"/>a<sub>i+1</sub> ... a<sub>j</sub><br/> >];
+    pi -> pe[label=< <b>z</b>&nbsp; =<br align="center"/>a<sub>j+1</sub> ... a<sub>m</sub><br/> >];
+
+  }
+}

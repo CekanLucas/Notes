@@ -1,0 +1,38 @@
+digraph FiniteAutomata {
+  graph [bgcolor=transparent, rankdir=LR]
+  edge [color=azure, fontcolor=lightblue]
+  node [fontname=monospace, fillcolor=linen, style=filled, color=cadetblue]
+
+  subgraph cluster_dfa {
+    // label= "Is the language of this DFA finite or infinite";
+    color=white;
+    fontcolor=white;
+    
+    start [label="Start", shape=point]; // Initial state with a point shape  
+    A [shape="circle", label="A"];
+    B [shape="circle", label="B"];
+    C [shape="circle", label="C"];
+    D [shape="circle", label="D"];
+    E [shape="doublecircle", label="E"];
+    F [shape="circle", label="F"];
+    G [shape="circle", label="G"];
+    H [shape="circle", label="H"];
+    start -> A;
+    A -> C[label=< <b>0</b> >, fontcolor=tomato];
+    A -> D[label=< <b>1</b> >, fontcolor=springgreen];
+    B -> H[label=< <b>0</b> >, fontcolor=tomato];
+    B -> D[label=< <b>1</b> >, fontcolor=springgreen];
+    C -> F[label=< <b>0</b> >, fontcolor=tomato];
+    C -> E[label=< <b>1</b> >, fontcolor=springgreen];
+    D -> E[label=< <b>0</b> >, fontcolor=tomato];
+    D -> F[label=< <b>1</b> >, fontcolor=springgreen];
+    E -> A[label=< <b>0</b> >, fontcolor=tomato];
+    E -> E[label=< <b>1</b> >, fontcolor=springgreen];
+    F -> F[label=< <b>0</b> >, fontcolor=tomato];
+    F -> B[label=< <b>1</b> >, fontcolor=springgreen];
+    G -> E[label=< <b>0</b> >, fontcolor=tomato];
+    G -> F[label=< <b>1</b> >, fontcolor=springgreen];
+    H -> F[label=< <b>0</b> >, fontcolor=tomato];
+    H -> E[label=< <b>1</b> >, fontcolor=springgreen];
+  }
+}

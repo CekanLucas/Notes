@@ -1,0 +1,42 @@
+digraph FiniteAutomata {
+  graph [bgcolor=transparent, rankdir=LR]
+  edge [color=azure, fontcolor=lightblue]
+  node [fontname=monospace, fillcolor=linen, style=filled, color=cadetblue]
+
+
+
+    subgraph cluster_pda {
+    label= < PDA for L<sub>wwr</sub> <br/><br/> Transition Diagram >;
+    color=white;
+    fontcolor=white;
+    Legend [shape="box", label= <  <br/>
+      &Sigma; = {0, 1}                                <br/><br/>
+      &Gamma; = {Z           <sub>0</sub>, 0, 1}               <br/><br/>
+      Q = {q         <sub>0</sub>, q   <sub>1</sub>, q   <sub>2</sub>}      <br/>
+    >];
+    startp [label="Start", shape=point]; // Initial state with a point shape  
+    p1 [shape="circle", label= <<b>q<sub>0</sub></b>>];
+    p2 [shape="circle", label= <<b>q<sub>1</sub></b>>];
+    p3 [shape="doublecircle", label= <<b>q<sub>2</sub></b>>];
+    startp -> p1[label=< &epsilon;, Z<sub>0</sub> / Z<sub>0</sub><br/> >];
+    p1 -> p1[label=< 0, Z<sub>0</sub> / 0Z<sub>0</sub><br/> 
+      <br/> 1, Z<sub>0</sub> / 1Z<sub>0</sub><br/> 
+      <br/> 0, 0 / 00 <br/> 
+      <br/> 0, 1 / 01 <br/> 
+      <br/> 1, 0 / 10 <br/> 
+      <br/> 1, 1 / 11 <br/> 
+      
+    >];
+    p1 -> p2[label=< &epsilon;, Z<sub>0</sub> / Z<sub>0</sub><br/>
+      <br/> &epsilon;, 0 / 0 <br/>
+      <br/> &epsilon;, 1 / 1 <br/>
+    >];
+    p2 -> p2[label=<
+      <br/> 1, 1 / &epsilon; <br/>
+      <br/> 0, 0 / &epsilon; <br/>
+    >];
+    p2 -> p3[label=< &epsilon;, Z<sub>0</sub> / Z<sub>0</sub><br/> >];
+  }
+
+}
+

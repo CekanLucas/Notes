@@ -1,0 +1,32 @@
+// This is a comment.
+
+// Define the graph type. "digraph" means it's a directed graph.
+digraph G {
+    // Define nodes and their attributes.
+    A [label="Node A", shape="box", color="white", fontcolor="white"];
+    B [label="Node B", shape="ellipse", color="white", fontcolor="white"];
+
+    // Define an edge between nodes A and B.
+    A -> B [label="Edge AB", style="dashed", color="white"];
+
+    // Subgraph (cluster) definition for grouping nodes.
+    subgraph cluster1 {
+        label="Cluster 1";
+        C [label="Node C", color="white", fontcolor="white"];
+        D [label="Node D", color="white", fontcolor="white"];
+        C -> D [label="Edge CD", color="white"];
+    }
+
+    // Define attributes for the entire graph.
+    // The "rankdir" attribute sets the layout direction to "LR" (left to right).
+    // The "bgcolor" sets the background color of the entire graph.
+    graph [rankdir=LR, bgcolor="transparent", fontcolor="white"];
+
+    // Define attributes for all nodes in the graph.
+    // The "fontname" attribute sets the font for node labels.
+    node [fontname="Arial", fontsize=12, style="filled", fillcolor="black"];
+
+    // Define attributes for all edges in the graph.
+    // The "color" attribute sets the edge color.
+    edge [color="lightgray"];
+}

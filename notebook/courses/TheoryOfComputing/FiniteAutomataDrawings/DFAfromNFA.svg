@@ -1,0 +1,114 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="457pt" height="215pt" viewBox="0.00 0.00 456.68 215">
+<g id="graph0" class="graph" transform="translate(4,211) scale(1)" data-name="FiniteAutomata">
+
+
+<g id="clust1" class="cluster" data-name="cluster_dfa">
+
+<polygon fill="none" stroke="white" points="8,-8 8,-199 440.68,-199 440.68,-8 8,-8"/>
+<text text-anchor="middle" x="224.34" y="-182.4" font-family="Times,serif" font-size="14.00" fill="white">DFA from NFA</text>
+</g>
+<!-- startn -->
+
+<!-- q0n -->
+
+<!-- startn&#45;&gt;q0n --><g id="edge1" class="edge" data-name="start-&gt;qs" data-comment="startn-&gt;q0n">
+
+<path fill="none" stroke="azure" d="M20.05,-90C23.49,-90 33.57,-90 45.1,-90"/>
+<polygon fill="azure" stroke="azure" points="44.9,-93.5 54.9,-90 44.9,-86.5 44.9,-93.5"/>
+</g>
+
+<!-- q0n&#45;&gt;q0n -->
+
+<!-- q1n --><g id="edge4" class="edge" data-name="q0-&gt;q0" data-comment="q1n">
+
+<path fill="none" stroke="azure" d="M183.93,-57.19C182.85,-67.26 185.45,-76.24 191.71,-76.24 195.42,-76.24 197.85,-73.07 198.98,-68.39"/>
+<polygon fill="azure" stroke="azure" points="202.46,-68.85 199.41,-58.7 195.47,-68.53 202.46,-68.85"/>
+<text text-anchor="middle" x="191.71" y="-80.44" font-family="Times,serif" font-size="14.00" fill="lightblue" style="">1</text>
+</g>
+
+<!-- q0n&#45;&gt;q1n -->
+
+<!-- q2n --><g id="node3" class="node" pointer-events="visible" data-name="qs" data-comment="q2n">
+
+<ellipse fill="linen" stroke="cadetblue" cx="92.03" cy="-90" rx="31.38" ry="31.38"/>
+<text text-anchor="start" x="77.25" y="-86.8" font-family="monospace" font-weight="bold" font-size="14.00">q</text><ellipse fill="none" stroke="cadetblue" cx="92.03" cy="-90" rx="35.37" ry="35.37"/>
+<text text-anchor="start" x="85.03" y="-86.8" font-family="monospace" font-weight="bold" baseline-shift="sub" font-size="14.00">0</text>
+<text text-anchor="start" x="92.03" y="-86.8" font-family="monospace" font-weight="bold" font-size="14.00">q</text>
+<text text-anchor="start" x="99.82" y="-86.8" font-family="monospace" font-weight="bold" baseline-shift="sub" font-size="14.00">2</text>
+
+</g><g id="edge3" class="edge" data-name="qs-&gt;q1" data-comment="q2n">
+
+<path fill="none" stroke="azure" d="M127.21,-96.45C140.64,-98.69 156.23,-100.9 170.47,-102 189.29,-103.45 194.07,-102.26 212.94,-102 223.13,-101.86 234.12,-101.61 244.41,-101.34"/>
+<polygon fill="azure" stroke="azure" points="244.24,-104.85 254.14,-101.07 244.05,-97.85 244.24,-104.85"/>
+<text text-anchor="middle" x="191.71" y="-106.2" font-family="Times,serif" font-size="14.00" fill="lightblue">0</text>
+</g><g id="edge2" class="edge" data-name="qs-&gt;q0" data-comment="q2n">
+
+<path fill="none" stroke="azure" d="M123.67,-73.38C136.05,-66.66 150.24,-58.96 162.37,-52.37"/>
+<polygon fill="azure" stroke="azure" points="163.95,-55.5 171.07,-47.65 160.62,-49.35 163.95,-55.5"/>
+<text text-anchor="middle" x="148.97" y="-64.2" font-family="Times,serif" font-size="14.00" fill="lightblue">1</text>
+</g><g id="edge5" class="edge" data-name="q0-&gt;q1" data-comment="q2n">
+
+<path fill="none" stroke="azure" d="M209.89,-48.56C221.47,-56.35 237.17,-66.91 251.33,-76.43"/>
+<polygon fill="azure" stroke="azure" points="249.32,-79.29 259.57,-81.97 253.22,-73.48 249.32,-79.29"/>
+<text text-anchor="middle" x="234.44" y="-70.2" font-family="Times,serif" font-size="14.00" fill="lightblue" style="">0</text>
+</g>
+
+<!-- q1n&#45;&gt;q2n -->
+
+<!-- start --><g id="edge7" class="edge" data-name="q1-&gt;q1" data-comment="start">
+
+<path fill="none" stroke="azure" d="M277.46,-129.93C277.25,-140.67 280.55,-149.43 287.38,-149.43 291.53,-149.43 294.39,-146.18 295.93,-141.21"/>
+<polygon fill="azure" stroke="azure" points="299.39,-141.78 297.11,-131.43 292.44,-140.94 299.39,-141.78"/>
+<text text-anchor="middle" x="287.38" y="-153.63" font-family="Times,serif" font-size="14.00" fill="lightblue">0</text>
+</g>
+<g id="node1" class="node" pointer-events="visible" data-name="start">
+
+<ellipse fill="linen" stroke="cadetblue" cx="17.8" cy="-90" rx="1.8" ry="1.8"/>
+</g>
+<!-- q0 -->
+<g id="node2" class="node" pointer-events="visible" data-name="q0">
+
+<ellipse fill="linen" stroke="cadetblue" cx="191.71" cy="-37" rx="21.47" ry="21.47"/>
+<text text-anchor="start" x="184.31" y="-33.8" font-family="monospace" font-size="14.00" font-weight="bold">q</text>
+<text text-anchor="start" x="192.1" y="-33.8" font-family="monospace" font-weight="bold" baseline-shift="sub" font-size="14.00">0</text>
+</g>
+<!-- start&#45;&gt;q0 --><g id="edge6" class="edge" data-name="q1-&gt;q2" data-comment="start-&gt;q0">
+
+<path fill="none" stroke="azure" d="M317.28,-89.28C328.27,-85.21 341.04,-80.47 353.07,-76.01"/>
+<polygon fill="azure" stroke="azure" points="354.26,-79.3 362.41,-72.55 351.82,-72.74 354.26,-79.3"/>
+<text text-anchor="middle" x="340.31" y="-85.2" font-family="Times,serif" font-size="14.00" fill="lightblue">1</text>
+</g><!-- q2&#45;&gt;q0 -->
+<g id="edge8" class="edge" data-name="q2-&gt;q0">
+
+<path fill="none" stroke="azure" d="M362.53,-51.42C349.03,-48.32 333.27,-45.11 318.81,-43.2 286.92,-38.99 250.15,-37.57 224.58,-37.12"/>
+<polygon fill="azure" stroke="azure" points="224.89,-33.63 214.84,-37 224.8,-40.62 224.89,-33.63"/>
+<text text-anchor="middle" x="287.38" y="-47.2" font-family="Times,serif" font-size="14.00" fill="lightblue">1</text>
+</g>
+<g id="node4" class="node" pointer-events="visible" data-name="q1" data-comment="q2-&gt;q0">
+
+<ellipse fill="linen" stroke="cadetblue" cx="287.38" cy="-100" rx="31.37" ry="31.37"/>
+<text text-anchor="start" x="272.59" y="-96.8" font-family="monospace" font-size="14.00" font-weight="bold">q</text>
+<text text-anchor="start" x="280.38" y="-96.8" font-family="monospace" font-weight="bold" baseline-shift="sub" font-size="14.00">0</text>
+<text text-anchor="start" x="287.38" y="-96.8" font-family="monospace" font-weight="bold" font-size="14.00">q</text>
+<text text-anchor="start" x="295.16" y="-96.8" font-family="monospace" font-weight="bold" baseline-shift="sub" font-size="14.00">1</text>
+</g><g id="node5" class="node" pointer-events="visible" data-name="q2" data-comment="q2-&gt;q0">
+
+<ellipse fill="linen" stroke="cadetblue" cx="397.25" cy="-60" rx="31.38" ry="31.38"/>
+<ellipse fill="none" stroke="cadetblue" cx="397.25" cy="-60" rx="35.37" ry="35.37"/>
+<text text-anchor="start" x="382.46" y="-56.8" font-family="monospace" font-size="14.00" font-weight="bold">q</text>
+<text text-anchor="start" x="390.25" y="-56.8" font-family="monospace" font-weight="bold" baseline-shift="sub" font-size="14.00">0</text>
+<text text-anchor="start" x="397.25" y="-56.8" font-family="monospace" font-weight="bold" font-size="14.00">q</text>
+<text text-anchor="start" x="405.03" y="-56.8" font-family="monospace" font-weight="bold" baseline-shift="sub" font-size="14.00">2</text>
+</g><!-- q2&#45;&gt;q2 -->
+
+<!-- q2&#45;&gt;q1 -->
+<g id="edge9" class="edge" data-name="q2-&gt;q1">
+
+<path fill="none" stroke="azure" d="M361.9,-55.37C353.5,-55.36 344.66,-56.33 336.81,-59.2 330.03,-61.67 323.55,-65.56 317.65,-69.97"/>
+<polygon fill="azure" stroke="azure" points="315.54,-67.17 310.07,-76.25 320.01,-72.57 315.54,-67.17"/>
+<text text-anchor="middle" x="340.31" y="-63.2" font-family="Times,serif" font-size="14.00" fill="lightblue">0</text>
+</g>
+
+</g>
+</svg>
