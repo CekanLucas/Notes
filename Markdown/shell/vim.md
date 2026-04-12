@@ -326,3 +326,17 @@ You can also specify a count before the `@` command to repeat the macro multiple
 Macros are stored in registers (letters a-z). You can view the contents of a register by typing `:reg` in command mode, followed by the letter of the register you want to view (e.g. `:reg` `a`)
 
 > **Note:** You can repeat commands including macros with the `.` key
+## Vim-Surround (Plugin)
+
+The ultimate "high-speed" tool for managing brackets, quotes, and markdown styling. 
+
+### The Grammar: `Action` + `Surround` + `Object` + `Character`
+
+| Command | Action | Result |
+| :--- | :--- | :--- |
+| **`ds(`** | **D**elete **S**urround | Removes `()` around a word |
+| **`cs(*`** | **C**hange **S**urround | Changes `(word)` to `*word*` |
+| **`ysiw*`** | **Y**ank **S**urround **I**nner **W**ord | Adds `*` around a single word |
+| **`yss*`** | **Y**ank **S**urround **S**entence | Adds `*` around the **entire line** |
+
+*Tip: Use `ysiw` with `"` or `'` to quickly quote strings in code!*
